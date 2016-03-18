@@ -1,0 +1,1419 @@
+﻿<!DOCTYPE html>
+
+<html lang="en-gb" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Infobot 42</title>
+    <style>
+        body {
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            top: 0;
+        }
+        ul {
+            list-style-type: none;
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+        p {
+            font-family: Whitney,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+            margin-top: 3px;
+            margin-bottom: 3px;
+        }
+        code {
+            font-family: Menlo,Consolas,Monaco,monospace;;
+            font-size: inherit;
+            background-color: #2e3337;
+        }
+        table.codeblock{
+            border-collapse:collapse;
+            border: 3px double black;
+            width: 95%;
+        }
+        td.codeblock{
+            border: none;
+        }
+        .codeblock {
+            font-family: monospace;
+            font-size: 14px;
+            background-color: #2e3337;
+            padding: 3px 3px 3px 3px;
+        }
+        .command {
+            padding-bottom: 20px;
+        }
+        aside {
+            background-color: #2e3136;
+            color: #8a8a94;
+            float: left;
+            overflow-y: scroll;
+            position: absolute;
+            width: 20vw;
+            top: 0px;
+            bottom: 0px;
+        }
+        ul#contents a:link    {color:#8a8a94; background-color:transparent; text-decoration:none}
+        ul#contents a:visited {color:#8a8a94; background-color:transparent; text-decoration:none}
+        ul#contents a:hover   {color:white; background-color:transparent; text-decoration:none}
+        ul#contents a:active  {color:white; background-color:#282b30; text-decoration:none}
+        a {color:white; background-color:transparent; text-decoration:underline}
+        article {
+            background-color: #36393e;
+            color: white;
+            float: left;
+            overflow-y: scroll;
+            position: absolute;
+            left: 22vw;
+            top: 0px;
+            bottom: 0px;
+        }
+        hr {
+            color: hsla(0, 0%, 100%, 0.04)
+        }
+        img {
+            border:solid;
+            border-color:hsla(0,0%,100%,0.04)
+        }
+        table.payout {
+            border-color: hsla(0, 0%, 100%, 0.04);
+        }
+        td.payout {
+            border-color: hsla(0, 0%, 100%, 0.04);
+        }
+        span.mention {
+            color:#738bd7; 
+            background-color: rgba(115,139,215,.1);
+        }
+
+    </style>
+</head>
+<body>
+    <aside>
+        
+        <h2>Command list</h2>
+        <ul id="contents">
+            <li><h4><a href="#top">Return to top</a></h4></li>
+            <li>
+                <b><a href="#category_bot">Category:Bot</a></b>
+                <ul>
+                    <li><a href="#tutorial">+tutorial</a></li>
+                    <li><a href="#help">+help</a></li>
+                    <li><a href="#hello">+hello</a></li>
+                    <li><a href="#about">+about</a></li>
+                    <li><a href="#faq">+faq</a></li>
+                    <li><a href="#changes">+changes</a></li>
+                    <li><a href="#hug">+hug</a></li>
+                    <li><a href="#join">+join</a></li>
+                    <li><a href="#leave">+leave</a></li>
+                    <li><a href="#echo">+echo</a></li>
+                    <li><a href="#cleanup">+cleanup</a></li>
+                    <li><a href="#botban">+botban</a></li>
+                    <li><a href="#botunban">+botunban</a></li>
+                    <li><a href="#toggle">+toggle</a></li>
+                    <li><a href="#check">+check</a></li>
+                </ul>
+            </li>
+            <li>
+                <b><a href="#category_moderation">Category:Moderation</a></b>
+                <ul>
+                    <li><a href="#remove">+remove</a></li>
+                    <li><a href="#kick">+kick</a></li>
+                    <li><a href="#ban">+ban</a></li>
+                    <li><a href="#archive">+archive</a></li>
+                    <li><a href="#welcome">+welcome</a></li>
+                    <li><a href="#blacklist">+blacklist</a></li>
+                    <li><a href="#colour">+colour</a></li>
+                    <li><a href="#giveme">+giveme</a></li>
+                </ul>
+            </li>
+            <li>
+                <b><a href="#category_stock">Category:Stock</a></b>
+                <ul>
+                    <li><a href="#remind">+remind</a></li>
+                    <li><a href="#me">+me</a></li>
+                    <li><a href="#sync">+sync</a></li>
+                    <li><a href="#lenny">+lenny</a></li>
+                    <li><a href="#youtube">+youtube</a></li>
+                    <li><a href="#define">+define</a></li>
+                    <li><a href="#lmgtfy">+lmgtfy</a></li>
+                    <li><a href="#currency">+currency</a></li>
+                    <li><a href="#brainfuck">+brainfuck</a></li>
+                    <li><a href="#alerts">+alerts</a></li>
+                    <li><a href="#poll">+poll</a></li>
+                    <li><a href="#vote">+vote</a></li>
+                    <li><a href="#changeavy">+changeavy</a></li>
+                    <li><a href="#now">+now</a></li>
+                    <li><a href="#ty">+ty</a></li>
+                </ul>
+            </li>
+            <li>
+                <b><a href="#category_tools">Category:Tools</a></b>
+                <ul>
+                    <li><a href="#info">+info</a></li>
+                    <li><a href="#avy">+avy</a></li>
+                    <li><a href="#mentions">+mentions</a></li>
+                    <li><a href="#perms">+perms</a></li>
+                    <li><a href="#awards">+awards</a></li>
+                    <li><a href="#msgcount">+msgcount</a></li>
+                    <li><a href="#autopost">+autopost</a></li>
+                </ul>
+            </li>
+            <li>
+                <b><a href="#category_rng">Category:RNG</a></b>
+                <ul>
+                    <li><a href="#random">+random</a></li>
+                    <li><a href="#choose">+choose</a></li>
+                    <li><a href="#dice">+dice</a></li>
+                </ul>
+            </li>
+            <li>
+                <b><a href="#category_memory">Category:Memory</a></b>
+                <ul>
+                    <li><a href="#tag">+tag</a></li>
+                    <li><a href="#profile">+profile</a></li>
+                    <li><a href="#event">+event</a></li>
+                </ul>
+            </li>
+            <li>
+                <b><a href="#category_splatoon">Category:Splatoon</a></b>
+                <ul>
+                    <li><a href="#schedule">+schedule</a></li>
+                    <li><a href="#gear">+gear</a></li>
+                    <li><a href="#splatmeta">+splatmeta</a></li>
+                    <li><a href="#spyke">+spyke</a></li>
+                    <li><a href="#basket">+basket</a></li>
+                    <li><a href="#marie">+marie</a></li>
+                </ul>
+            </li>
+            <li>
+                <b><a href="#category_pokemon">Category:Pok&eacute;mon</a></b>
+                <ul>
+                    <li><a href="#dex">+dex</a></li>
+                    <li><a href="#movedex">+movedex</a></li>
+                    <li><a href="#pokestats">+pokestats</a></li>
+                    <li><a href="#matchup">+matchup</a></li>
+                </ul>
+            </li>
+            <li>
+                <b><a href="#category_mabinogi">Category:Mabinogi</a></b>
+                <ul>
+                    <li><a href="#mabiwiki">+mabiwiki</a></li>
+                </ul>
+            </li>
+            <li>
+                <b><a href="#category_games">Category:Games</a></b>
+                <ul>
+                    <li><a href="#rps">+rps</a></li>
+                    <li><a href="#coins">+coins</a></li>
+                    <li><a href="#blackjack">+blackjack</a></li>
+                    <li><a href="#slots">+slots</a></li>
+                    <li><a href="#fibbage">+fibbage</a></li>
+                </ul>
+            </li>
+            <li>
+                <b><a href="#category_secret">Category:Secret</a></b>
+            </li>
+            <li>
+                <h4>Appendices:</h4>
+                <ul>
+                    <li><a href="#frequently_asked_questions">FAQ</a></li>
+                    <li><a href="#uplink_command">The +uplink command</a></li>
+                </ul>
+            </li>
+         </ul>
+       
+    </aside>
+
+    <div style="background-color: #36393e; color: white; float: left;
+            position: absolute; left: 20vw; right: 22vw;
+            top: 0px; bottom: 0px;"></div>
+
+
+    <article>
+        <header>
+            <h1 id="top">Help for 42</h1>
+            <iframe src="https://discordapp.com/widget?id=149866687615729665&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" , style="float:right; margin-right:4vw; margin-left:2vw"></iframe>
+            <p>"Hello! I am 42 and I am a robot. I wish to make your time inside Discord easier and more enjoyable. On this site, there is a fukk description of all my commands and how to use them. I look forward to seeing you over on your server~~!"</p>
+            <hr />
+            <p>
+                <b>Commands:</b><br />
+                All commands are called with a <code>+</code> sign, but an <code>!</code> can also be used. 
+                If <span class="mention">@R. Danny</span> is on the server, common commands such as <code>+schedule</code> and <code>+info</code> will not work with an <code>!</code> and must be called with a <code>+</code>
+            </p>
+            <hr />
+            <p>
+                <b>Server:</b>
+                Found a bug? have a suggestion? need help? bored and want someone to talk to? I have a server you can check out.
+                There is an invite in the <code>+about</code> message or if you prefer, just look to the right and there is an invite there.
+            </p>
+            <hr />
+            <p>
+                <b>Authority:</b><br />
+                There are several authority levels that 42 uses. Any [Server] level authorities are given by having certain permissions
+                <ul>
+                    <li>[Server Owner] This is the big man, woman or Wumpus in charge of the server.</li>
+                    <li>[Server Admin] These are the people who have just as much power. They have "Manage Roles"</li>
+                    <li>[Server Manager] These are the second in command. They are the ones with "Manage Servers"</li>
+                    <li>[Server Mod] These are the guys who keep the peace. They have "Manage Messages"</li>
+                    <li>[Kick] and [Ban] These lot are the ones to watch out for since they have "Kick" and "Ban"</li>
+                </ul>
+                There are a couple of authority levels that mods can hand out without having to give away power on the server. They are [Bot] roles
+                <ul>
+                    <li>[Bot Admin] These people keep the bot under control since she sees them as "Best&nbsp;Friends"&nbsp;(&lArr;&nbsp;role&nbsp;name&nbsp;btw)</li>
+                    <li>[Bot Mod] These people keep chat free of the bots mess since they are "Friends"&nbsp;(&lArr;&nbsp;also&nbsp;role&nbsp;name)</li>
+                </ul>
+                There are a couple special ones too
+                <ul>
+                    <li>[Old User] These people who werent banned in the first 15 minutes for spamming become old users</li>
+                    <li>[User] This is a group for everyone. Any command that isnt marked with another auth level is a [User] command</li>
+                    <li>[Buds] This is the exclusive group of people squas hangs out with. Don't ask to join, he will say no.</li>
+                </ul>
+            </p>
+            <!-- this needs to be the stock headers -->
+        </header>
+
+
+        <section>
+            <h2>Commands</h2>
+            <h3 id="category_bot">Category Bot</h3>
+
+            <div class="command" id="tutorial">
+                <h4><code>+tutorial</code> [Owner]</h4>
+                <p>This helps you get started using 42's functions and is designed for anyone who has no idea how she works.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+tutorial</code></li>
+                    </ul>
+                </p>
+                <p>
+                    Example Usage
+                    <table class="codeblock">
+                        <tr><td>&gt;&gt;&gt; +tutorial</td></tr>
+                        <tr><td>42: Hello, I am a robot. Use <code>++next</code> to advance.</td></tr>
+                        <tr><td>&gt;&gt;&gt; ++next</td></tr>
+                        <tr><td>42: [stuff]</td></tr>
+                    </table>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="help">
+                <h4><code>+help</code></h4>
+                <p>This makes 42 PM you the list of commands you can use in your current context and elaborate on each commands usage.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+help</code></li>
+                        <li><code>+help 'command'</code> makes her post specific command details.</li>
+                    </ul>
+                </p>
+                <p>Note: The commands you are shown are only what you can use in your current context. For instance, inside a PM, you wont be shown commands that can't be used in PM.</p>
+                <p>
+                    Example Usage
+                    <table class="codeblock">
+                        <tr><td>&gt;&gt;&gt; +help hello</td></tr>
+                        <tr><td>42: Help about +hello:<br />+hello - makes me say my hello message</td></tr>
+                    </table>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="hello">
+                <h4><code>+hello</code></h4>
+                <p>This makes 42 say her hello message.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+hello</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="about">
+                <h4><code>+about</code></h4>
+                <p>This makes 42 PM you a little bit about herself, Kiwi Blitz and her server.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+about</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="faq">
+                <h4><code>+faq</code></h4>
+                <p>This makes 42 PM you a copy of the <a href="#frequently_asked_questions">FAQ</a></p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+faq</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="changes">
+                <h4><code>+changes</code></h4>
+                <p>This makes 42 PM you a list of her 20 most recent changes.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+changes</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="hug">
+                <h4><code>+hug</code></h4>
+            </div>
+            <hr />
+            <div class="command" id="join">
+                <h4><code>+join</code></h4>
+                <p>This makes 42 join an instant invite. It is recomended to use this command in PM so as to not allow other users (or scraperbots) into your server.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+join 'invite'</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="leave">
+                <h4><code>+leave</code> [Bot Admin]</h4>
+                <p>This makes 42 leave whatever server it is called in.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+leave</code> &gt; <code>confirm</code></li>
+                        <li><code>+leave</code> &gt; <code>forever</code></li>
+                    </ul>
+                </p>
+                <p>Note: Leave forever is a Server Owner only command and means that only the server owner can reinvite her.</p>
+            </div>
+            <hr />
+            <div class="command" id="echo">
+                <h4><code>+echo</code> [Bot Mod]</h4>
+                <p>This makes 42 repeat anything after the command call. This is also one of the only 2 commands to ignore the need for quotes in a message.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+echo</code></li>
+                    </ul>
+                </p>
+                <p>
+                    Example Usage
+                    <table class="codeblock">
+                        <tr><td>&gt;&gt;&gt; +echo message</td></tr>
+                        <tr><td>42: _```message```_</td></tr>
+                        <tr><td>&gt;&gt;&gt; +echo "this has quotes"</td></tr>
+                        <tr><td>42: _```"this has quotes"```_</td></tr>
+                        <tr><td>&gt;&gt;&gt; +echo this works too</td></tr>
+                        <tr><td>42: _```this works too```_</td></tr>
+                    </table>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="cleanup">
+                <h4><code>+cleanup</code> [Bot Mod]</h4>
+                <p>This makes 42 search the last 100 (or specified) messages and delete her messages and where possible + command calls too.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+cleanup ['limit']</code></li>
+                    </ul>
+                </p>
+                <p>Note: <code>limit</code> is how many messages are searched, not </p>
+            </div>
+            <hr />
+            <div class="command" id="botban">
+                <h4><code>+botban</code> [Bot Mod]</h4>
+                <p>This makes 42 stop executing commands from a specified user on your server. </p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+botban 'username'</code></li>
+                    </ul>
+                </p>
+                <p>Botbans are per server <i>but</i> if a user gets botbanned on 3 or more servers, it becomes global.</p>
+            </div>
+            <hr />
+            <div class="command" id="botunban">
+                <h4><code>+botunban</code> [Bot Mod]</h4>
+                <p>This removes a botban from a user on your server.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+botunban 'username'</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="toggle">
+                <h4><code>+toggle</code> [Server Manager]</h4>
+                <p>This makes 42 stop executing specific commands or command sets when performed by non Admin users.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+toggle 'command'</code></li>
+                        <li><code>+toggle 'command set'</code></li>
+                        <li><code>+toggle !</code> makes 42 ignore any <code>!</code> induced commands.</li>
+                    </ul>
+                </p>
+                <p>
+                    Example Usage
+                    <table class="codeblock">
+                        <tr><td>&gt;&gt;&gt; +toggle 'Pok&eacute;mon'</td></tr>
+                        <tr><td>42: I have disabled +dex, +dexdata, +dexentry, +movedex, +pokestats, +matchup</td></tr>
+                        <tr><td>&gt;&gt;&gt; +toggle '+dex'</td></tr>
+                        <tr><td>42: I have enabled +dex</td></tr>
+                    </table>
+                </p>
+            </div>
+            <hr />  
+            <div class="command" id="check">
+                <h4><code>+check</code></h4>
+                <p>This makes 42 stats your current bot permissions in the channel.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+check</code></li>
+                    </ul>
+                </p>
+                <p>
+                    Example Usage
+                    <table class="codeblock">
+                        <tr><td>&gt;&gt;&gt; +check</td></tr>
+                        <tr><td>42: 
+                            <table class="codeblock" style="margin-left:20px;">
+                                <tr style="color:red;"><td>- server owner</td><td>: Owner of server</td></tr>
+                                <tr style="color:red;"><td>- server admin</td><td>: "Manage Roles" permission</td></tr>
+                                <tr><td> . . .</td></tr>
+                                <tr style="color:yellow;"><td>+ bot mod</td><td>: "Friends" role</td></tr>
+                                <tr style="color:yellow;"><td>+ old user</td><td>: On server for 15 mns</td></tr>
+                                <tr style="color:red;"><td>- buds</td><td>: Close friends of squaswin</td></tr>
+                            </table>    
+                        </td></tr>
+                    </table>
+                </p>
+            </div>
+            <hr />
+            <h3 id="category_moderation">Category Moderation</h3>
+
+            <div class="command" id="remove">
+                <h4><code>+remove</code> [Server Mod] [User]</h4>
+                <p>This command makes 42 clear a specific set of messages out of the channel.<br /><b>42 requires the "Manage Messages" permission to use this function.</b></p>
+                <p>
+                    Basic Usage: User commands
+                    <ul>
+                        <li><code>+remove me ['limit']</code> archives chat and removes all messages from the user.</li>
+                    </ul>
+                    Server Mod commands
+                    <ul>
+                        <li><code>+remove user 'username' ['limit']</code> removes all messages from the given user</li>
+                        <li><code>+remove user @user [@user ...]</code> removes entire conversations</li>
+                        <li><code>+remove embeds ['limit']</code> removes all embeded messages from chat</li>
+                        <li><code>+remove contains 'query' ['limit']</code> removes all messages that contains the given query</li>
+                        <li><code>+remove commands 'calls' ['limit']</code> removes messages that start with specific command calls</li>
+                        <li><code>+remove all ['limit']</code> removes all messages from the chatlog</li>
+                    </ul>
+                </p>
+                <p>Notes: <code>limit</code> is how many messages are searched, not how many are removed and in <code>+remove commands</code>, the <code>calls</code> are a space seperated list, for example <code>'+! ~ `'</code></p>
+            </div>
+            <hr />
+            <div class="command", id="kick">
+                <h4><code>+kick</code> [Kick]</h4>
+                <p>This makes 42 kick a user from your server.<br />42 requires the "Kick" permission to use this command.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+kick 'username'</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" , id="ban">
+                <h4><code>+ban</code> [Ban]</h4>
+                <p>This makes 42 ban a user from your server.<br />42 requires the "Ban" permission to use this command.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+ban 'username'</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="archive">
+                <h4><code>+archive</code></h4>
+                <p>This makes 42 log the last <code>limit</code> messages into a text file that is then posted to chat.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+archive ['limit']</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="welcome">
+                <h4><code>+welcome</code> [Server Manager]</h4>
+                <p>This makes 42 start (or stop) listening for new users joining the server and announces their arrival.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+welcome 'code'</code></li>
+                    </ul>
+                </p>
+                <p>
+                    <code>+welcome</code> has (currently) 7 different modes.
+                    <ul>
+                        <li>1: Post standard message</li>
+                        <li>2: Post welcome hug</li>
+                        <li>3: PM server owner</li>
+                        <li>4: Post the contents of <code><a href="#tag">+tag welcome</a></code></li>
+                        <li>5: Wait until they are about to post</li>
+                        <li>6: Wait and then post <code>+tag welcome</code></li>
+                        <li>0: Do nothing</li>
+                    </ul>
+                </p>
+                <p>Note: options 5 and 6 are reliant on 42's uptime. If she goes down, the buffer of new users is dropped.</p>
+            </div>
+            <hr />
+            <div class="command" id="blacklist">
+                <h4><code>+blacklist</code> [Server Mod]</h4>
+                <p>This makes 42 listen out for specific words in non moderator messages and if that word appears, she will delete the message.<br />42 requires the "Manage Messages" permission to use this function.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+blacklist add 'term'</code> adds a word to the filter</li>
+                        <li><code>+blacklist remove</code> &gt; <code>'number'</code> removes a term from the filter</li>
+                        <li><code>+blacklist list</code> lists the words in the filter</li>
+                        <li><code>+blacklist clear</code> clears the filter</li>
+                    </ul>
+                </p>
+                <p>Note: 42 requires <i>constant</i> access to manage messages.</p>
+            </div>
+            <hr />
+            <div class="command" id="colour">
+                <h4><code>+colour</code> [Server Admin]</h4>
+                <p>This lets 42 modify the colours of roles and users. But unlike discord, she is not limited to a small range of preset colours, she has access to the full RBG spectrum.<br />42 requires the "Manage Roles" permission to use this command.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+colour 'rolename' '0xRRGGBB'</code></li>
+                        <li><code>+colour 'username' '0xRRGGBB'</code></li>
+                        <li><code>+colour get ['role or username']</code> gets the colour of a role or user, or all roles if none is given</li>
+                    </ul>
+                </p>
+                <p>Example Usage</p>
+                <img src="http://puu.sh/nJif6/415661574e.png">
+            </div>
+            <hr />
+            <div class="command" id="giveme">
+                <h4><code>+giveme</code> [Server Admin] [User]</h4>
+                <p>This lets 42 remember and hand out certain roles to users without requiring continued admin input<br />42 requires the "Manage Roles" permission to use this command.</p>
+                <p>
+                    Basic Usage: Server Admin commands
+                    <ul>
+                        <li><code>+giveme set 'name' 'rolename'</code> adds a giveme to the list</li>
+                        <li><code>+giveme clear 'name'</code> removes a giveme</li>
+                        <li><code>+giveme exclusive</code> marks (or unmarks) the servers givemes as mutually exclusive</li>
+                    </ul>
+                    User commands
+                    <ul>
+                        <li><code>+giveme list</code> lists the givemes on the server</li>
+                        <li><code>+giveme 'name'</code> makes 42 give the caller the role associated with <code>name</code></li>
+                    </ul>
+                </p>
+                <p>I'm sure that you can come up with more creative ways to use this, but so far I've seen servers use givemes for access to NSFW or spoiler channels and also use mutually exclusive givemes to let users choose their colour.</p>
+                <p>
+                    Example Usage
+                    <table class="codeblock">
+                        <tr><td>&gt;&gt;&gt; +giveme set 1 "Custom Colour 1"</td></tr>
+                        <tr><td>42: I have set `+giveme 1` to assign custom colour 1</td></tr>
+                        <tr><td>&gt;&gt;&gt; +giveme 1</td></tr>
+                        <tr><td>42: I have given you `1`</td></tr>
+                    </table>
+                </p>
+            </div>
+            <hr />
+            <h3 id="category_stock">Category Stock</h3>
+
+            <div class="command" id="remind">
+                <h4><code>+remind</code></h4>
+                <p>This makes 42 ping you after a certain amount of time.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+remind 'seconds' ['message']</code></li>
+                        <li><code>+remind 'min:sec' ['message']</code></li>
+                        <li><code>+remind 'h:m:s' ['message']</code></li>
+                    </ul>
+                </p>
+                <p>
+                    Example Usage
+                    <table class="codeblock">
+                        <tr><td>&gt;&gt;&gt; +remind '5:00' 'start the next section'</td></tr>
+                        <tr><td>42: I will remind you in 5:00</td></tr>
+                    </table>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="me">
+                <h4><code>+me</code></h4>
+                <p>This is a Skype like replacement to Discord's /me command. This is one of those commands that doesn't strictly require quote marks.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+me 'action'</code></li>
+                    </ul>
+                </p>
+                <p>
+                    Example Usage
+                    <table class="codeblock">
+                        <tr><td>&gt;&gt;&gt; +me is eating pizza</td></tr>
+                        <tr><td>42:  * squaswin is eating pizza</td></tr>
+                    </table>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="sync">
+                <h4><code>+sync</code></h4>
+                <p>Originally designed to help during splatfest, but useful elswhere too, this command makes 42 start a short countdown in chat.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+sync</code></li>
+                    </ul>
+                </p>
+                <p>Example Usage:</p>
+                <img src="http://puu.sh/nJPNL/5c195c40ef.gif">
+            </div>
+            <hr />
+            <div class="command" id="lenny">
+                <h4><code>+lenny</code></h4>
+            </div>
+            <hr />
+            <div class="command" id="youtube">
+                <h4><code>+youtube</code></h4>
+                <p>This makes 42 search youtube and post the first result. This command respects quotes, but they are not required, so saying <code>"query"</code> and <code>query</code> will be seen exactly the same.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+youtube 'query'</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="define">
+                <h4><code>+define</code></h4>
+                <p>This makes 42 search an up to date dictionary and post the definition.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+define 'query'</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="lmgtfy">
+                <h4><code>+lmgtfy</code> [Buds]</h4>
+                <p>This command generates a Let Me Google That For You link and makes 42 post it into chat</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+lmgtfy 'query'</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="currency">
+                <h4><code>+currency</code></h4>
+                <p>This makes 42 convert values between about 30 common currencies.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+currency 'value' 'from' ['to']</code></li>
+                    </ul>
+                </p>
+                <p>She will always post the conversion to USD, GBP, EUR and JPY, using the <code>to</code> field lets you add a fifth conversion to that list.</p>
+                <p>
+                    Example Usage
+                    <table class="codeblock">
+                        <tr><td>&gt;&gt;&gt; +currency 1 GBP AUD</td></tr>
+                        <tr><td>
+                            42:
+                            <table class="codeblock" style="margin-left:20px;">
+                                <tr><td>To AUD: 1.8964</td></tr>
+                                <tr><td>To USD: 1.4466</td></tr>
+                                <tr><td>To EUR: 1.2793</td></tr>
+                                <tr><td>To JPY: 161.1585</td></tr>
+                            </table>
+                        </td></tr>
+                    </table>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="brainfuck">
+                <h4><code>+brainfuck</code></h4>
+                <p><a href="https://en.wikipedia.org/wiki/Brainfuck">Brainfuck</a> is an esoteric programing language that consists of only 8 characters. if you give 42 some brainfuck code, she will compile and execute it and return the results.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+brainfuck 'code' ['input']</code></li>
+                    </ul>
+                </p>
+                <p>
+                    Quick reference:
+                    <ul>
+                        <li><code>&gt;</code> moves the pointer (^) 1 cell right</li>
+                        <li><code>&lt;</code> moves the pointer (^) 1 cell left</li>
+                        <li><code>+</code> increments the value at ^</li>
+                        <li><code>-</code> decrements the value at ^</li>
+                        <li><code>[</code> denotes an open loop and will skip to the corresponding <code>]</code> if the value at ^ is 0</li>
+                        <li><code>]</code> denotes a close loop and will jump back to the corresponding <code>[</code></li>
+                        <li><code>.</code> prints the ascii character at ^</li>
+                        <li><code>,</code> reads the next input character into ^</li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="alerts">
+                <h4><code>+alerts</code> [Bot Mod] [Buds]</h4>
+                <p>This command is buds only because it is in testing.<br />This makes 42 post a message when a twitch streamer goes live.</p>
+                <p>
+                    Basic Usage: Buds commands
+                    <ul>
+                        <li><code>+alerts set 'streamname'</code> set the attached stream</li>
+                        <li><code>+alerts stop</code> stops recieving alerts from the stream</li>
+                        <li><code>+alerts list</code> lists the servers attached streams</li>
+                    </ul>
+                    Bot Mod commands
+                    <ul>
+                        <li><code>+alerts toggle 'streamname'</code> activates or deactivates an alert</li>
+                    </ul>
+                </p>
+                <p>By default, streams are disabled and must be enabled by a bot mod using <code>+alerts toggle</code></p>
+                <p>
+                    Diff in alerts list.
+                    <table class="codeblock">
+                        <tr style="color:yellow;"><td>+ A plus line means a stream is online</td></tr>
+                        <tr><td>A white line means a stream is offline</td></tr>
+                        <tr style="color:red;"><td>- A minus line means that an alert is disabled by mods.</td></tr>
+                    </table>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="poll">
+                <h4><code>+poll</code> [Server Manager]</h4>
+                <p>This lets servers hold a poll that 42 will keep track of. Users can use <a href="#vote"><code>+vote</code></a> to vote on the poll.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+poll start 'question' 'answer' 'answer' [...]</code> starts a poll</li>
+                        <li><code>+poll results</code> posts the results</li>
+                        <li><code>+poll close</code> posts the results and closes the poll</li>
+                    </ul>
+                </p>
+                <p>Each server can only have 1 poll open at a time.</p>
+            </div>
+            <hr />
+            <div class="command" id="vote">
+                <h4><code>+vote</code></h4>
+                <p>This lets users vote on the servers active poll.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+vote</code> lists the options</li>
+                        <li><code>+vote 'number'</code></li>
+                    </ul>
+                </p>
+                <p>Each user can only vote for 1 thing.</p>
+            </div>
+            <hr />
+            <div class="command" id="changeavy">
+                <h4><code>+changeavy</code></h4>
+                <p>this makes 42 randomly change her current avatar. This command is on a 10 minute cooldown.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+changeavy</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="now">
+                <h4><code>+now</code></h4>
+                <p>This makes 42 stats the current time <a href="https://www.youtube.com/watch?v=-5wpm-gesOY">without regard to daylight savings</a> into the chat.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+now</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="ty">
+                <h4><code>+ty</code></h4>
+            </div>
+            <hr />
+            <table class="codeblock">
+                <tr><td>42: @squaswin: Times up! You asked me to remind you to <i>start the next section</i></td></tr>
+            </table>
+            <hr />
+            <h3 id="category_tools">Category Tools</h3>
+
+            <div class="command" id="info">
+                <h4><code>+info</code></h4>
+                <p>This command makes 42 state a large amount of information about herself, the caller, another user, the server or all of her servers.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+info [user 'username']</code> posts info about a user, or the caller if no user is given</li>
+                        <li><code>+info server</code> posts info about the server</li>
+                        <li><code>+info world</code> posts the servers with the highest rank in several criteria</li>
+                        <li><code>+info 42</code> posts info about 42</li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="avy">
+                <h4><code>+avy</code></h4>
+                <p>This command makes 42 post the avatar of a user (or the caller if no user is given)</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+avy ['username']</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="mentions">
+                <h4><code>+mentions</code></h4>
+                <p>This makes 42 PM you any direct mentions (i.e. not @everyone mentions) in the last 2000 messages.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+mentions</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="perms">
+                <h4><code>+perms</code></h4>
+                <p>This makes 42 stats what perms a user has in the channel.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+perms ['username']</code></li>
+                    </ul>
+                </p>
+                <p>
+                    Example Usage
+                    <table class="codeblock">
+                        <tr><td>&gt;&gt;&gt; +perms</td></tr>
+                        <tr>
+                            <td>
+                                42:
+                                <table class="codeblock" style="margin-left:20px;">
+                                    <tr style="color:yellow;"><td>+ attach files</td></tr>
+                                    <tr style="color:red;"><td>- ban members</td></tr>
+                                    <tr><td> . . .</td></tr>
+                                    <tr style="color:red;"><td>- send tts messages</td></tr>
+                                    <tr style="color:yellow;"><td>+ speak</td></tr>
+                                    <tr style="color:yellow;"><td>+ use voice activation</td></tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </p>
+
+            </div>
+            <hr />
+            <div class="command" id="awards">
+                <h4><code>+awards</code></h4>
+                <p>This makes 42 post the top 10 in a category on <code>+info world</code></p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+awards 'field'</code></li>
+                    </ul>
+                </p>
+                <p>
+                    The fields are currently:
+                    <ul>
+                        <li>popular - server member count</li>
+                        <li>spacey - server channel total</li>
+                        <li>packed - members per channel</li>
+                        <li>empty - least members per channel</li>
+                        <li>vocal - members in voice</li>
+                        <li>gamer - members in game</li>
+                        <li>active - members online</li>
+                        <li>dependant - command uses</li>
+                        <li>shitposting - <a href="#tag">server tag count</a></li>
+                        <li>spammy - messages sent</li>
+                        <li>richest - <a href="#coins">member coin count</a></li>
+                        <li>command - individual command uses</li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="msgcount">
+                <h4><code>+msgcount</code> [Server Mod]</h4>
+                <p>This makes 42 count up the messages in the last 24 hours and state who posted how many messages.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+msgcount</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="autopost">
+                <h4><code>+autopost</code> [Bot Admin]</h4>
+                <p>This makes 42 post a random message from a given set every so often. This command will be interrupted if the bot goes down at any time</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+autopost 'count' 'interval' 'message' [...]</code></li>
+                        <li><code>count</code> is the amount of times she will post (1-30)</li>
+                        <li><code>interval</code> is the rough time between each post in minutes (3-60)</li>
+                        <li><code>message [...]</code> is the list of messages that she will randomly choose from</li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <h3 id="category_rng">Category RNG</h3>
+            
+            <div class="command" id="random">
+                <h4><code>+random</code></h4>
+                <p>This is 42's built in generic randomisers. There are too many sub commands to list, so you'll have to do <code>+help random</code> to see them. There are even a couple bonuses left in there too that aren't listed.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+random 'subcommand'</code></li>
+                        <li><code>+random number ['max']</code></li>
+                        <li><code>+random team ['size']</code></li>
+                        <li><code>+help random</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="choose">
+                <h4><code>+choose</code></h4>
+                <p>This makes 42 choose from a list of items.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+choose 'option 1' 'option 2' [...]</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="dice">
+                <h4><code>+dice</code></h4>
+                <p>This lets 42 throw some given D&amp;D style dice</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+dice 'dice' [... up to 6]</code></li>
+                    </ul>
+                </p>
+                <p>D&amp;D style dice system:<br />Dice are in the format nDf where n is the number of dice in a set and f is the number of faces on the die.</p>
+            </div>
+            <hr />
+            <h3 id="category_memory">Category Memory</h3>
+
+            <div class="command" id="tag">
+                <h4><code>+tag</code></h4>
+                <p>This is 42's database function. It allows users to store and recall messages and image links.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+tag create 'name' 'contents'</code> and</li>
+                        <li><code>+tag create 'name'</code> &gt; <code>'contents'</code> allow a user to create a tag</li>
+                        <li><code>+tag rename 'name' 'new name'</code> renames a tag</li>
+                        <li><code>+tag edit 'name' 'new contents'</code> modifies a tag</li>
+                        <li><code>+tag clone 'tagname' 'server name'</code> copies any tag to another server and makes you the owner of that copy</li>
+                        <li><code>+tag gift 'tagname' 'new owner'</code> transfers ownership of a tag. They will have to accept it though</li>
+                        <li><code>+tag owner 'tagname'</code> makes 42 tell you the tags owner</li>
+                        <li><code>+tag list ['username']</code> makes 42 PM you yours (or someone elses) tags</li>
+                        <li><code>+tag list all</code> writes all the tags on the server to a file and posts it</li>
+                        <li><code>+tag nsfw 'tagname'</code> toggles NSFW on a tag.</li>
+                        <li><code>+tag random</code> posts a random tag to chat. NSFW tags will not be posted.</li>
+                        <li><code>+tag search 'query'</code> will search the database</li>
+                        <li><code>+tag clain 'tagname'</code> makes you the owner of a tag if the original owner has left</li>
+                    </ul>
+                </p>
+                <p>Tags are exclusively per server. Commands such as <code>clone</code>, <code>export</code> and <code>import</code> can be used to copy tags between servers.</p>
+                <p>
+                    Example Usage <br />
+                    Creating, editing and deleting:<br />
+                    <img src="http://puu.sh/nKjaf/38877ff1dd.gif"><br />
+                    Random and NSFW:<br />
+                    <img src="http://puu.sh/nKk0R/00c360e1e9.gif"><br />
+                    <!--Export and Import:<br />
+                    <img src="http://puu.sh/nKkrU/29d8159105.gif">-->
+                </p>
+                <p>Export and Import:<br />For those users who need to transfer all their tags to another server, you can use <code>+tag export</code> to generate a file.<br />To use this file, upload it onto the server you want to copy the tags to and give it the caption <code>+tag import</code></p>
+                <p><code>+tag welcome</code>: This tag is special because it is called directly by the +welcome command in options 4 and 6. Therefore, only [Server Managers] have access to create or modify it.</p>
+            </div>
+            <hr />
+            <div class="command" id="profile">
+                <h4><code>+profile</code></h4>
+                <p>This lets you make a internet profile and store it with 42.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+profile [get ['username']]</code> gets someones profile (or yours if unspecified)</li>
+                        <li><code>+profile 'field' 'data</code> sets a field on your profile</li>
+                        <li><code>+profile clear 'field'</code> clears a field on your profile</li>
+                        <li><code>+profile clear game</code> &gt; <code>'number'</code> is needed for game (and also alt)</li>
+                        <li><code>+profile delete</code> &gt; <code>confirm</code> deletes your profile</li>
+                        <li><code>+profile make</code> makes a profile through a walkthrough</li>
+                    </ul>
+                </p>
+                <p>Example Usage</p>
+                <img src="http://puu.sh/nKoRr/9dd8779306.gif">
+            </div>
+            <hr />
+            <div class="command" id="event">
+                <h4><code>+event</code> [Bot Mod] [User]</h4>
+                <p>This is an in discord calandar. it doesn't have alrets though and its looping by year, but hey. At least its good for birthdays.</p>
+                <p>
+                    Basic Usage: User commands
+                    <ul>
+                        <li><code>+event next</code> posts the next event</li>
+                        <li><code>+event list</code> posts all events</li>
+                    </ul>
+                    Bot Mod commands
+                    <ul>
+                        <li><code>+event set 'date' 'event'</code> replaces that days events</li>
+                        <li><code>+event add 'date' 'event'</code> adds an event to a day (or sets it if there were none before it)</li>
+                        <li><code>+event delete 'date'</code> &gt; <code>'number'</code> will delete a single event</li>
+                        <li><code>+event clear 'date'</code> will delete all events that day</li>
+                        <li><code>+event wipe</code> will wipe the entire calandar</li>
+                    </ul>
+                </p>
+                <p>
+                    Example Usage
+                    <table class="codeblock">
+                        <tr><td>&gt;&gt;&gt; +event set 24/2 "squaswin's b-day"</td></tr>
+                        <tr><td>42: I have added that event to the calandar</td></tr>
+                        <tr><td>&gt;&gt;&gt; +event next</td></tr>
+                        <tr><td>42: The next event(s) in --- days are: squaswin's b-day</td></tr>
+                    </table>
+                </p>
+            </div>
+            <hr />
+            <h3 id="category_splatoon"></h3>
+
+            <div class="command" id="schedule">
+                <h4><code>+schedule</code></h4>
+                <p>This command posts the schedule from splatoon.net.<br />Warning: 42 is hosted in England and uses a PAL NNID, so when PAL region is on (or leading upto) Splatfest, this command wont work.</p>
+                <p>
+                    Basic Usage
+                    <ul>
+                        <li><code>+schedule</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="gear">
+                <h4><code>+gear</code></h4>
+                <p>This has a bunch of splatoon gear related commands.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+gear ability 'ability name'</code> shows the affecting brands</li>
+                        <li><code>+gear brand 'brand name'</code> shows the abilities this brand affects</li>
+                        <li><code>+gear ability list</code> and <code>+gear brand list</code> lists abilities and brands</li>
+                        <li><code>+gear search 'query'</code> finds gear by name</li>
+                        <li><code>+gear list 'ability'</code> and <code>+gear brandlist 'brand'</code> lists gear with an ability or brand</li>
+                        <li><code>+gear find 'ability' 'ability'</code> finds the best match gear for rolling</li>
+                    </ul>
+                </p>
+                <p>
+                    Example Usage:
+                    <table class="codeblock">
+                        <tr><td>&gt;&gt;&gt; +gear ability ism</td></tr>
+                        <tr><td>42: The ability Ink Saver (Main) is 5x as likely to be roled on Splash Mob and 0.5x as likely to be rolled on Squid Force.</td></tr>
+                        <tr><td>&gt;&gt;&gt; +gear find damage ism</td></tr>
+                        <tr><td>42: Hat: Found neutral gear. Roll the Samurai Helmet for a ~1/2200 chance.<br />Clothes: Found Match! Roll the Navy College Sweat for a ~1/36 chance of a triple.<br />Shoes: Found neutral gear. Roll the Armor Boot Replicas for a ~1/2200 chance.</td></tr>
+                    </table>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="splatmeta">
+                <h4><code>+splatmeta</code></h4>
+                <p>This is currently fairly limited, but it has some splatoon metagame related commands.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+splatmeta damage 'wpn' <abbr title="'main+sub'">'atk'</abbr> <abbr title="'main+sub'">'def'</abbr></code> gets the shots to kill</li>
+                        <li><code>+splatmeta damage 'wpn' <abbr title="'main+sub'">'atk'</abbr> ?</code> calculates the defence to block</li>
+                        <li><code>+splatmeta damage 'wpn' ? <abbr title="'main+sub'">'def'</abbr></code> calculates the attack to overcome</li>
+                    </ul>
+                </p>
+                <p>If you have any more ideas and can supply the related formulas then I will see about adding in new things here.</p>
+                <p>
+                    Example Usage
+                    <table class="codeblock">
+                        <tr><td>&gt;&gt;&gt; +splatmeta damage '52-gal' 2+0 3+4</td></tr>
+                        <tr><td>42: You need 3 shots to kill.</td></tr>
+                    </table>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="spyke">
+                <h4><code>+spyke</code></h4>
+                <p>This is one of the slot machines inside 42. It costs and gives <a href="coins">coins</a>. This machine is Forge brand.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+spyke</code> (requires 30 coins)</li>
+                    </ul>
+                </p>
+                <p>
+                    Pay rates
+                    <table class="payout">
+                        <tr><td>Cost:</td><td>30</td></tr>
+                        <tr><td>ISS ISS ISS</td><td>20000</td></tr>
+                        <tr><td>ISS ISS ---</td><td>4500</td></tr>
+                        <tr><td>ISS --- ---</td><td>180</td></tr>
+                        <tr><td>SDU SDU SDU</td><td>250</td></tr>
+                        <tr><td>MATCH 2 ---</td><td>100</td></tr>
+                    </table>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="basket">
+                <h4><code>+basket</code></h4>
+                <p>This posts a link to the squid basket made by Frawst and Toby</p>
+            </div>
+            <hr />
+            <div class="command" id="marie">
+                <h4><code>+marie</code></h4>
+            </div>
+            <hr />
+            <h3 id="category_pokemon">Category Pok&eacute;mon</h3>
+
+            <div class="command" id="dex">
+                <h4><code>+dex</code> (and family)</h4>
+                <p>This is 42's main Pok&eacute;mon database function.</p>
+                <p>
+                    Basic Usage:<br />
+                    All <code>query</code>s can either be by name or by number.
+                    <ul>
+                        <li><code>+dex 'query'</code> is the generic Pok&eacute;dex command</li>
+                        <li><code>+dexentry 'query'</code> is just the XYORAS Pok&eacute;dex entries</li>
+                        <li><code>+dexdata 'query'</code> is a lot of stats and data</li>
+                    </ul>
+                </p>
+                <p>
+                    <code>+dexdata</code> key:
+                    <table class="codeblock">
+                        <tr><td>Number: Name &nbsp;&nbsp;&nbsp;[Type] [Type]</td></tr>
+                        <tr><td>H:Height W:Weight G:Gender (M:F) B:Body Type</td></tr>
+                        <tr><td>Ability, Ability, [Hidden]</td></tr>
+                        <tr><td>EXP:Base exp FR:Base friendship CR:Catchrate EV:[EV yield]</td></tr>
+                        <tr><td>BASE:[Base stats]</td></tr>
+                        <tr><td>LV100:[Stats at lv100, 0EV, 0IV, neutral nature]</td></tr>
+                    </table>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="movedex">
+                <h4><code>+movedex</code></h4>
+                <p>This makes 42 post details about a move</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+movedex 'query'</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="pokestats">
+                <h4><code>+pokestats</code></h4>
+                <p>This makes 42 calculate the stats of a pokemon at level 1, 50 and 100</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+pokestats 'query'</code></li>
+                    </ul>
+                </p>
+                <p>MAX stats are 252EV, 31IV and helpful nature, MIN stats are 0EV, 0IV and hindering nature.</p>
+            </div>
+            <hr />
+            <div class="command" id="matchup">
+                <h4><code>+matchup</code></h4>
+                <p>This makes 42 spin off the pokemon type matchups.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+matchup 'type'</code></li>
+                    </ul>
+                </p>
+                <p>If a type is not on the list, the matchup is x1 standard.</p>
+            </div>
+            <hr />
+            <h3 id="category_mabinogi">Category Mabinogi</h3>
+
+            <div class="command" id="mabiwiki">
+                <h4><code>+mabiwiki</code></h4>
+                <p>This makes 42 query the Mabinogi wikia and post the results</p>
+                <p>
+                    Basic Usage
+                    <ul>
+                        <li><code>+mabiwiki 'query'</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <h3 id="category_games">Category Games</h3>
+
+            <div class="command" id="rps">
+                <h4><code>+rps</code></h4>
+                <p>This is an in Discord game of Rock Paper Scissors.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+rps ['opponent']</code> starts a game with the opponent or anyone if not supplied</li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="coins">
+                <h4><code>+coins</code></h4>
+                <p>This lets you get your coin count for the discord casino.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+coins [get ['user']]</code> gets a users coins or yours if noone is supplied</li>
+                        <li><code>+coins add</code> lets you gain 300 coins every 24 hours</li>
+                        <li><code>+coins give 'amount' 'user'</code> lets you give away coins</li>
+                    </ul>
+                </p>
+                <p>Disclainer: These coins are entirely worthless and do not equate to internet point, karma, gold or a bigger e-peen.<br />
+                   squaswin takes no responsibility for if a user develops a gambling addiction.</p>
+            </div>
+            <hr />
+            <div class="command" id="blackjack">
+                <h4><code>+blackjack</code></h4>
+                <p>This is an in Discord game of blackjack.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+blackjack 'wager'</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="slots">
+                <h4><code>+slots</code></h4>
+                <p>This is an in Discord slot machine.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+slots [1|2]</code> how many coins to put in the machine</li>
+                    </ul>
+                </p>
+                <p>
+                    Pay rates
+                    <table class="payout">
+                        <tr><td>Cost:</td><td>1</td><td>2</td></tr>
+                        <tr><td>$$$ $$$ $$$</td><td>200</td><td>1000</td></tr>
+                        <tr><td>$ $ $ $ $ $</td><td>50</td><td>150</td></tr>
+                        <tr><td>&nbsp;$&nbsp;&nbsp;$&nbsp;&nbsp;$</td><td>10</td><td>20</td></tr>
+                        <tr><td>ANY ANY ANY</td><td>5</td><td>10</td></tr>
+                        <tr><td>--- --- ---</td><td>1</td><td>2</td></tr>
+                    </table>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="fibbage">
+                <h4><code>+fibbage</code> [Buds]</h4>
+                <p>This is an in Discord game of fibbage.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+fibbage</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <h3 id="category_secret">Category Secret</h3>
+            <p>There are some secret commands too. see if you can find them</p>
+            <table class="command">
+                <tr><td><code>+...........</code></td></tr>
+                <tr><td><code>+......</code></td></tr>
+                <tr><td><code>+......</code></td></tr>
+                <tr><td><code>+.....</code></td></tr>
+                <tr><td><code>+....</code></td></tr>
+                <tr><td><code>+....</code></td></tr>
+                <tr><td><code>+....</code></td></tr>
+                <tr><td><code>+....</code></td></tr>
+                <tr><td><code>+....</code> [Buds]</td></tr>
+                <tr><td><code>+....</code> [Buds]</td></tr>
+                <tr><td><code>+..</code> [Buds]</td></tr>
+            </table>
+            <p>(Don't worry, some of these commands not even my friends know :3c</p>
+            <hr />
+
+        </section>
+
+        <section>
+
+            <div id="frequently_asked_questions">
+                <h4>Frequently Asked Questions</h4>
+                Q: Who are you and why are you on my server?<br />
+                A: "Hello. I'm 42. If I'm on your server, it means someone has sent me here from another server I'm on. Don't worry though, I wont go causing any trouble. You can use `+help` to see what I can do."<br />
+                Q: Why do you exist?<br />
+                A: "I started as a pet project by squaswin to help with his coding skills, but eventually I grew into a full server helper bot."<br />
+                Q: I don't like you or want you here. How do I make you leave?<br />
+                A: "If you are the owner of the server or have "Manage Roles", you can use `+leave` to send me on my way."<br />
+                Q: Your help message is too short. Is there a more informative copy anywhere?<br />
+                A: "Yes. head over to http://fennekid.github.io&zwsp;"<br />
+                Q: I have a question, suggestion or but report...<br />
+                A: "You should head over to Kiwi Hangout then https://discord.gg/0ptu0m1G0a2KrjFq and let squas know"<br />
+                Q: What do I do if people are making you do bad things?<br />
+                A: "You can use the `+botban` command to make me ignore a user."<br />
+                Q: But, isn't it mean to make you ignore them?<br />
+                A: "Absolutely not, when you botban someone, it only applies to your server, so they can still talk to me elsewhere."<br />
+                Q: I created a tag but i cant recall it again, why?<br />
+                A: "I am designed to keep each server's tags independent of each other. This is for 2 main reasons, If you create an NSFW tag, there is no risk of it being called in a SFW server and it frees up names, so your server can have a 'welcome' and so can mine."<br />
+                Q: Me and my friends need you, how can I get you onto my server?<br />
+                A: "If you do `+join` and supply an instant invite, I will be able to hop on your server."<br />
+                Q: Why do you have or need a +hug command?<br />
+                A: "Because everyone needs a hug sometimes. \*hug*"
+            </div>
+            <hr />
+            <div id="uplink_command">
+                <h4>The <code>+uplink</code> command</h4>
+                <p>
+                    Now then. I feel like the existance of this command requires justification. Most servers never need to worry about it though
+                    as I will hopefully never need to use it.<br />First, a little bit of context. Even though 42 is a bot, she is still affected
+                    by certain limitations within Discord. The most problematic of this is the message rate limit. In the past when I have seen
+                    42's log fill up with a large amount of identical requests (such as tag spam) I have needed to log into her account to access
+                    the offending server and let them know that the rate limiting she is experiencing is ruining it for everyone. <br />This was
+                    <i>before</i> the official API came out however. Now we have bot accounts which are slightly more leniant on the restrictions
+                    but at the cost of unlinking her email and password meaning I will have no way to access the bot anymore to contact these
+                    problem servers.<br />
+                    This is where <code>+uplink</code> comes in. It is a command that only I (squaswin) can use and it connects 2 channels on 
+                    different servers and make the bot relay messages between them. I hope I never need to use this command, but if I do, you will
+                    know when I do. 42 will alert you when she starts and stops a connection.
+                    <table class="codeblock">
+                        <tr><td>42: This server has been uplinked to Kiwi Hangout#ishinomoris-lab. Any messages sent in either channel will be relayed between them.</td></tr>
+                        <tr><td>42: <b>squaswin:</b> yes, hello, can you please stop spamming the bot. There are rate limits and you are breaking her.</td></tr>
+                        <tr><td>42: The connection has been closed. No more messages will be relayed.</td></tr>
+                    </table>
+                </p>
+            </div>
+        </section>
+
+        <footer>
+
+        </footer>
+    </article>
+</body>
+</html>
+
