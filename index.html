@@ -5,6 +5,10 @@
     <meta charset="utf-8" />
     <title>Infobot 42</title>
     <style>
+        @font-face {
+          font-family: Whitney Book;
+          src: url(Whitney.woff) format('woff');
+        }
         body {
             margin-bottom: 0;
             margin-left: 0;
@@ -18,7 +22,7 @@
             margin-bottom: 2px;
         }
         p {
-            font-family: Whitney,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+            font-family: Whitney Book,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
             margin-top: 3px;
             margin-bottom: 3px;
         }
@@ -83,7 +87,7 @@
             border-color: hsla(0, 0%, 100%, 0.04);
         }
         span.mention {
-            color:#738bd7; 
+            color:#738bd7;
             background-color: rgba(115,139,215,.1);
         }
 
@@ -91,7 +95,7 @@
 </head>
 <body>
     <aside>
-        
+
         <h2>Command list</h2>
         <ul id="contents">
             <li><h4><a href="#top">Return to top</a></h4></li>
@@ -223,7 +227,7 @@
                 </ul>
             </li>
          </ul>
-       
+
     </aside>
 
     <div style="background-color: #36393e; color: white; float: left;
@@ -239,7 +243,7 @@
             <hr />
             <p>
                 <b>Commands:</b><br />
-                All commands are called with a <code>+</code> sign, but an <code>!</code> can also be used. 
+                All commands are called with a <code>+</code> sign, but an <code>!</code> can also be used.
                 If <span class="mention">@R. Danny</span> is on the server, common commands such as <code>+schedule</code> and <code>+info</code> will not work with an <code>!</code> and must be called with a <code>+</code>
             </p>
             <hr />
@@ -469,7 +473,7 @@
                     </table>
                 </p>
             </div>
-            <hr />  
+            <hr />
             <div class="command" id="check">
                 <h4><code>+check</code></h4>
                 <p>This makes 42 stats your current bot permissions in the channel.</p>
@@ -483,7 +487,7 @@
                     Example Usage
                     <table class="codeblock">
                         <tr><td>&gt;&gt;&gt; +check</td></tr>
-                        <tr><td>42: 
+                        <tr><td>42:
                             <table class="codeblock" style="margin-left:20px;">
                                 <tr style="color:red;"><td>- server owner</td><td>: Owner of server</td></tr>
                                 <tr style="color:red;"><td>- server admin</td><td>: "Manage Roles" permission</td></tr>
@@ -491,7 +495,7 @@
                                 <tr style="color:yellow;"><td>+ bot mod</td><td>: "Friends" role</td></tr>
                                 <tr style="color:yellow;"><td>+ old user</td><td>: On server for 15 mns</td></tr>
                                 <tr style="color:red;"><td>- buds</td><td>: Close friends of squaswin</td></tr>
-                            </table>    
+                            </table>
                         </td></tr>
                     </table>
                 </p>
@@ -982,7 +986,7 @@
             </div>
             <hr />
             <h3 id="category_rng">Category RNG</h3>
-            
+
             <div class="command" id="random">
                 <h4><code>+random</code></h4>
                 <p>This is 42's built in generic randomisers. There are too many sub commands to list, so you'll have to do <code>+help random</code> to see them. There are even a couple bonuses left in there too that aren't listed.</p>
@@ -1398,7 +1402,7 @@
                     <i>before</i> the official API came out however. Now we have bot accounts which are slightly more leniant on the restrictions
                     but at the cost of unlinking her email and password meaning I will have no way to access the bot anymore to contact these
                     problem servers.<br />
-                    This is where <code>+uplink</code> comes in. It is a command that only I (squaswin) can use and it connects 2 channels on 
+                    This is where <code>+uplink</code> comes in. It is a command that only I (squaswin) can use and it connects 2 channels on
                     different servers and make the bot relay messages between them. I hope I never need to use this command, but if I do, you will
                     know when I do. 42 will alert you when she starts and stops a connection.
                     <table class="codeblock">
@@ -1416,4 +1420,3 @@
     </article>
 </body>
 </html>
-
