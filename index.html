@@ -975,14 +975,20 @@
                 <p><code>+tag welcome</code>: This tag is special because it is called directly by the +welcome command in options 4 and 6. Therefore, only [Server Managers] have access to create or modify it.</p>
                 <p>
                     <b>Tag Formatting</b><br />
-                    Tags can now contain some formatting tags to do different things.
-                    <ul>
-                        <li><code>{name}</code> is replaced with the name of the caller</li>
+                    Tags can now contain some formatting tags to do different things.                    <ul>
+                        <li><code>{caller}</code> is replaced with the name of the caller</li>
+                        <li><code>{me}</code> is replaced with the name of the current owner</li>
+                        <li><code>{user[key];}</code> is replaced with a random member's name</li>
                         <li><code>{time}</code> is the UTC time when the tag is called</li>
                         <li><code>{arg}</code> subs in the first word after the tag name</li>
-                        <li><code>{arg1}</code> <code>{arg2}</code> etc. allows multiple args</li>
-                        <li><code>{r:foo;bar;baz;}</code> picks a random item from the given list with each call</li>
+                        <li><code>{arg[index]}</code> allows multiple args starting from 1</li>
+                        <li><code>{r[key]:item[;item[;...]];}</code> <code></code> etc. picks a random item from the given list with each call</li>
+                        <li><code>{num1[key][:max];}</code> picks a randum number from 1 to max</li>
                     </ul>
+                    The <code>[key]</code> element is not required, but allows a user to have multiple of the same kinds of formats, and allows a user to use the same format twice.<br />
+                    For example: <code>{user1;} hugs {user2;}. {user1} is happy.</code> means that the same person will appear in both <code>{user1}</code> brackets.<br />
+                    All closing <code>;</code>s are important where stated because that tells 42 "This is an evaluated block" instead of just a substituted block, which is what allows identical args to work.<br />
+                    <code>{r1:foo;bar;baz;} {r1}</code> will say the same item twice. Since the <code>{r1}</code> bracket doesn't have a <code>;</code>, it will not change the outcome of the random statement.
                     By making the first arguement of a tag <code>raw</code> (for example <code>+tag fmttest raw</code>) 42 will not replace tags and will instead show the initial content of the tag.
                 </p>
             </div>
