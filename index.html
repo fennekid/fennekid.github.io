@@ -983,6 +983,7 @@
                         <li><code>{arg1}</code> <code>{arg2}</code> etc. allows multiple args</li>
                         <li><code>{r:foo;bar;baz;}</code> picks a random item from the given list with each call</li>
                     </ul>
+                    By making the first arguement of a tag <code>raw</code> (for example <code>+tag fmttest raw</code>) 42 will not replace tags and will instead show the initial content of the tag.
                 </p>
             </div>
             <hr />
@@ -1318,7 +1319,7 @@
             </div>
             <hr />
             <div id="status_cycle">
-                <h4>The Status Cycle</p>
+                <h4>The Status Cycle</h4>
                 <p>
                     42 shows a lot of different facts inside her <code>playing</code> status block. These in order are:
                     <ol>
