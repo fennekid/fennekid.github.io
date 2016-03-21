@@ -136,6 +136,7 @@
                 <h4>Appendices:</h4>
                 <ul>
                     <li><a href="#frequently_asked_questions">FAQ</a></li>
+                    <li><a href="#status_cycle">Status Cycle</a></li>
                     <li><a href="#uplink_command">The +uplink command</a></li>
                 </ul>
             </li>
@@ -972,6 +973,17 @@
                 </p>
                 <p>Export and Import:<br />For those users who need to transfer all their tags to another server, you can use <code>+tag export</code> to generate a file.<br />To use this file, upload it onto the server you want to copy the tags to and give it the caption <code>+tag import</code></p>
                 <p><code>+tag welcome</code>: This tag is special because it is called directly by the +welcome command in options 4 and 6. Therefore, only [Server Managers] have access to create or modify it.</p>
+                <p>
+                    <b>Tag Formatting</b><br />
+                    Tags can now contain some formatting tags to do different things.
+                    <ul>
+                        <li><code>{name}</code> is replaced with the name of the caller</li>
+                        <li><code>{time}</code> is the UTC time when the tag is called</li>
+                        <li><code>{arg}</code> subs in the first word after the tag name</li>
+                        <li><code>{arg1}</code> <code>{arg2}</code> etc. allows multiple args</li>
+                        <li><code>{r:foo;bar;baz;}</code> picks a random item from the given list with each call</li>
+                    </ul>
+                </p>
             </div>
             <hr />
             <div class="command" id="profile">
@@ -1303,6 +1315,23 @@
                 A: "If you do <code>+join</code> and supply an instant invite, I will be able to hop on your server."<br />
                 Q: Why do you have or need a +hug command?<br />
                 A: "Because everyone needs a hug sometimes. \*hug*"
+            </div>
+            <hr />
+            <div id="status_cycle">
+                <h4>The Status Cycle</p>
+                <p>
+                    42 shows a lot of different facts inside her <code>playing</code> status block. These in order are:
+                    <ol>
+                        <li>Server Count</li>
+                        <li>Online Users</li>
+                        <li>Command Uses</li>
+                        <li>+help message</li>
+                        <li>Tag Count</li>
+                        <li>Uptime</li>
+                        <li>Recent Commands</li>
+                        <li>+help message</li>
+                    </ol>
+                </p>
             </div>
             <hr />
             <div id="uplink_command">
