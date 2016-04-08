@@ -3,6 +3,7 @@
 <html lang="en-gb" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <meta content="All about 42!" name="Description" property="og:description">
     <title>Infobot 42</title>
     <link rel="stylesheet" type="text/css" href="42help.css">
 </head>
@@ -138,6 +139,7 @@
                     <li><a href="#frequently_asked_questions">FAQ</a></li>
                     <li><a href="#status_cycle">Status Cycle</a></li>
                     <li><a href="#uplink_command">The +uplink command</a></li>
+                    <li><a href="beta.html" class="invisible">Don't click here</a></li>
                 </ul>
             </li>
          </ul>
@@ -620,6 +622,7 @@
                         <li><code>+youtube 'query'</code></li>
                     </ul>
                 </p>
+                <p>The <code>+ytr</code> command works the same as above, but posts a link to youtubeonrepeat.com instead.</p>
             </div>
             <hr />
             <div class="command" id="define">
@@ -989,7 +992,7 @@
                         <li><code>{arg[index]}</code> allows multiple args starting from 1</li>
                         <li><code>{parse}</code> and <code>{parse[index]}</code> are the same as <code>{arg}</code> but parse the arg as a URL</li>
                         <li><code>{r[key]:item[;item[;...]];}</code> picks a random item from the given list with each call</li>
-                        <li><code>{num1[key][:max];}</code> picks a randum number from 1 to max</li>
+                        <li><code>{num[key][:max];}</code> picks a randum number from 1 to max</li>
                     </ul>
                     The <code>[key]</code> element is not required, but allows a user to have multiple of the same kinds of formats, and allows a user to use the same format twice.<br />
                     For example: <code>{user1;} hugs {user2;}. {user1} is happy.</code> means that the same person will appear in both <code>{user1}</code> brackets.<br />

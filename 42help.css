@@ -56,6 +56,8 @@
         ul#contents a:hover   {color:white; background-color:transparent; text-decoration:none}
         ul#contents a:active  {color:white; background-color:#282b30; text-decoration:none}
         a {color:white; background-color:transparent; text-decoration:underline}
+        a.invisible:link      {color:inherit; background-color:transparent; text-decoration:none; opacity:0}
+        a.invisible:visited   {color:inherit; background-color:transparent; text-decoration:none; opacity:0}
         article {
             background-color: #36393e;
             color: white;
@@ -65,6 +67,7 @@
             left: 22vw;
             top: 0px;
             bottom: 0px;
+            right: 0px;
         }
         hr {
             color: hsla(0, 0%, 100%, 0.04)
