@@ -73,6 +73,7 @@
                     <li><a href="#avy">+avy</a></li>
                     <li><a href="#mentions">+mentions</a></li>
                     <li><a href="#perms">+perms</a></li>
+                    <li><a href="#discrim">+discrim</a></li>
                     <li><a href="#awards">+awards</a></li>
                     <li><a href="#msgcount">+msgcount</a></li>
                     <li><a href="#autopost">+autopost</a></li>
@@ -139,7 +140,6 @@
                     <li><a href="#frequently_asked_questions">FAQ</a></li>
                     <li><a href="#status_cycle">Status Cycle</a></li>
                     <li><a href="#uplink_command">The +uplink command</a></li>
-                    <li><a href="beta.html" class="invisible">Don't click here</a></li>
                 </ul>
             </li>
          </ul>
@@ -850,6 +850,17 @@
 
             </div>
             <hr />
+            <div class="command" id="discrim">
+                <h4>+discrim</h4>
+                <p>This makes 42 post a list of user names with matching discriminators to you. Please dont abuse it to change your discriminator because Jake will yell at me and you will get struck with a 2 per hour name change limit.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+discrim</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
             <div class="command" id="awards">
                 <h4><code>+awards</code></h4>
                 <p>This makes 42 post the top 10 in a category on <code>+info world</code></p>
@@ -983,7 +994,10 @@
                 <p><code>+tag welcome</code>: This tag is special because it is called directly by the +welcome command in options 4 and 6. Therefore, only [Server Managers] have access to create or modify it.</p>
                 <p>
                     <b>Tag Formatting</b><br />
-                    Tags can now contain some formatting tags to do different things.                    <ul>
+                    Can now be found on its own page <a href="tags.html">Here</a>.
+                    <!--
+                    Tags can now contain some formatting tags to do different things.
+                    <ul>
                         <li><code>{caller}</code> is replaced with the name of the caller</li>
                         <li><code>{me}</code> is replaced with the name of the current owner</li>
                         <li><code>{user[key];}</code> is replaced with a random member's name</li>
@@ -999,6 +1013,7 @@
                     All closing <code>;</code>s are important where stated because that tells 42 "This is an evaluated block" instead of just a substituted block, which is what allows identical args to work.<br />
                     <code>{r1:foo;bar;baz;} {r1}</code> will say the same item twice. Since the <code>{r1}</code> bracket doesn't have a <code>;</code>, it will not change the outcome of the random statement.
                     By making the first arguement of a tag <code>raw</code> (for example <code>+tag fmttest raw</code>) 42 will not replace tags and will instead show the initial content of the tag.
+                        -->
                 </p>
             </div>
             <hr />

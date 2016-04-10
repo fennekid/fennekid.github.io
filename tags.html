@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html lang="en-gb" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta content="All about 42!" name="Description" property="og:description">
+    <title>Infobot 42</title>
+    <link rel="stylesheet" type="text/css" href="42help.css">
+</head>
+<body>
+    <aside>
+        <h2>Tag Formatting</h2>
+        <p>This is some really confusing and powerful shit that may take a while to understand, but once you know what you are doing, feel free to experiment.</p>
+        <h3><a href="index.html">Return to main page...</a></h3>
+        <ul id="contents">
+            <li>
+                <b><a href="#formatting">Formatting Tags</a></b>
+            </li>
+            <li>
+                <b><a href="#evaluating">Evaluating Tags</a></b>
+                <ul>
+                    <li><a href="#user">{user}</a></li>
+                    <li><a href="#choice">{choice}</a></li>
+                    <li><a href="#num">{num}</a></li>
+                    <li><a href="#time">{time}</a></li>
+                    <li><a href="#parse">{parse}</a></li>
+                    <li><a href="#when">{when}</a></li>
+                    <li><a href="#rep">{rep}</a></li>
+                    <li><a href="#nameof">{nameof}</a></li>
+                </ul>
+            </li>
+            <li>
+                <b><a href="#nesting">Nesting</a></b>
+            </li>
+            <li>
+                <b><a href="#examples">Examples</a></b>
+                <ul>
+                    <li><a href="#lmgtfy">Google That</a></li>
+                    <li><a href="#shipscore">Shipping Score</a></li>
+                    <li><a href="#iammemes">Meme Generator</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <div style="background-color: #36393e; color: white; float: left;
+        position: absolute; left: 20vw; right: 22vw;
+        top: 0px; bottom: 0px;"></div>
+
+    <article>
+    <header>
+    </header>
+    <section>
+        <hr />
+        <h2><code>+tag</code> advanced tech</h2>
+        <h3 id="formatting">Formatting Tags</h3>
+        <p>These are the tags that are filled in by 42 on use. They are fairly simplistic, but they work. Just place the braces as written in your tag.</p>
+        <p><code>{caller}</code> is replaced by the name of the person using the tag</p>
+        <p><code>{callerid}</code> is replaced by the ID of the person using the tag</p>
+        <p><code>{me}</code> and <code>{meid}</code> is the name/ID of the tags owner</p>
+        <p><code>{channel}</code> and <code>{server}</code> are the names of the channel and server</p>
+        <p>
+            <code>{args}</code> is the rest of the message after the tag is called.<br />
+            If the tag test is called with <code>+tag test foo bar baz</code>, then "foo bar baz" will be passed into <code>{args}</code>
+        </p>
+        <p><code>{arglen}</code> is the number of words or quoted phrases after the tag is called</p>
+        <p>
+            <code>{arg[index]}</code> is the specific arguement after the tag is called<br />
+            From the example above, <code>{arg1}</code> is "foo", <code>{arg2}</code> is "bar" and <code>{arg3}</code> is "baz"
+        </p>
+        <p><code>{time}</code> is replaced by the UTC time that the tag was called.</p>
+        <hr />
+        
+        <h3 id="evaluating">Evaluating Tags</h3>
+        <p>These braces are ones that do the work and the semicolon before the closing bracket is what tells 42 that she needs to work this one out..</p>
+        <p>
+            Couple of preambles first. The <code>;</code> at the end of a tag means "evaluate", but for a few select tags, this isnt required.<br />
+            Instead, you can use the <code>[key]</code> value to ensure that the same value is repeated.<br />
+            For example, in <code>{choose}</code>, you can define it first with <code>{choose1:foo;bar;baz;}</code> and then recall it again with <code>{choose1}</code><br />
+            Any section with [Stored] written in have this property.
+        </p>
+        <div id="user">
+            <h4><code>{user[key];}</code> [Stored]</h4>
+            <p>This makes 42 pick any random user from the server (this includes offline members, inactive members, herself and other bots.)</p>
+        </div>
+        <hr />
+        <div id="choice">
+            <h4><code>{choice[key]:option[;option[;...]];}</code> [Stored]</h4>
+            <p>This makes 42 choose one of the given options.</p>
+        </div>
+        <hr />
+        <div id="num">
+            <h4><code>{num[key][:max];}</code> [Stored]</h4>
+            <p>This will be replaced with a number that is between 0 and 100 or 0 and max</p>
+        </div>
+        <hr />
+        <div id="time">
+            <h4><code>{time[:timezone;]}</code></h4>
+            <p>This will be the current UTC time. If an offset (number) is given, it will be applied.</p>
+            <p>The number (-5, +9) is whats required, not the name (EST, JST)</p>
+        </div>
+        <hr />
+        <div id="parse">
+            <h4><code>{parse:quote;}</code></h4>
+            <p>The contents of the tag will be parsed as a URL. i.e. "hello world" -> "hello%20world"</p>
+        </div>
+        <hr />
+        <div id="when">
+            <h4><code>{when:a;op;b;true[;false];}</code></h4>
+            <p>This is like a <code>if</code> statement. This will compare the value of <code>a</code> and <code>b</code> using whatever operation is supplied in <code>op</code></p>
+            <p>
+                Possible values for <code>op</code>
+                <table>
+                    <tr><td><code>eq</code> (equal)</td><td>This prints <code>true</code> if <code>a</code> and <code>b</code> are exactly the same.</td></tr>
+                    <tr><td><code>ne</code> (not equal)</td><td>This prints <code>true</code> if <code>a</code> and <code>b</code> are different.</td></tr>
+                    <tr><td><code>gt</code> (greater than)</td><td>This reads <code>a</code> and <code>b</code> in as numbers and prints <code>true</code> if <code>a</code> is larger.</td></tr>
+                    <tr><td><code>lt</code> (less than)</td><td>This reads <code>a</code> and <code>b</code> in as numbers and prints <code>true</code> if <code>a</code> is smaller.</td></tr>
+                    <tr><td><code>is</code></td><td>This reads <code>a</code> and sees if it a <code>word</code>, <code>letter</code>, <code>number</code>, <code>decimal</code> or <code>truth</code>, type is determined by what is in <code>b</code></td></tr>
+                </table>
+            </p>
+            <code>false</code> defaults to nothing if it is left out.<br />
+            Example Usage:
+            <table class="codeblock">
+                <tr><td>&gt;&gt;&gt; +tag create istest "{when:{arg1};eq;test;True;False;}"</td></tr>
+                <tr><td>42: I have added the tag istest</td></tr>
+                <tr><td>&gt;&gt;&gt; +tag istest "not test"</td></tr>
+                <tr><td>42: False</td></tr>
+                <tr><td>&gt;&gt;&gt; +tag istest "test"</td></tr>
+                <tr><td>42: True</td></tr>
+            </table>
+        </div>
+        <hr />
+        <div id="rep">
+            <h4><code>{rep:var;in;with;}</code></h4>
+            <p>This will replace anything inside <code>in</code> that matches <code>var</code> with thats in <code>with</code></p>
+            <p>For example, <code>{rep:X;hello X;{caller};}</code> will replace the "X" in "hello X" with the name of the caller.</p>
+        </div>
+        <hr />
+        <div id="nameof">
+            <h4><code>{nameof:id;}</code></h4>
+            <p>This will find the name of the user with the given ID. Useful for if someone changes their name a lot.</p>
+        </div>
+        <hr />
+        <div id="set">
+            <h4><code>{set:var;value;}</code></h4>
+            <p>This will make the tag replaces any occurances after the set of <code>{var}</code> with what is in <code>value</code></p>
+            <p>This is similar to variable control in programming.</p>
+        </div>
+        <hr />
+
+        <h3 id="nesting">Nesting</h3>
+        <p><b>Tags now support nesting!</b> This means that you can now place tags inside other tags, such as <code>{parse:{args};}</code> or <code>{choice:{arg1};{arg2};{when:arglen;eq;3;{arg3};moar plz;};}</code></p>
+        <hr />
+        
+        <h3 id="examples lmgtfy">Example Tag: lmgtfy</h3>
+        <p>This is gonna take the args on the command and shove them into a Let Me Google That For You link.</p>
+        <p>All that we need to do for this one is to parse the args into a URL and then tack it on the end of the url.</p>
+        <table class="codeblock">
+            <tr><td>{when:{arglen};gt;0; --fill this bit with the link-- ;you need to pass args into this tag;}</td></tr>
+            <tr><td>http://lmgtfy.com/?q={parse:{args};}</td></tr>
+        </table>
+        <p>Then we just slot the 2nd line into the gap in the first and we get our tag.</p>
+        <p><code>{when:{arglen};gt;0;http://lmgtfy.com/?q={parse:{args};};you need to pass args into this tag;}</code></p>
+
+        <hr />
+        <h3 id="shipscore">Example Tag: shipscore</h3>
+        <p>Here, I'm going to show you how to use tags to make a shipping score.</p>
+        <p>Firstly, we need to get our 2 participants. The first one should be the caller, the second one should be the name given, or random if not given. Lets use <code>{set}</code> for this.</p>
+        <table class="codeblock">
+            <tr><td>{set:first;{caller};}</td></tr>
+            <tr><td>{set:second;{when:{arglen};gt;0;{args};{user;};};}</td></tr>
+        </table>
+        <p>When we evaluate this ourselves, if we pass in any args, then arglen will be bigger than 0, and therefore {second} will be {args}, else we get a random user.</p>
+        <p>Next, we need to decide on what we want the score to be.</p>
+        <table class="codeblock">
+            <tr><td>{set:score;{choose:X% - Terrible;1X% - Really Bad;2X% - Fairly Bad; ---- ;9X% - AMAZING!!;};}</td></tr>
+            <tr><td>{set:score;{rep:X;{score};{num:9;};};}</td></tr>
+        </table>
+        <p>Here, we are creating a <code>{score}</code> tag that will decide the score of the ship. The first line sets it to a phrase, and the second line resets it, but fills in the <code>X</code> with a number 0 to 9</p>
+        <p>Lastly, we need to make our message.</p>
+        <table class="codeblock">
+            <tr><td>**=====Shipping Score=====**</td></tr>
+            <tr><td>**First: {first}**</td></tr>
+            <tr><td>**Second: {second}**</td></tr>
+            <tr><td>**========================**</td></tr>
+            <tr><td>{score}</td></tr>
+        </table>
+
+        <p>This leaves the final command to be:</p>
+        <p><code>{set:first;{caller};}{set:second;{when:{arglen};gt;0;{args};{user;};};}{set:score;{choose:X% - Terrible;1X% - Really Bad;2X% - Fairly Bad; ---- ;9X% - AMAZING!!;};}{set:score;{rep:X;{score};{num:9;};};}**=====Shipping Score=====**<br />
+               **First: {first}**<br />
+               **Second: {second}**<br />
+               **========================**<br />
+               {score}</code></p>
+
+        <hr />
+        <h4 id="iammemes">Example Tag: iammemes</h4>
+        <p>Here, were going to make a tag that posts a meme from memegen</p>
+        <p>Firstly, we need our name, which we take from the caller, and just to put on a nice spin, lets make the bottom text customisable too.</p>
+        <table class="codeblock">
+            <tr><td>{set:bottom;{when:{arglen};eq;0;memes;{args};};}</td></tr>
+        </table>
+        <p>This sets {bottom} to say memes when no args are given, otherwise it uses args.</p>
+        <p>Now, Memegen uses a lot of things different to {parse} so we will have to handle it ourselves. We need to do the same to both caller and bottom</p>
+        <table class="codeblock">
+            <tr><td>{set:bottom;{rep: ;{rep:_;{rep:-;{rep:?;{rep:%;{bottom};~p;};~q;};--;};__;};_;};}</td></tr>
+            <tr><td>{set:name;{rep: ;{rep:_;{rep:-;{rep:?;{rep:%;{caller};~p;};~q;};--;};__;};_;};}</td></tr>
+        </table>
+        <p>As confusing as this looks, it is doing 5 different replace actions in a row before setting bottom and name again. You <i>can</i> overwrite the initial variables such as {caller} and {me}, but I advise against it.</p>
+        <p>Lastly, now that we have our variables, lets make a meme.</p>
+        <table>
+            <tr><td>http://memegen.link/inigo/hello,_my_name_is_{name}/I_am_{bottom}.png </td></tr>
+        </table>
+        <p>This leaves our final tag content to be:</p>
+        <p><code>{set:bottom;{when:{arglen};eq;0;memes;{args};};}{set:bottom;{rep: ;{rep:_;{rep:-;{rep:?;{rep:%;{bottom};~p;};~q;};--;};__;};_;};}{set:name;{rep: ;{rep:_;{rep:-;{rep:?;{rep:%;{caller};~p;};~q;};--;};__;};_;};}http://memegen.link/inigo/hello,_my_name_is_{name}/I_am_{bottom}.jpg </code></p>
+    </section>
+    </article>
+</body>
+</html>
