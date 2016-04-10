@@ -965,6 +965,7 @@
                 <p>
                     Basic Usage:
                     <ul>
+                        <li><code>+tag 'name' ['args' ...]</code> retrieves the ontents of a tag</li>
                         <li><code>+tag create 'name' 'contents'</code> and</li>
                         <li><code>+tag create 'name'</code> &gt; <code>'contents'</code> allow a user to create a tag</li>
                         <li><code>+tag rename 'name' 'new name'</code> renames a tag</li>
@@ -978,6 +979,7 @@
                         <li><code>+tag random</code> posts a random tag to chat. NSFW tags will not be posted.</li>
                         <li><code>+tag search 'query'</code> will search the database</li>
                         <li><code>+tag clain 'tagname'</code> makes you the owner of a tag if the original owner has left</li>
+                        <li><code>+tag eval 'content' ['args' ...]</code> lets you run a command without saving it</li>
                     </ul>
                 </p>
                 <p>Tags are exclusively per server. Commands such as <code>clone</code>, <code>export</code> and <code>import</code> can be used to copy tags between servers.</p>

@@ -180,15 +180,15 @@
             <tr><td>**=====Shipping Score=====**</td></tr>
             <tr><td>**First: {first}**</td></tr>
             <tr><td>**Second: {second}**</td></tr>
-            <tr><td>**========================**</td></tr>
+            <tr><td>**=====================**</td></tr>
             <tr><td>{score}</td></tr>
         </table>
 
         <p>This leaves the final command to be:</p>
-        <p><code>{set:first;{caller};}{set:second;{when:{arglen};gt;0;{args};{user;};};}{set:score;{choose:X% - Terrible;1X% - Really Bad;2X% - Fairly Bad; ---- ;9X% - AMAZING!!;};}{set:score;{rep:X;{score};{num:9;};};}**=====Shipping Score=====**<br />
+        <p><code>{set:first;{caller};}{set:second;{when:{arglen};gt;0;{args};{user;};};}{set:score;{choose:X% - Terrible;1X% - Really Bad;2X% - Fairly Bad;3X% - Bad;4X% - Meh;5X% Okay;6X% - Good;7X% - Great;8X% - Excellent;9X% - AMAZING!!;};}{set:score;{rep:X;{score};{num:9;};};}**=====Shipping Score=====**<br />
                **First: {first}**<br />
                **Second: {second}**<br />
-               **========================**<br />
+               **=====================**<br />
                {score}</code></p>
 
         <hr />
