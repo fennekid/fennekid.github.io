@@ -26,6 +26,8 @@
                     <li><a href="#when">{when}</a></li>
                     <li><a href="#rep">{rep}</a></li>
                     <li><a href="#nameof">{nameof}</a></li>
+                    <li><a href="#set">{set}</a></li>
+                    <li><a href="#math">{math}</a></li>
                 </ul>
             </li>
             <li>
@@ -51,6 +53,8 @@
     <section>
         <hr />
         <h2><code>+tag</code> advanced tech</h2>
+        <p>Before I even start, I am going to say that there is a <code>+tag eval "statement" ["args" ...]</code> command that you can use to test your tags without saving them.
+        <hr />
         <h3 id="formatting">Formatting Tags</h3>
         <p>These are the tags that are filled in by 42 on use. They are fairly simplistic, but they work. Just place the braces as written in your tag.</p>
         <p><code>{caller}</code> is replaced by the name of the person using the tag</p>
@@ -77,6 +81,11 @@
             For example, in <code>{choose}</code>, you can define it first with <code>{choose1:foo;bar;baz;}</code> and then recall it again with <code>{choose1}</code><br />
             Any section with [Stored] written in have this property.
         </p>
+        <p>
+            <b>Errors: </b> Some of these values could cause errors. These errors will be shown in pointed brackets (<code>&lt;&gt;</code>) and will say their type and what went wrong.<br />
+            Most of these are either caused by tags not having enough parts in (<code>&lt;---:No Params&gt;</code>) or by not being recognised (<code>&lt;...:Missing ;&gt;</code> or <code>&lt;...:Unknown Key&gt;</code>)<br />
+            If an arguement, say <code>{arg2}</code> is requested, but wasnt given in the tag call, then you will get a <code>&lt;arg:Missing Arg&gt;</code>
+        </p>
         <div id="user">
             <h4><code>{user[key];}</code> [Stored]</h4>
             <p>This makes 42 pick any random user from the server (this includes offline members, inactive members, herself and other bots.)</p>
@@ -90,12 +99,14 @@
         <div id="num">
             <h4><code>{num[key][:max];}</code> [Stored]</h4>
             <p>This will be replaced with a number that is between 0 and 100 or 0 and max</p>
+            <p>This could return <code>&lt;num:Invalid Max&gt;</code> if a non-integer number is passed.</p>
         </div>
         <hr />
         <div id="time">
             <h4><code>{time[:timezone;]}</code></h4>
             <p>This will be the current UTC time. If an offset (number) is given, it will be applied.</p>
             <p>The number (-5, +9) is whats required, not the name (EST, JST)</p>
+            <p>This could return a <code>&lt;time:Invalid Timezone&gt;</code> when a non-integer timezone value is passed.</p>
         </div>
         <hr />
         <div id="parse">
@@ -126,6 +137,7 @@
                 <tr><td>&gt;&gt;&gt; +tag istest "test"</td></tr>
                 <tr><td>42: True</td></tr>
             </table>
+            <p>This could return <code>&lt;when:Invalid Operator&gt;</code> when <code>op</code> is unrecognised, <code>&lt;when:Bad Arguement&gt;</code> when <code>lt</code> or <code>gt</code> is passed a non number value or <code>&lt;when:Unknown Type&gt;</code> when the type in <code>is<code> is unregocnised.</p>
         </div>
         <hr />
         <div id="rep">
@@ -137,6 +149,7 @@
         <div id="nameof">
             <h4><code>{nameof:id;}</code></h4>
             <p>This will find the name of the user with the given ID. Useful for if someone changes their name a lot.</p>
+            <p>If the ID does not belong to a user, you will get a <code>&lt;nameof:Not Found&gt;</code> error.</p>
         </div>
         <hr />
         <div id="set">
@@ -145,6 +158,26 @@
             <p>This is similar to variable control in programming.</p>
         </div>
         <hr />
+        <div id="math">
+            <h4><code>{math:equation;}</code></h4>
+            <p>This will make 42 preform arbritrary math operations on the equation.</p>
+            <p>
+                valid inputs:
+                <ul>
+                    <li><code>+ - * /</code> arithmetic operations</li>
+                    <li><code>s c t</code> trigonometry</li>
+                    <li><code>** r</code> exponentials and square root</li>
+                    <li><code>e pi</code> mathematical constants</li>
+                    <li><code>// %</code> integer division and modulus</li>
+                    <li><code>! | & ^</code> bitwise operations</li>
+                </ul>
+                Trying to pass in anything else will yield a <code>&lt;math:Invalid Input&gt;</code> error.
+                If the calculation was unsuccessful, you will get a <code>&lt;math:Calc Exception&gt;</code> error.
+            </p>
+        </div>
+        <hr />
+        
+        
 
         <h3 id="nesting">Nesting</h3>
         <p><b>Tags now support nesting!</b> This means that you can now place tags inside other tags, such as <code>{parse:{args};}</code> or <code>{choice:{arg1};{arg2};{when:arglen;eq;3;{arg3};moar plz;};}</code></p>
@@ -206,11 +239,14 @@
         </table>
         <p>As confusing as this looks, it is doing 5 different replace actions in a row before setting bottom and name again. You <i>can</i> overwrite the initial variables such as {caller} and {me}, but I advise against it.</p>
         <p>Lastly, now that we have our variables, lets make a meme.</p>
-        <table>
+        <table class="codeblock">
             <tr><td>http://memegen.link/inigo/hello,_my_name_is_{name}/I_am_{bottom}.png </td></tr>
         </table>
         <p>This leaves our final tag content to be:</p>
         <p><code>{set:bottom;{when:{arglen};eq;0;memes;{args};};}{set:bottom;{rep: ;{rep:_;{rep:-;{rep:?;{rep:%;{bottom};~p;};~q;};--;};__;};_;};}{set:name;{rep: ;{rep:_;{rep:-;{rep:?;{rep:%;{caller};~p;};~q;};--;};__;};_;};}http://memegen.link/inigo/hello,_my_name_is_{name}/I_am_{bottom}.jpg </code></p>
+        <hr />
+        
+        <p>Thus ends this page about tags. If you make anything interesting, head over to <a href="https://discord.gg/0ptu0m1G0a2KrjFq">Kiwi Hangout</a> and show it off. Who knows. Maybe it'll be featured here, or even made into a dedicated command.</p>
     </section>
     </article>
 </body>
