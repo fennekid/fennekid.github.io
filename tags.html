@@ -36,6 +36,7 @@
             <li>
                 <b><a href="#examples">Examples</a></b>
                 <ul>
+                    <li><a href="#ifonly">If Only...</a></li>
                     <li><a href="#lmgtfy">Google That</a></li>
                     <li><a href="#shipscore">Shipping Score</a></li>
                     <li><a href="#iammemes">Meme Generator</a></li>
@@ -139,7 +140,7 @@
                 <tr><td>&gt;&gt;&gt; +tag istest "test"</td></tr>
                 <tr><td>42: True</td></tr>
             </table>
-            <p>This could return <code>&lt;when:Invalid Operator&gt;</code> when <code>op</code> is unrecognised, <code>&lt;when:Bad Arguement&gt;</code> when <code>lt</code> or <code>gt</code> is passed a non number value or <code>&lt;when:Unknown Type&gt;</code> when the type in <code>is<code> is unregocnised.</p>
+            <p>This could return <code>&lt;when:Invalid Operator&gt;</code> when <code>op</code> is unrecognised, <code>&lt;when:Bad Arguement&gt;</code> when <code>lt</code> or <code>gt</code> is passed a non number value or <code>&lt;when:Unknown Type&gt;</code> when the type in <code>is</code> is unregocnised.</p>
         </div>
         <hr />
         <div id="rep">
@@ -185,6 +186,26 @@
         <p><b>Tags now support nesting!</b> This means that you can now place tags inside other tags, such as <code>{parse:{args};}</code> or <code>{choice:{arg1};{arg2};{when:arglen;eq;3;{arg3};moar plz;};}</code></p>
         <hr />
         
+        <h3 id="ifonly">Example Tag: ifonly</h3>
+        <p>Here is an example tag from <span class="mention">@eye-sigil</span>. All it does is demonstrate some of the basics, but its a good learner example :3</p>
+        <p>What we want, is we want to get the callers name (or the given name if supplied) and paste it into a sentence.</p>
+        <p>Firstly, we need to get the name, so we would use <code>{caller}</code>, but we also want it to take the args if it can instead, which uses <code>{args}</code><br />So here, we must use when to see if there are any args first.</p>
+        <table class="codeblock">
+            <tr><td>{when:{arglen};eq;0;{caller};{args};}</td></tr>
+        </table>
+        <p>The <code>{arglen};eq;0</code> just means check if there are no arguements on the tag.</p>
+        <p>Next, we need our choices, which we can do with a <code>{choose}</code> bracket.</p>
+        <table class="codeblock">
+            <tr><td>{choose:git gud;lern2na;stop dyin;shitpost moar;}</td></tr>
+        </table>
+        <p>The things in this part could be changed to whatever you want them to be.</p>
+        <p>
+            Lastly, we just put our code together to form a message: <code>If only &lt;subject&gt; could &lt;choice&gt;</code><br />
+            This leaving our final tag as:<br />
+            <code>If only {when:{arglen};eq;0;{caller};{args};} could {choose:git gud;lern2na;stop dyin;shitpost moar;}</code>
+        </p>
+        
+        <hr />
         <h3 id="examples lmgtfy">Example Tag: lmgtfy</h3>
         <p>This is gonna take the args on the command and shove them into a Let Me Google That For You link.</p>
         <p>All that we need to do for this one is to parse the args into a URL and then tack it on the end of the url.</p>
@@ -227,7 +248,7 @@
                {score}</code></p>
 
         <hr />
-        <h4 id="iammemes">Example Tag: iammemes</h4>
+        <h3 id="iammemes">Example Tag: iammemes</h3>
         <p>Here, were going to make a tag that posts a meme from memegen</p>
         <p>Firstly, we need our name, which we take from the caller, and just to put on a nice spin, lets make the bottom text customisable too.</p>
         <table class="codeblock">
@@ -247,6 +268,7 @@
         <p>This leaves our final tag content to be:</p>
         <p><code>{set:bottom;{when:{arglen};eq;0;memes;{args};};}{set:bottom;{rep: ;{rep:_;{rep:-;{rep:?;{rep:%;{bottom};~p;};~q;};--;};__;};_;};}{set:name;{rep: ;{rep:_;{rep:-;{rep:?;{rep:%;{caller};~p;};~q;};--;};__;};_;};}http://memegen.link/inigo/hello,_my_name_is_{name}/I_am_{bottom}.jpg </code></p>
         <hr />
+        
         
         <p>Thus ends this page about tags. If you make anything interesting, head over to <a href="https://discord.gg/0ptu0m1G0a2KrjFq">Kiwi Hangout</a> and show it off. Who knows. Maybe it'll be featured here, or even made into a dedicated command.</p>
     </section>
