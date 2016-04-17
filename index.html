@@ -38,6 +38,7 @@
                 <ul>
                     <li><a href="#remove">+remove</a></li>
                     <li><a href="#kick">+kick</a></li>
+                    <li><a href="#softban">+softban</a></li>
                     <li><a href="#ban">+ban</a></li>
                     <li><a href="#archive">+archive</a></li>
                     <li><a href="#welcome">+welcome</a></li>
@@ -448,24 +449,35 @@
                 <p>Notes: <code>limit</code> is how many messages are searched, not how many are removed and in <code>+remove commands</code>, the <code>calls</code> are a space seperated list, for example <code>'+! ~ `'</code></p>
             </div>
             <hr />
-            <div class="command", id="kick">
+            <div class="command" id="kick">
                 <h4><code>+kick</code> [Kick]</h4>
                 <p>This makes 42 kick a user from your server.<br />42 requires the "Kick" permission to use this command.</p>
                 <p>
                     Basic Usage:
                     <ul>
-                        <li><code>+kick 'username'</code></li>
+                        <li><code>+kick '@username'</code></li>
                     </ul>
                 </p>
             </div>
             <hr />
-            <div class="command" , id="ban">
+            <div class="command" id="softban">
+                <h4><code>+softban</code> [Kick]</h4>
+                <p>This makes 42 kick a person and delete their messages.<br />This is equivalent to ban/delete then unban, therefore 42 requires the "Ban" permission to use this command.</p>
+                <p>
+                    Basic Usage:
+                    <ul>
+                        <li><code>+softban '@username</code></li>
+                    </ul>
+                </p>
+            </div>
+            <hr />
+            <div class="command" id="ban">
                 <h4><code>+ban</code> [Ban]</h4>
                 <p>This makes 42 ban a user from your server.<br />42 requires the "Ban" permission to use this command.</p>
                 <p>
                     Basic Usage:
                     <ul>
-                        <li><code>+ban 'username'</code></li>
+                        <li><code>+ban '@username'</code></li>
                     </ul>
                 </p>
             </div>
