@@ -36,6 +36,7 @@
             <li>
                 <b><a href="#examples">Examples</a></b>
                 <ul>
+                    <li><a href="#default">Default Channel?</a></li>
                     <li><a href="#ifonly">If Only...</a></li>
                     <li><a href="#lmgtfy">Google That</a></li>
                     <li><a href="#shipscore">Shipping Score</a></li>
@@ -62,6 +63,7 @@
         <p><code>{callerid}</code> is replaced by the ID of the person using the tag</p>
         <p><code>{me}</code> and <code>{meid}</code> is the name/ID of the tags owner</p>
         <p><code>{channel}</code> and <code>{server}</code> are the names of the channel and server</p>
+        <p><code>{channelid}</code> and <code>{serverid}</code> are the IDs of the channel and server</p>
         <p>
             <code>{args}</code> is the rest of the message after the tag is called.<br />
             If the tag test is called with <code>+tag test foo bar baz</code>, then "foo bar baz" will be passed into <code>{args}</code>
@@ -188,6 +190,14 @@
         <h3 id="nesting">Nesting</h3>
         <p><b>Tags now support nesting!</b> This means that you can now place tags inside other tags, such as <code>{parse:{args};}</code> or <code>{choice:{arg1};{arg2};{when:arglen;eq;3;{arg3};moar plz;};}</code></p>
         <hr />
+        <h3 id="default">Example Tag: default</h3>
+        <p>Here is an easy tag to demonstrate the where bracket. It uses the fact that a server and its default channel (<span class="mention">#general</span>) have the same ID</p>
+        <p>All we need to do is construct our when bracket using <code>{channelid}</code> and <code>{serverid}</code> and the equals operator</p>
+        <p>
+            This leaves our final tag to be this<br />
+            <code>{when;{channelid};eq;{serverid};This is the default channel;This is not the default channel;}</code>
+        </p>
+        <hr />        
         
         <h3 id="ifonly">Example Tag: ifonly</h3>
         <p>Here is an example tag from <span class="mention">@eye-sigil</span>. All it does is demonstrate some of the basics, but its a good learner example :3</p>
