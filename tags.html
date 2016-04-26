@@ -59,6 +59,13 @@
         <hr />
         <h3 id="formatting">Formatting Tags</h3>
         <p>These are the tags that are filled in by 42 on use. They are fairly simplistic, but they work. Just place the braces as written in your tag.</p>
+        <!--While callerid, serverid, meid and channelid are staying, they are not really necissary.
+            This is a secret to everyone, but the caller, user, server and channel brackets are passed as objects
+            instead of names. Those who aren't good at python or discord.py, dont worry about this, but those who
+            are can use things like {caller.name} or even {server.roles[0].id} and get the expected results of
+            pythons str.format() method. I havent tested it, but you may even be able to do crazy things like
+            say for instance {server.roles[0].permissions.mention_everyone} or something. 
+            But shush, its a secret to everyone, take your 20 rupees and leave me alone.-->
         <p><code>{caller}</code> is replaced by the name of the person using the tag</p>
         <p><code>{callerid}</code> is replaced by the ID of the person using the tag</p>
         <p><code>{me}</code> and <code>{meid}</code> is the name/ID of the tags owner</p>
@@ -195,7 +202,7 @@
         <p>All we need to do is construct our when bracket using <code>{channelid}</code> and <code>{serverid}</code> and the equals operator</p>
         <p>
             This leaves our final tag to be this<br />
-            <code>{when;{channelid};eq;{serverid};This is the default channel;This is not the default channel;}</code>
+            <code>{when:{channelid};eq;{serverid};This is the default channel;This is not the default channel;}</code>
         </p>
         <hr />        
         
