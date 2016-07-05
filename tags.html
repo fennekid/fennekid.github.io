@@ -27,11 +27,17 @@
                     <li><a href="#rep">{rep}</a></li>
                     <li><a href="#nameof">{nameof}</a></li>
                     <li><a href="#set">{set}</a></li>
-                    <li><a href="#math">{math}</a></li>
+                    <li><a href="#string">{upper}, {lower}</a></li>
+                    <li><a href="#oneline">{oneline}</a></li>
                 </ul>
             </li>
             <li>
-                <b><a href="#nesting">Nesting</a></b>
+                <b>Techniques</b>
+                <ul>
+                    <li><a href="#nesting">Nesting</a></li>
+                    <li><a href="#escaping">Escaping</a></li>
+                    <li><a href="#commenting">Comments</a></li>
+                </ul>
             </li>
             <li>
                 <b><a href="#examples">Examples</a></b>
@@ -80,6 +86,7 @@
             <code>{arg[index]}</code> is the specific arguement after the tag is called<br />
             From the example above, <code>{arg1}</code> is "foo", <code>{arg2}</code> is "bar" and <code>{arg3}</code> is "baz"
         </p>
+        <p><code>{mentionlen}</code> and <code>{mention[index]}</code> gets mentions from the message.</p>
         <p><code>{time}</code> is replaced by the UTC time that the tag was called.</p>
         <hr />
         
@@ -137,6 +144,7 @@
                     <tr><td><code>gt</code> (greater than)</td><td>This reads <code>a</code> and <code>b</code> in as numbers and prints <code>true</code> if <code>a</code> is larger.</td></tr>
                     <tr><td><code>lt</code> (less than)</td><td>This reads <code>a</code> and <code>b</code> in as numbers and prints <code>true</code> if <code>a</code> is smaller.</td></tr>
                     <tr><td><code>is</code></td><td>This reads <code>a</code> and sees if it a <code>word</code>, <code>letter</code>, <code>number</code>, <code>decimal</code> or <code>truth</code>, type is determined by what is in <code>b</code></td></tr>
+                    <tr><td><code>in</code></td><td>This lets you check if <code>a</code> is in <code>b</code> somewhere, or if <code>b</code> is a comma seperated list, its the same as checking if one of the items in the list is equal to <code>a</code></td></tr>
                 </table>
             </p>
             <code>false</code> defaults to nothing if it is left out.<br />
@@ -169,6 +177,8 @@
             <p>This will make the tag replaces any occurances after the set of <code>{var}</code> with what is in <code>value</code></p>
             <p>This is similar to variable control in programming.</p>
         </div>
+        <!--TODO: remove-->
+        <!--
         <hr />
         <div id="math">
             <h4><code><s>{math:equation;}</s></code></h4>
@@ -190,13 +200,42 @@
                 If the calculation was unsuccessful, you will get a <code>&lt;math:Calc Exception&gt;</code> error.
             </p>
         </div>
+        -->
         <hr />
-        
-        
+        <!--TODO: add new upper, lower, oneline, > and ! brackets-->
+        <div id="string">
+            <h4><code>{upper:string;}</code> and <code>{lower:string;}</code>
+            <p>This will make 42 modify the contents of the bracket to block uppercase or block lowercase.</p>
+        </div>
+        <hr />
+        <div id="oneline">
+            <h4><code>{oneline:section;}</code></h4>
+            <p>This will strip all newline (LF and CRLF) characters from the section.</p>
+            <p>This will be useful for sections of code where you are setting up comments or writing variables as it allows you to space out your tags a bit more without it being picked up at the end.</p>
+        </div>
+        <hr />
 
         <h3 id="nesting">Nesting</h3>
         <p><b>Tags now support nesting!</b> This means that you can now place tags inside other tags, such as <code>{parse:{args};}</code> or <code>{choice:{arg1};{arg2};{when:arglen;eq;3;{arg3};moar plz;};}</code></p>
         <hr />
+        <h3 id="escaping">Escaping</h3>
+        <p><b>Tags can now be escaped!</b> This means that you can create example formatting tags.</p>
+        <p>This is done by placing a <code>&gt;</code> character just inside your tag.</p>
+        <p>
+            Example:
+            <table class="codeblock">
+                <tr><td>{&gt;choose:foo;bar;baz;}</tr></td>
+            </table>
+            will be shown in tag as <code>{choose:foo;bar;baz;}</code>
+        </p>
+        <hr />
+        <h3 id="commenting">Comments</h3>
+        <p><b>Tags can now contain comments!</b> This means that you can put things in tags that will not be shown in normal usage.</p>
+        <p>Comment tags are written in the form <code>{!this is a comment.}</code> Everything inside the block will be completely removed</p>
+        <hr />
+        
+        
+        
         <h3 id="default">Example Tag: default</h3>
         <p>Here is an easy tag to demonstrate the where bracket. It uses the fact that a server and its default channel (<span class="mention">#general</span>) have the same ID</p>
         <p>All we need to do is construct our when bracket using <code>{channelid}</code> and <code>{serverid}</code> and the equals operator</p>
