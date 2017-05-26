@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html lang="en-gb" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta content="All about 42!" name="Description" property="og:description">
+    <title>Infobot 42</title>
+    <link rel="stylesheet" type="text/css" href="42help.css">
+</head>
+<body>
+    <aside>
+        <div class="aside-header">
+            <a href="https://discordapp.com/oauth2/authorize?client_id=196574652229877760&scope=bot&permissions=403041302">
+                Want Me? Have ME! =join <br />
+            </a>
+            You need manage server or manage roles to add bots.
+        </div>
+        <div class="aside-content">
+            <h3><a href="index.html">Home</a></h3>
+            <h3>Command Help</h3>
+            <ul class="no-bullet">
+                <li><a href="introduction.html">&#9654; Introduction</a> </li>
+                <li><a href="faq.html">&#9654; Frequently Asked Questions</a></li>
+                <li>Command Categories</li>
+                <li>
+                    <a href="#top">&#9660; Bot</a>
+                    <ul class="no-bullet">
+                        <li><a href="#hello">=hello</a></li>
+                        <li><a href="#about">=about</a></li>
+                        <li><a href="#join">=join</a></li>
+                        <li><a href="#help">=help</a></li>
+                        <li><a href="#tutorial">=tutorial</a></li>
+                        <li><a href="#language">=language</a></li>
+                        <li><a href="#alias">=alias</a></li>
+                        <li><a href="#faq">=faq</a></li>
+                        <li><a href="#toggle">=toggle</a></li>
+                        <li><a href="#botban">=botban</a></li>
+                        <li><a href="#botunban">=botunban</a></li>
+                        <li><a href="#cleanup">=cleanup</a></li>
+                        <li><a href="#check">=check</a></li>
+                        <li><a href="#echo">=echo</a></li>
+                        <li><a href="#hug">=hug</a></li>
+                        <li><a href="#owner">Owner Only Commands</a></li>
+                    </ul>
+                </li>
+                <li><a href="tools.html">&#9654; Tools</a></li>
+                <li><a href="mod.html">&#9654; Moderation</a></li>
+                <li><a href="info.html">&#9654; Information</a></li>
+                <li><a href="rng.html">&#9654; RNG</a></li>
+                <li><a href="memory.html">&#9654; Memory</a></li>
+                <li><a href="fun.html">&#9654; Fun</a></li>
+                <li><a href="nerd.html">&#9654; Nerd</a></li>
+                <li><a href="vg.html">&#9654; Video Games</a></li>
+                <li><a href="secret.html">&#9654; Secrets</a></li>
+                <li>Other Sections</li>
+                <li><a href="autofunc.html">&#9654; Automatic Functions</a></li>
+                <li><a href="yna.html">&#9654; yna Tag Scripting</a></li>
+            </ul>
+            <h3>Friends of 42</h3>
+            <ul class="no-bullet">
+                <li><a href="redditbot/index.html">&#9654; Redditbot</a></li>
+                <li><a href="pinksquid/index.html">&#9654; Pinksquid</a></li>
+                <li>&#9654; Your bot here?</li>
+            </ul>
+        </div>
+        <div class="aside-footer">
+            programmers are fueled by pizza~!<br />
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="53TDH5RCZ6QTU">
+                <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal Donate - Keep those creative juices flowing!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+            </form>
+        </div>
+    </aside>
+
+    <article>
+        <h1 id="top">Bot category commands</h1>
+        <p>
+            These are commands that are directly controlling of the bot.<br />
+            These cannot be disabled by using <code>=toggle</code>.
+        </p>
+
+        <hr />
+
+        <div id="hello" class="command">
+            <h4><code>=hello</code></h4>
+            <em class="bot-text">"makes me say my hello message"</em>
+            <p>
+                Simple starting command. This just makes 42 send her hello message. This could be used for testing if the bot is awake.
+            </p>
+        </div>
+        <hr />
+
+        <div id="about" class="command">
+            <h4><code>=about</code></h4>
+            <em class="bot-text">"makes me PM you some information about me"</em>
+            <p>
+                This command makes 42 PM you what language she is written in, what version she is in, and who created her.<br />
+                It also sends an invite to <a href="http://discord.me/kiwibots">Kiwi Hangout</a>.
+            </p>
+        </div>
+        <hr />
+
+        <div id="join" class="command">
+            <h4><code>=join</code></h4>
+            <em class="bot-text">"makes me link my invite page"</em>
+            <p>
+                This command just links to <a href="https://discordapp.com/oauth2/authorize?client_id=196574652229877760&scope=bot&permissions=403041302">Beta 42's invite link</a>
+            </p>
+        </div>
+        <hr />
+
+        <div id="help" class="command">
+            <h4><code>=help</code></h4>
+            <em class="bot-text">"makes me tell you my functions"</em>
+            <p>
+                This command is Beta 42's in-Discord help command. It can be used to get a comprehensive list of <em>almost</em> all of her commands.<br />
+                It can also be used to get detailed help on a particular topic or search for commands.<br />
+                This is also the source for all the quoted summaries of commands.
+            </p>
+
+            <strong>Usage:</strong><br />
+
+            <code>=help 'command name'</code><br />
+            <em>Fetches the long-help of a specific command.</em>
+            <table class="codeblock">
+                <tr><td>&lt;user&gt; =help info</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; Help for `=info`</td></tr>
+                <tr><td class="bot-text">&nbsp;      `=info` makes me tell you a whole bunch of cool stats and info</td></tr>
+                <tr><td class="bot-text">&nbsp;      `=info [user 'username']` gets info about yourself or another user</td></tr>
+                <tr><td class="bot-text">&nbsp;      `=info server` gets info about the server</td></tr>
+                <tr><td class="bot-text">&nbsp;      ...</td></tr>
+            </table>
+
+            <code>=help 'category name'</code><br />
+            <em>Fetches the short-help of every command in a category.</em>
+            <table class="codeblock">
+                <tr><td>&lt;user&gt; =help Information</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; Information - Tools for telling you things</td></tr>
+                <tr><td class="bot-text">&nbsp;      `=perms` gets your channel permissions</td></tr>
+                <tr><td class="bot-text">&nbsp;      `=msgcount` makes me generate a list of authors in this channel</td></tr>
+                <tr><td class="bot-text">&nbsp;      `=avy` lets me get the avatar of a user</td></tr>
+                <tr><td class="bot-text">&nbsp;      ...</td></tr>
+            </table>
+
+            <code>=help search 'query'</code><br />
+            <em>
+                Searches for commands relating to the keyword. This only works in english.<br />
+                Also its really bad...
+            </em>
+            <table class="codeblock">
+                <tr><td>&lt;user&gt; =help search user</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; I found these commands:</td></tr>
+                <tr><td class="bot-text">&nbsp;      `=about` makes me PM you some info about me</td></tr>
+                <tr><td class="bot-text">&nbsp;      `=profile` lets me keep track of your online profile</td></tr>
+                <tr><td class="bot-text">&nbsp;      `=info` makes me tell you a whole bunch of cool stats and info</td></tr>
+                <tr><td class="bot-text">&nbsp;      ...</td></tr>
+            </table>
+
+        </div>
+        <hr />
+
+        <div id="tutorial" class="command">
+            <h4><code>=tutorial</code> [Server Owner]</h4>
+            <em class="bot-text">"makes me teach you about my basic functionality"</em>
+            <p>
+                This starts up Beta 42's semi-interractive introduction, consisting of ~10 messages that can be advanced on a command.<br />
+                It outlines a lot of the basic commands.<br />
+                If she is ignored for too long, she will automatically end the tutorial with the outro message.
+            </p>
+
+            <strong>Usage:</strong><br />
+
+            <code>=tutorial</code>
+            <table class="codeblock">
+                <tr><td>&lt;user&gt; =tutorial</td></tr>
+                <tr><td class="bot-text">&lt;B 42&lt; Hello new user. Thank you for inviting me to your server. ... Use `==next` to move to the next message.</td></tr>
+                <tr><td>&lt;user&gt; ==next</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; [0] Hello, I am 42, a robot build by squaswin. If you cannot understand me, use `=language` ...</td></tr>
+                <tr><td>&lt;user&gt; ==next</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; [1] I am a Moderation bot. I can do ... things, like `=ban` or `=kick` people ...</td></tr>
+                <tr><td>&lt;user&gt; *waits a couple minutes*</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; This ends my tutorial ...</td></tr>
+            </table>
+
+        </div>
+        <hr />
+
+        <div id="language" class="command">
+            <h4><code>=language</code> [Server Owner]</h4>
+            <em class="bot-text">"makes me change my language"</em>
+            <p>
+                This changes the language of the channel or the server. Once the bot leaves Beta, I can start asking for voulenteers to start translating the bot.<br />
+                However, just because of how the bot is laid out, translations may not be 100% perfect, and right now, no full translations exist. Sorry for the inconvenience.<br />
+                <strong>Changing the language of a channel does <em>NOT</em> change the names of commands.</strong><br />
+                <br />
+                The channel is chosen based on where the command is run. If the command is used in the servers default channel, then the change applies to the whole server.<br />
+                <br />
+                If there are people who want to do so, they could also create new "language" files to give the bot an accent. 
+                For instance, I've heard word of someone wanting to make 42 less verbiose and more to the point.<br />
+                Use <code>=help language</code> to find the possible languages.
+            </p>
+
+        </div>
+        <hr />
+
+        <div id="alias" class="command">
+            <h4><code>=alias</code> [Bot Admin]</h4>
+            <em class="bot-text">"changes my alt call character"</em>
+            <p>
+                This command allows a different character or string to be used to call a command.<br />
+                However it does not remove using <code>=</code> as a call character.<br />
+                <br />
+                You cannot use call characters that use spaces.
+            </p>
+
+            <strong>Usage:</strong><br />
+
+            <code>=alias 'call'</code><br />
+            <em>Changes the alias for the entire server</em>
+            <table class="codeblock">
+                <tr><td>&lt;user&gt; =alias 'pls'</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; I have changed this servers alias to `pls` (`plshelp`, `plstag`, `plsalias`)</td></tr>
+            </table>
+
+            <code>=alias =</code><br />
+            <em>Removes the alias from the server</em>
+            <table class="codeblock">
+                <tr><td>&lt;user&gt; =alias =</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; I have removed the alias for this server.</td></tr>
+            </table>
+        </div>
+        <hr />
+
+        <div id="faq" class="command">
+            <h4><code>=faq</code></h4>
+            <em class="bot-text">"makes me answer some of your questions"</em>
+            <p>
+                This command just makes 42 PM you a page of frequently asked questions.
+            </p>
+        </div>
+        <hr />
+
+        <div id="toggle" class="command">
+            <h4><code>=toggle</code> [Bot Admin]</h4>
+            <em class="bot-text">"lets me disable commands"</em>
+            <p>
+                Toggle allows server admins to selectively enable and disable commands.<br />
+                By default, all commands are enabled and must be toggled off where required.<br />
+                Commands that have been disabled can still be used by moderators and can still be queried in <code>=help</code>, 
+                however, a <code>[Disabled by server]</code> tag applied to the help message.<br />
+                <br />
+                Commands that have been disabled will yield a <a href="introduction.html#auth">message</a> telling the user what happened when they try to use it.<br />
+                <br />
+                You cannot toggle commands that are catagorised as "Bot" commands.
+            </p>
+
+            <strong>Usage:</strong><br />
+
+            <code>=toggle 'command'</code><br />
+            <em>Disables or enables individual commands</em>
+            <table class="codeblock">
+                <tr><td>&lt;user&gt; =toggle choose</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; I have disabled that command</td></tr>
+                <tr><td>&lt;user &gt; =help choose</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; Help for =choose [5/10s] [Disabled by server]</td></tr>
+                <tr><td class="bot-text">&nbsp;      `=choose` makes me pick from a list of options</td></tr>
+                <tr><td class="bot-text">&nbsp;      `=choose 'optn1' 'optn2' [...]`</td></tr>
+            </table>
+
+            <code>=toggle 'category'</code><br />
+            <em>Disables or enables all the commands in a set</em>
+            <table class="codeblock">
+                <tr><td>&lt;user&gt; =toggle Fun</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; I have disabled 16 commands:</td></tr>
+                <tr><td class="bot-text">&nbsp;      ayy, coins, sync, ...</td></tr>
+            </table>
+
+            <code>=toggle list</code><br />
+            <em>Lists all commands that have been disabled</em>
+            <table class="codeblock">
+                <tr><td>&lt;user&gt; =toggle list</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; Disabled commands:</td></tr>
+                <tr><td class="bot-text">&nbsp;      Fun: ayy, coins, sync, ...</td></tr>
+                <tr><td class="bot-text">&nbsp;      RNG: choose</td></tr>
+            </table>
+
+        </div>
+        <hr />
+
+        <div id="botban" class="command">
+            <h4><code>=botban</code> [Bot Mod]</h4>
+            <em class="bot-text">"makes me ignore any commands from a user"</em>
+            <p>
+                This allows botmods to stop problematic users from being able to access the bot, but only on your server.<br />
+                Botbanned users still have access to the <code>=check</code> command and any automatic responses.<br />
+                <br />
+                There is a way that a user can be globally botbanned, but only squaswin has access to that command.<br />
+                <br />
+                Botbanned users who attempt to use a command will be met with a <a href="introduction.html#auth">message</a> telling them about the botban.<br />
+                This message will only be sent at maximum once every minute.
+            </p>
+
+            <strong>Usage:</strong><br />
+
+            <code>=botban 'user'</code>
+            <table class="codeblock">
+                <tr><td>&lt;mod&gt; =botban user</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; I have bot-banned that user. They will no longer be able to use my commands.</td></tr>
+                <tr><td>&lt;user&gt; =tag</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; I cannot run this command as you have been botbanned on this server.</td></tr>
+                <tr><td>&lt;user&gt; =tag</td></tr>
+                <tr><td>&lt;user&gt; =tag</td></tr>
+            </table>
+
+        </div>
+        <hr />
+
+        <div id="botunban" class="command">
+            <h4><code>=botunban</code> [Bot Mod]</h4>
+            <em class="bot-text">"makes me remove a botban on a user"</em>
+            <p>
+                This allows botmods to undo botbans on users.
+            </p>
+
+            <strong>Usage:</strong>
+
+            <code>=botunban 'user'</code>
+            <table class="codeblock">
+                <tr><td>&lt;mod&gt; =botunban user</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; I have unbanned that member.</td></tr>
+                <tr><td>&lt;user&gt; =tag</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; You asked me about tags, but didn't tell me what to do. Use `=help tag`</td></tr>
+            </table>
+        </div>
+        <hr />
+
+        <div id="cleanup" class="command">
+            <h4><code>=cleanup</code> [Bot Mod]</h4>
+            <em class="bot-text">"removes my own messages and if possible my command calls too"</em>
+            <p>
+                This makes the bot scan all the messages sent in the channel and delete any that she has sent.<br />
+                If she has the Manage Messages permission, she will also remove any messages that start with the call character.<br />
+                <br />
+                Due to the way that bulk deleting works, you cannot cleanup messages over 2 weeks old, and if the bot does not have Manage Messages, 
+                she will have to delete messages one by one which may take up to 20 seconds.
+            </p>
+
+            <strong>Usage:</strong><br />
+
+            <code>=cleanup ['limit']</code>
+            <em>Limit is how many messages will be scanned, not how many will be deleted. If it is not supplied, then it defaults to 100.</em>
+        </div>
+        <hr />
+
+        <div id="check" class="command">
+            <h4><code>=check</code> [Always] [2/2m]</h4>
+            <em class="bot-text">"makes me tell you what bot permissions you have"</em>
+            <p>
+                <strong>Permission: [Always]</strong> This command is ignored by botbans but has a relatively strict ratelimit to compensate.<br />
+                <br />
+                This command makes Beta 42 query all of her <a href="introduction.html#auth">main permission checks</a> and tell the user what they have.<br />
+                This command uses a codeblock language called <code>diff</code> which changes the colour of a line based on what it starts with.<br />
+                <ul>
+                    <li class="diff-added">Yellow lines (that start with a +) means a permission the user has</li>
+                    <li class="diff-removed">Red lines (that start with a -) means a permission the user does not have</li>
+                </ul>
+            </p>
+
+            <strong>Usage:</strong><br />
+
+            <code>=check ['member']</code><br />
+            <em>Member is who to check. If no-one is given, then it defaults to the caller</em>
+            <table class="codeblock">
+                <tr><td>&lt;user&gt; =check</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; Permissions for user</td></tr>
+                <tr><td class="diff-removed">&nbsp; - server owner&nbsp;&nbsp;: owner of server</td></tr>
+                <tr><td class="diff-added">&nbsp;   + server admin&nbsp;&nbsp;: members with Manage Roles</td></tr>
+                <tr><td class="diff-removed">&nbsp; - server manager: members with Manage Server</td></tr>
+                <tr><td class="bot-text">&nbsp;      ...</td></tr>
+                <tr><td class="diff-removed">&nbsp; - buds&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: squas' close friends</td></tr>
+            </table>
+
+        </div>
+        <hr />
+
+        <div id="echo" class="command">
+            <h4><code>=echo</code> [Bot Mod]</h4>
+            <em class="bot-text">"makes me repeat a message"</em>
+            <p>
+                Just a simple dud command that makes Beta 42 re-send the contents of a message.
+            </p>
+
+            <strong>Usage:</strong><br />
+            <code>=echo 'content'</code>
+        </div>
+        <hr />
+
+        <div id="hug" class="command">
+            <h4><code>=hug</code></h4>
+            <p>What more is there to say about this one to be honest. Its a command that sends hugs~!</p>
+        </div>
+        <hr />
+
+        <div id="owner" class="command">
+            <h4>Owner only commands.</h4>
+            <p>
+                These are commands in this category that can only be used by squaswin and are only displayed here as a display of transparency.
+            </p>
+
+            <ul>
+                <li><code>=eval</code> executes arbitrary lines of code, usually for debug reasons.</li>
+                <li><code>=traceback</code> fetches the full stacetrace of the last eval command that went wrong</li>
+                <li><code>=source</code> pastes the contents of a given method into the chat</li>
+                <li><code>=reload</code> reloads all the languages files in the bot</li>
+                <li><code>=backlog</code> recalls the last 100 actions taken by the bot, such as commands posted or anouncement cycles</li>
+                <li><code>=powermod</code> forcably gives a member in an arbitrary server the Bot Admin permission</li>
+                <li><code>=config</code> updates the bots friends list, blocked members and blocked servers</li>
+                <li><code>=uplink</code> connects 2 channels together, relaying messages between them</li>
+            </ul>
+
+            <p>
+                "Wait wait wait wait, =backlog? are you spying on us?!"<br />
+                Absoloutly not. All backlog stores is a channel, a username and the root command, not full commands.<br />
+                When this command is normally used, it is to check for large amounts of identical commands being spammed by single users or servers.<br />
+
+                "Also powermods? Isn't that a bit breaking?"<br />
+                Yes, but it is also never used. When I see spammers either in the on-screen logs or the backlogs, I can either uplink to the channel and tell 
+                them to cool it with the spam, or if I have a trusted member in Kiwi Hangout from that server, I can powermod them and ask them to do my bidding 
+                directly.<br />
+                Don't forget that the Bot Admin permission only allows users to botban, cleanup and toggle, so no real damage could be done.
+            </p>
+        </div>
+
+
+
+
+
+
+
+    </article>
+</body>
+</html>

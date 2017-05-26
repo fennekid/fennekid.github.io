@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+
+<html lang="en-gb" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta content="All about 42!" name="Description" property="og:description">
+    <title>Infobot 42</title>
+    <link rel="stylesheet" type="text/css" href="42help.css">
+</head>
+<body>
+    <aside>
+        <div class="aside-header">
+            <a href="https://discordapp.com/oauth2/authorize?client_id=196574652229877760&scope=bot&permissions=403041302">
+                Want Me? Have ME! =join <br />
+            </a>
+            You need manage server or manage roles to add bots.
+        </div>
+        <div class="aside-content">
+            <h3><a href="index.html">Home</a></h3>
+            <h3>Command Help</h3>
+            <ul class="no-bullet">
+                <li>
+                    <a href="#top">&#9660; Introduction</a>
+                    <ul class="no-bullet">
+                        <li><a href="#commands">Commands</a></li>
+                        <li><a href="#auto">Automatic Functions</a></li>
+                        <li><a href="#bugs">Bug Reports and Suggestions</a></li>
+                        <li><a href="#auth">Authority</a></li>
+                        <li><a href="#language">Language Coverage</a></li>
+                        <li><a href="#users">User Resolution</a></li>
+                    </ul>
+                </li>
+                <li><a href="faq.html">&#9654; Frequently Asked Questions</a></li>
+                <li>Command Categories</li>
+                <li><a href="bot.html">&#9654; Bot</a></li>
+                <li><a href="tools.html">&#9654; Tools</a></li>
+                <li><a href="mod.html">&#9654; Moderation</a></li>
+                <li><a href="info.html">&#9654; Information</a></li>
+                <li><a href="rng.html">&#9654; RNG</a></li>
+                <li><a href="memory.html">&#9654; Memory</a></li>
+                <li><a href="fun.html">&#9654; Fun</a></li>
+                <li><a href="nerd.html">&#9654; Nerd</a></li>
+                <li><a href="vg.html">&#9654; Video Games</a></li>
+                <li><a href="secret.html">&#9654; Secrets</a></li>
+                <li>Other Sections</li>
+                <li><a href="autofunc.html">&#9654; Automatic Functions</a></li>
+                <li><a href="yna.html">&#9654; yna Tag Scripting</a></li>
+            </ul>
+            <h3>Friends of 42</h3>
+            <ul class="no-bullet">
+                <li><a href="redditbot/index.html">&#9654; Redditbot</a></li>
+                <li><a href="pinksquid/index.html">&#9654; Pinksquid</a></li>
+                <li>&#9654; Your bot here?</li>
+            </ul>
+        </div>
+        <div class="aside-footer">
+            programmers are fueled by pizza~!<br />
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="53TDH5RCZ6QTU">
+                <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal Donate - Keep those creative juices flowing!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+            </form>
+        </div>
+    </aside>
+
+    <article>
+        <h1 id="top">Introduction to using Beta 42</h1>
+        
+        <hr />
+
+        <div id="commands" class="command">
+            <h4>Commands</h4>
+            <p>
+                The main usage of Beta 42 is directly calling commands.<br />
+                This is done simply by sending a message that starts with <code>=</code>. 
+                There are ways to <a href="bot.html#alias">assign an alternate call</a> character, but <code>=</code> will always work.<br />
+                <br />
+                <strong>Command Syntax:</strong>
+                <ul>
+                    <li>All commands start with an = or appropiate <a href="bot.html#alias">alias</a></li>
+                    <li>Any elements in 'single quotes' are arguments</li>
+                    <li>Any elements without quotes are subcommands</li>
+                    <li>Any args in ['square brackets'] are optional. This does not mean you need to write in the brackets</li>
+                </ul>
+                Any args that contain spaces should be wrapped in either 'single quotes', "double quotes" or «double angle quotes»
+            </p>
+        </div>
+        <hr />
+
+        <div id="auto" class="command">
+            <h4>Automatic Functions</h4>
+            <p>
+                Beta 42 has a set of automatic functions that do not require a command to trigger.<br />
+                These are all optional and can be set with the correct command, such as using <code><a href="fun.html/#ayy">=ayy</a></code> to disable the bot responding to mentions.
+                A full list of automatic functionality can be found <a href="autofunc.html">here</a>.
+            </p>
+        </div>
+        <hr />
+
+        <div id="bugs" class="command">
+            <h4>Bug Reports and Feature Suggestions</h4>
+            <p>
+                <strong>Bug reports:</strong><br />
+                Every command within Beta 42 will send a reply, wether that reply is a successful response or an error message.<br />
+                If a response isn't sent, it means one of two things have happened:<br />
+            </p>
+            <ol>
+                <li>The command call was blocked by an <a href="#auth">authority check</a> and is still on cooldown.</li>
+                <li>The command is bugged.</li>
+            </ol>
+            <p>
+                If it is the latter, then it would be greatly apreciated if you could send it to <span class="mention">@squaswin</span> 
+                either in DMs or <a href="http://www.discord.me/kiwibots">Kiwi Hangout</a>. The <span class="mention">#reeds-station</span> is designed specifically for reporting bugs.<br />
+                <del>And I know Beta 42 has some bugs...</del><br />
+                <br />
+                <strong>Suggestions:</strong><br />
+                Is there something you need but don't have or don't know how to do? head over to the server linked above and ask in <span class="mention">#heinrichs-workshop</span>.<br />
+                If we have a solution, we can tell you there and then, if not, we can suggest a bot or squas may be able to implement a solution into Beta 42 for you.
+            </p>
+        </div>
+        <hr />
+
+        <div id="auth" class="command">
+            <h4>Authority Checks</h4>
+            <p>
+                Beta 42 implements a suite of authority checks to help curb abuse and help server moderators combat spam. There are currently 6 checks:
+            </p>
+            <ol>
+                <li>Permission Levels</li>
+                <li>Ratelimits</li>
+                <li>Spamlimits</li>
+                <li>Server Toggles</li>
+                <li>Bot Bans</li>
+                <li>Global Bans</li>
+            </ol>
+            <p>
+                When a check is failed, Beta 42 will alert the user as to what went wrong and will then start ignoring any more permission errors caused by that user for one minute.<br />
+                This is to stop botbanned members from spamming "You are botbanned" messages.<br />
+                <br />
+                <strong>Permission Levels:</strong><br />
+                Permission levels are non-changable and are defined on a command by command basis. 
+                They exist to stop people using the bot to bypass certain safety features within discord, 
+                such as preventing users without Manage Roles from creating giveme roles so that they can grant themselves roles.<br />
+                Each command will have its permission level displayed next to the name<br />
+            </p>
+            <ul>
+                <li class="no-bullet"><strong>Server Permissions</strong>. These are granted through having a particular permission on a users roles.</li>
+                <li><strong>[Server Owner]</strong>: This is the big man, woman or wumpus in charge of the server.</li>
+                <li><strong>[Server Admin]</strong>: Admins are the members with Manage Roles.</li>
+                <li><strong>[Server Manager]</strong>: Managers are members with Manage Channels.</li>
+                <li><strong>[Server Moderator]</strong>: Moderators are the members with Manage Messages.</li>
+                <li><strong>[Kick]</strong> and <strong>[Ban]</strong>: Self explanitory, members with the named roles.</li>
+                <li class="no-bullet"><strong>Bot Permissions</strong>. These allow servers to grant normal users an elevated level of power over the bot without granting general permissions.</li>
+                <li><strong>[Bot Admin]</strong>: These are members who have a role called "Best Friends". Server admins can also use these commands.</li>
+                <li><strong>[Bot Mod]</strong>: These are members who have a role called "Friends". Server mods can also use these commands.</li>
+                <li class="no-bullet"><strong>Special Permissions</strong>. There are some specialised permissions used within Beta 42. Any not listed below will be explained when they are used.</li>
+                <li><strong>[Owner]</strong>: This refers to squaswin himself. Commands locked to Owner are generally for the wellbeing of the bot.</li>
+                <li><strong>[Buds]</strong>: This is only given to a few of squas' close friends. If you ask for buds, you will not get buds.</li>
+                <li><strong>[No DM]</strong>: These mark commands that cannot be used inside private or direct channels. If a command has any other permission, assume it has this too.</li>
+            </ul>
+            <p>
+                Any command not marked with a permission level can be used by anyone.<br />
+                <br />
+                <strong>Rate Limits:</strong><br />
+                Rate limits are also fixed by the bot. This stops both spam in servers and stress on the bot herself.
+                If a command is rate limited, it will be marked so on its help article next to the permission check,<br />
+                if no indication exists, then the command is not rate limited<br />
+                <strong>THIS IS NOT AN INVITATION TO START SPAMMING THE BOT.</strong> All spamming like this will do is get you or your server sanctioned<br />
+                <br />
+                <strong>Spam Limits:</strong><br />
+                This is the first check that can be set by the server managers via a <a href="mod.html#spamlimit">command</a>.<br />
+                It enforces a limit to the amount of lines the bot can send to a single non-bot channel within a timeframe, but this is explained in the command's page.<br />
+                <br />
+                <strong>Server Toggles:</strong><br />
+                This is the largest amount of control servers have over the bot's usage as it allows them to <a href="bot.html#toggle">completely disable commands</a>.<br />
+                Commands that are toggled will have a <code>[Disabled by server]</code> tag applied to the end of the built in help command.<br />
+                Users who have any server related permissions are not affected by disabled commands.<br />
+                <br />
+                <strong>Botbans:</strong><br />
+                Botbans are a servers last level of control, or rather defence. It allows them to stop a given user from accessing any of the bots commands.<br />
+                Botbans applied in one server are not respected in any other servers, and unlike her predecessor, Beta 42 will not automatically globalban people with too many botbans.<br />
+                You cannot botban the server owner or other bots and you cannot botban squas.<br />
+                In general, botbans only affect command calls, not automatic functions.<br />
+                <br />
+                <strong>Global Bans:</strong><br />
+                Global bans are the absoloute last resort for cleaning up a mess. They can only be applied and removed by squaswin and can affect either single users or entire servers.<br />
+                If a user is global banned, they will not be able to use Beta 42's commands in any server or private channel.<br />
+                If a server is global blocked, the bot will refuse to join the server and if she does get on the server, she will leave at the first opertunity.
+            </p>
+        </div>
+        <hr />
+
+        <div id="language" class="command">
+            <h4>Languages and Coverage</h4>
+            <p>
+                While Beta 42 does have facilities to load in different language files, no alternate language files currently exist, 
+                and until she is finalised and no more changes are to be made, no files will be created.<br />
+                Beta 42 is currently somewhat in a state of feature limbo, and until she is stable, language files will be painful to create 
+                just because of the amount of updates that will be required in the immediate future.
+            </p>
+        </div>
+        <hr />
+
+        <div id="users" class="command">
+            <h4>Username Resolution</h4>
+            <p>
+                A lot of commands accept a user as an argument. For these args, you can pass any of the following:
+                <ul>
+                    <li>User Mention (@Beta 42)</li>
+                    <li>Discord Tag (Beta 42#3979)</li>
+                    <li>Username (Beta 42)</li>
+                    <li>Nickname (Ping for Free Hugs)</li>
+                    <li>ID (196574963673595904)</li>
+                    <li>Role Mention (@Bots)</li>
+                </ul>
+                If multiple users are found, or a role has multiple users, then she will ask for who you meant.<br />
+                If no names match a user perfectly, she will attempt to find people with a similar name or nickname.<br />
+                <br />
+                Usually args of <code>'user'</code> or <code>'member'</code> are what is affected.
+            </p>
+        </div>
+
+        <a href="#top">Return to top...</a>
+
+    </article>
+
+</body>
+</html>
