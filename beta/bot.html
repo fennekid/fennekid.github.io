@@ -198,7 +198,7 @@
                 The channel is chosen based on where the command is run. If the command is used in the servers default channel, then the change applies to the whole server.<br />
                 <br />
                 If there are people who want to do so, they could also create new "language" files to give the bot an accent. 
-                For instance, I've heard word of someone wanting to make 42 less verbiose and more to the point.<br />
+                For instance, I've heard word of someone wanting to make 42 less verbose and more to the point.<br />
                 Use <code>=help language</code> to find the possible languages.
             </p>
 
@@ -249,7 +249,7 @@
                 Toggle allows server admins to selectively enable and disable commands.<br />
                 By default, all commands are enabled and must be toggled off where required.<br />
                 Commands that have been disabled can still be used by moderators and can still be queried in <code>=help</code>, 
-                however, a <code>[Disabled by server]</code> tag applied to the help message.<br />
+                however, a <code>[Disabled by server]</code> tag will be applied to the help message.<br />
                 <br />
                 Commands that have been disabled will yield a <a href="introduction.html#auth">message</a> telling the user what happened when they try to use it.<br />
                 <br />
@@ -307,7 +307,7 @@
             <code>=botban 'user'</code>
             <table class="codeblock">
                 <tr><td>&lt;mod&gt; =botban user</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have bot-banned that user. They will no longer be able to use my commands.</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; I have botbanned that user. They will no longer be able to use my commands.</td></tr>
                 <tr><td>&lt;user&gt; =tag</td></tr>
                 <tr><td class="bot-text">&lt;B 42&gt; I cannot run this command as you have been botbanned on this server.</td></tr>
                 <tr><td>&lt;user&gt; =tag</td></tr>
@@ -399,7 +399,7 @@
 
         <div id="hug" class="command">
             <h4><code>=hug</code></h4>
-            <p>What more is there to say about this one to be honest. Its a command that sends hugs~!</p>
+            <p>What more is there to say about this one to be honest. It's a command that sends hugs~!</p>
         </div>
         <hr />
 
@@ -411,18 +411,18 @@
 
             <ul>
                 <li><code>=eval</code> executes arbitrary lines of code, usually for debug reasons.</li>
-                <li><code>=traceback</code> fetches the full stacetrace of the last eval command that went wrong</li>
-                <li><code>=source</code> pastes the contents of a given method into the chat</li>
-                <li><code>=reload</code> reloads all the languages files in the bot</li>
-                <li><code>=backlog</code> recalls the last 100 actions taken by the bot, such as commands posted or anouncement cycles</li>
-                <li><code>=powermod</code> forcably gives a member in an arbitrary server the Bot Admin permission</li>
-                <li><code>=config</code> updates the bots friends list, blocked members and blocked servers</li>
-                <li><code>=uplink</code> connects 2 channels together, relaying messages between them</li>
+                <li><code>=traceback</code> fetches the full stacktrace of the last eval command that went wrong.</li>
+                <li><code>=source</code> pastes the contents of a given method into the chat.</li>
+                <li><code>=reload</code> reloads all the language files in the bot.</li>
+                <li><code>=backlog</code> recalls the last 100 actions taken by the bot, such as commands posted or announcement cycles.</li>
+                <li><code>=powermod</code> forcibly gives a member in an arbitrary server the Bot Admin permission.</li>
+                <li><code>=config</code> updates the bots friends list, blocked members and blocked servers.</li>
+                <li><code>=uplink</code> connects 2 channels together, relaying messages between them.</li>
             </ul>
 
             <p>
-                "Wait wait wait wait, =backlog? are you spying on us?!"<br />
-                Absoloutly not. All backlog stores is a channel, a username and the root command, not full commands.<br />
+                "Wait wait wait wait, =backlog? Are you spying on us?!"<br />
+                Absolutly not. All backlog stores is a channel, a username and the root command, not full commands.<br />
                 When this command is normally used, it is to check for large amounts of identical commands being spammed by single users or servers.<br />
 
                 "Also powermods? Isn't that a bit breaking?"<br />
