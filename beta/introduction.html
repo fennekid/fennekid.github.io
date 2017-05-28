@@ -28,6 +28,7 @@
                         <li><a href="#auth">Authority</a></li>
                         <li><a href="#language">Language Coverage</a></li>
                         <li><a href="#users">User Resolution</a></li>
+                        <li><a href="#tulpa">Tulpa Compliancy</a></li>
                     </ul>
                 </li>
                 <li><a href="faq.html">&#9654; Frequently Asked Questions</a></li>
@@ -221,6 +222,26 @@
                 Usually args of <code>'user'</code> or <code>'member'</code> are what is affected.
             </p>
         </div>
+        <hr />
+
+        <div id="tulpa" class="command">
+            <h4>Tulpa Compliancy</h4>
+            <p>
+                Beta 42 supports being able to process messages sent through alternate users of accounts.<br />
+                The way this works is that if a message matches a compliancy, the compliancy will be removed from the message before it is processed.<br />
+                List of current compliancies: (All resolve to "content")
+                <ul>
+                    <li><code>[command]</code></li>
+                    <li><code>[&lt;whitespace&gt;command&lt;whitespace&gt;]</code></li>
+                    <li><code>{command}</code></li>
+                    <li><code>{&lt;whitespace&gt;command&lt;whitespace&gt;}</code></li>
+                    <li><code>//command</code></li>
+                    <li><code>//&lt;whitespace&gt;command</code></li>
+                </ul>
+                Because I update the message itself, this means that the compliant version will be used for commands that rely on past messages, such as <code>=remove</code> and <code>=modlog</code>
+            </p>
+        </div>
+        <hr />
 
         <a href="#top">Return to top...</a>
 
