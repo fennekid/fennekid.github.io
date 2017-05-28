@@ -126,3 +126,16 @@
             color:#738bd7;
             background-color: rgba(115,139,215,.1);
         }
+
+        .embed{
+            background-color:#36393b;
+            color:#fff;
+            padding:8px 0;
+            border: 2px solid #34363b;
+            border-left: 5px solid #b200ff;
+            border-radius:4px;
+            display: inline-block;
+        }
+        .embed p{
+            margin:0 10px;
+        }
