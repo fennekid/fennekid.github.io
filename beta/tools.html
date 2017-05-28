@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+
+<html lang="en-gb" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta content="All about 42!" name="Description" property="og:description">
+    <title>Infobot 42</title>
+    <link rel="stylesheet" type="text/css" href="42help.css">
+</head>
+<body>
+    <aside>
+        <div class="aside-header">
+            <a href="https://discordapp.com/oauth2/authorize?client_id=196574652229877760&scope=bot&permissions=403041302">
+                Want Me? Have ME! =join <br />
+            </a>
+            You need manage server or manage roles to add bots.
+        </div>
+        <div class="aside-content">
+            <h3><a href="index.html">Home</a></h3>
+            <h3>Command Help</h3>
+            <ul class="no-bullet">
+                <li><a href="introduction.html">&#9654; Introduction</a> </li>
+                <li><a href="faq.html">&#9654; Frequently Asked Questions</a></li>
+                <li>Command Categories</li>
+                <li><a href="bot.html">&#9654; Bot</a></li>
+                <li>
+					<a href="#top">&#9660; Tools</a>
+					<ul class="no-bullet">
+						<li><a href="#remind">=remind</a></li>
+						<li><a href="#youtube">=youtube</a></li>
+						<li><a href="#archive">=archive</a></li>
+						<li><a href="#cleanme">=cleanme</a></li>
+						<li><a href="#prunecheck">prunecheck</a></li>
+						<li><a href="#afk">=afk</a></li>
+						<li><a href="#announce">=announce</a></li>
+					</ul>
+				</li>
+                <li><a href="mod.html">&#9654; Moderation</a></li>
+                <li><a href="info.html">&#9654; Information</a></li>
+                <li><a href="rng.html">&#9654; RNG</a></li>
+                <li><a href="memory.html">&#9654; Memory</a></li>
+                <li><a href="fun.html">&#9654; Fun</a></li>
+                <li><a href="nerd.html">&#9654; Nerd</a></li>
+                <li><a href="vg.html">&#9654; Video Games</a></li>
+                <li><a href="secret.html">&#9654; Secrets</a></li>
+                <li>Other Sections</li>
+                <li><a href="autofunc.html">&#9654; Automatic Functions</a></li>
+                <li><a href="yna.html">&#9654; yna Tag Scripting</a></li>
+            </ul>
+            <h3>Friends of 42</h3>
+            <ul class="no-bullet">
+                <li><a href="redditbot/index.html">&#9654; Redditbot</a></li>
+                <li><a href="pinksquid/index.html">&#9654; Pinksquid</a></li>
+                <li>&#9654; Your bot here?</li>
+            </ul>
+        </div>
+        <div class="aside-footer">
+            programmers are fueled by pizza~!<br />
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="53TDH5RCZ6QTU">
+                <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal Donate - Keep those creative juices flowing!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+            </form>
+        </div>
+    </aside>
+
+    <article>
+	    <h1 id="top">Tools category commands</h1>
+	    <p>
+		    These are just some simple commands that serve to improve quality of life on Discord.
+	    </p>
+	
+	    <hr />
+	
+	    <div id="remind" class="command">
+		    <h4><code>=remind</code> [One Per Channel]</h4>
+		    <em class="bot-text">"makes me remind you about something"</em>
+		    <p>
+			    <strong>Permission: [One Per Channel]</strong> Only one active timer can exist in a channel at any given time.<br />
+			    <br />
+			    Asks 42 to mention you after a certain amount of time has passed.<br />
+			    The <code>=cancel</code> command can be used halt any running timers.<br />
+			    Due to the way this command works, it has been artificially nerfed to only have a accuracy of &plusmn;1 minute.<br />
+			    <br />
+			    For the technically advanced who want to know why, the command works by storing a list of all the active timers and checking 
+			    if any have completed every minute or so. This allows me to dump the list to a json when the bot process ends, which is why 
+			    timers are no longer lost when the bot "crashes."
+		    </p>
+		
+		    <strong>Usage:</strong><br />
+		
+		    <code>=remind 'minutes' ['message']</code><br />
+		    <em>
+			    Minutes is the number of minutes to wait. Message is what will be sent to you.<br />
+			    There is a limit of 7 days &asymp; 10000 minutes.
+		    </em>
+		    <table class="codeblock">
+			    <tr><td>&lt;user&gt; =remind 80 "do the laundry"</td></tr>
+			    <tr><td class="bot-text">&lt;B 42&gt; ​I will notify you in 1:20. Use `=cancel` to stop the reminder.</td></tr>
+			    <tr><td>&nbsp;&nbsp;&nbsp; ~~ Time Passes ~~ </td></tr>
+			    <tr><td class="bot-text">&lt;B 42&gt; @user, you asked me to remind you to do the laundry.</td></tr>
+		    </table>
+		
+		    <code>=remind 'hh:mm' ['message']</code><br />
+		    <em>
+			    HH is the hours and MM is the minutes. Again, message is what will be sent.<br />
+			    Just as above, there is a limit of 7 days = 168 hours.
+		    </em>
+		    <table class="codeblock">
+			    <tr><td>&lt;user&gt; =remind 2:30 "check oven"</td></tr>
+			    <tr><td class="bot-text">&lt;B 42&gt; ​I will notify you in 2:30. Use `=cancel` to stop the reminder.</td></tr>
+			    <tr><td>&nbsp;&nbsp;&nbsp; ~~ Time Passes ~~ </td></tr>
+			    <tr><td class="bot-text">&lt;B 42&gt; @user, you asked me to remind you to check oven.</td></tr>
+		    </table>
+		
+		    <code>=cancel</code><br />
+		    <em>Removes your current timer in the channel.</em>
+	        <table class="codeblock">
+			    <tr><td>&lt;user&gt; =remind 20 "shower"</td></tr>
+			    <tr><td class="bot-text">&lt;B 42&gt; ​I will notify you in 0:20. Use `=cancel` to stop the reminder.</td></tr>
+			    <tr><td>&lt;user&gt; =cancel</td></tr>
+			    <tr><td class="bot-text">&lt;B 42&gt; Stopping reminder.</td></tr>
+			    <tr><td>&nbsp;&nbsp;&nbsp; ~~ Time Passes ~~ </td></tr>
+			    <tr><td>&nbsp;&nbsp;&nbsp; But there was only silence... </td></tr>
+		    </table>
+		
+	    </div>
+	    <hr />
+	
+	    <div id="youtube" class="command">
+		    <h4><code>=youtube</code> [5/60s]</h4>
+		    <em class="bot-text">"makes me search YouTube"</em>
+		    <p>
+			    This command simply searches youtube for a given search term and returns the fisrt video result.<br />
+			    This command does not return channel links or advert redirects.<br />
+			    <br />
+			    Note: 42 is based in England and uses a English IP address. Bare this in mind when searching.<br />
+			    <br />
+			    squaswin refuses to be held responsible for whatever videos the bot pulls up. That responsibility falls on the user.<br />
+			    To put it in an analogy, if a bully slaps a kid, you don't yell at the kid for crying or the kids parent for letting it happen. You yell at the bully.
+		    </p>
+		
+		    <strong>Usage:</strong><br />
+		
+		    <code>=youtube 'query'</code>
+		    <em>This command is one of the very few that does not require quotes around the query.</em>
+		    <table class="codeblock">
+			    <tr><td>&lt;user&gt; =youtube dynamix cryonix giga omega</td></tr>
+			    <tr><td class="bot-text">&lt;B 42&gt; https://www.youtube.com/watch?v=6zfcdS5Gbb0</td></tr>
+		    </table>
+	    </div>
+	    <hr />
+	
+	    <div id="archive", class="command">
+		    <h4><code>=archive</code> [1/30s]</h4>
+		    <em class="bot-text">"makes me store the most recent messages in a channel"</em>
+		    <p>
+			    This dumps the messages in a given range into a file.<br />
+			    IDs can be found by turning on Developer Mode in the appearence options. This adds a Copy ID option to the context menu.<br />
+			    <br />
+			    This command uploads a file with the results and therefore requires the bot to have Attatch Files permission.<br />
+                <br />
+                Note: this command may take a long time to run if you ask for more than ~200 messages.
+		    </p>
+		
+		    <strong>Usage:</strong><br />
+		
+		    <code>=archive ['limit']</code><br />
+		    <em>starting at the command call, limit is the number of messages to save. Defaults to 100.</em><br />
+		    <br />
+		
+		    <code>=archive 'start ID' 'limit;</code><br />
+		    <code>=archive 'limit' 'end ID'</code><br />
+		    <code>=archive 'start ID' 'end ID'</code><br />
+		    <em>
+			    IDs can be gathered with the method above. Both an ID and a limit is required for this method.<br />
+			    For all methods defined above, the maximum limit is 5000. If you are using the between ID method, it will take the first 5000.<br />
+		    </em>
+	
+	    </div>
+	    <hr />
+	
+	    <div id="cleanme" class="command">
+		    <h4><code>=cleanme</code> [1/60s]</h4>
+		    <em class="bot-text">"archives and deletes your messages"</em>
+		    <p>
+			    This command deletes any messages sent by the caller whilst also making a call to <code>=archive</code> first.<br />
+			    The archive is so that users cannot hide their spam from the mods using this command to quickly clear their tracks.
+		    </p>
+		
+		    <strong>Usage:</strong><br />
+		
+		    <code>=cleanme ['limit']</code>
+		    <em>Limit is the number of messages that will be archived and then scanned for deletions. If not given, it defaults to 100.</em>
+	    </div>
+        <hr />
+	
+	    <div id="prunecheck" class="command">
+		    <h4><code>=prunecheck</code> [Kick]</h4>
+		    <em class="bot-text">"checks how many members will be pruned"</em>
+		    <p>
+			    Story time: This command exists because one of the servers I moderated accidentally did a 30 
+			    day prune when checking how many inactive members there are. Turns out the red button means "Do it!"
+			    and the grey button cancels. Said mod assumed the red button was the back button, so prunes were had...<br />
+			    This command was created so that we never have to open the prune dialouge again.<br />
+			    <br />
+			    Criteria for a member to be removed in a prune: 
+			    <ul>
+				    <li>Has no roles other than the default role</li>
+				    <li>Has not logged into discord within the last n days</li>
+			    </ul>
+		    </p>
+		
+		    <strong>Usage:</strong>
+		
+		    <code>=prunecheck</code>
+		    <table class="codeblock">
+			    <tr><td>&lt;user&gt; =prunecheck</td></tr>
+			    <tr><td class="bot-text">&lt;B 42&gt; # Members on server: 1626</td></tr>
+			    <tr><td class="bot-text">&nbsp; [Role Members][867]</td></tr>
+			    <tr><td class="bot-text">&nbsp; [Safe Members][1305]</td></tr>
+			    <tr><td class="bot-text">&nbsp; [1 Day Prune ][321]</td></tr>
+			    <tr><td class="bot-text">&nbsp; [7 Day Prune ][213]</td></tr>
+			    <tr><td class="bot-text">&nbsp; [30 Day Prune][122]</td></tr>
+		    </table>
+	    </div>
+        <hr />
+	
+	    <div id="afk" class="command">
+            <h4><code>=afk</code> [No PM]</h4>
+            <em class="bot-text">"leaves a message for people who ping you"</em>
+            <p>
+                This tracks when you get mentioned either via direct mention or a role and then sends a message to the server.
+            </p>
+
+            <strong>Usage:</strong><br />
+
+            <code>=afk 'message'</code>
+            <em>this is another command that does not require quotes</em>
+            <table class="codeblock">
+                <tr><td>&lt;user&gt; =afk gone fishing</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; I have set your AFK message...</td></tr>
+                <tr><td>&lt;mod&gt; @user</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; user: gone fishing</td></tr>
+                <tr><td>&lt;user&gt; back</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; Welcome back user, I will stop sending your AFK message.</td></tr>
+            </table>
+
+        </div>
+        <hr />
+
+        <div id="announce" class="command">
+            <h4><code>=announce</code> [Server Manager]</h4>
+            <em class="bot-text">sets a regular repeating message</em>
+            <p>
+                This command allows the bot to take up to 3 actions in a channel:
+                <ul>
+                    <li>Send a message <strong>roughly</strong> on the hour every hour.</li>
+                    <li>Send a message <strong>roughly</strong> at midnight UTC every day.</li>
+                    <li>Perform a command <strong>roughly</strong> on the hour every hour <em>before sending the message</em>.</li>
+                </ul>
+                This allows for things like shilling active livestream marathons or creating self-purging channels.
+            </p>
+
+            <strong>Usage:</strong><br />
+
+            <code>=announce hourly 'message'</code><br />
+            <em>Sends a message every hour. Message is what to send.</em><br />
+
+            <code>=announce daily 'message'</code><br />
+            <em>Sends a message daily. Message is what to send.</em><br />
+
+            <code>=announce command 'command...'</code><br />
+            <em>Performs a command hourly. Command... is the non quoted command to use, and does not require the call character.</em>
+            <table class="codeblock">
+                <tr><td>&lt;user&gt; =announce hourly "Welcome to the server... Please type `=giveme entry` to start talking"</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; I have set your hourly message.</td></tr>
+                <tr><td>&lt;user&gt; =announce command remove all 500</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; I have set your hourly command to =remove all 500</td></tr>                
+            </table>
+
+            <code>=announce stop 'type'</code><br />
+            <em>Stops an announcement. Type is one of "hourly", "daily" or "command"</em>
+        </div>
+        <hr />
+
+        <a href="#top">Return to top.</a>
+
+
+    </article>
+
+</body>
+</html>
