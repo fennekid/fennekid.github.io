@@ -32,11 +32,18 @@
             border: 3px double black;
             width: 95%;
         }
-        tr.codeblock {
+        table.codeblock tr {
             margin: 0px 3px 0px 3px;
         }
-        td.codeblock{
+        table.codeblock td {
             border: none;
+            padding: 1px 6px;
+        }
+        table.channel-view {
+            table-layout: fixed;
+        }
+        table.channel-view td + td, table.channel-view th + th {
+            border-left: 3px double black;
         }
         .bot-text {
             color: mediumpurple;
