@@ -91,7 +91,7 @@
 
         <div id="kick" class="command">
             <h4><code>=kick</code> [Kick]</h4>
-            <em class="bot-text">"makes me kick a user"</i>
+            <i class="bot-text">"makes me kick a user"</i>
             <p>
                 This command kicks a member from the server. The member must be on the server.<br />
                 The bot requires Kick Members to use this command and cannot kick members with equal or higher standing in the role hierarchy.
@@ -106,7 +106,7 @@
 
         <div id="ban" class="command">
             <h4><code>=ban</code> [Ban]</h4>
-            <em class="bot-text">"makes me ban a user"</i>
+            <i class="bot-text">"makes me ban a user"</i>
             <p>
                 This command bans (with delete) a member on the server.<br />
                 The bot requires Ban Members to use this command and cannot ban members with equal or higher standing in the role hierarchy.
@@ -121,7 +121,7 @@
 
         <div id="softban" class="command">
             <h4><code>=softban</code> [Softban]</h4>
-            <em class="bot-text">"makes me kick a user and deletes their messages"</i>
+            <i class="bot-text">"makes me kick a user and deletes their messages"</i>
             <p>
                 <b>Permission: [Softban]</b> This command requires the caller to have <i>either</i> Ban Members <i>or</i> Kick Members and Manage Messages<br />
                 This command kicks a user and deletes all their recent messages.<br />
@@ -137,7 +137,7 @@
 
         <div id="xban" class="command">
             <h4><code>=xban</code> [Ban]</h4>
-            <em class="bot-text">"bans an ID from the server"</i>
+            <i class="bot-text">"bans an ID from the server"</i>
             <p>
                 This command is used to preemptively ban members from a server, or ban members who have left already.<br />
                 Unlike most other similar commands, this one only accepts an ID (not Discord Tag.) <br />
@@ -154,7 +154,7 @@
 
         <div id="remove" class="command">
             <h4><code>=remove</code> [Server Mod]</h4>
-            <em class="bot-text">"makes me delete messages from chat"</i>
+            <i class="bot-text">"makes me delete messages from chat"</i>
             <p>
                 This command purges messages from a channel that matches a specific criteria.<br />
                 <code>Limit</code> is number of messages that will be scanned, not removed, and defaults to 100.<br />
@@ -190,7 +190,7 @@
                 Does not delete any messages, instead removes reactions posted to all messages within the range.<br />
                 This command is slow because it scans each message individually instead of purging them all at once.
             </i><br />
-            <em class="bot-text">"Try using <code>=purge finebros</code> instead, it works the same, but is funner~!"</i><br />
+            <i class="bot-text">"Try using <code>=purge finebros</code> instead, it works the same, but is funner~!"</i><br />
 
             <code>=remove system ['limit']</code><br />
             <i>Deletes any system messages such as "Message Pinned" notifications.</i>
@@ -199,7 +199,7 @@
 
         <div id="giverole" class="command">
             <h4><code>=giverole</code> [Server Admin]</h4>
-            <em class="bot-text">"manages my role distribution system"</i>
+            <i class="bot-text">"manages my role distribution system"</i>
             <p>
                 There are currently 5 types of roles that Beta 42 can handle:
                 <ul>
@@ -320,7 +320,7 @@
 
         <div id="giveme" class="command">
             <h4><code>=giveme</code> [No PM]</h4>
-            <em class="bot-text">"lets you collect a preset role"</i>
+            <i class="bot-text">"lets you collect a preset role"</i>
             <p>
                 Givemes are set up with the <a href="#giverole">giverole</a> command.<br />
                 To recieve a giveme, a user must meet 3 requirements, all of which are set by the server admins:
@@ -344,7 +344,7 @@
 
         <div id="colourme" class="command">
             <h4><code>=colourme</code> [No PM]</h4>
-            <em class="bot-text">"gives you a preset colour"</i>
+            <i class="bot-text">"gives you a preset colour"</i>
             <p>
                 Colourmes are set up with the <a href="#giverole">giverole</a> command.<br />
                 This command is functionally identical to givemes with 2 differences.
@@ -362,7 +362,7 @@
 
         <div id="giveyou" class="command">
             <h4><code>=giveyou</code> [Server Mod]</h4>
-            <em class="bot-text">"gives a role to another user"</i>
+            <i class="bot-text">"gives a role to another user"</i>
             <p>
                 Giveroles are set up with the <a href="#giverole">giverole</a> command.<br />
                 This command allows mods who normally do not have permissions to assign roles to assign preset roles to users.<br />
@@ -381,7 +381,7 @@
 
         <div id="welcome" class="command">
             <h4><code>=welcome</code> [Server Admin]</h4>
-            <em class="bot-text">"welcomes new users"</i>
+            <i class="bot-text">"welcomes new users"</i>
             <!--Oh god not looking forward to this one...-->
             <p>
                 Welcome makes the bot take up to 3 actions when a new member joins a server. These are to send a message, assign a role and assign a bot role.<br />
@@ -479,7 +479,7 @@
 
         <div id="modlog" class="command">
             <h4><code>=modlog</code> [Server Manager]</h4>
-            <em class="bot-text">"tracks events in your server"</i>
+            <i class="bot-text">"tracks events in your server"</i>
             <p>
                 While yes it is true that audit logs have just been released and that they completely outshine the modlog, it still exists.<br />
                 The largest setback in the audit log is that logs are only kept for 90 days.<br />
@@ -623,7 +623,7 @@
 
         <div id="report" class="command">
             <h4><code>=report</code> [Active Modlog Reports]</h4>
-            <em class="bot-text">"sends a message to the modlog"</i>
+            <i class="bot-text">"sends a message to the modlog"</i>
             <p>
                 <b>Permission: [Active Modlog Reports]</b> This command requires both a modlog to exist and said modlog to have allow_reports = true.<br />
                 This command simply sends a non-anonymous report message to the modlog.<br />
@@ -641,7 +641,7 @@
 
         <div id="log" class="command">
             <h4><code>=log</code> [Active Modlog Mod]</h4>
-            <em class="bot-text">"sends a message to the modlog"</i>
+            <i class="bot-text">"sends a message to the modlog"</i>
             <p>
                 <b>Permission: [Active Modlog Mod]</b> This command requires both a modlog to exist and the caller to have any permission based auth level.<br />
                 This command sends a non-anonymous log message to the modlog.<br />
@@ -658,7 +658,7 @@
 
         <div id="blacklist" class="command">
             <h4><code>=blacklist</code> [Server Mod]</h4>
-            <em class="bot-text">"this controls my automoderation function"</i>
+            <i class="bot-text">"this controls my automoderation function"</i>
             <p>
                 This command checks for specific words and when someone sends a message containing one of said words, the message is deleted.<br />
                 Messages sent by Server Mods or any higher powers will not be hit by the blacklist.<br />
@@ -710,7 +710,7 @@
 
         <div id="spamlimit" class="command">
             <h4><code>=spamlimit</code> [Bot Admin]</h4>
-            <em class="bot-text">"makes me size limit my commands"</i>
+            <i class="bot-text">"makes me size limit my commands"</i>
             <p>
                 This command sets the bot such that outside of any preset channels, she will ensure that the amount she posts doesn't excede a certain limit.<br />
                 This line counting is applied to all messages, but the blocking affect is only applied to command calls.<br />
@@ -741,7 +741,7 @@
 
         <div id="rolestate" class="command">
             <h4><code>=rolestate</code> [Server Admin]</h4>
-            <em class="bot-text">"saves a persons roles when they leave the server"</i>
+            <i class="bot-text">"saves a persons roles when they leave the server"</i>
             <p>
                 Rolestate is a simple feature but in my oppinion, one of the strongest ones.<br />
                 When a member leaves the server, Beta 42 remembers what roles they had.<br />
@@ -766,7 +766,7 @@
 
         <div id="uplink" class="command">
             <h4><code>=uplink</code> [Owner]</h4>
-            <em class="bot-text">"makes me connect 2 servers together"</i>
+            <i class="bot-text">"makes me connect 2 servers together"</i>
             <p>
                 You may wonder why I chose to document this here and the answer is simply "transparency."<br />
                 Beta 42 has the facility to link 2 channels together through herself and then relay messages sent in one to the other.<br />
