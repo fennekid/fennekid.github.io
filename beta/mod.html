@@ -91,53 +91,53 @@
 
         <div id="kick" class="command">
             <h4><code>=kick</code> [Kick]</h4>
-            <em class="bot-text">"makes me kick a user"</em>
+            <em class="bot-text">"makes me kick a user"</i>
             <p>
                 This command kicks a member from the server. The member must be on the server.<br />
                 The bot requires Kick Members to use this command and cannot kick members with equal or higher standing in the role hierarchy.
             </p>
 
-            <strong>Usage:</strong><br />
+            <b>Usage:</b><br />
 
             <code>=kick 'member' ['message']</code><br />
-            <em>Member is who to kick, message is an optional message to be PM'd to the target before being kicked.</em>
+            <i>Member is who to kick, message is an optional message to be PM'd to the target before being kicked.</i>
         </div>
         <hr />
 
         <div id="ban" class="command">
             <h4><code>=ban</code> [Ban]</h4>
-            <em class="bot-text">"makes me ban a user"</em>
+            <em class="bot-text">"makes me ban a user"</i>
             <p>
                 This command bans (with delete) a member on the server.<br />
                 The bot requires Ban Members to use this command and cannot ban members with equal or higher standing in the role hierarchy.
             </p>
 
-            <strong>Usage:</strong><br />
+            <b>Usage:</b><br />
 
             <code>=ban 'member' ['message']</code><br />
-            <em>Member is who to ban, message is an optional message to be PM'd to the target before being banned.</em>
+            <i>Member is who to ban, message is an optional message to be PM'd to the target before being banned.</i>
         </div>
         <hr />
 
         <div id="softban" class="command">
             <h4><code>=softban</code> [Softban]</h4>
-            <em class="bot-text">"makes me kick a user and deletes their messages"</em>
+            <em class="bot-text">"makes me kick a user and deletes their messages"</i>
             <p>
-                <strong>Permission: [Softban]</strong> This command requires the caller to have <em>either</em> Ban Members <em>or</em> Kick Members and Manage Messages<br />
+                <b>Permission: [Softban]</b> This command requires the caller to have <i>either</i> Ban Members <i>or</i> Kick Members and Manage Messages<br />
                 This command kicks a user and deletes all their recent messages.<br />
                 Because the mechanic behind this is to ban (with delete) and then unban, the bot requires Ban Members. She also cannot softban members with equal or higher standing in the role hierarchy.
             </p>
 
-            <strong>Usage:</strong><br />
+            <b>Usage:</b><br />
 
             <code>=softban 'member' ['message']</code><br />
-            <em>Member is who to kick, message is an optional message to be PM'd to the target before being kicked.</em>
+            <i>Member is who to kick, message is an optional message to be PM'd to the target before being kicked.</i>
         </div>
         <hr />
 
         <div id="xban" class="command">
             <h4><code>=xban</code> [Ban]</h4>
-            <em class="bot-text">"bans an ID from the server"</em>
+            <em class="bot-text">"bans an ID from the server"</i>
             <p>
                 This command is used to preemptively ban members from a server, or ban members who have left already.<br />
                 Unlike most other similar commands, this one only accepts an ID (not Discord Tag.) <br />
@@ -145,61 +145,61 @@
                 The bot requires Ban Members.
             </p>
 
-            <strong>Usage:</strong><br />
+            <b>Usage:</b><br />
 
             <code>=xban 'ID'</code><br />
-            <em>ID is the 18-19 digit ID number of the target. This can be found by enabling developer mode and right clicking on a users name or avatar.</em>
+            <i>ID is the 18-19 digit ID number of the target. This can be found by enabling developer mode and right clicking on a users name or avatar.</i>
         </div>
         <hr />
 
         <div id="remove" class="command">
             <h4><code>=remove</code> [Server Mod]</h4>
-            <em class="bot-text">"makes me delete messages from chat"</em>
+            <em class="bot-text">"makes me delete messages from chat"</i>
             <p>
                 This command purges messages from a channel that matches a specific criteria.<br />
                 <code>Limit</code> is number of messages that will be scanned, not removed, and defaults to 100.<br />
                 (i.e. If you remove with a limit of 200 from a specific user, it might catch closer to 60 messages than 200.)<br />
                 <br />
-                All remove commands will return a small chart of who sent the messages that were deleted, or in the case of purging reactions, which reactions were most common <em>and</em> who posted them.<br />
+                All remove commands will return a small chart of who sent the messages that were deleted, or in the case of purging reactions, which reactions were most common <i>and</i> who posted them.<br />
                 <br />
                 Due to the nature of Delete Many, you cannot delete messages older than 2 weeks, and due to how the bot handles it, this means you cannot even include 2 week old messages inside the limit range at all.
             </p>
 
-            <strong>Usage:</strong><br />
+            <b>Usage:</b><br />
 
             <code>=remove all ['limit']</code><br />
-            <em>Deletes all messages in the limit regardless of what it says and who sent it.</em><br />
+            <i>Deletes all messages in the limit regardless of what it says and who sent it.</i><br />
 
             <code>=remove user 'member' [['member' ...] 'limit']</code><br />
-            <em>
+            <i>
                 Deletes messages sent by the given members. To include multiple members, you must add the limit.<br />
                 Because of how the bot selects members, supplying a role mention will not purge from members of the role and instead ask which singular member of the role to use.
-            </em><br />
+            </i><br />
 
             <code>=remove contains 'content' ['limit']</code><br />
-            <em>Deletes messages that contain a given keyword. This must be at least 3 letters long.</em><br />
+            <i>Deletes messages that contain a given keyword. This must be at least 3 letters long.</i><br />
 
             <code>=remove embeds ['limit']</code><br />
-            <em>Deletes messages that contain any embeds or attatchments. Useful for image spam.</em><br />
+            <i>Deletes messages that contain any embeds or attatchments. Useful for image spam.</i><br />
 
             <code>=remove command 'call' ['call' ...] ['limit']</code><br />
-            <em>Deletes messages that start with a given call character. This follows tulpa compliancy.</em><br />
+            <i>Deletes messages that start with a given call character. This follows tulpa compliancy.</i><br />
 
             <code>=remove reactions ['limit']</code><br />
-            <em>
+            <i>
                 Does not delete any messages, instead removes reactions posted to all messages within the range.<br />
                 This command is slow because it scans each message individually instead of purging them all at once.
-            </em><br />
-            <em class="bot-text">"Try using <code>=purge finebros</code> instead, it works the same, but is funner~!"</em><br />
+            </i><br />
+            <em class="bot-text">"Try using <code>=purge finebros</code> instead, it works the same, but is funner~!"</i><br />
 
             <code>=remove system ['limit']</code><br />
-            <em>Deletes any system messages such as "Message Pinned" notifications.</em>
+            <i>Deletes any system messages such as "Message Pinned" notifications.</i>
         </div>
         <hr />
 
         <div id="giverole" class="command">
             <h4><code>=giverole</code> [Server Admin]</h4>
-            <em class="bot-text">"manages my role distribution system"</em>
+            <em class="bot-text">"manages my role distribution system"</i>
             <p>
                 There are currently 5 types of roles that Beta 42 can handle:
                 <ul>
@@ -216,13 +216,13 @@
                 The bot requires Manage Roles and can only interract with roles that are lower in the hierarchy than her own.
             </p>
 
-            <strong>Usage:</strong><br />
+            <b>Usage:</b><br />
             <br />
 
-            <strong>Givemes:</strong><br />
+            <b>Givemes:</b><br />
 
             <code>=giverole giveme create 'name' 'role'</code><br />
-            <em>Creates a new giveme. Name is the name of the giveme (<code>=giveme 'name'</code>,) role is the role to hand out when the giveme is called.</em>
+            <i>Creates a new giveme. Name is the name of the giveme (<code>=giveme 'name'</code>,) role is the role to hand out when the giveme is called.</i>
             <table class="codeblock">
                 <tr><td>&lt;user&gt; =giverole giveme create spoilers "Spoiler Access"</td></tr>
                 <tr><td class="bot-text">&lt;B 42&gt; I have set `=giveme spoilers` to assign Spoiler Access.</td></tr>
@@ -231,18 +231,18 @@
             </table>
 
             <code>=giverole giveme delete 'name'</code><br />
-            <em>Deletes a giveme. Name is the name of the giveme to delete.</em>
+            <i>Deletes a giveme. Name is the name of the giveme to delete.</i>
             <table class="codeblock">
                 <tr><td>&lt;user&gt; =giverole giveme delete nsfw</td></tr>
                 <tr><td class="bot-text">&lt;B 42&gt; I have removed that giveme.</td></tr>                
             </table>
 
             <code>=giverole giveme require 'name' 'role'</code><br />
-            <em>
+            <i>
                 Adds a role requirement to a giveme. Name is the giveme name, role is the requirement to add.<br />
                 For a user to claim or remove a giveme, all role requirements must be met.<br />
                 The logical conclusion to this is that a giveme that requires the role it assigns becomes remove only.
-            </em>
+            </i>
             <table class="codeblock">
                 <tr><td>&lt;user&gt; =giverole giveme create roleplay "Roleplay Access"</td></tr>
                 <tr><td class="bot-text">&lt;B 42&gt; I have set `=giveme roleplay` to assign Roleplay Access.</td></tr>
@@ -251,22 +251,22 @@
             </table>
 
             <code>=giverole giveme ignore 'name' 'role'</code><br />
-            <em>
+            <i>
                 Adds a role restriction to a giveme. Name is the giveme name, role is the restriction to add.<br />
                 For a user to claim or remove a giveme, they must not have any of that givemes restricted roles.<br />
                 The logical conclusion to this is that a giveme that ignores the role it assigns becomes assign only.
-            </em>
+            </i>
             <table class="codeblock">
                 <tr><td>&lt;user&gt; =giverole giveme ignore roleplay "RP Banned"</td></tr>
                 <tr><td class="bot-text">&lt;B 42&gt; I have set `=giveme roleplay` to reject users who have RP Banned.</td></tr>
             </table>
 
             <code>=giverole giveme time 'name' 'time'</code><br />
-            <em>
+            <i>
                 Adds a age requirement to a giveme. Name is the giveme name, time is the delay period entered as <code>Xd</code>, <code>Xw</code> or <code>Xm</code> where X is the number of days, weeks or months.<br />
                 For a user to claim or remove a giveme, they must have been on the server for at least as long as the delay period.<br />
                 This can be combined with welcome roles to add a gate keeper to your server, or it can be used to assign member roles.
-            </em>
+            </i>
             <table class="codeblock">
                 <tr><td>&lt;user&gt; =giverole giveme create member "Member"</td></tr>
                 <tr><td class="bot-text">&lt;B 42&gt; I have set `=giveme member` to assign Member.</td></tr>
@@ -275,52 +275,52 @@
             </table>
             <br />
 
-            <strong>Colourmes and Giveyous:</strong><br />
+            <b>Colourmes and Giveyous:</b><br />
 
             <code>=giverole colourme create 'name' 'role'</code> and <code>=giverole giveyou create 'name' 'role'</code><br />
-            <em>Creates a new colourme/giveyou. Name is the colourme/giveyou name, role is the role to use.</em><br />
+            <i>Creates a new colourme/giveyou. Name is the colourme/giveyou name, role is the role to use.</i><br />
 
             <code>=giverole colourme delete 'name'</code> and <code>=giverole giveyou remove 'name'</code><br />
-            <em>Deletes a colourme/giveyou. Name is the colourme/giveyou name.</em><br />
+            <i>Deletes a colourme/giveyou. Name is the colourme/giveyou name.</i><br />
             <br />
 
-            <strong>Voice Roles:</strong><br />
+            <b>Voice Roles:</b><br />
 
             <code>=giverole voice bind 'channel' 'role'</code><br />
-            <em>
+            <i>
                 Binds a role to the voice channel. Channel is the voice channel name, role is the role to assign.<br />
                 This functionality can be used to give users channel keys.
-            </em>
+            </i>
             <table class="codeblock">
                 <tr><td>&lt;user&gt; =giverole voice bind 'Room 1' '&#x1f511;[1]'</td></tr>
                 <tr><td class="bot-text">&lt;B 42&gt; I have changed the bound role for Room 1 to &#x1f511;[1]</td></tr>
             </table>
 
             <code>=giverole voice unbind 'channel'</code><br />
-            <em>Removes the bound role of a channel. Channel is the voice channel name.</em><br />
+            <i>Removes the bound role of a channel. Channel is the voice channel name.</i><br />
 
             <code>=giverole voice persist 'channel'</code><br />
-            <em>Allows users to keep the voice channel role when they leave the channel. Channel is the voice channel name.</em><br />
+            <i>Allows users to keep the voice channel role when they leave the channel. Channel is the voice channel name.</i><br />
             <br />
 
-            <strong>Welcome Roles</strong><br />
-            <em>See <a href="#welcome">=welcome</a>.</em><br />
+            <b>Welcome Roles</b><br />
+            <i>See <a href="#welcome">=welcome</a>.</i><br />
 
             <code>=giverole welcome ['role']</code><br />
-            <em>Gets or sets the welcome role. Role is the role to assign, if no role is given, it fetches the current welcome role.</em><br />
+            <i>Gets or sets the welcome role. Role is the role to assign, if no role is given, it fetches the current welcome role.</i><br />
 
             <code>=giverole bots ['role']</code><br />
-            <em>Gets or sets the bot welcome role. Role is the role to assign, if no role is given, it fetches the current bot welcome role.</em><br />
+            <i>Gets or sets the bot welcome role. Role is the role to assign, if no role is given, it fetches the current bot welcome role.</i><br />
 
             <code>=giverole welcome stop</code> and <code>=giverole bots stop</code><br />
-            <em>Removes the welcome or bot welcome role.</em><br />
+            <i>Removes the welcome or bot welcome role.</i><br />
 
         </div>
         <hr />
 
         <div id="giveme" class="command">
             <h4><code>=giveme</code> [No PM]</h4>
-            <em class="bot-text">"lets you collect a preset role"</em>
+            <em class="bot-text">"lets you collect a preset role"</i>
             <p>
                 Givemes are set up with the <a href="#giverole">giverole</a> command.<br />
                 To recieve a giveme, a user must meet 3 requirements, all of which are set by the server admins:
@@ -332,19 +332,19 @@
                 You can remove a giveme role by requesting the bot to add it again.
             </p>
 
-            <strong>Usage:</strong><br />
+            <b>Usage:</b><br />
 
             <code>=giveme 'name'</code><br />
-            <em>Assigns or removes a giveme role. Name is the name of the giveme.</em>
+            <i>Assigns or removes a giveme role. Name is the name of the giveme.</i>
 
             <code>=giveme list</code><br />
-            <em>Lists the available giveme roles as well as their requirements.</em>
+            <i>Lists the available giveme roles as well as their requirements.</i>
         </div>
         <hr />
 
         <div id="colourme" class="command">
             <h4><code>=colourme</code> [No PM]</h4>
-            <em class="bot-text">"gives you a preset colour"</em>
+            <em class="bot-text">"gives you a preset colour"</i>
             <p>
                 Colourmes are set up with the <a href="#giverole">giverole</a> command.<br />
                 This command is functionally identical to givemes with 2 differences.
@@ -355,39 +355,39 @@
                 Requesting the colourme that you have already will remove the colour role you have.
             </p>
 
-            <strong>Usage:</strong><br />
-            <em>See <a href="#giveme">=giveme</a>.</em>
+            <b>Usage:</b><br />
+            <i>See <a href="#giveme">=giveme</a>.</i>
         </div>
         <hr />
 
         <div id="giveyou" class="command">
             <h4><code>=giveyou</code> [Server Mod]</h4>
-            <em class="bot-text">"gives a role to another user"</em>
+            <em class="bot-text">"gives a role to another user"</i>
             <p>
                 Giveroles are set up with the <a href="#giverole">giverole</a> command.<br />
                 This command allows mods who normally do not have permissions to assign roles to assign preset roles to users.<br />
                 Assigning a giveyou to a member who already has the role will remove it.
             </p>
 
-            <strong>Usage:</strong><br />
+            <b>Usage:</b><br />
             
             <code>=giveyou 'member' 'name'</code><br />
-            <em>Assigns or removes a member. Member is who is affected, name is the giveyou name.</em><br />
+            <i>Assigns or removes a member. Member is who is affected, name is the giveyou name.</i><br />
 
             <code>=giveyou list</code><br />
-            <em>Lists the available giveyous.</em>
+            <i>Lists the available giveyous.</i>
         </div>
         <hr />
 
         <div id="welcome" class="command">
             <h4><code>=welcome</code> [Server Admin]</h4>
-            <em class="bot-text">"welcomes new users"</em>
+            <em class="bot-text">"welcomes new users"</i>
             <!--Oh god not looking forward to this one...-->
             <p>
                 Welcome makes the bot take up to 3 actions when a new member joins a server. These are to send a message, assign a role and assign a bot role.<br />
             </p>
             <p>
-                <strong>Sending Messages</strong><br />
+                <b>Sending Messages</b><br />
                 There are 3 parts to sending a message: The destination, the content and the delay time.<br />
                 <br />
                 The destination (<code>dest</code>):
@@ -414,13 +414,13 @@
                     <tr><td class="bot-text welcome">[typing]</td><td>Send the message when they first start typing.</td></tr>
                     <tr><td class="bot-text welcome">[message]</td><td>Send the message when they first send a message.</td></tr>
                 </table>
-                The new member cache is <em>not</em> storred in a file, so if the bot suffers a crash, outage or other reason to restart herself, the list of new members will be reset.<br />
+                The new member cache is <i>not</i> storred in a file, so if the bot suffers a crash, outage or other reason to restart herself, the list of new members will be reset.<br />
                 This basically means that if new members don't type until the bot has crashed, they will not recieve a welcome message.<br />
                 Because of this, if you are using destn=owner, it is advised to have wait=instant.<br />
                 <br />
             </p>
             <p>
-                <strong>Assigning Roles</strong><br />
+                <b>Assigning Roles</b><br />
                 There is only 1 option here.<br />
                 <br />
                 The role (<code>role</code>):
@@ -434,7 +434,7 @@
                 <br />
             </p>
             <p>
-                <strong>Handling Bots</strong><br />
+                <b>Handling Bots</b><br />
                 There are facilities to treat new bots differently to new users-- <span class="bot-text">That's probably racist or someth--</span> shut up 42...<br />
                 There are 2. One for silencing the message portion and one for changing how roles are treated.<br />
                 <br />
@@ -454,10 +454,10 @@
                 <br />
             </p>
 
-            <strong>Usage:</strong><br />
+            <b>Usage:</b><br />
 
             <code>=welcome 'type' 'option'</code><br />
-            <em>Sets the specific part of the welcome message. Type is the typename (monospace above), option is the item from the list</em>
+            <i>Sets the specific part of the welcome message. Type is the typename (monospace above), option is the item from the list</i>
             <table class="codeblock">
                 <tr><td>&lt;user&gt; =welcome dest server</td></tr>
                 <tr><td class="bot-text">&lt;B 42&gt; I have changed the welcome dest to **Send to the default channel**</td></tr>
@@ -472,36 +472,36 @@
             </table>
 
             <code>=welcome info</code><br />
-            <em>Posts the current status of the servers as well as what commands to run to disable each feature.</em>
+            <i>Posts the current status of the servers as well as what commands to run to disable each feature.</i>
 
         </div>
         <hr />
 
         <div id="modlog" class="command">
             <h4><code>=modlog</code> [Server Manager]</h4>
-            <em class="bot-text">"tracks events in your server"</em>
+            <em class="bot-text">"tracks events in your server"</i>
             <p>
                 While yes it is true that audit logs have just been released and that they completely outshine the modlog, it still exists.<br />
                 The largest setback in the audit log is that logs are only kept for 90 days.<br />
-                The modlog exists as a kind of pseudo-audit log. It can't see <em>who</em> does something, but it can track when things are done.<br />
+                The modlog exists as a kind of pseudo-audit log. It can't see <i>who</i> does something, but it can track when things are done.<br />
                 ... Well... It actually handles more than the audit log.<br />
                 <br />
                 The bot requires Manage Channels as it can create a new channel if required.
             </p>
 
-            <strong>Usage:</strong><br />
+            <b>Usage:</b><br />
 
             <code>=modlog</code><br />
-            <em>Creates a new channel with a default topic and assigns it as the modlog.</em><br />
+            <i>Creates a new channel with a default topic and assigns it as the modlog.</i><br />
 
             <code>=modlog here</code><br />
-            <em>Moves the modlog into the channel the command is called in. The topic will remain unchanged.</em><br />
+            <i>Moves the modlog into the channel the command is called in. The topic will remain unchanged.</i><br />
 
             <code>=modlog stop</code><br />
-            <em>Stops posting to the modlog. The channel will not be deleted.</em><br />
+            <i>Stops posting to the modlog. The channel will not be deleted.</i><br />
             <br />
 
-            <strong>The channel topic:</strong><br />
+            <b>The channel topic:</b><br />
             <p>
                 All the configuration for the modlog is done inside the channel topic by setting different variables, for example <code>member_join = true</code><br />
                 If you have other bots in the channel that use the topic for config, you can start the line with "42" <code>42 member_join = true</code><br />
@@ -623,42 +623,42 @@
 
         <div id="report" class="command">
             <h4><code>=report</code> [Active Modlog Reports]</h4>
-            <em class="bot-text">"sends a message to the modlog"</em>
+            <em class="bot-text">"sends a message to the modlog"</i>
             <p>
-                <strong>Permission: [Active Modlog Reports]</strong> This command requires both a modlog to exist and said modlog to have allow_reports = true.<br />
+                <b>Permission: [Active Modlog Reports]</b> This command requires both a modlog to exist and said modlog to have allow_reports = true.<br />
                 This command simply sends a non-anonymous report message to the modlog.<br />
                 The command call is instantly deleted to protect the people who make reports.<br />
                 This command can be used to send tips off to the moderators of the server if they arent accepting PMs.
             </p>
 
-            <strong>Usage:</strong><br />
+            <b>Usage:</b><br />
 
             <code>=report 'message'</code>
-            <em>Message is the message to send.</em>
+            <i>Message is the message to send.</i>
 
         </div>
         <hr />
 
         <div id="log" class="command">
             <h4><code>=log</code> [Active Modlog Mod]</h4>
-            <em class="bot-text">"sends a message to the modlog"</em>
+            <em class="bot-text">"sends a message to the modlog"</i>
             <p>
-                <strong>Permission: [Active Modlog Mod]</strong> This command requires both a modlog to exist and the caller to have any permission based auth level.<br />
+                <b>Permission: [Active Modlog Mod]</b> This command requires both a modlog to exist and the caller to have any permission based auth level.<br />
                 This command sends a non-anonymous log message to the modlog.<br />
                 The command call is instantly deleted <del>because when squas was updating <code>=log</code> he accidentally hit this command first instead.</del><br />
                 This command can be used to add reasons as to why certain things happened, like members being banned or roles being updated.
             </p>
 
-            <strong>Usage:</strong>
+            <b>Usage:</b>
 
             <code>=log 'message'</code>
-            <em>Message is the message to send.</em>
+            <i>Message is the message to send.</i>
         </div>
         <hr />
 
         <div id="blacklist" class="command">
             <h4><code>=blacklist</code> [Server Mod]</h4>
-            <em class="bot-text">"this controls my automoderation function"</em>
+            <em class="bot-text">"this controls my automoderation function"</i>
             <p>
                 This command checks for specific words and when someone sends a message containing one of said words, the message is deleted.<br />
                 Messages sent by Server Mods or any higher powers will not be hit by the blacklist.<br />
@@ -694,23 +694,23 @@
             </div>
 
             <br />
-            <strong>Usage:</strong><br />
+            <b>Usage:</b><br />
 
             <code>=blacklist add 'term'</code><br />
-            <em>Adds a new term to the blacklist. Teem is what to add.</em><br />
+            <i>Adds a new term to the blacklist. Teem is what to add.</i><br />
 
             <code>=blacklist remove</code><br />
-            <em>Removes an item from the blacklist. This command is semi-interractive</em><br />
+            <i>Removes an item from the blacklist. This command is semi-interractive</i><br />
 
             <code>=blacklist list</code><br />
-            <em>Lists all the words on the blacklist.</em>
+            <i>Lists all the words on the blacklist.</i>
 
         </div>
         <hr />
 
         <div id="spamlimit" class="command">
             <h4><code>=spamlimit</code> [Bot Admin]</h4>
-            <em class="bot-text">"makes me size limit my commands"</em>
+            <em class="bot-text">"makes me size limit my commands"</i>
             <p>
                 This command sets the bot such that outside of any preset channels, she will ensure that the amount she posts doesn't excede a certain limit.<br />
                 This line counting is applied to all messages, but the blocking affect is only applied to command calls.<br />
@@ -720,28 +720,28 @@
                 Due to how lines are counted (number of newline characters in the content + 1), message that consist solely of embeds are only counted as one line no matter how big.<br />
                 Because every message adds to the line count, messages alerting users they have reached the spamlimit are counted towards the spamlimit<br />
                 <br />
-                To use the spamlimit function, you <em>must</em> assign at least one bot channel.
+                To use the spamlimit function, you <i>must</i> assign at least one bot channel.
             </p>
 
-            <strong>Usage:</strong>
+            <b>Usage:</b>
             
             <code>=spamlimit channels '#channel' [...]</code><br />
-            <em>
+            <i>
                 Changes the defined bot channels. #channel is the mention of the channel to use. You can use multiple mentions.<br />
                 This automatically starts tracking spamlimit with the default limits of 10 lines every 30 seconds.
-            </em><br />
+            </i><br />
 
             <code>=spamlimit limit 'lines' ['cooldown']</code><br />
-            <em>Sets the maximum number of lines the bot can send. Lines is the number of lines before stopping, cooldown is the seconds for those lines to ware off, if ommitted, the value is unchanged.</em><br />
+            <i>Sets the maximum number of lines the bot can send. Lines is the number of lines before stopping, cooldown is the seconds for those lines to ware off, if ommitted, the value is unchanged.</i><br />
 
             <code>=spamlimit stop</code><br />
-            <em>Stops counting lines.</em>
+            <i>Stops counting lines.</i>
         </div>
         <hr />
 
         <div id="rolestate" class="command">
             <h4><code>=rolestate</code> [Server Admin]</h4>
-            <em class="bot-text">"saves a persons roles when they leave the server"</em>
+            <em class="bot-text">"saves a persons roles when they leave the server"</i>
             <p>
                 Rolestate is a simple feature but in my oppinion, one of the strongest ones.<br />
                 When a member leaves the server, Beta 42 remembers what roles they had.<br />
@@ -753,27 +753,27 @@
                 Especially more useful for timed roles as members who leave do not need to wait again for the timer unless they want to remove the role.
             </p>
 
-            <strong>Usage:</strong><br />
+            <b>Usage:</b><br />
 
             <code>=rolestate</code><br />
-            <em>
+            <i>
                 Enables or disables the rolestate. The bot will ask for confirmation.<br />
                 Disabling rolestate will delete all saved data for the server.
-            </em>
+            </i>
 
         </div>
         <hr />
 
         <div id="uplink" class="command">
             <h4><code>=uplink</code> [Owner]</h4>
-            <em class="bot-text">"makes me connect 2 servers together"</em>
+            <em class="bot-text">"makes me connect 2 servers together"</i>
             <p>
                 You may wonder why I chose to document this here and the answer is simply "transparency."<br />
                 Beta 42 has the facility to link 2 channels together through herself and then relay messages sent in one to the other.<br />
                 Ideally I would never need to use this command and a lot of the time, I can solve problems by assigning an ambassador with <a href="bot.html#owner">powermod</a>.<br />
                 Sometimes I don't know anyone on the server though, and this is when this command comes in useful.<br />
                 <br />
-                From your side, you will see something like <span class="bot-text">"This channel has been uplinked with <strong>Kiwi Hangout#ishinomoris-lab</strong>..."</span> This means that the channel you are in has been uplinked.<br />
+                From your side, you will see something like <span class="bot-text">"This channel has been uplinked with <b>Kiwi Hangout#ishinomoris-lab</b>..."</span> This means that the channel you are in has been uplinked.<br />
                 At the end of the interraction, you will see <span class="bot-text">"Ulpink closed..."</span> This means that no more messages will be sent in either direction.<br />
                 <br />
             </p>

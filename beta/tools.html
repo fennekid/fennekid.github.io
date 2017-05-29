@@ -75,9 +75,9 @@
 	
 	    <div id="remind" class="command">
 		    <h4><code>=remind</code> [One Per Channel]</h4>
-		    <em class="bot-text">"makes me remind you about something"</em>
+		    <em class="bot-text">"makes me remind you about something"</i>
 		    <p>
-			    <strong>Permission: [One Per Channel]</strong> Only one active timer can exist in a channel at any given time.<br />
+			    <b>Permission: [One Per Channel]</b> Only one active timer can exist in a channel at any given time.<br />
 			    <br />
 			    Asks 42 to mention you after a certain amount of time has passed.<br />
 			    The <code>=cancel</code> command can be used halt any running timers.<br />
@@ -88,13 +88,13 @@
 			    timers are no longer lost when the bot "crashes."
 		    </p>
 		
-		    <strong>Usage:</strong><br />
+		    <b>Usage:</b><br />
 		
 		    <code>=remind 'minutes' ['message']</code><br />
-		    <em>
+		    <i>
 			    Minutes is the number of minutes to wait. Message is what will be sent to you.<br />
 			    There is a limit of 7 days &asymp; 10000 minutes.
-		    </em>
+		    </i>
 		    <table class="codeblock">
 			    <tr><td>&lt;user&gt; =remind 80 "do the laundry"</td></tr>
 			    <tr><td class="bot-text">&lt;B 42&gt; ​I will notify you in 1:20. Use `=cancel` to stop the reminder.</td></tr>
@@ -103,10 +103,10 @@
 		    </table>
 		
 		    <code>=remind 'hh:mm' ['message']</code><br />
-		    <em>
+		    <i>
 			    HH is the hours and MM is the minutes. Again, message is what will be sent.<br />
 			    Just as above, there is a limit of 7 days = 168 hours.
-		    </em>
+		    </i>
 		    <table class="codeblock">
 			    <tr><td>&lt;user&gt; =remind 2:30 "check oven"</td></tr>
 			    <tr><td class="bot-text">&lt;B 42&gt; ​I will notify you in 2:30. Use `=cancel` to stop the reminder.</td></tr>
@@ -115,7 +115,7 @@
 		    </table>
 		
 		    <code>=cancel</code><br />
-		    <em>Removes your current timer in the channel.</em>
+		    <i>Removes your current timer in the channel.</i>
 	        <table class="codeblock">
 			    <tr><td>&lt;user&gt; =remind 20 "shower"</td></tr>
 			    <tr><td class="bot-text">&lt;B 42&gt; ​I will notify you in 0:20. Use `=cancel` to stop the reminder.</td></tr>
@@ -130,7 +130,7 @@
 	
 	    <div id="youtube" class="command">
 		    <h4><code>=youtube</code> [5/60s]</h4>
-		    <em class="bot-text">"makes me search YouTube"</em>
+		    <em class="bot-text">"makes me search YouTube"</i>
 		    <p>
 			    This command simply searches youtube for a given search term and returns the fisrt video result.<br />
 			    This command does not return channel links or advert redirects.<br />
@@ -141,10 +141,10 @@
 			    To put it in an analogy, if a bully slaps a kid, you don't yell at the kid for crying or the kids parent for letting it happen. You yell at the bully.
 		    </p>
 		
-		    <strong>Usage:</strong><br />
+		    <b>Usage:</b><br />
 		
 		    <code>=youtube 'query'</code>
-		    <em>This command is one of the very few that does not require quotes around the query.</em>
+		    <i>This command is one of the very few that does not require quotes around the query.</i>
 		    <table class="codeblock">
 			    <tr><td>&lt;user&gt; =youtube dynamix cryonix giga omega</td></tr>
 			    <tr><td class="bot-text">&lt;B 42&gt; https://www.youtube.com/watch?v=6zfcdS5Gbb0</td></tr>
@@ -154,7 +154,7 @@
 	
 	    <div id="archive", class="command">
 		    <h4><code>=archive</code> [1/30s]</h4>
-		    <em class="bot-text">"makes me store the most recent messages in a channel"</em>
+		    <em class="bot-text">"makes me store the most recent messages in a channel"</i>
 		    <p>
 			    This dumps the messages in a given range into a file.<br />
 			    IDs can be found by turning on Developer Mode in the appearence options. This adds a Copy ID option to the context menu.<br />
@@ -164,41 +164,41 @@
                 Note: this command may take a long time to run if you ask for more than ~200 messages.
 		    </p>
 		
-		    <strong>Usage:</strong><br />
+		    <b>Usage:</b><br />
 		
 		    <code>=archive ['limit']</code><br />
-		    <em>starting at the command call, limit is the number of messages to save. Defaults to 100.</em><br />
+		    <i>starting at the command call, limit is the number of messages to save. Defaults to 100.</i><br />
 		    <br />
 		
 		    <code>=archive 'start ID' 'limit;</code><br />
 		    <code>=archive 'limit' 'end ID'</code><br />
 		    <code>=archive 'start ID' 'end ID'</code><br />
-		    <em>
+		    <i>
 			    IDs can be gathered with the method above. Both an ID and a limit is required for this method.<br />
 			    For all methods defined above, the maximum limit is 5000. If you are using the between ID method, it will take the first 5000.<br />
-		    </em>
+		    </i>
 	
 	    </div>
 	    <hr />
 	
 	    <div id="cleanme" class="command">
 		    <h4><code>=cleanme</code> [1/60s]</h4>
-		    <em class="bot-text">"archives and deletes your messages"</em>
+		    <em class="bot-text">"archives and deletes your messages"</i>
 		    <p>
 			    This command deletes any messages sent by the caller whilst also making a call to <code>=archive</code> first.<br />
 			    The archive is so that users cannot hide their spam from the mods using this command to quickly clear their tracks.
 		    </p>
 		
-		    <strong>Usage:</strong><br />
+		    <b>Usage:</b><br />
 		
 		    <code>=cleanme ['limit']</code>
-		    <em>Limit is the number of messages that will be archived and then scanned for deletions. If not given, it defaults to 100.</em>
+		    <i>Limit is the number of messages that will be archived and then scanned for deletions. If not given, it defaults to 100.</i>
 	    </div>
         <hr />
 	
 	    <div id="prunecheck" class="command">
 		    <h4><code>=prunecheck</code> [Kick]</h4>
-		    <em class="bot-text">"checks how many members will be pruned"</em>
+		    <em class="bot-text">"checks how many members will be pruned"</i>
 		    <p>
 			    Story time: This command exists because one of the servers I moderated accidentally did a 30 
 			    day prune when checking how many inactive members there are. Turns out the red button means "Do it!"
@@ -212,7 +212,7 @@
 			    </ul>
 		    </p>
 		
-		    <strong>Usage:</strong>
+		    <b>Usage:</b>
 		
 		    <code>=prunecheck</code>
 		    <table class="codeblock">
@@ -229,15 +229,15 @@
 	
 	    <div id="afk" class="command">
             <h4><code>=afk</code> [No PM]</h4>
-            <em class="bot-text">"leaves a message for people who ping you"</em>
+            <em class="bot-text">"leaves a message for people who ping you"</i>
             <p>
                 This tracks when you get mentioned either via direct mention or a role and then sends a message to the server.
             </p>
 
-            <strong>Usage:</strong><br />
+            <b>Usage:</b><br />
 
             <code>=afk 'message'</code>
-            <em>this is another command that does not require quotes</em>
+            <i>this is another command that does not require quotes</i>
             <table class="codeblock">
                 <tr><td>&lt;user&gt; =afk gone fishing</td></tr>
                 <tr><td class="bot-text">&lt;B 42&gt; I have set your AFK message...</td></tr>
@@ -252,27 +252,27 @@
 
         <div id="announce" class="command">
             <h4><code>=announce</code> [Server Manager]</h4>
-            <em class="bot-text">sets a regular repeating message</em>
+            <em class="bot-text">sets a regular repeating message</i>
             <p>
                 This command allows the bot to take up to 3 actions in a channel:
                 <ul>
-                    <li>Send a message <strong>roughly</strong> on the hour every hour.</li>
-                    <li>Send a message <strong>roughly</strong> at midnight UTC every day.</li>
-                    <li>Perform a command <strong>roughly</strong> on the hour every hour <em>before sending the message</em>.</li>
+                    <li>Send a message <b>roughly</b> on the hour every hour.</li>
+                    <li>Send a message <b>roughly</b> at midnight UTC every day.</li>
+                    <li>Perform a command <b>roughly</b> on the hour every hour <i>before sending the message</i>.</li>
                 </ul>
                 This allows for things like shilling active livestream marathons or creating self-purging channels.
             </p>
 
-            <strong>Usage:</strong><br />
+            <b>Usage:</b><br />
 
             <code>=announce hourly 'message'</code><br />
-            <em>Sends a message every hour. Message is what to send.</em><br />
+            <i>Sends a message every hour. Message is what to send.</i><br />
 
             <code>=announce daily 'message'</code><br />
-            <em>Sends a message daily. Message is what to send.</em><br />
+            <i>Sends a message daily. Message is what to send.</i><br />
 
             <code>=announce command 'command...'</code><br />
-            <em>Performs a command hourly. Command... is the non quoted command to use, and does not require the call character.</em>
+            <i>Performs a command hourly. Command... is the non quoted command to use, and does not require the call character.</i>
             <table class="codeblock">
                 <tr><td>&lt;user&gt; =announce hourly "Welcome to the server... Please type `=giveme entry` to start talking"</td></tr>
                 <tr><td class="bot-text">&lt;B 42&gt; I have set your hourly message.</td></tr>
@@ -281,7 +281,7 @@
             </table>
 
             <code>=announce stop 'type'</code><br />
-            <em>Stops an announcement. Type is one of "hourly", "daily" or "command"</em>
+            <i>Stops an announcement. Type is one of "hourly", "daily" or "command"</i>
         </div>
         <hr />
 
