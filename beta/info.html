@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+
+<html lang="en-gb" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta content="All about 42!" name="Description" property="og:description">
+    <title>Infobot 42</title>
+    <link rel="stylesheet" type="text/css" href="42help.css">
+</head>
+<body>
+    <aside>
+        <div class="aside-header">
+            <a href="https://discordapp.com/oauth2/authorize?client_id=196574652229877760&scope=bot&permissions=403041302">
+                Want Me? Have ME! =join <br />
+            </a>
+            You need manage server or manage roles to add bots.
+        </div>
+        <div class="aside-content">
+            <h3><a href="index.html">Home</a></h3>
+            <h3>Command Help</h3>
+            <ul class="no-bullet">
+                <li><a href="introduction.html">&#9654; Introduction</a></li>
+                <li><a href="faq.html">&#9654; Frequently Asked Questions</a></li>
+                <li>Command Categories</li>
+                <li><a href="bot.html">&#9654; Bot</a></li>
+                <li><a href="tools.html">&#9654; Tools</a></li>
+                <li><a href="mod.html">&#9654; Moderation</a></li>
+                <li>
+                    <a href="#top">&#9660; Information</a>
+                    <ul class="no-bullet">
+                        <li><a href="#info">=info</a></li>
+                        <li><a href="#avy">=avy</a></li>
+                        <li><a href="#perms">=perms</a></li>
+                        <li><a href="#define">=define</a></li>
+                        <li><a href="#now">=now</a></li>
+                        <li><a href="#currency">=currency</a></li>
+                        <li><a href="#discrim">=discrim</a></li>
+                        <li><a href="#msgcoung">=msgcount</a></li>
+                        <li><a href="#timetravel">=timetravel</a></li>
+                    </ul>
+                </li>
+                <li><a href="rng.html">&#9654; RNG</a></li>
+                <li><a href="memory.html">&#9654; Memory</a></li>
+                <li><a href="fun.html">&#9654; Fun</a></li>
+                <li><a href="nerd.html">&#9654; Nerd</a></li>
+                <li><a href="vg.html">&#9654; Video Games</a></li>
+                <li><a href="secret.html">&#9654; Secrets</a></li>
+                <li>Other Sections</li>
+                <li><a href="autofunc.html">&#9654; Automatic Functions</a></li>
+                <li><a href="yna.html">&#9654; yna Tag Scripting</a></li>
+            </ul>
+            <h3>Friends of 42</h3>
+            <ul class="no-bullet">
+                <li><a href="redditbot/index.html">&#9654; Redditbot</a></li>
+                <li><a href="pinksquid/index.html">&#9654; Pinksquid</a></li>
+                <li>&#9654; Your bot here?</li>
+            </ul>
+        </div>
+        <div class="aside-footer">
+            programmers are fueled by pizza~!<br />
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="53TDH5RCZ6QTU">
+                <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal Donate - Keep those creative juices flowing!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+            </form>
+        </div>
+    </aside>
+
+    <article>
+        <h1 id="top">Information Category Commands</h1>
+        <p>
+            These are commands that are for fetching general information, either about something in Discord or something else.
+        </p>
+
+        <hr />
+
+        <div id="info" class="command">
+            <h4><code>=info</code> [No PM]</h4>
+            <i class="bot-text">"makes me tell you a whole bunch of cool stats and info"</i>
+            <p>
+                As 42 says above, this command just fetches a set of data, ranging from a user's name and ID, to when they joined the server and how many tags they have.
+            </p>
+
+            <b>Usage:</b><br />
+
+            <code>=info [user ['member']]</code><br />
+            <i>
+                Fetches info on a member of the server. If no member is given, it takes yourself.<br />
+                Data fields are:
+            </i>
+            <ul style="font-style:italic">
+                <li>Name and Discriminator</li>
+                <li>ID</li>
+                <li>Account creation date</li>
+                <li>Roles and Colour</li>
+                <li>Server join date</li>
+                <li>Server join score and member count</li>
+                <li>"Playing" status</li>
+                <li>Tag count</li>
+                <li>Last seen at</li>
+            </ul>
+            <i>Last seen is the last message that the user sent in the server assuming one exists in the bot's message deque.</i><br />
+            <br />
+
+            <code>=info server</code><br />
+            <i>
+                Fetches info about the server as a whole.<br />
+                Data fields are:
+            </i>
+            <ul style="font-style:italic">
+                <li>Name and ID</li>
+                <li>Creation time</li>
+                <li>Owner</li>
+                <li>Channel count</li>
+                <li>Member count</li>
+                <li>Member statuses</li>
+                <li>Spammiest user</li>
+                <li>Loudest channel</li>
+                <li>Newest member</li>
+                <li>Bots</li>
+                <li>42's join time</li>
+                <li>Welcome status</li>
+                <li>Total tags</li>
+                <li>Emojis</li>
+            </ul>
+            <i>Spammiest user and loudest channel are the member and channel with the most messages in the deque.</i><br />
+            <br />
+
+            <code>=info 42</code><br />
+            <i class="bot-text">This fetches information about myself~!</i><br />
+            <i>Data fields are:</i>
+            <ul style="font-style:italic">
+                <li>42's ID</li>
+                <li>Number of commands</li>
+                <li>Uptime</li>
+                <li>Total tags</li>
+                <li>Total command usages</li>
+                <li>Total servers</li>
+                <li>Total unique users</li>
+                <li>Total channels</li>
+                <li>Current response time*</li>
+            </ul>
+            <i>*response time does not mean ping. This is the time it takes for the bot to:</i>
+            <ol style="font-style:italic">
+                <li>Recieve the message</li>
+                <li>Process the content</li>
+                <li>Send a message back</li>
+            </ol>
+            <br />
+
+            <code>=info role 'rolename'</code>
+            <i>
+                Gets information about a role. Rolename is the name of the role to query.<br />
+                Data fields are:
+            </i>
+            <ul style="font-style:italic">
+                <li>Name and ID</li>
+                <li>Hierarchy position</li>
+                <li>Colour</li>
+                <li>Notable permissions</li>
+                <li>Member count</li>
+                <li>Secret channel access</li>
+            </ul>
+            <br />
+
+            <code>=info emoji ':emoji:'</code><br />
+            <i>
+                Gets information about an emoji. Emoji is the resolved emoji to use.<br />
+                Only works with custom emoji and the bot does not need to be on the server.<br />
+                Data fields are:
+            </i>
+            <ul style="font-style:italic">
+                <li>Name and ID</li>
+                <li>Containing servers</li>
+                <li>Full resolution image</li>
+            </ul>
+            <br />
+
+            <code>=info world</code><br />
+            <i>Fetches the server awards of all the servers the bot is on.</i><br />
+            <i class="bot-text">
+                Please don't spam this command... It takes me a long time to gather all the data and if you do the command too many times, it grinds me to a halt<br />
+                Which means nobody gets to use any of my functions. :&lt;
+            </i><br />
+            <i>Data fields are:</i>
+            <ul style="font-style:italic">
+                <li>Total server count</li>
+                <li>Largest server (members)</li>
+                <li>Largest server (channels)</li>
+                <li>Lowest and highest members per channel ratio</li>
+                <li>Most members in voice chat</li>
+                <li>Most recent messages</li>
+                <li>Most tags per member</li>
+                <li>Most messages sent by the bot</li>
+                <li>Most common command</li>
+                <li>Global member stats</li>
+                <li>Global member statuses</li>
+                <li>Total bot count</li>
+            </ul>
+
+        </div>
+        <hr />
+
+        <div id="avy" class="command">
+            <h4><code>=avy</code></h4>
+            <i class="bot-text">"lets me get the avatar of a user"</i>
+            <p>
+                This returns the avatar of a user in either .webp or .gif format.<br />
+                If used in a PM, it will only recall the users avatar.
+            </p>
+
+            <b>Usage:</b><br />
+
+            <code>=avy ['member']</code><br />
+            <i>Member is the name of the person who's avatar to get. If no member is supplied, it fetches your own avatar.</i>
+        </div>
+        <hr />
+
+        <div id="perms" class="command">
+            <h4><code>=perms</code></h4>
+            <i class="bot-text">"gets your channel permissions"</i>
+            <p>
+                This command resolves the permissions of a given user in the current channel.<br />
+                Like <code><a href="bot.html#check">=check</a></code>, this command uses diff syntax highlighting.
+                <ul>
+                    <li class="diff-added">Yellow lines (that start with a +) means a permission the user has</li>
+                    <li class="diff-removed">Red lines (that start with a -) means a permission the user does not have</li>
+                </ul>
+            </p>
+
+            <b>Usage:</b><br />
+
+            <code>=perms ['member']</code><br />
+            <i>Member is the member to query. If no member is given then yourself is used.</i>
+            <table class="codeblock">
+                <tr><td>&lt;user&gt; =perms "Beta 42"</td></tr>
+                <tr><td class="bot-text">&lt;B 42&gt; Permissions for Beta 42#3979:</td></tr>
+                <tr><td class="diff-added">&nbsp;     + Add Reactions</td></tr>
+                <tr><td class="diff-removed">&nbsp;   - Administrator</td></tr>
+                <tr><td class="diff-added">&nbsp;     + Attach Files</td></tr>
+                <tr><td class="bot-text">&nbsp;       ...</td></tr>
+                <tr><td class="diff-added">&nbsp;     + View Audit Logs</td></tr>
+            </table>
+        </div>
+        <hr />
+
+        <div id="define" class="command">
+            <h4><code>=define</code> [2/15s]</h4>
+            <i class="bot-text">"makes me define a word for you"</i>
+            <p>
+                This command attempts to find the definition of a word inside the dictionary used by the PyDictionary module.<br />
+                You may notice sections of descriptions missing (most notably after an open bracket,) but I have no idea what causes this...
+            </p>
+
+            <b>Usage:</b><br />
+
+            <code>=define 'query'</code><br />
+            <i>Defines via PyDictionary. Query is the word to define.</i><br />
+
+            <code>=define urban 'query'</code><br />
+            <i>Defines via UrbanDictionary. Query is the word to define.</i><br />
+            <i class="bot-text">You can also use <code>=ud 'query'</code> as a shortcut~!</i>
+        </div>
+        <hr />
+
+        <div id="now" class="command">
+            <h4><code>=now</code></h4>
+            <i class="bot-text">"makes me tell you the current time"</i>
+            <p>
+                The timezones used in this command are selected based on the most popular timezones users have set in profiles.<br />
+                UTC, Europe/London, US/Pacific and Asia/Kuala_Lumpur will all appear by default, then 6 more timezones will be chosen.<br />
+                The bottom of the list will also display the current date in UTC, the Epoch/Unix timestamp and a potential snowflake ID.<br />
+                The colour is determined by using the same method as in <a href="mod.html#welcome">welcome's newcol role</a>, and is described in the <a href="nerd.html#mycol">mycol</a> docs.
+            </p>
+
+            <b>Usage:</b><br />
+
+            <code>=now</code><br />
+        </div>
+        <hr />
+
+        <div id="currency" class="command">
+            <h4><code>=currency</code></h4>
+            <i class="bot-text">"makes me convert between different currencies"</i>
+            <p>
+                This command uses the Currency API to quickly convert between different currencies.<br />
+                However it is limited to only 38 currencies.
+            </p>
+            <table style="margin-left:3em;">
+                <tr><td>ARS</td><td>AUD</td><td>BRL</td><td>BTC</td><td>CAD</td><td>CHF</td><td>CLP</td><td>CNY</td></tr>
+                <tr><td>CRK</td><td>DKK</td><td>EUR</td><td>FJD</td><td>GBP</td><td>HKD</td><td>HNL</td><td>HUF</td></tr>
+                <tr><td>IDR</td><td>ILS</td><td>INR</td><td>ISK</td><td>JPY</td><td>KRW</td><td>MXN</td><td>MYR</td></tr>
+                <tr><td>NOK</td><td>NZD</td><td>PHP</td><td>PKR</td><td>PLN</td><td>RUB</td><td>SEK</td><td>SGD</td></tr>
+                <tr><td>THB</td><td>TRY</td><td>TWD</td><td>USD</td><td>VND</td><td>ZAR</td><td><td></td><td></td></tr>
+            </table>
+            <p>
+                When converting, conversions to GBP, USD, EUR and JPY will always be shown
+            </p>
+
+            <b>Usage:</b><br />
+
+            <code>=currency 'value' 'FROM' ['TO']</code><br />
+            <i>Value is the amount to convert. FROM and TO are the 3 letter codes from the list above. If TO is given, it is added to the list of conversions to make.</i><br />
+
+            <code>=currency list</code>
+            <i>Lists the recognised currencies.</i>
+
+        </div>
+        <hr />
+
+        <div id="discrim" class="command">
+            <h4><code>=descrim</code></h4>
+            <i class="bot-text">"makes me find users with the same discriminator"</i>
+            <p>
+                This makes the bot search all your servers for users who have a given discriminator.<br />
+                This can be used to force a username clash and subsequently change your own discrim.
+            </p>
+
+            <b>Usage:</b><br />
+
+            <code>=discrim ['0000']</code><br />
+            <i>0000 is the full 4 digit discrim to take. If not given, your own is used.</i>
+        </div>
+        <hr />
+
+        <div id="msgcount" class="codeblock">
+            <h4><code>=msgcount</code> [Bot Admin]</h4>
+            <i class="bot-text">"makes me generate a list of authors in this channel"</i>
+            <p>
+                This scans the last 250 messages or 24 hours (whichever is shorter) in the channel and counts who sent messages.<br />
+                It returns the top 10 spammy users in a table.<br />
+                The bot requires Read Message History to use this command.
+            </p>
+
+            <b>Usage:</b><br />
+
+            <code>=msgcount</code>
+        </div>
+        <hr />
+
+        <div id="timetravel" class="command">
+            <h4><code>=timetravel</code> [server mod]</h4>
+            <i class="bot-text">"pins the first message in a channel"</i>
+            <p>
+                The bot requires Manage Messages to use this command.
+            </p>
+
+            <b>Usage:</b><br />
+
+            <code>=timetravel ['days']</code><br />
+            <i>Days is how many days back to pin. If not given, it pins the first message.</i>
+        </div>
+        <hr />
+
+        <a href="#top">Return to top.</a>
+
+
+    </article>
+
+</body>
+</html>
