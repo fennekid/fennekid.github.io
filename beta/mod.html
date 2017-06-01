@@ -180,7 +180,7 @@
             <i>Deletes messages that contain a given keyword. This must be at least 3 letters long.</i><br />
 
             <code>=remove embeds ['limit']</code><br />
-            <i>Deletes messages that contain any embeds or attatchments. Useful for image spam.</i><br />
+            <i>Deletes messages that contain any embeds or attachments. Useful for image spam.</i><br />
 
             <code>=remove command 'call' ['call' ...] ['limit']</code><br />
             <i>Deletes messages that start with a given call character. This follows tulpa compliancy.</i><br />
@@ -398,7 +398,7 @@
                     <tr><td class="bot-text welcome">[new]</td><td>Send a private message to the new user.</td></tr>
                     <tr><td class="bot-text welcome">[owner]</td><td>Sends a private message to the owner of the server.</td></tr>
                 </table>
-                <code>*</code> for the bot to know what channel to use, the <code>=welcome wait</code> must not be set to "instant"<br />
+                <code>*</code> for the bot to know what channel to use, you must use either wait=typing or wait=message.<br />
                 <br />
                 The content (<code>message</code>):
                 <table class="codeblock">
@@ -416,7 +416,7 @@
                 </table>
                 The new member cache is <i>not</i> storred in a file, so if the bot suffers a crash, outage or other reason to restart herself, the list of new members will be reset.<br />
                 This basically means that if new members don't type until the bot has crashed, they will not recieve a welcome message.<br />
-                Because of this, if you are using destn=owner, it is advised to have wait=instant.<br />
+                Because of this, if you are using dest=owner, it is advised to have wait=instant.<br />
                 <br />
             </p>
             <p>
@@ -430,7 +430,8 @@
                     <tr><td class="bot-text welcome">[new]</td><td>Create a new role.</td></tr>
                     <tr><td class="bot-text welcome">[newcol]</td><td>Create a new seeded colour role.</td></tr>
                 </table>
-                Due to the limit of roles in a server and just how cluttered it will get, using role=new and role=newcol in public servers is not recommended.<br />
+                Due to the limit of roles in a server and just how cluttered it will get, using role=new or role=newcol in public servers is not recommended.<br />
+                Newcol uses a time based algorithm that is described in the <a href="nerd.html#mycol">mycol</a> docs.<br />
                 <br />
             </p>
             <p>
@@ -511,7 +512,7 @@
             </p>
 
             <div>
-                <p>Member Tracking</p>
+                <p><b>Member Tracking</b></p>
                 <div class="embed" data-color="#ff6">
                     <p><code>member_join</code> When a member joins the server.</p>
                 </div>
@@ -536,7 +537,7 @@
                 <div class="embed" data-color="#999">
                     <p><code>nick_changed</code> When a member changes their nickname.</p>
                 </div>
-                <p>Message Tracking</p>
+                <p><b>Message Tracking</b></p>
                 <div class="embed" data-color="#f67">
                     <p><code>message_delete</code> When a message is deleted.</p>
                 </div>
@@ -575,7 +576,7 @@
                 <div class="embed" data-color="#38c">
                     <p><code>hours_offset</code> [int] The offset in the timestamp on messages (-12 - 12)</p>
                 </div>
-                <p>Server Tracking</p>
+                <p><b>Server Tracking</b></p>
                 <div class="embed" data-color="#06f">
                     <p><code>channel_update</code> When a channel is edited.</p>
                 </div>
@@ -596,7 +597,7 @@
                 <div class="embed" data-color="#f69">
                     <p><code>permission_saved</code> When roles are stored via <a href="#rolestate">rolestate</a></p>
                 </div>
-                <p>Bot Usage Tracking</p>
+                <p><b>Bot Usage Tracking</b></p>
                 <div class="embed" data-color="#969">
                     <p><code>command_called</code> When a Beta 42 command is called.</p>
                 </div>
@@ -609,7 +610,7 @@
                 <div class="embed" data-color="#93c">
                     <p><code>show_failed_calls</code> Show failed command calls and explain what happened.</p>
                 </div>
-                <p>Miscellaneous</p>
+                <p><b>Miscellaneous</b></p>
                 <div class="embed" data-color="#fa3">
                     <p><code>log_all</code> Turns on all logging. Individual features can be disabled.</p>
                 </div>
@@ -628,7 +629,7 @@
                 <b>Permission: [Active Modlog Reports]</b> This command requires both a modlog to exist and said modlog to have allow_reports = true.<br />
                 This command simply sends a non-anonymous report message to the modlog.<br />
                 The command call is instantly deleted to protect the people who make reports.<br />
-                This command can be used to send tips off to the moderators of the server if they arent accepting PMs.
+                This command can be used to send tips off to the moderators of the server if they aren't accepting PMs.
             </p>
 
             <b>Usage:</b><br />
@@ -663,7 +664,7 @@
                 This command checks for specific words and when someone sends a message containing one of said words, the message is deleted.<br />
                 Messages sent by Server Mods or any higher powers will not be hit by the blacklist.<br />
                 <br />
-                This command takes direct interraction with the server modlog and can actually start tracking infractions, and when they hit a limit, actions can be taken<br />
+                This command takes direct interraction with the server modlog and can actually start tracking infractions, and when they hit a limit, actions can be taken.<br />
                 The additional modlog configs are:
             </p>
             <div>
@@ -700,7 +701,7 @@
             <i>Adds a new term to the blacklist. Teem is what to add.</i><br />
 
             <code>=blacklist remove</code><br />
-            <i>Removes an item from the blacklist. This command is semi-interractive</i><br />
+            <i>Removes an item from the blacklist. This command is semi-interractive.</i><br />
 
             <code>=blacklist list</code><br />
             <i>Lists all the words on the blacklist.</i>
@@ -712,7 +713,7 @@
             <h4><code>=spamlimit</code> [Bot Admin]</h4>
             <i class="bot-text">"makes me size limit my commands"</i>
             <p>
-                This command sets the bot such that outside of any preset channels, she will ensure that the amount she posts doesn't excede a certain limit.<br />
+                This command sets the bot such that outside of any preset channels, she will ensure that the amount she posts doesn't exceed a certain limit.<br />
                 This line counting is applied to all messages, but the blocking affect is only applied to command calls.<br />
                 This function does not affect Bot Mods and by proxy, Server Mods. This is so as to not block access to vital moderation tools like <code>=cleanup</code>. 
                 However the output will still be counted.<br />
@@ -732,7 +733,7 @@
             </i><br />
 
             <code>=spamlimit limit 'lines' ['cooldown']</code><br />
-            <i>Sets the maximum number of lines the bot can send. Lines is the number of lines before stopping, cooldown is the seconds for those lines to ware off, if ommitted, the value is unchanged.</i><br />
+            <i>Sets the maximum number of lines the bot can send. Lines is the number of lines before stopping, cooldown is the seconds for those lines to ware off, if omitted, the value is unchanged.</i><br />
 
             <code>=spamlimit stop</code><br />
             <i>Stops counting lines.</i>
@@ -743,7 +744,7 @@
             <h4><code>=rolestate</code> [Server Admin]</h4>
             <i class="bot-text">"saves a persons roles when they leave the server"</i>
             <p>
-                Rolestate is a simple feature but in my oppinion, one of the strongest ones.<br />
+                Rolestate is a simple feature but in my opinion, one of the strongest ones.<br />
                 When a member leaves the server, Beta 42 remembers what roles they had.<br />
                 When they return, Beta 42 returns those roles to them.<br />
                 <br />
@@ -774,7 +775,7 @@
                 Sometimes I don't know anyone on the server though, and this is when this command comes in useful.<br />
                 <br />
                 From your side, you will see something like <span class="bot-text">"This channel has been uplinked with <b>Kiwi Hangout#ishinomoris-lab</b>..."</span> This means that the channel you are in has been uplinked.<br />
-                At the end of the interraction, you will see <span class="bot-text">"Ulpink closed..."</span> This means that no more messages will be sent in either direction.<br />
+                At the end of the interraction, you will see <span class="bot-text">"Uplink closed..."</span> This means that no more messages will be sent in either direction.<br />
                 <br />
             </p>
 
