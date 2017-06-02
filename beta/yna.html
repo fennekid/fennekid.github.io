@@ -1,0 +1,934 @@
+﻿<!DOCTYPE html>
+
+<html lang="en-gb" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta content="All about 42!" name="Description" property="og:description">
+    <title>Infobot 42</title>
+    <link rel="stylesheet" type="text/css" href="42help.css">
+    <script type="text/javascript" src="42help.js"></script>
+
+    <style>
+        .indented {
+            margin-left:2em;
+        }
+        .footnote {
+            font-size: 0.7em;
+            color: slategray;
+        }
+        .default {
+            color: dimgrey;
+        }
+        img.dl {
+            border: 2px solid #333333;
+            border-radius: 3px;
+            height: 1em;
+            width: 1em;
+        }
+    </style>
+
+</head>
+<body>
+    <aside>
+        <div class="aside-header">
+            <a href="https://discordapp.com/oauth2/authorize?client_id=196574652229877760&scope=bot&permissions=403041302">
+                Want Me? Have ME! =join <br />
+            </a>
+            You need manage server or manage roles to add bots.
+        </div>
+        <div class="aside-content">
+            <h3><a href="index.html">Home</a></h3>
+            <h3>Command Help</h3>
+            <ul class="no-bullet">
+                <li><a href="introduction.html">&#9654; Introduction</a></li>
+                <li><a href="faq.html">&#9654; Frequently Asked Questions</a></li>
+                <li>Command Categories</li>
+                <!--
+                <li><a href="bot.html">&#9654; Bot</a></li>
+                <li><a href="tools.html">&#9654; Tools</a></li>
+                <li><a href="mod.html">&#9654; Moderation</a></li>
+                <li><a href="info.html">&#9654; Information</a></li>
+                <li><a href="rng.html">&#9654; RNG</a></li>
+                <li><a href="memory.html">&#9654; Memory</a></li>
+                <li><a href="fun.html">&#9654; Fun</a></li>
+                <li><a href="nerd.html">&#9654; Nerd</a></li>
+                <li><a href="vg.html">&#9654; Video Games</a></li>
+                <li><a href="secret.html">&#9654; Secrets</a></li>
+                <li>Other Sections</li>
+                <li><a href="autofunc.html">&#9654; Automatic Functions</a></li>
+                    -->
+                <li><a href="memory.html#tag">&#9654;Memory/=tag</a></li>
+                <li>Other Sections</li>
+                <li>
+                    <a href="#top">&#9660; yna Tag Scripting</a>
+                    <ul class="no-bullet">
+                        <li><a href="#changes">Changes</a></li>
+                        <li><a href="#limits">Limitations</a></li>
+                        <li><a href="#format">Formatting Objects</a></li>
+                        <li>
+                            <a href="#eval">Evaluation Objects</a>
+                            <ul class="no-bullet">
+                                <li><a href="#case">Case functions</a></li>
+                                <li><a href="#len">{len}</a></li>
+                                <li><a href="#slice">{slice}</a></li>
+                                <li><a href="#time">{time}</a></li>
+                                <li><a href="#parse">{parse}</a></li>
+                                <li><a href="#choose">{choose}</a></li>
+                                <li><a href="#wchoose">{wchoose}</a></li>
+                                <li><a href="#user">{user}</a></li>
+                                <li><a href="#nameof">{nameof}</a></li>
+                                <li><a href="#num">{num}</a></li>
+                                <li><a href="#set">{set}</a></li>
+                                <li><a href="#func">{func}</a></li>
+                                <li><a href="#member">{member}</a></li>
+                                <li><a href="#when">{when}</a></li>
+                                <li><a href="#rep">{rep}</a></li>
+                                <li><a href="#math">{math}</a></li>
+                                <li><a href="#oneline">{oneline}</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#examples">Example Scripts</a>
+                            <ul class="no-bullet">
+                                <li><a href="#shipscore">shipscore.yna</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                
+            </ul>
+            <h3>Friends of 42</h3>
+            <ul class="no-bullet">
+                <li><a href="redditbot/index.html">&#9654; Redditbot</a></li>
+                <li><a href="pinksquid/index.html">&#9654; Pinksquid</a></li>
+                <li>&#9654; Your bot here?</li>
+            </ul>
+        </div>
+        <div class="aside-footer">
+            programmers are fueled by pizza~!<br />
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="53TDH5RCZ6QTU">
+                <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal Donate - Keep those creative juices flowing!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+            </form>
+        </div>
+    </aside>
+
+    <article>
+        <h1 id="top">Yonni Na Tag Development</h1>
+        <p>
+            <a href="memory.html#memory">Tags</a> in Beta 42 include a custom scripting language called <a href="/assets/na_origin.jpg">Yonni Na</a> or yna for short.<br />
+            The majority of this is done through Python's <code>str.format</code>, but some more powerful objects exist that are implemented differently.<br />
+            The main difference is when there is a semicolon (<code>;</code>) before the closing bracket of a object.<br />
+            <br />
+            <b>This is a very powerful mechanism and may be very hard to understand.</b> Just try starting with simple things and building up from there.<br />
+            Examples can be found at the <a href="#examples">bottom of the page</a>.
+        </p>
+
+        <hr />
+
+        <div id="changes" class="command">
+            <h3>Changes from yna v4</h3>
+            <p class="bot-text">"I'm technically the 5th version of 42 now~"</p>
+            <p>
+                Here is a full list of changes:
+            </p>
+            <ul class="no-bullet">
+                <li>
+                    <a href="#format">Format objects</a>
+                    <ul>
+                        <li>Added <code>{uses}</code></li>
+                        <li>Added <code>{newrep}</code></li>
+                    </ul>
+                </li>
+                <li>
+                    Evaluation Objects
+                    <ul>
+                        <li>Added <code><a href="#wchoose">{wchoose}</a></code></li>
+                        <li>Added <code><a href="#func">{func}</a></code></li>
+                        <li>Added <code><a href="#case">{title}</a></code></li>
+                        <li>Added <code><a href="#math">{math}</a></code></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#when">When statement</a>
+                    <ul>
+                        <li>Added <code>le</code> and <code>ge</code></li>
+                        <li>Added aliases <code>= == &lt; &lt;= &gt; &gt;= != &lt;&gt;</code></li>
+                        <li>Removed <code>is;truth</code></li>
+                        <li>Added <code>is;error</code></li>
+                        <li>Changed <code>is;word</code></li>
+                        <li>Only the chosen path is executed instead of both paths then the output chosen.</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#user">User statement</a>
+                    <ul>
+                        <li>Added attribute support.</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#time">Time statement</a>
+                    <ul>
+                        <li>
+                            Added string format support. 
+                            <span class="footnote">
+                                <a href="https://pyformat.info/#datetime">Syntax</a>
+                                <a href="https://docs.python.org/3.4/library/datetime.html#strftime-strptime-behavior">Options</a>
+                            </span>
+                        </li>
+                        <li>Default strf changed to <code>%H:%M</code></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#rep">Rep statement</a>
+                    <ul>
+                        <li>Depreciated old syntax (<code>{rep:var;in;with;}</code>)</li>
+                        <li>Added new syntax (<code>{rep:var;with;in;}</code>)</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#set">Set statement</a>
+                    <ul>
+                        <li>Force keys to be valid variable names.</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#member">Member statement</a>
+                    <ul>
+                        <li>Added nickname and Discord Tag matching</li>
+                        <li>Force keys to valid variable names.</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#slice">Slice statement</a>
+                    <ul>
+                        <li>Added step value</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#oneline">Oneline statement</a>
+                    <ul>
+                        <li>Added \ at the end of a line to keep the newline</li>
+                        <li>Added \n to insert a newline</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr />
+
+        <div id="limits" class="command">
+            <h3>Limitations to yna</h3>
+            <p>
+                Tags in general have a few limits in them to stop errors, memory leaks and infinite loops (which are possible).
+            </p>
+            <div class="indented">
+                <h5>Tag size limits</h5>
+                <p>There are 2 different limits to the size of a tag in Beta 42:</p>
+                <ul class="no-bullet">
+                    <li>Standard Tags (5 or fewer yna objects)</li>
+                    <li>yna Scripts (more than 5 yna objects)</li>
+                </ul>
+                <p>
+                    Standard tags have a size limit of ~256kB. This is for mainly tags that are one or two choose objects.<br />
+                    Scripts have a considerably smaller limit of ~32kB.<br />
+                    <br />
+                    <b>To upload tags that are longer than 2000 characters, you can create a text file with the <code>.yna</code> extension and upload it with the command you want to call.</b><br />
+                </p>
+
+                <h5>Stack height</h5>
+                <p>
+                    You can only nest Objects 32 levels deep.<br />
+                    When this limit is reached, a <code>nesting depth reached</code> error will be returned.
+                </p>
+
+                <h5>Action limit</h5>
+                <p>
+                    Only 1200 "actions" can be performed with a single call to a tag.<br />
+                    Each action is defined as 1 line written in the debug log.<br />
+                    When this limit is reached, no exceptions will be thrown, but the tag will be returned in its unfinished state and posted to chat.<br />
+                </p>
+            </div>
+        </div>
+
+        <div id="format" class="command">
+            <h3>Formatting Objects</h3>
+            <p>
+                Formatting objects are defined by objects that do <i>not</i> have a trailing semicolon. (e.g. <code>{caller}</code>)<br />
+                There are several objects that are defined by default, but more can be created by using <a href="#set">set</a> or similar functions.<br />
+                These are the default format objects:
+            </p>
+            <table class="codeblock">
+                <tr><th class="bot-text">Object Name</th><th>Description and Default Value</th></tr>
+                <tr><td class="bot-text">{tag}</td><td>The name of the tag, or None if you use eval.</td></tr>
+                <tr><td class="bot-text">{me}</td><td>The Member object of the tags creator, or None if the tag is orphaned.</td></tr>
+                <tr><td class="bot-text">{meid}</td><td>The ID of the tags creator.</td></tr>
+                <tr><td class="bot-text">{caller}</td><td>The Member object of the person calling the command. <span class="footnote"><a href="http://discordpy.readthedocs.io/en/latest/api.html#member">Member docs</a></span>.</td></tr>
+                <tr><td class="bot-text">{callerid}</td><td>The ID of the person calling the command.</td></tr>
+                <tr><td class="bot-text">{channel}</td><td>The Channel object of the current channel. <span class="footnote"><a href="http://discordpy.readthedocs.io/en/latest/api.html#channel">Channel docs</a></span>.</td></tr>
+                <tr><td class="bot-text">{channelid}</td><td>The ID of the current channel.</td></tr>
+                <tr><td class="bot-text">{server}</td><td>The Server object of the current server. <span class="footnote"><a href="http://discordpy.readthedocs.io/en/latest/api.html#server">Server docs</a></span>.</td></tr>
+                <tr><td class="bot-text">{serverid}</td><td>The ID of the current server. This is the same as the default channel ID.</td></tr>
+                <tr><td class="bot-text">{time}</td><td>This is the UTC DateTime object for the time the tag was called. <span class="footnote"><a href="https://pyformat.info/#datetime">Datetime templates</a></span>.</td></tr>
+                <tr><td class="bot-text">{uses}</td><td>The number of times this tag has been used (including this time.)</td></tr>
+                <tr><td class="bot-text">{arglen}</td><td>The number of args.</td></tr>
+                <tr><td class="bot-text">{arg1} {arg2}...</td><td>The individual args.</td></tr>
+                <tr><td class="bot-text">{args}</td><td>All given args.</td></tr>
+                <tr><td class="bot-text">{mentionlen}</td><td>The number of mentions.</td></tr>
+                <tr><td class="bot-text">{mention1} ...</td><td>The individual Member objects of mentions.</td></tr>
+                <tr><td class="bot-text">{newrep}</td><td>Defaults to <code>false</code>. Changes the way <a href="#rep"><code>{rep}</code></a> works.</td></tr>
+            </table>
+            <p>
+                You can access the different attributes of each object by using Python's attribute access syntax, but in short...<br />
+                <br />
+                To access the name of a Member, Channel or Server:<br />
+                <code>{me.name}</code> -&gt; <code>squaswin</code><br />
+                <br />
+                To pad a string<br />
+                <code>{arg1:&lt;10}</code> -&gt; <code>Hello&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br />
+                <code>{arg2:^10}</code> -&gt; <code>&nbsp;&nbsp;World!&nbsp;&nbsp;</code><br />
+                <br />
+                To print a data<br />
+                <code>{time:%Y-%m-%d}</code> -&gt; <code>2017-05-31</code><br />
+            </p>
+            <br />
+            <h5>General Format Exceptions</h5>
+            <ul class="no-bullet">
+                <li><code>missing semicolon</code> General format exception. Usually caused by missing a semicolon, however may be caused by mistyping a date template.</li>
+                <li><code>does not have _</code> General attribute exception. Usually caused by trying to access a member variable that does not exist.</li>
+                <li><code>bad slice</code> General index exception. Usually caused by using invalid slices.</li>
+            </ul>
+
+        </div>
+        <hr />
+
+        <h3 class="eval">Evaluation Objects</h3>
+        <p>
+            Evaluation Objects are where the majority of yna's power lays.<br />
+            These objects are designated by the trailing semicolon (i.e. <code>{object<b>;</b>}</code>)<br />
+            "Evaluated Content" means content that has already had all its Objects resolved, and so should be raw text.<br />
+            <br />
+            Keys are special shortcuts for saving the output of some functions as variables without the set function.<br />
+            For example, <code>{chooseanimal:cat;dog;horse;}</code> will save whatever it chooses to <code>{chooseanimal}</code>
+        </p>
+        <br />
+        <h5>General Evaluation Exceptions</h5>
+        <ul class="no-bullet">
+            <li><code>mismatched brackets</code> Failed to find a close bracket for an Object.</li>
+        </ul>
+        <hr />
+
+        <div id="case" class="command">
+            <h4>Case Functions</h4>
+            <p>
+                Case functions change the case of a block of evaluated content, either to UPPER, lower or Title case.
+            </p>
+            <div class="indented">
+                <h5>Syntax</h5>
+                <code>{upper:&lt;content&gt;;}</code><br />
+                <code>{lower:&lt;content&gt;;}</code><br />
+                <code>{title:&lt;content&gt;;}</code><br />
+
+                <h5>Arguments</h5>
+                <ul class="no-bullet">
+                    <li><code>content</code> The content to edit.</li>
+                </ul>
+
+                <h5>Exceptions</h5>
+                <ul class="no-bullet">
+                    <li><code>no content</code> No content was given.</li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+
+        <div id="len" class="command">
+            <h4>Length Function</h4>
+            <p>
+                Gets the length of the given evaluated content.
+            </p>
+            <div class="indented">
+                <h5>Syntax</h5>
+                <code>{len:&lt;content&gt;;}</code><br />
+
+                <h5>Arguments</h5>
+                <ul class="no-bullet">
+                    <li><code>content</code> The content to measure.</li>
+                </ul>
+
+                <h5>Exceptions</h5>
+                <ul class="no-bullet">
+                    <li><code>no content</code> No content was given.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="slice" class="command">
+            <h4>Slice Function</h4>
+            <p>
+                Slices a piece of evaluated content.
+            </p>
+            <div class="indented">
+                <h5>Syntax</h5>
+                <code>{slice:&lt;c&gt;;&lt;content&gt;;}</code><br />
+                <i>Returns a specific 0-indexed character</i><br />
+                <br />
+
+                <code>{slice:[&lt;b<span class="default">=None</span>&gt;],[&lt;e<span class="default">=None</span>&gt;][,&lt;s<span class="default">=1</span>&gt;];&lt;content&gt;;}</code><br />
+                <i>Returns a 0-indexed, top-exclusive substring.</i><br />
+
+                <h5>Arguments</h5>
+                <ul class="no-bullet">
+                    <li><code>content</code> The content to slice.</li>
+                    <li><code>c</code> A specific character index.</li>
+                    <li><code>b</code> The beginning of a slice.</li>
+                    <li><code>e</code> The end value of a slice.</li>
+                    <li><code>s</code> The step of a slice.</li>
+                </ul>
+
+                <h5>Exceptions</h5>
+                <ul class="no-bullet">
+                    <li><code>no args</code> No arguments were given.</li>
+                    <li><code>bad content</code> Either not enough or too many args were given.</li>
+                    <li><code>too many nums</code> More than 3 values were given for the slice.</li>
+                    <li><code>bad index</code> String index was out of range.</li>
+                    <li><code>non int index</code> Values could not be casted to int.</li>
+                    <li><code>zero step</code> A step value of 0 was given.</li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+
+        <div id="time" class="command">
+            <h4>Time Function</h4>
+            <p>
+                Gets the current time and either stores or posts it.<br />
+                <span class="footnote"><a href="https://docs.python.org/3.4/library/datetime.html#strftime-strptime-behavior">Template options</a></span>
+            </p>
+            <div class="indented">
+                <h5>Syntax</h5>
+                <code>{time[&lt;k&gt;][:&lt;offset<span class="default">=0</span>&gt;[;&lt;template<span class="default">=%H:%M</span>&gt;]];}</code><br />
+                <i>Posts the time with a given template.</i><br />
+                <br />
+
+                <code>{time[&lt;k&gt;]:&lt;offset&gt;;;}</code><br />
+                <i>Stores the DateTime object without posting it.</i><br />
+
+                <h5>Arguments</h5>
+                <ul class="no-bullet">
+                    <li><code>k</code> A key to store the DateTime object under.</li>
+                    <li><code>offset</code> The integer hours offest to add to the time.</li>
+                    <li><code>template</code> The template to match the time into. If omitted and a key is given, then no output will be posted.</li>
+                </ul>
+
+                <h5>Exceptions</h5>
+                <ul class="no-bullet">
+                    <li><code>invalid offset</code> The offset given could not be casted to int.</li>
+                    <li><code>invalid format</code> The template given was invalid.</li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+
+        <div id="parse" class="command">
+            <h4>Parse Function</h4>
+            <p>
+                Converts characters into a string into a format that can be used in URLs.
+            </p>
+            <div class="indented">
+                <h5>Syntax</h5>
+                <code>{parse:&lt;quote&gt;;}</code><br />
+                
+                <h5>Arguments</h5>
+                <ul class="no-bullet">
+                    <li><code>quote</code> The content to parse.</li>
+                </ul>
+
+                <h5>Exceptions</h5>
+                <ul class="no-bullet">
+                    <li><code>no content</code> No content was given.</li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+
+        <div id="choose" class="command">
+            <h4>Choose Function</h4>
+            <p>
+                Chooses a random element from a given list.
+            </p>
+            <div class="indented">
+                <h5>Syntax</h5>
+                <code>{choose:&lt;option&gt;;&lt;option&gt;[;&lt;...&gt;];}</code>
+
+                <h5>Arguments</h5>
+                <ul class="no-bullet">
+                    <li><code>option</code> One of the choices.</li>
+                    <li><code>...</code> Options list can extend indefinately.</li>
+                </ul>
+
+                <h5>Exceptions</h5>
+                <ul class="no-bullet">
+                    <li><code>no options</code> No options were given.</li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+
+        <div id="wchoose" class="command">
+            <h4>Weighted Choose Function</h4>
+            <p>
+                Chooses an element with regards to given weightings.
+            </p>
+            <div class="indented">
+                <h5>Syntax</h5>
+                <code>{wchoose:&lt;option1&gt;;&lt;weight1&gt;;&lt;option2&gt;;&lt;weight2&gt;[;&lt;...&gt;;&lt;...&gt;];}</code>
+                
+                <h5>Arguments</h5>
+                <ul class="no-bullet">
+                    <li><code>option</code> The available choices.</li>
+                    <li><code>weight</code> The corresponding weightings for each option.</li>
+                    <li><code>...</code> Options list can extend indefinately.</li>
+                </ul>
+
+                <h5>Exceptions</h5>
+                <ul class="no-bullet">
+                    <li><class>no options</class> No options were given</li>
+                    <li><class>mismatched weightings</class> Not every option could be matched with a weighting.</li>
+                    <li><class>invalid weight</class> A weighting could not be casted to int or float.</li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+
+        <div id="user" class="command">
+            <h4>Random User Function</h4>
+            <p>
+                Chooses a random member from the server. Can choose any member, not just online/active/in the channel members.
+            </p>
+            <div class="indented">
+                <h5>Syntax</h5>
+                <code>{user[:&lt;attrs<span class="default">=None</span>&gt;];}</code><br />
+                <i>Posts the content directly in place.</i><br />
+
+                <code>{user&lt;k&gt;;}</code><br />
+                <i>Swallows the output and only stores the Member object.</i>
+
+                <h5>Arguments</h5>
+                <ul class="no-bullet">
+                    <li><code>attrs</code> Attribute path for the member. Equal to <code>{_.attrs}</code></li>
+                    <li><code>k</code> Key value to store the member with.</li>
+                </ul>
+
+                <h5>Exceptions</h5>
+                <ul class="no-bullet">
+                    <li><code>type clash</code> User brackets cannot have a key and an attribute path.</li>
+                    <li><code>too many args</code> More than 1 argument was given.</li>
+                    <li><code>has no attrs</code> The attribute path is not valid.</li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+
+        <div id="nameof" class="command">
+            <h4>Nameof Function</h4>
+            <p>
+                Fetches a members name from their ID.<br />
+                This can be paired with <a href="#member"><code>{member}</code></a> to get an object.
+            </p>
+            <div class="indented">
+                <h5>Syntax</h5>
+                <code>{nameof:&lt;ID&gt;[;&lt;attrs<span class="default">=None</span>&gt;];}</code>
+                
+                <h5>Arguments</h5>
+                <ul class="no-bullet">
+                    <li><code>ID</code> ID to search for.</li>
+                    <li><code>attrs</code> Attribute path for the member. Equal to <code>{_.attrs}</code></li>
+                </ul>
+                <h5>Exceptions</h5>
+                <ul class="no-bullet">
+                    <li><code>no id</code> No ID was given.</li>
+                    <li><code>too many args</code> More than 1 arg was given.</li>
+                    <li><code>not found</code> The ID did not match a user on the server.</li>
+                    <li><code>has no attrs</code> The attribute path is not valid.</li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+
+        <div id="num" class="command">
+            <h4>Random Number Function</h4>
+            <p>
+                Gets a random number between a given range.
+            </p>
+            <div class="indented">
+                <h5>Syntax</h5>
+                <code>{num[&lt;k&gt;][:[&lt;min<span class="default">=0</span>&gt;];&lt;max<span class="default">=100</span>&gt;[;&lt;step<span class="default">1</span>&gt;]];}</code>
+
+                <h5>Arguments</h5>
+                <ul class="no-bullet">
+                    <li><code>k</code> Key value to store the number with.</li>
+                    <li><code>min</code> The inclusive minimum.</li>
+                    <li><code>max</code> The inclusive maximum.</li>
+                    <li><code>step</code> The step value.</li>
+                </ul>
+
+                <h5>Exceptions</h5>
+                <ul class="no-bullet">
+                    <li><code>no args</code> Args were expected, but none were given. Caused by <code>{num:;}</code></li>
+                    <li><code>invalid args</code> Could not cast args to int.</li>
+                    <li><code>invalid range</code> Given range was negative or empty, or step was 0.</li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+
+        <div id="set" class="command">
+            <h4>Variable Storing</h4>
+            <p>
+                Variables can be stored using the <code>set</code> command and then recalled like any other Format Object.<br />
+                All objects saved this way are strings.<br />
+                <br />
+                Example: calling <code>{set:foo;Hello World;}</code> means that you can now use <code>{foo}</code>
+            </p>
+            <div class="indented">
+                <h5>Syntax</h5>
+                <code>{set:&lt;key&gt;;&lt;value&gt;;}</code>
+
+                <h5>Arguments</h5>
+                <ul class="no-bullet">
+                    <li><code>key</code> The key value (variable name.)</li>
+                    <li><code>value</code> The evaluated contents to store.</li>
+                </ul>
+
+                <h5>Exceptions</h5>
+                <ul class="no-bullet">
+                    <li><code>no args</code> No args were given.</li>
+                    <li><code>invalid args</code> Either too many or not enough args were given.</li>
+                    <li><code>invalid key</code> The key value is not a valid identifier name.</li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+
+        <div id="func" class="command">
+            <h4>Function Declaration</h4>
+            <p>
+                Functions are declared using the <code>func</code> command. This is similar to the <code>set</code> command but does not evaluate the contents.<br />
+                This means that when you recall it, it executes the code again instead of just regurgitating the results.<br />
+                <br />
+                You <i>can</i> use recursion this way, but if you start an infinite loop, <del>I will find you and kill you</del> she will eventually reach a point and stop executing.<br />
+            </p>
+            <div class="indented">
+                <h5>Syntax</h5>
+                <code>{func:&lt;key&gt;;&lt;code&gt;;}</code>
+
+                <h5>Arguments</h5>
+                <ul class="no-bullet">
+                    <li><code>key</code> The key value (function name.)</li>
+                    <li><code>code</code> The script to store.</li>
+                </ul>
+
+                <h5>Exceptions</h5>
+                <ul class="no-bullet">
+                    <li><code>no args</code> No args were given.</li>
+                    <li><code>invalid args</code> Either too many or not enough args were given.</li>
+                    <li><code>invalid key</code> The key value is not a valid identifier name.</li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+
+        <div id="member" class="command">
+            <h4>Member Fetch Function</h4>
+            <p>
+                Fetches a Member object from the server and stores it to a variable.<br />
+                Fetches a member by either name, nickname or Discord Tag.
+            </p>
+            <div class="indented">
+                <h5>Syntax</h5>
+                <code>{member:&lt;key&gt;;&lt;name&gt;;}</code>
+
+                <h5>Arguments</h5>
+                <ul class="no-bullet">
+                    <li><code>key</code> The key value (variable name.)</li>
+                    <li><code>name</code> The username, nickname or Discord Tag of the target.</li>
+                </ul>
+
+                <h5>Exceptions</h5>
+                <ul class="no-bullet">
+                    <li><code>no args</code> No args were given.</li>
+                    <li><code>no query</code> No name was given.</li>
+                    <li><code>invalid key</code> The key value is not a valid identifier name.</li>
+                    <li><code>not found</code> There was no user with the given name on the server.</li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+
+        <div id="when" class="command">
+            <h4>When Function</h4>
+            <p>
+                Flow control, similar to if statements.<br />
+                Unlike the old version of yna, only the path chosen will be executed instead of the when block deciding just what output to post.
+            </p>
+            <div class="indented">
+                <h5>Syntax</h5>
+                <code>{when:&lt;a&gt;;&lt;op&gt;;&lt;b&gt;;&lt;true&gt;[;&lt;false<span class="default">=None</span>&gt;];}</code>
+
+                <h5>Arguments</h5>
+                <ul class="no-bullet">
+                    <li><code>a</code> <code>b</code> The 2 arguments.</li>
+                    <li><code>op</code> The operation.</li>
+                    <li><code>true</code> Code to execute if true.</li>
+                    <li><code>false</code> Code to execute if false.</li>
+                </ul>
+
+                <h5>Operations</h5>
+                <ul class="no-bullet">
+                    <li><code>eq</code> Checks that <code>a</code> and <code>b</code> are the same.</li>
+                    <li><code>ne</code> Checks that <code>a</code> and <code>b</code> are different.</li>
+                    <li><code>lt</code> Checks that <code>a</code> is strictly less than <code>b</code>.</li>
+                    <li><code>le</code> Checks that <code>a</code> is less than or equal to <code>b</code>.</li>
+                    <li><code>gt</code> Checks that <code>a</code> is strictly greater than <code>b</code>.</li>
+                    <li><code>ge</code> Checks that <code>a</code> is greater than or equal to <code>b</code>.</li>
+                    <li><code>in</code> Checks that <code>a</code> is a substring of <code>b</code>.</li>
+                    <li><code>in</code> Checks that <code>a</code> matches an element in the comma seperated list in <code>b</code>.</li>
+                    <li>
+                        <code>is</code> Checks that <code>a</code> is of the type defined in <code>b</code>
+                        <ul>
+                            <li><code>word</code> Checks if <code>a</code> is a single word.</li>
+                            <li><code>letter</code> Checks if <code>a</code> is a single letter.</li>
+                            <li><code>number</code> Checks if <code>a</code> is castable to int.</li>
+                            <li><code>decimal</code> Checks if <code>a</code> is castable to float.</li>
+                            <li><code>error</code> Checks if <code>a</code> is a yna exception.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h5>Exceptions</h5>
+                <ul class="no-bullet">
+                    <li><code>invalid args</code> Either too few or too many args were given.</li>
+                    <li><code>invalid op</code> The operation could not be recognised.</li>
+                    <li><code>args must be numbers</code> Comparison operators were attempted between non-number inputs</li>
+                    <li><code>args do not support in</code> A generic type error occured while performing <code>in</code> checks.</li>
+                    <li><code>invalid type name</code> The type name in <code>is</code> could not be recognised.</li>
+                </ul>
+
+            </div>
+        </div>
+        <hr />
+
+        <div id="rep" class="command">
+            <h4>Rep Function</h4>
+            <p>
+                Works like a find and replace function in a text editer.<br />
+                This command has 2 different syntaxes. The old and depreciated one and a new one.<br />
+                Switching between the two is done by setting the <code>{newrep}</code> variable.<br />
+            </p>
+            <div class="indented">
+                <h5>Syntax</h5>
+                <code>{rep:&lt;var&gt;;&lt;in&gt;;&lt;with&gt;;}</code><br />
+                <i>Old syntax. This is the one used by default.</i><br />
+
+                <code>{rep:&lt;var&gt;;&lt;with&gt;;&lt;in&gt;;}</code><br />
+                <i>New syntax. To enable this, call <code>{set:newrep;true;}</code>.</i>
+
+                <h5>Arguments</h5>
+                <ul class="no-bullet">
+                    <li><code>var</code> The search variable.</li>
+                    <li><code>with</code> The evaluated replace value.</li>
+                    <li><code>in</code> The string to search and replace.</li>
+                </ul>
+
+                <h5>Exceptions</h5>
+                <ul class="no-bullet">
+                    <li><code>no args</code> No arguments were given.</li>
+                    <li><code>invalid args</code> Too few or too many args were given.</li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+
+        <div id="math" class="command">
+            <h4>yna Arithmetic</h4>
+            <p>
+                All arithmetic is done through a single function.<br />
+                Each method takes a specific number of arguments and has a specific resolution.<br />
+                The resolution is either int or float, the args are either exactly 1, exactly 2 or 2 and more.<br />
+                <br />
+                You can use aliases, e.e. <code>add</code> and <code>+</code>, <code>not</code> and <code>~</code>
+            </p>
+            <div class="indented">
+                <h5>Syntax</h5>
+                <code>{rep:&lt;op&gt;;&lt;arg1&lt;[[;&lt;arg2&gt;];&lt;...&gt;];}</code>
+
+                <h5>Arguments</h5>
+                <ul class="no-bullet">
+                    <li><code>op</code> The operator to use.</li>
+                    <li><code>arg1</code> The first arg.</li>
+                    <li><code>arg2</code> The second arg. Omitted in <code>= 1</code> operators.</li>
+                    <li><code>...</code> Any aditional args. Only used in <code>&ge; 2</code> operators.</li>
+                </ul>
+
+                <h5>Operators</h5>
+                <table class="codeblock channel-view">
+                    <tr><th>Operation</th><th>Aliases</th><th>Arguments</th><th>Resolution</th><th>Description</th></tr>
+                    <tr style="border-bottom:3px double black"></tr>
+                    <tr><td>add</td><td>+</td><td>&ge; 2</td><td>float</td><td>Addition</td></tr>
+                    <tr><td>sub</td><td>-</td><td>= 2</td><td>float</td><td>Subtraction</td></tr>
+                    <tr><td>mul</td><td>*</td><td>&ge; 2</td><td>float</td><td>Multiplication</td></tr>
+                    <tr><td>div</td><td>/, /f</td><td>= 2</td><td>float</td><td>Division</td></tr>
+                    <tr style="border-bottom:3px double black"></tr>
+                    <tr><td>idiv</td><td>//</td><td>= 2</td><td>int</td><td>Integer Division</td></tr>
+                    <tr><td>mod</td><td>%</td><td>= 2</td><td>int</td><td>Modulo Function</td></tr>
+                    <tr><td>pow</td><td>**</td><td>= 2</td><td>float</td><td>Exponent</td></tr>
+                    <tr style="border-bottom:3px double black"></tr>
+                    <tr><td>and</td><td>&amp;</td><td>&ge; 2</td><td>int</td><td>Bitwise AND</td></tr>
+                    <tr><td>or</td><td>|</td><td>&ge; 2</td><td>int</td><td>Bitwise OR</td></tr>
+                    <tr><td>xor</td><td>^</td><td>= 2</td><td>int</td><td>Bitwise XOR</td></tr>
+                    <tr><td>not</td><td>~</td><td>= 1</td><td>int</td><td>Bitwise NOT</td></tr>
+                    <tr style="border-bottom:3px double black"></tr>
+                    <tr><td>max</td><td></td><td>&ge; 2</td><td>float</td><td>Maximum Number</td></tr>
+                    <tr><td>min</td><td></td><td>&ge; 2</td><td>float</td><td>Minimum Number</td></tr>
+                    <tr><td>floor</td><td></td><td>= 1</td><td>float</td><td>Floor Function</td></tr>
+                    <tr><td>ceil</td><td></td><td>= 1</td><td>float</td><td>Ceiling Function</td></tr>
+                    <tr><td>round</td><td></td><td>= 1</td><td>float</td><td>Round (floor(val + 0.5))</td></tr>
+                </table>
+
+                <h5>Exceptions</h5>
+                <ul class="no-bullet">
+                    <li><code>no args</code> No arguments were given.</li>
+                    <li><code>unknon op</code> The operator was not recognised.</li>
+                    <li><code>invalid args</code> The number of args doesn't match the operator.</li>
+                    <li><code>non-int args</code>, <code>non-float args</code> The args could not be cast properly.</li>
+                    <li><code>inf</code>, <code>-inf</code> The result is too large or small.</li>
+                    <li><code>divide by 0</code> Attempted to divide by 0.</li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+
+        <div id="online" class="command">
+            <h4>Oneline Function</h4>
+            <p>
+                This strips all the newlines and leading whitespace from code, allowing it to be formatted in a readable way without leaving a lot of newlines.<br />
+                A backslash at the end of a line will make the newline remain.<br />
+                A "\n" anywhere inside the block will insert a newline.
+            </p>
+            <div class="indented">
+                <h5>Syntax</h5>
+                <code>{oneline:&lt;content&gt;;}</code>
+
+                <h5>Arguments</h5>
+                <ul class="no-bullet">
+                    <li><code>content</code> The content to condense.</li>
+                </ul>
+
+                <h5>Exceptions</h5>
+                <ul class="no-bullet">
+                    <li><code>no content</code> No content was given.</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr />
+
+        <h3 id="examples">Examples</h3>
+        <p>
+            Here is a list of some relatively simple tags created either by myself or the community.<br />
+            Credit will be given where credit is due.<br />
+            <br />
+        </p>
+        <div class="embed" data-color="#FF66FF">
+            <p>
+                <!--<img class="dl" src="assets/download_button.png" />-->
+                <a href="assets/yna.xml" download="yna.xml">Download Notepad++ stylers</a>
+            </p>
+        </div>
+        <hr />
+
+        <div id="shipscore" class="command">
+            <h4>Shipscore by squaswin</h4>
+            <div class="embed" data-color="#1dfca4">
+                <p>
+                    <!--<img class="dl" src="assets/download_button.png" />-->
+                    <a href="assets/shipscore.yna" download="shipscore.yna">Download code</a>
+                </p>
+            </div>
+
+            <p>
+                This tag simply takes either 2 given users or the caller and a random number, then picks a random number from 0 to 99.
+            </p>
+
+            <h5>Code Demonstration</h5>
+
+            <p>
+                First we need to decide who our 2 targets should be.<br />
+                If we have no args, we should use a random member and the caller.<br />
+                If we have only 1 arg, we should use the arg and the caller.<br />
+                Otherwise we should use 2 args.<br />
+            </p>
+
+            <p>
+                First, we need to decide if we are using the caller or an arg.<br />
+                For the caller, we use <code>{caller.name}</code> to get just the name, 
+                and here we want to get the second arg, since if we only have the first arg, we still use the caller.
+            </p>
+            <table class="codeblock">
+                <tr><td>{when:{arglen};lt;2;{caller.name};{arg2};}</td></tr>
+            </table>
+
+            <p>Lets just store this away for later.</p>
+            <table class="codeblock">
+                <tr><td>{set:first;</td></tr>
+                <tr><td>&nbsp; {when:{arglen};lt;2;{caller.name};{arg2};}</td></tr>
+                <tr><td>;}</td></tr>
+            </table>
+
+            <p>
+                Now we just need to do this again for the second person in the ship.<br />
+                If we don't have any args, we should use a random member, otherwise we should take the arg.<br />
+                Lets just save that to {second}
+            </p>
+
+            <p>
+                Third part of the puzzle is the score.<br />
+                Since we want different text for each option, we can use rep later on to substitute the units.
+            </p>
+            <table class="codeblock">
+                <tr><td>{set:score;</td></tr>
+                <tr><td>&nbsp; {choose:</td></tr>
+                <tr><td>&nbsp; &nbsp; X% - Terrible;</td></tr>
+                <tr><td>&nbsp; &nbsp; 1X% - Really Bad;</td></tr>
+                <tr><td>&nbsp; &nbsp; ...</td></tr>
+                <tr><td>&nbsp; &nbsp; 9X% - AMAZING!!</td></tr>
+                <tr><td>&nbsp; ;}</td></tr>
+                <tr><td>;}</td></tr>
+            </table>
+
+            <p>Then we just replace in the <code>X</code> with a number from 0 to 9 and put that away for later.</p>
+            <table class="codeblock">
+                <tr><td>{set:newrep;true;}{!old replace syntax is depreciated}</td></tr>
+                <tr><td>{set:score;</td></tr>
+                <tr><td>&nbsp; {rep:X;{num:9;};{score};}</td></tr>
+                <tr><td>;}</td></tr>
+            </table>
+
+            <p>Now we just stitch it together.</p>
+            <table class="codeblock">
+                <tr><td>=====Shipping Score=====</td></tr>
+                <tr><td>First: {first}</td></tr>
+                <tr><td>Second: {second}</td></tr>
+                <tr><td>====================</td></tr>
+                <tr><td>{score}</td></tr>
+            </table>
+
+        </div>
+        <hr />
+
+    </article>
+
+</body>
+</html>
