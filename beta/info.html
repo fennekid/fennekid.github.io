@@ -84,120 +84,127 @@
 
             <b>Usage:</b><br />
 
-            <code>=info [user ['member']]</code><br />
-            <i>
-                Fetches info on a member of the server. If no member is given, it takes yourself.<br />
-                Data fields are:
-            </i>
-            <ul style="font-style:italic">
-                <li>Name and Discriminator</li>
-                <li>ID</li>
-                <li>Account creation date</li>
-                <li>Roles and Colour</li>
-                <li>Server join date</li>
-                <li>Server join score and member count</li>
-                <li>"Playing" status</li>
-                <li>Tag count</li>
-                <li>Last seen at</li>
-            </ul>
-            <i>Last seen is the last message that the user sent in the server assuming one exists in the bot's message deque.</i><br />
-            <br />
+            <div class="command-usage">
+                <code>=info [user ['member']]</code><br />
+                <i>
+                    Fetches info on a member of the server. If no member is given, it takes yourself.<br />
+                    Data fields are:
+                </i>
+                <ul style="font-style:italic">
+                    <li>Name and Discriminator</li>
+                    <li>ID</li>
+                    <li>Account creation date</li>
+                    <li>Roles and Colour</li>
+                    <li>Server join date</li>
+                    <li>Server join score and member count</li>
+                    <li>"Playing" status</li>
+                    <li>Tag count</li>
+                    <li>Last seen at</li>
+                </ul>
+                <i>Last seen is the last message that the user sent in the server assuming one exists in the bot's message deque.</i><br />
+            </div>
 
-            <code>=info server</code><br />
-            <i>
-                Fetches info about the server as a whole.<br />
-                Data fields are:
-            </i>
-            <ul style="font-style:italic">
-                <li>Name and ID</li>
-                <li>Creation time</li>
-                <li>Owner</li>
-                <li>Channel count</li>
-                <li>Member count</li>
-                <li>Member statuses</li>
-                <li>Spammiest user</li>
-                <li>Loudest channel</li>
-                <li>Newest member</li>
-                <li>Bots</li>
-                <li>42's join time</li>
-                <li>Welcome status</li>
-                <li>Total tags</li>
-                <li>Emojis</li>
-            </ul>
-            <i>Spammiest user and loudest channel are the member and channel with the most messages in the deque.</i><br />
-            <br />
+            <div class="command-usage">
+                <code>=info server</code><br />
+                <i>
+                    Fetches info about the server as a whole.<br />
+                    Data fields are:
+                </i>
+                <ul style="font-style:italic">
+                    <li>Name and ID</li>
+                    <li>Creation time</li>
+                    <li>Owner</li>
+                    <li>Channel count</li>
+                    <li>Member count</li>
+                    <li>Member statuses</li>
+                    <li>Spammiest user</li>
+                    <li>Loudest channel</li>
+                    <li>Newest member</li>
+                    <li>Bots</li>
+                    <li>42's join time</li>
+                    <li>Welcome status</li>
+                    <li>Total tags</li>
+                    <li>Emojis</li>
+                </ul>
+                <i>Spammiest user and loudest channel are the member and channel with the most messages in the deque.</i><br />
+            </div>
 
-            <code>=info 42</code><br />
-            <i class="bot-text">This fetches information about myself~!</i><br />
-            <i>Data fields are:</i>
-            <ul style="font-style:italic">
-                <li>42's ID</li>
-                <li>Number of commands</li>
-                <li>Uptime</li>
-                <li>Total tags</li>
-                <li>Total command usages</li>
-                <li>Total servers</li>
-                <li>Total unique users</li>
-                <li>Total channels</li>
-                <li>Current response time*</li>
-            </ul>
-            <i>*response time does not mean ping. This is the time it takes for the bot to:</i>
-            <ol style="font-style:italic">
-                <li>Recieve the message</li>
-                <li>Process the content</li>
-                <li>Send a message back</li>
-            </ol>
-            <br />
+            <div class="command-usage">
+                <code>=info 42</code><br />
+                <i class="bot-text">This fetches information about myself~!</i><br />
+                <i>Data fields are:</i>
+                <ul style="font-style:italic">
+                    <li>42's ID</li>
+                    <li>Number of commands</li>
+                    <li>Uptime</li>
+                    <li>Total tags</li>
+                    <li>Total command usages</li>
+                    <li>Total servers</li>
+                    <li>Total unique users</li>
+                    <li>Total channels</li>
+                    <li>Current response time*</li>
+                </ul>
+                <i>*response time does not mean ping. This is the time it takes for the bot to:</i>
+                <ol style="font-style:italic">
+                    <li>Recieve the message</li>
+                    <li>Process the content</li>
+                    <li>Send a message back</li>
+                </ol>
+            </div>
 
-            <code>=info role 'rolename'</code>
-            <i>
-                Gets information about a role. Rolename is the name of the role to query.<br />
-                Data fields are:
-            </i>
-            <ul style="font-style:italic">
-                <li>Name and ID</li>
-                <li>Hierarchy position</li>
-                <li>Colour</li>
-                <li>Notable permissions</li>
-                <li>Member count</li>
-                <li>Secret channel access</li>
-            </ul>
-            <br />
+            <div class="command-usage">
+                <code>=info role 'rolename'</code>
+                <i>
+                    Gets information about a role. Rolename is the name of the role to query.<br />
+                    Data fields are:
+                </i>
+                <ul style="font-style:italic">
+                    <li>Name and ID</li>
+                    <li>Hierarchy position</li>
+                    <li>Colour</li>
+                    <li>Notable permissions</li>
+                    <li>Member count</li>
+                    <li>Secret channel access</li>
+                </ul>
+            </div>
 
-            <code>=info emoji ':emoji:'</code><br />
-            <i>
-                Gets information about an emoji. Emoji is the resolved emoji to use.<br />
-                Only works with custom emoji and the bot does not need to be on the server.<br />
-                Data fields are:
-            </i>
-            <ul style="font-style:italic">
-                <li>Name and ID</li>
-                <li>Containing servers</li>
-                <li>Full resolution image</li>
-            </ul>
-            <br />
+            <div class="command-usage">
+                <code>=info emoji ':emoji:'</code><br />
+                <i>
+                    Gets information about an emoji. Emoji is the resolved emoji to use.<br />
+                    Only works with custom emoji and the bot does not need to be on the server.<br />
+                    Data fields are:
+                </i>
+                <ul style="font-style:italic">
+                    <li>Name and ID</li>
+                    <li>Containing servers</li>
+                    <li>Full resolution image</li>
+                </ul>
+            </div>
 
-            <code>=info world</code><br />
-            <i>Fetches the server awards of all the servers the bot is on.</i><br />
-            <i class="bot-text">
-                Please don't spam this command... It takes me a long time to gather all the data and if you do the command too many times, it grinds me to a halt<br />
-                Which means nobody gets to use any of my functions. :&lt;
-            </i><br />
-            <i>Data fields are:</i>
-            <ul style="font-style:italic">
-                <li>Total server count</li>
-                <li>Largest server (members)</li>
-                <li>Largest server (channels)</li>
-                <li>Lowest and highest members per channel ratio</li>
-                <li>Most members in voice chat</li>
-                <li>Most recent messages</li>
-                <li>Most tags per member</li>
-                <li>Most messages sent by the bot</li>
-                <li>Most common command</li>
-                <li>Global member stats</li>
-                <li>Global member statuses</li>
-                <li>Total bot count</li>
-            </ul>
+            <div class="command-usage">
+                <code>=info world</code><br />
+                <i>Fetches the server awards of all the servers the bot is on.</i><br />
+                <i class="bot-text">
+                    Please don't spam this command... It takes me a long time to gather all the data and if you do the command too many times, it grinds me to a halt<br />
+                    Which means nobody gets to use any of my functions. :&lt;
+                </i><br />
+                <i>Data fields are:</i>
+                <ul style="font-style:italic">
+                    <li>Total server count</li>
+                    <li>Largest server (members)</li>
+                    <li>Largest server (channels)</li>
+                    <li>Lowest and highest members per channel ratio</li>
+                    <li>Most members in voice chat</li>
+                    <li>Most recent messages</li>
+                    <li>Most tags per member</li>
+                    <li>Most messages sent by the bot</li>
+                    <li>Most common command</li>
+                    <li>Global member stats</li>
+                    <li>Global member statuses</li>
+                    <li>Total bot count</li>
+                </ul>
+            </div>
 
         </div>
         <hr />
@@ -212,8 +219,10 @@
 
             <b>Usage:</b><br />
 
-            <code>=avy ['member']</code><br />
-            <i>Member is the name of the person who's avatar to get. If no member is supplied, it fetches your own avatar.</i>
+            <div class="command-usage">
+                <code>=avy ['member']</code><br />
+                <i>Member is the name of the person who's avatar to get. If no member is supplied, it fetches your own avatar.</i>
+            </div>
         </div>
         <hr />
 
@@ -231,17 +240,19 @@
 
             <b>Usage:</b><br />
 
-            <code>=perms ['member']</code><br />
-            <i>Member is the member to query. If no member is given then yourself is used.</i>
-            <table class="codeblock">
-                <tr><td>&lt;user&gt; =perms "Beta 42"</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; Permissions for Beta 42#3979:</td></tr>
-                <tr><td class="diff-added">&nbsp;     + Add Reactions</td></tr>
-                <tr><td class="diff-removed">&nbsp;   - Administrator</td></tr>
-                <tr><td class="diff-added">&nbsp;     + Attach Files</td></tr>
-                <tr><td class="bot-text">&nbsp;       ...</td></tr>
-                <tr><td class="diff-added">&nbsp;     + View Audit Logs</td></tr>
-            </table>
+            <div class="command-usage">
+                <code>=perms ['member']</code><br />
+                <i>Member is the member to query. If no member is given then yourself is used.</i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =perms "Beta 42"</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; Permissions for Beta 42#3979:</td></tr>
+                    <tr><td class="diff-added">&nbsp;     + Add Reactions</td></tr>
+                    <tr><td class="diff-removed">&nbsp;   - Administrator</td></tr>
+                    <tr><td class="diff-added">&nbsp;     + Attach Files</td></tr>
+                    <tr><td class="bot-text">&nbsp;       ...</td></tr>
+                    <tr><td class="diff-added">&nbsp;     + View Audit Logs</td></tr>
+                </table>
+            </div>
         </div>
         <hr />
 
@@ -255,12 +266,16 @@
 
             <b>Usage:</b><br />
 
-            <code>=define 'query'</code><br />
-            <i>Defines via PyDictionary. Query is the word to define.</i><br />
+            <div class="command-usage">
+                <code>=define 'query'</code><br />
+                <i>Defines via PyDictionary. Query is the word to define.</i><br />
+            </div>
 
-            <code>=define urban 'query'</code><br />
-            <i>Defines via UrbanDictionary. Query is the word to define.</i><br />
-            <i class="bot-text">You can also use <code>=ud 'query'</code> as a shortcut~!</i>
+            <div class="command-usage">
+                <code>=define urban 'query'</code><br />
+                <i>Defines via UrbanDictionary. Query is the word to define.</i><br />
+                <i class="bot-text">You can also use <code>=ud 'query'</code> as a shortcut~!</i>
+            </div>
         </div>
         <hr />
 
@@ -276,7 +291,9 @@
 
             <b>Usage:</b><br />
 
-            <code>=now</code><br />
+            <div class="command-usage">
+                <code>=now</code><br />
+            </div>
         </div>
         <hr />
 
@@ -300,11 +317,15 @@
 
             <b>Usage:</b><br />
 
-            <code>=currency 'value' 'FROM' ['TO']</code><br />
-            <i>Value is the amount to convert. FROM and TO are the 3 letter codes from the list above. If TO is given, it is added to the list of conversions to make.</i><br />
+            <div class="command-usage">
+                <code>=currency 'value' 'FROM' ['TO']</code><br />
+                <i>Value is the amount to convert. FROM and TO are the 3 letter codes from the list above. If TO is given, it is added to the list of conversions to make.</i><br />
+            </div>
 
-            <code>=currency list</code>
-            <i>Lists the recognised currencies.</i>
+            <div class="command-usage">
+                <code>=currency list</code>
+                <i>Lists the recognised currencies.</i>
+            </div>
 
         </div>
         <hr />
@@ -319,8 +340,10 @@
 
             <b>Usage:</b><br />
 
-            <code>=discrim ['0000']</code><br />
-            <i>0000 is the full 4 digit discrim to take. If not given, your own is used.</i>
+            <div class="command-usage">
+                <code>=discrim ['0000']</code><br />
+                <i>0000 is the full 4 digit discrim to take. If not given, your own is used.</i>
+            </div>
         </div>
         <hr />
 
@@ -335,7 +358,9 @@
 
             <b>Usage:</b><br />
 
-            <code>=msgcount</code>
+            <div class="command-usage">
+                <code>=msgcount</code>
+            </div>
         </div>
         <hr />
 
@@ -348,8 +373,10 @@
 
             <b>Usage:</b><br />
 
-            <code>=timetravel ['days']</code><br />
-            <i>Days is how many days back to pin. If not given, it pins the first message.</i>
+            <div class="command-usage">
+                <code>=timetravel ['days']</code><br />
+                <i>Days is how many days back to pin. If not given, it pins the first message.</i>
+            </div>
         </div>
         <hr />
 

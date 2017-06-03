@@ -134,6 +134,10 @@
             background-color: rgba(115,139,215,.1);
         }
 
+        .command-usage {
+            margin-top: 0.6em;
+        }
+
         .embed{
             background-color:#36393b;
             color:#fff;

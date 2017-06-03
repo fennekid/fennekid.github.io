@@ -99,8 +99,10 @@
 
             <b>Usage:</b><br />
 
-            <code>=kick 'member' ['message']</code><br />
-            <i>Member is who to kick, message is an optional message to be PM'd to the target before being kicked.</i>
+            <div class="command-usage">
+                <code>=kick 'member' ['message']</code><br />
+                <i>Member is who to kick, message is an optional message to be PM'd to the target before being kicked.</i>
+            </div>
         </div>
         <hr />
 
@@ -114,8 +116,10 @@
 
             <b>Usage:</b><br />
 
-            <code>=ban 'member' ['message']</code><br />
-            <i>Member is who to ban, message is an optional message to be PM'd to the target before being banned.</i>
+            <div class="command-usage">
+                <code>=ban 'member' ['message']</code><br />
+                <i>Member is who to ban, message is an optional message to be PM'd to the target before being banned.</i>
+            </div>
         </div>
         <hr />
 
@@ -130,8 +134,10 @@
 
             <b>Usage:</b><br />
 
-            <code>=softban 'member' ['message']</code><br />
-            <i>Member is who to kick, message is an optional message to be PM'd to the target before being kicked.</i>
+            <div class="command-usage">
+                <code>=softban 'member' ['message']</code><br />
+                <i>Member is who to kick, message is an optional message to be PM'd to the target before being kicked.</i>
+            </div>
         </div>
         <hr />
 
@@ -147,8 +153,10 @@
 
             <b>Usage:</b><br />
 
-            <code>=xban 'ID'</code><br />
-            <i>ID is the 18-19 digit ID number of the target. This can be found by enabling developer mode and right clicking on a users name or avatar.</i>
+            <div class="command-usage">
+                <code>=xban 'ID'</code><br />
+                <i>ID is the 18-19 digit ID number of the target. This can be found by enabling developer mode and right clicking on a users name or avatar.</i>
+            </div>
         </div>
         <hr />
 
@@ -167,33 +175,47 @@
 
             <b>Usage:</b><br />
 
-            <code>=remove all ['limit']</code><br />
-            <i>Deletes all messages in the limit regardless of what it says and who sent it.</i><br />
+            <div class="command-usage">
+                <code>=remove all ['limit']</code><br />
+                <i>Deletes all messages in the limit regardless of what it says and who sent it.</i><br />
+            </div>
 
-            <code>=remove user 'member' [['member' ...] 'limit']</code><br />
-            <i>
-                Deletes messages sent by the given members. To include multiple members, you must add the limit.<br />
-                Because of how the bot selects members, supplying a role mention will not purge from members of the role and instead ask which singular member of the role to use.
-            </i><br />
+            <div class="command-usage">
+                <code>=remove user 'member' [['member' ...] 'limit']</code><br />
+                <i>
+                    Deletes messages sent by the given members. To include multiple members, you must add the limit.<br />
+                    Because of how the bot selects members, supplying a role mention will not purge from members of the role and instead ask which singular member of the role to use.
+                </i><br />
+            </div>
 
-            <code>=remove contains 'content' ['limit']</code><br />
-            <i>Deletes messages that contain a given keyword. This must be at least 3 letters long.</i><br />
+            <div class="command-usage">
+                <code>=remove contains 'content' ['limit']</code><br />
+                <i>Deletes messages that contain a given keyword. This must be at least 3 letters long.</i><br />
+            </div>
 
-            <code>=remove embeds ['limit']</code><br />
-            <i>Deletes messages that contain any embeds or attachments. Useful for image spam.</i><br />
+            <div class="command-usage">
+                <code>=remove embeds ['limit']</code><br />
+                <i>Deletes messages that contain any embeds or attachments. Useful for image spam.</i><br />
+            </div>
 
-            <code>=remove command 'call' ['call' ...] ['limit']</code><br />
-            <i>Deletes messages that start with a given call character. This follows tulpa compliancy.</i><br />
+            <div class="command-usage">
+                <code>=remove command 'call' ['call' ...] ['limit']</code><br />
+                <i>Deletes messages that start with a given call character. This follows tulpa compliancy.</i><br />
+            </div>
 
-            <code>=remove reactions ['limit']</code><br />
-            <i>
-                Does not delete any messages, instead removes reactions posted to all messages within the range.<br />
-                This command is slow because it scans each message individually instead of purging them all at once.
-            </i><br />
-            <i class="bot-text">"Try using <code>=purge finebros</code> instead, it works the same, but is funner~!"</i><br />
+            <div class="command-usage">
+                <code>=remove reactions ['limit']</code><br />
+                <i>
+                    Does not delete any messages, instead removes reactions posted to all messages within the range.<br />
+                    This command is slow because it scans each message individually instead of purging them all at once.
+                </i><br />
+                <i class="bot-text">"Try using <code>=purge finebros</code> instead, it works the same, but is funner~!"</i><br />
+            </div>
 
-            <code>=remove system ['limit']</code><br />
-            <i>Deletes any system messages such as "Message Pinned" notifications.</i>
+            <div class="command-usage">
+                <code>=remove system ['limit']</code><br />
+                <i>Deletes any system messages such as "Message Pinned" notifications.</i>
+            </div>
         </div>
         <hr />
 
@@ -221,99 +243,128 @@
 
             <b>Givemes:</b><br />
 
-            <code>=giverole giveme create 'name' 'role'</code><br />
-            <i>Creates a new giveme. Name is the name of the giveme (<code>=giveme 'name'</code>,) role is the role to hand out when the giveme is called.</i>
-            <table class="codeblock">
-                <tr><td>&lt;user&gt; =giverole giveme create spoilers "Spoiler Access"</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have set `=giveme spoilers` to assign Spoiler Access.</td></tr>
-                <tr><td>&lt;user&gt; =giverole giveme create nsfw "NSFW Access"</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have set `=giveme nsfw` to assign NSFW Access.</td></tr>
-            </table>
+            <div class="command-usage">
+                <code>=giverole giveme create 'name' 'role'</code><br />
+                <i>Creates a new giveme. Name is the name of the giveme (<code>=giveme 'name'</code>,) role is the role to hand out when the giveme is called.</i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =giverole giveme create spoilers "Spoiler Access"</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have set `=giveme spoilers` to assign Spoiler Access.</td></tr>
+                    <tr><td>&lt;user&gt; =giverole giveme create nsfw "NSFW Access"</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have set `=giveme nsfw` to assign NSFW Access.</td></tr>
+                </table>
+            </div>
 
-            <code>=giverole giveme delete 'name'</code><br />
-            <i>Deletes a giveme. Name is the name of the giveme to delete.</i>
-            <table class="codeblock">
-                <tr><td>&lt;user&gt; =giverole giveme delete nsfw</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have removed that giveme.</td></tr>                
-            </table>
+            <div class="command-usage">
+                <code>=giverole giveme delete 'name'</code><br />
+                <i>Deletes a giveme. Name is the name of the giveme to delete.</i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =giverole giveme delete nsfw</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have removed that giveme.</td></tr>
+                </table>
+            </div>
 
-            <code>=giverole giveme require 'name' 'role'</code><br />
-            <i>
-                Adds a role requirement to a giveme. Name is the giveme name, role is the requirement to add.<br />
-                For a user to claim or remove a giveme, all role requirements must be met.<br />
-                The logical conclusion to this is that a giveme that requires the role it assigns becomes remove only.
-            </i>
-            <table class="codeblock">
-                <tr><td>&lt;user&gt; =giverole giveme create roleplay "Roleplay Access"</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have set `=giveme roleplay` to assign Roleplay Access.</td></tr>
-                <tr><td>&lt;user&gt; =giverole giveme require roleplay "Member"</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have set `=giveme roleplay` to require users to have Member</td></tr>
-            </table>
+            <div class="command-usage">
+                <code>=giverole giveme require 'name' 'role'</code><br />
+                <i>
+                    Adds a role requirement to a giveme. Name is the giveme name, role is the requirement to add.<br />
+                    For a user to claim or remove a giveme, all role requirements must be met.<br />
+                    The logical conclusion to this is that a giveme that requires the role it assigns becomes remove only.
+                </i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =giverole giveme create roleplay "Roleplay Access"</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have set `=giveme roleplay` to assign Roleplay Access.</td></tr>
+                    <tr><td>&lt;user&gt; =giverole giveme require roleplay "Member"</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have set `=giveme roleplay` to require users to have Member</td></tr>
+                </table>
+            </div>
 
-            <code>=giverole giveme ignore 'name' 'role'</code><br />
-            <i>
-                Adds a role restriction to a giveme. Name is the giveme name, role is the restriction to add.<br />
-                For a user to claim or remove a giveme, they must not have any of that givemes restricted roles.<br />
-                The logical conclusion to this is that a giveme that ignores the role it assigns becomes assign only.
-            </i>
-            <table class="codeblock">
-                <tr><td>&lt;user&gt; =giverole giveme ignore roleplay "RP Banned"</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have set `=giveme roleplay` to reject users who have RP Banned.</td></tr>
-            </table>
+            <div class="command-usage">
+                <code>=giverole giveme ignore 'name' 'role'</code><br />
+                <i>
+                    Adds a role restriction to a giveme. Name is the giveme name, role is the restriction to add.<br />
+                    For a user to claim or remove a giveme, they must not have any of that givemes restricted roles.<br />
+                    The logical conclusion to this is that a giveme that ignores the role it assigns becomes assign only.
+                </i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =giverole giveme ignore roleplay "RP Banned"</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have set `=giveme roleplay` to reject users who have RP Banned.</td></tr>
+                </table>
+            </div>
 
-            <code>=giverole giveme time 'name' 'time'</code><br />
-            <i>
-                Adds a age requirement to a giveme. Name is the giveme name, time is the delay period entered as <code>Xd</code>, <code>Xw</code> or <code>Xm</code> where X is the number of days, weeks or months.<br />
-                For a user to claim or remove a giveme, they must have been on the server for at least as long as the delay period.<br />
-                This can be combined with welcome roles to add a gate keeper to your server, or it can be used to assign member roles.
-            </i>
-            <table class="codeblock">
-                <tr><td>&lt;user&gt; =giverole giveme create member "Member"</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have set `=giveme member` to assign Member.</td></tr>
-                <tr><td>&lt;user&gt; =giverole giveme time member 2d</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have set the delay period for this giveme to 2 days.</td></tr>
-            </table>
+            <div class="command-usage">
+                <code>=giverole giveme time 'name' 'time'</code><br />
+                <i>
+                    Adds a age requirement to a giveme. Name is the giveme name, time is the delay period entered as <code>Xd</code>, <code>Xw</code> or <code>Xm</code> where X is the number of days, weeks or months.<br />
+                    For a user to claim or remove a giveme, they must have been on the server for at least as long as the delay period.<br />
+                    This can be combined with welcome roles to add a gate keeper to your server, or it can be used to assign member roles.
+                </i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =giverole giveme create member "Member"</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have set `=giveme member` to assign Member.</td></tr>
+                    <tr><td>&lt;user&gt; =giverole giveme time member 2d</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have set the delay period for this giveme to 2 days.</td></tr>
+                </table>
+            </div>
+
             <br />
 
             <b>Colourmes and Giveyous:</b><br />
 
-            <code>=giverole colourme create 'name' 'role'</code> and <code>=giverole giveyou create 'name' 'role'</code><br />
-            <i>Creates a new colourme/giveyou. Name is the colourme/giveyou name, role is the role to use.</i><br />
+            <div class="command-usage">
+                <code>=giverole colourme create 'name' 'role'</code> and <code>=giverole giveyou create 'name' 'role'</code><br />
+                <i>Creates a new colourme/giveyou. Name is the colourme/giveyou name, role is the role to use.</i><br />
+            </div>
 
-            <code>=giverole colourme delete 'name'</code> and <code>=giverole giveyou remove 'name'</code><br />
-            <i>Deletes a colourme/giveyou. Name is the colourme/giveyou name.</i><br />
+            <div class="command-usage">
+                <code>=giverole colourme delete 'name'</code> and <code>=giverole giveyou remove 'name'</code><br />
+                <i>Deletes a colourme/giveyou. Name is the colourme/giveyou name.</i><br />
+            </div>
+
             <br />
 
             <b>Voice Roles:</b><br />
 
-            <code>=giverole voice bind 'channel' 'role'</code><br />
-            <i>
-                Binds a role to the voice channel. Channel is the voice channel name, role is the role to assign.<br />
-                This functionality can be used to give users channel keys.
-            </i>
-            <table class="codeblock">
-                <tr><td>&lt;user&gt; =giverole voice bind 'Room 1' '&#x1f511;[1]'</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have changed the bound role for Room 1 to &#x1f511;[1]</td></tr>
-            </table>
+            <div class="command-usage">
+                <code>=giverole voice bind 'channel' 'role'</code><br />
+                <i>
+                    Binds a role to the voice channel. Channel is the voice channel name, role is the role to assign.<br />
+                    This functionality can be used to give users channel keys.
+                </i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =giverole voice bind 'Room 1' '&#x1f511;[1]'</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have changed the bound role for Room 1 to &#x1f511;[1]</td></tr>
+                </table>
+            </div>
 
-            <code>=giverole voice unbind 'channel'</code><br />
-            <i>Removes the bound role of a channel. Channel is the voice channel name.</i><br />
+            <div class="command-usage">
+                <code>=giverole voice unbind 'channel'</code><br />
+                <i>Removes the bound role of a channel. Channel is the voice channel name.</i><br />
+            </div>
 
-            <code>=giverole voice persist 'channel'</code><br />
-            <i>Allows users to keep the voice channel role when they leave the channel. Channel is the voice channel name.</i><br />
+            <div class="command-usage">
+                <code>=giverole voice persist 'channel'</code><br />
+                <i>Allows users to keep the voice channel role when they leave the channel. Channel is the voice channel name.</i><br />
+            </div>
+
             <br />
 
             <b>Welcome Roles</b><br />
             <i>See <a href="#welcome">=welcome</a>.</i><br />
 
-            <code>=giverole welcome ['role']</code><br />
-            <i>Gets or sets the welcome role. Role is the role to assign, if no role is given, it fetches the current welcome role.</i><br />
+            <div class="command-usage">
+                <code>=giverole welcome ['role']</code><br />
+                <i>Gets or sets the welcome role. Role is the role to assign, if no role is given, it fetches the current welcome role.</i><br />
+            </div>
 
-            <code>=giverole bots ['role']</code><br />
-            <i>Gets or sets the bot welcome role. Role is the role to assign, if no role is given, it fetches the current bot welcome role.</i><br />
+            <div class="command-usage">
+                <code>=giverole bots ['role']</code><br />
+                <i>Gets or sets the bot welcome role. Role is the role to assign, if no role is given, it fetches the current bot welcome role.</i><br />
+            </div>
 
-            <code>=giverole welcome stop</code> and <code>=giverole bots stop</code><br />
-            <i>Removes the welcome or bot welcome role.</i><br />
+            <div class="command-usage">
+                <code>=giverole welcome stop</code> and <code>=giverole bots stop</code><br />
+                <i>Removes the welcome or bot welcome role.</i><br />
+            </div>
 
         </div>
         <hr />
@@ -334,11 +385,15 @@
 
             <b>Usage:</b><br />
 
-            <code>=giveme 'name'</code><br />
-            <i>Assigns or removes a giveme role. Name is the name of the giveme.</i>
+            <div class="command-usage">
+                <code>=giveme 'name'</code><br />
+                <i>Assigns or removes a giveme role. Name is the name of the giveme.</i>
+            </div>
 
-            <code>=giveme list</code><br />
-            <i>Lists the available giveme roles as well as their requirements.</i>
+            <div class="command-usage">
+                <code>=giveme list</code><br />
+                <i>Lists the available giveme roles as well as their requirements.</i>
+            </div>
         </div>
         <hr />
 
@@ -371,11 +426,15 @@
 
             <b>Usage:</b><br />
             
-            <code>=giveyou 'member' 'name'</code><br />
-            <i>Assigns or removes a member. Member is who is affected, name is the giveyou name.</i><br />
+            <div class="command-usage">
+                <code>=giveyou 'member' 'name'</code><br />
+                <i>Assigns or removes a member. Member is who is affected, name is the giveyou name.</i><br />
+            </div>
 
-            <code>=giveyou list</code><br />
-            <i>Lists the available giveyous.</i>
+            <div class="command-usage">
+                <code>=giveyou list</code><br />
+                <i>Lists the available giveyous.</i>
+            </div>
         </div>
         <hr />
 
@@ -457,23 +516,27 @@
 
             <b>Usage:</b><br />
 
-            <code>=welcome 'type' 'option'</code><br />
-            <i>Sets the specific part of the welcome message. Type is the typename (monospace above), option is the item from the list</i>
-            <table class="codeblock">
-                <tr><td>&lt;user&gt; =welcome dest server</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have changed the welcome dest to **Send to the default channel**</td></tr>
-                <tr><td>&lt;user&gt; =welcome message hug</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have changed the welcome message to **Send a welcome hug**</td></tr>
-                <tr><td>&lt;user&gt; =welcome wait tuping</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have changed the welcome wait to **Wait for typing**</td></tr>
-                <tr><td>&lt;user&gt; =welcome role giverole</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have changed the welcome role to **Assign `=giverole welcome`**</td></tr>
-                <tr><td>&lt;user&gt; =welcome bots ignore</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have changed the welcome bots to **Ignore new bots**</td></tr>
-            </table>
+            <div class="command-usage">
+                <code>=welcome 'type' 'option'</code><br />
+                <i>Sets the specific part of the welcome message. Type is the typename (monospace above), option is the item from the list</i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =welcome dest server</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have changed the welcome dest to **Send to the default channel**</td></tr>
+                    <tr><td>&lt;user&gt; =welcome message hug</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have changed the welcome message to **Send a welcome hug**</td></tr>
+                    <tr><td>&lt;user&gt; =welcome wait tuping</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have changed the welcome wait to **Wait for typing**</td></tr>
+                    <tr><td>&lt;user&gt; =welcome role giverole</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have changed the welcome role to **Assign `=giverole welcome`**</td></tr>
+                    <tr><td>&lt;user&gt; =welcome bots ignore</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have changed the welcome bots to **Ignore new bots**</td></tr>
+                </table>
+            </div>
 
-            <code>=welcome info</code><br />
-            <i>Posts the current status of the servers as well as what commands to run to disable each feature.</i>
+            <div class="command-usage">
+                <code>=welcome info</code><br />
+                <i>Posts the current status of the servers as well as what commands to run to disable each feature.</i>
+            </div>
 
         </div>
         <hr />
@@ -492,14 +555,21 @@
 
             <b>Usage:</b><br />
 
-            <code>=modlog</code><br />
-            <i>Creates a new channel with a default topic and assigns it as the modlog.</i><br />
+            <div class="command-usage">
+                <code>=modlog</code><br />
+                <i>Creates a new channel with a default topic and assigns it as the modlog.</i><br />
+            </div>
 
-            <code>=modlog here</code><br />
-            <i>Moves the modlog into the channel the command is called in. The topic will remain unchanged.</i><br />
+            <div class="command-usage">
+                <code>=modlog here</code><br />
+                <i>Moves the modlog into the channel the command is called in. The topic will remain unchanged.</i><br />
+            </div>
 
-            <code>=modlog stop</code><br />
-            <i>Stops posting to the modlog. The channel will not be deleted.</i><br />
+            <div class="command-usage">
+                <code>=modlog stop</code><br />
+                <i>Stops posting to the modlog. The channel will not be deleted.</i><br />
+            </div>
+
             <br />
 
             <b>The channel topic:</b><br />
@@ -634,8 +704,10 @@
 
             <b>Usage:</b><br />
 
-            <code>=report 'message'</code>
-            <i>Message is the message to send.</i>
+            <div class="command-usage">
+                <code>=report 'message'</code>
+                <i>Message is the message to send.</i>
+            </div>
 
         </div>
         <hr />
@@ -652,8 +724,10 @@
 
             <b>Usage:</b>
 
-            <code>=log 'message'</code>
-            <i>Message is the message to send.</i>
+            <div class="command-usage">
+                <code>=log 'message'</code>
+                <i>Message is the message to send.</i>
+            </div>
         </div>
         <hr />
 
@@ -697,14 +771,20 @@
             <br />
             <b>Usage:</b><br />
 
-            <code>=blacklist add 'term'</code><br />
-            <i>Adds a new term to the blacklist. Teem is what to add.</i><br />
+            <div class="command-usage">
+                <code>=blacklist add 'term'</code><br />
+                <i>Adds a new term to the blacklist. Teem is what to add.</i><br />
+            </div>
 
-            <code>=blacklist remove</code><br />
-            <i>Removes an item from the blacklist. This command is semi-interractive.</i><br />
+            <div class="command-usage">
+                <code>=blacklist remove</code><br />
+                <i>Removes an item from the blacklist. This command is semi-interractive.</i><br />
+            </div>
 
-            <code>=blacklist list</code><br />
-            <i>Lists all the words on the blacklist.</i>
+            <div class="command-usage">
+                <code>=blacklist list</code><br />
+                <i>Lists all the words on the blacklist.</i>
+            </div>
 
         </div>
         <hr />
@@ -726,17 +806,23 @@
 
             <b>Usage:</b>
             
-            <code>=spamlimit channels '#channel' [...]</code><br />
-            <i>
-                Changes the defined bot channels. #channel is the mention of the channel to use. You can use multiple mentions.<br />
-                This automatically starts tracking spamlimit with the default limits of 10 lines every 30 seconds.
-            </i><br />
+            <div class="command-usage">
+                <code>=spamlimit channels '#channel' [...]</code><br />
+                <i>
+                    Changes the defined bot channels. #channel is the mention of the channel to use. You can use multiple mentions.<br />
+                    This automatically starts tracking spamlimit with the default limits of 10 lines every 30 seconds.
+                </i><br />
+            </div>
 
-            <code>=spamlimit limit 'lines' ['cooldown']</code><br />
-            <i>Sets the maximum number of lines the bot can send. Lines is the number of lines before stopping, cooldown is the seconds for those lines to ware off, if omitted, the value is unchanged.</i><br />
+            <div class="command-usage">
+                <code>=spamlimit limit 'lines' ['cooldown']</code><br />
+                <i>Sets the maximum number of lines the bot can send. Lines is the number of lines before stopping, cooldown is the seconds for those lines to ware off, if omitted, the value is unchanged.</i><br />
+            </div>
 
-            <code>=spamlimit stop</code><br />
-            <i>Stops counting lines.</i>
+            <div class="command-usage">
+                <code>=spamlimit stop</code><br />
+                <i>Stops counting lines.</i>
+            </div>
         </div>
         <hr />
 
@@ -756,11 +842,13 @@
 
             <b>Usage:</b><br />
 
-            <code>=rolestate</code><br />
-            <i>
-                Enables or disables the rolestate. The bot will ask for confirmation.<br />
-                Disabling rolestate will delete all saved data for the server.
-            </i>
+            <div class="command-usage">
+                <code>=rolestate</code><br />
+                <i>
+                    Enables or disables the rolestate. The bot will ask for confirmation.<br />
+                    Disabling rolestate will delete all saved data for the server.
+                </i>
+            </div>
 
         </div>
         <hr />

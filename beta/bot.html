@@ -122,41 +122,47 @@
 
             <b>Usage:</b><br />
 
-            <code>=help 'command name'</code><br />
-            <i>Fetches the long-help of a specific command.</i>
-            <table class="codeblock">
-                <tr><td>&lt;user&gt; =help info</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; Help for `=info`</td></tr>
-                <tr><td class="bot-text">&nbsp;      `=info` makes me tell you a whole bunch of cool stats and info</td></tr>
-                <tr><td class="bot-text">&nbsp;      `=info [user 'username']` gets info about yourself or another user</td></tr>
-                <tr><td class="bot-text">&nbsp;      `=info server` gets info about the server</td></tr>
-                <tr><td class="bot-text">&nbsp;      ...</td></tr>
-            </table>
+            <div class="command-usage">
+                <code>=help 'command name'</code><br />
+                <i>Fetches the long-help of a specific command.</i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =help info</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; Help for `=info`</td></tr>
+                    <tr><td class="bot-text">&nbsp;      `=info` makes me tell you a whole bunch of cool stats and info</td></tr>
+                    <tr><td class="bot-text">&nbsp;      `=info [user 'username']` gets info about yourself or another user</td></tr>
+                    <tr><td class="bot-text">&nbsp;      `=info server` gets info about the server</td></tr>
+                    <tr><td class="bot-text">&nbsp;      ...</td></tr>
+                </table>
+            </div>
 
-            <code>=help 'category name'</code><br />
-            <i>Fetches the short-help of every command in a category.</i>
-            <table class="codeblock">
-                <tr><td>&lt;user&gt; =help Information</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; Information - Tools for telling you things</td></tr>
-                <tr><td class="bot-text">&nbsp;      `=perms` gets your channel permissions</td></tr>
-                <tr><td class="bot-text">&nbsp;      `=msgcount` makes me generate a list of authors in this channel</td></tr>
-                <tr><td class="bot-text">&nbsp;      `=avy` lets me get the avatar of a user</td></tr>
-                <tr><td class="bot-text">&nbsp;      ...</td></tr>
-            </table>
+            <div class="command-usage">
+                <code>=help 'category name'</code><br />
+                <i>Fetches the short-help of every command in a category.</i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =help Information</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; Information - Tools for telling you things</td></tr>
+                    <tr><td class="bot-text">&nbsp;      `=perms` gets your channel permissions</td></tr>
+                    <tr><td class="bot-text">&nbsp;      `=msgcount` makes me generate a list of authors in this channel</td></tr>
+                    <tr><td class="bot-text">&nbsp;      `=avy` lets me get the avatar of a user</td></tr>
+                    <tr><td class="bot-text">&nbsp;      ...</td></tr>
+                </table>
+            </div>
 
-            <code>=help search 'query'</code><br />
-            <i>
-                Searches for commands relating to the keyword. This only works in english.<br />
-                Also it's really bad...
-            </i>
-            <table class="codeblock">
-                <tr><td>&lt;user&gt; =help search user</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I found these commands:</td></tr>
-                <tr><td class="bot-text">&nbsp;      `=about` makes me PM you some info about me</td></tr>
-                <tr><td class="bot-text">&nbsp;      `=profile` lets me keep track of your online profile</td></tr>
-                <tr><td class="bot-text">&nbsp;      `=info` makes me tell you a whole bunch of cool stats and info</td></tr>
-                <tr><td class="bot-text">&nbsp;      ...</td></tr>
-            </table>
+            <div class="command-usage">
+                <code>=help search 'query'</code><br />
+                <i>
+                    Searches for commands relating to the keyword. This only works in english.<br />
+                    Also it's really bad...
+                </i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =help search user</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I found these commands:</td></tr>
+                    <tr><td class="bot-text">&nbsp;      `=about` makes me PM you some info about me</td></tr>
+                    <tr><td class="bot-text">&nbsp;      `=profile` lets me keep track of your online profile</td></tr>
+                    <tr><td class="bot-text">&nbsp;      `=info` makes me tell you a whole bunch of cool stats and info</td></tr>
+                    <tr><td class="bot-text">&nbsp;      ...</td></tr>
+                </table>
+            </div>
 
         </div>
         <hr />
@@ -172,17 +178,19 @@
 
             <b>Usage:</b><br />
 
-            <code>=tutorial</code>
-            <table class="codeblock">
-                <tr><td>&lt;user&gt; =tutorial</td></tr>
-                <tr><td class="bot-text">&lt;B 42&lt; Hello new user. Thank you for inviting me to your server. ... Use `==next` to move to the next message.</td></tr>
-                <tr><td>&lt;user&gt; ==next</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; [0] Hello, I am 42, a robot build by squaswin. If you cannot understand me, use `=language` ...</td></tr>
-                <tr><td>&lt;user&gt; ==next</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; [1] I am a Moderation bot. I can do ... things, like `=ban` or `=kick` people ...</td></tr>
-                <tr><td>&lt;user&gt; *waits a couple minutes*</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; This ends my tutorial ...</td></tr>
-            </table>
+            <div class="command-usage">
+                <code>=tutorial</code>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =tutorial</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&lt; Hello new user. Thank you for inviting me to your server. ... Use `==next` to move to the next message.</td></tr>
+                    <tr><td>&lt;user&gt; ==next</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; [0] Hello, I am 42, a robot build by squaswin. If you cannot understand me, use `=language` ...</td></tr>
+                    <tr><td>&lt;user&gt; ==next</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; [1] I am a Moderation bot. I can do ... things, like `=ban` or `=kick` people ...</td></tr>
+                    <tr><td>&lt;user&gt; *waits a couple minutes*</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; This ends my tutorial ...</td></tr>
+                </table>
+            </div>
 
         </div>
         <hr />
@@ -217,19 +225,23 @@
 
             <b>Usage:</b><br />
 
-            <code>=alias 'call'</code><br />
-            <i>Changes the alias for the entire server</i>
-            <table class="codeblock">
-                <tr><td>&lt;user&gt; =alias 'pls'</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have changed this servers alias to `pls` (`plshelp`, `plstag`, `plsalias`)</td></tr>
-            </table>
+            <div class="command-usage">
+                <code>=alias 'call'</code><br />
+                <i>Changes the alias for the entire server</i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =alias 'pls'</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have changed this servers alias to `pls` (`plshelp`, `plstag`, `plsalias`)</td></tr>
+                </table>
+            </div>
 
-            <code>=alias =</code><br />
-            <i>Removes the alias from the server</i>
-            <table class="codeblock">
-                <tr><td>&lt;user&gt; =alias =</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have removed the alias for this server.</td></tr>
-            </table>
+            <div class="command-usage">
+                <code>=alias =</code><br />
+                <i>Removes the alias from the server</i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =alias =</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have removed the alias for this server.</td></tr>
+                </table>
+            </div>
         </div>
         <hr />
 
@@ -258,33 +270,39 @@
 
             <b>Usage:</b><br />
 
-            <code>=toggle 'command'</code><br />
-            <i>Disables or enables individual commands</i>
-            <table class="codeblock">
-                <tr><td>&lt;user&gt; =toggle choose</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have disabled that command</td></tr>
-                <tr><td>&lt;user&gt; =help choose</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; Help for =choose [5/10s] [Disabled by server]</td></tr>
-                <tr><td class="bot-text">&nbsp;      `=choose` makes me pick from a list of options</td></tr>
-                <tr><td class="bot-text">&nbsp;      `=choose 'optn1' 'optn2' [...]`</td></tr>
-            </table>
+            <div class="command-usage">
+                <code>=toggle 'command'</code><br />
+                <i>Disables or enables individual commands</i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =toggle choose</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have disabled that command</td></tr>
+                    <tr><td>&lt;user&gt; =help choose</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; Help for =choose [5/10s] [Disabled by server]</td></tr>
+                    <tr><td class="bot-text">&nbsp;      `=choose` makes me pick from a list of options</td></tr>
+                    <tr><td class="bot-text">&nbsp;      `=choose 'optn1' 'optn2' [...]`</td></tr>
+                </table>
+            </div>
 
-            <code>=toggle 'category'</code><br />
-            <i>Disables or enables all the commands in a set</i>
-            <table class="codeblock">
-                <tr><td>&lt;user&gt; =toggle Fun</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have disabled 16 commands:</td></tr>
-                <tr><td class="bot-text">&nbsp;      ayy, coins, sync, ...</td></tr>
-            </table>
+            <div class="command-usage">
+                <code>=toggle 'category'</code><br />
+                <i>Disables or enables all the commands in a set</i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =toggle Fun</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have disabled 16 commands:</td></tr>
+                    <tr><td class="bot-text">&nbsp;      ayy, coins, sync, ...</td></tr>
+                </table>
+            </div>
 
-            <code>=toggle list</code><br />
-            <i>Lists all commands that have been disabled</i>
-            <table class="codeblock">
-                <tr><td>&lt;user&gt; =toggle list</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; Disabled commands:</td></tr>
-                <tr><td class="bot-text">&nbsp;      Fun: ayy, coins, sync, ...</td></tr>
-                <tr><td class="bot-text">&nbsp;      RNG: choose</td></tr>
-            </table>
+            <div class="command-usage">
+                <code>=toggle list</code><br />
+                <i>Lists all commands that have been disabled</i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =toggle list</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; Disabled commands:</td></tr>
+                    <tr><td class="bot-text">&nbsp;      Fun: ayy, coins, sync, ...</td></tr>
+                    <tr><td class="bot-text">&nbsp;      RNG: choose</td></tr>
+                </table>
+            </div>
 
         </div>
         <hr />
@@ -304,15 +322,18 @@
 
             <b>Usage:</b><br />
 
-            <code>=botban 'user'</code>
-            <table class="codeblock">
-                <tr><td>&lt;mod&gt; =botban user</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have botbanned that user. They will no longer be able to use my commands.</td></tr>
-                <tr><td>&lt;user&gt; =tag</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I cannot run this command as you have been botbanned on this server.</td></tr>
-                <tr><td>&lt;user&gt; =tag</td></tr>
-                <tr><td>&lt;user&gt; =tag</td></tr>
-            </table>
+            <div class="command-usage">
+                <code>=botban 'user'</code>
+                <i>User is the member to botban.</i>
+                <table class="codeblock">
+                    <tr><td>&lt;mod&gt; =botban user</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have botbanned that user. They will no longer be able to use my commands.</td></tr>
+                    <tr><td>&lt;user&gt; =tag</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I cannot run this command as you have been botbanned on this server.</td></tr>
+                    <tr><td>&lt;user&gt; =tag</td></tr>
+                    <tr><td>&lt;user&gt; =tag</td></tr>
+                </table>
+            </div>
 
         </div>
         <hr />
@@ -326,13 +347,16 @@
 
             <b>Usage:</b>
 
-            <code>=botunban 'user'</code>
-            <table class="codeblock">
-                <tr><td>&lt;mod&gt; =botunban user</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have unbanned that member.</td></tr>
-                <tr><td>&lt;user&gt; =tag</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; You asked me about tags, but didn't tell me what to do. Use `=help tag`</td></tr>
-            </table>
+            <div class="command-usage">
+                <code>=botunban 'user'</code>
+                <i>User is the member to botban.</i>
+                <table class="codeblock">
+                    <tr><td>&lt;mod&gt; =botunban user</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have unbanned that member.</td></tr>
+                    <tr><td>&lt;user&gt; =tag</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; You asked me about tags, but didn't tell me what to do. Use `=help tag`</td></tr>
+                </table>
+            </div>
         </div>
         <hr />
 
@@ -349,8 +373,10 @@
 
             <b>Usage:</b><br />
 
-            <code>=cleanup ['limit']</code>
-            <i>Limit is how many messages will be scanned, not how many will be deleted. If it is not supplied, then it defaults to 100.</i>
+            <div class="command-usage">
+                <code>=cleanup ['limit']</code>
+                <i>Limit is how many messages will be scanned, not how many will be deleted. If it is not supplied, then it defaults to 100.</i>
+            </div>
         </div>
         <hr />
 
@@ -370,17 +396,19 @@
 
             <b>Usage:</b><br />
 
-            <code>=check ['member']</code><br />
-            <i>Member is who to check. If no-one is given, then it defaults to the caller</i>
-            <table class="codeblock">
-                <tr><td>&lt;user&gt; =check</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; Permissions for user</td></tr>
-                <tr><td class="diff-removed">&nbsp; - server owner&nbsp;&nbsp;: owner of server</td></tr>
-                <tr><td class="diff-added">&nbsp;   + server admin&nbsp;&nbsp;: members with Manage Roles</td></tr>
-                <tr><td class="diff-removed">&nbsp; - server manager: members with Manage Server</td></tr>
-                <tr><td class="bot-text">&nbsp;      ...</td></tr>
-                <tr><td class="diff-removed">&nbsp; - buds&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: squas' close friends</td></tr>
-            </table>
+            <div class="command-usage">
+                <code>=check ['member']</code><br />
+                <i>Member is who to check. If no-one is given, then it defaults to the caller</i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =check</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; Permissions for user</td></tr>
+                    <tr><td class="diff-removed">&nbsp; - server owner&nbsp;&nbsp;: owner of server</td></tr>
+                    <tr><td class="diff-added">&nbsp;   + server admin&nbsp;&nbsp;: members with Manage Roles</td></tr>
+                    <tr><td class="diff-removed">&nbsp; - server manager: members with Manage Server</td></tr>
+                    <tr><td class="bot-text">&nbsp;      ...</td></tr>
+                    <tr><td class="diff-removed">&nbsp; - buds&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: squas' close friends</td></tr>
+                </table>
+            </div>
 
         </div>
         <hr />
@@ -393,7 +421,9 @@
             </p>
 
             <b>Usage:</b><br />
-            <code>=echo 'content'</code>
+            <div class="command-usage">
+                <code>=echo 'content'</code>
+            </div>
         </div>
         <hr />
 

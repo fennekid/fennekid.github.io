@@ -90,40 +90,46 @@
 		
 		    <b>Usage:</b><br />
 		
-		    <code>=remind 'minutes' ['message']</code><br />
-		    <i>
-			    Minutes is the number of minutes to wait. Message is what will be sent to you.<br />
-			    There is a limit of 7 days &asymp; 10000 minutes.
-		    </i>
-		    <table class="codeblock">
-			    <tr><td>&lt;user&gt; =remind 80 "do the laundry"</td></tr>
-			    <tr><td class="bot-text">&lt;B 42&gt; ​I will notify you in 1:20. Use `=cancel` to stop the reminder.</td></tr>
-			    <tr><td>&nbsp;&nbsp;&nbsp; ~~ Time Passes ~~ </td></tr>
-			    <tr><td class="bot-text">&lt;B 42&gt; @user, you asked me to remind you to do the laundry.</td></tr>
-		    </table>
+            <div class="command-usage">
+                <code>=remind 'minutes' ['message']</code><br />
+                <i>
+                    Minutes is the number of minutes to wait. Message is what will be sent to you.<br />
+                    There is a limit of 7 days &asymp; 10000 minutes.
+                </i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =remind 80 "do the laundry"</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; ​I will notify you in 1:20. Use `=cancel` to stop the reminder.</td></tr>
+                    <tr><td>&nbsp;&nbsp;&nbsp; ~~ Time Passes ~~ </td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; @user, you asked me to remind you to do the laundry.</td></tr>
+                </table>
+            </div>
 		
-		    <code>=remind 'hh:mm' ['message']</code><br />
-		    <i>
-			    HH is the hours and MM is the minutes. Again, message is what will be sent.<br />
-			    Just as above, there is a limit of 7 days = 168 hours.
-		    </i>
-		    <table class="codeblock">
-			    <tr><td>&lt;user&gt; =remind 2:30 "check oven"</td></tr>
-			    <tr><td class="bot-text">&lt;B 42&gt; ​I will notify you in 2:30. Use `=cancel` to stop the reminder.</td></tr>
-			    <tr><td>&nbsp;&nbsp;&nbsp; ~~ Time Passes ~~ </td></tr>
-			    <tr><td class="bot-text">&lt;B 42&gt; @user, you asked me to remind you to check oven.</td></tr>
-		    </table>
+            <div class="command-usage">
+                <code>=remind 'hh:mm' ['message']</code><br />
+                <i>
+                    HH is the hours and MM is the minutes. Again, message is what will be sent.<br />
+                    Just as above, there is a limit of 7 days = 168 hours.
+                </i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =remind 2:30 "check oven"</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; ​I will notify you in 2:30. Use `=cancel` to stop the reminder.</td></tr>
+                    <tr><td>&nbsp;&nbsp;&nbsp; ~~ Time Passes ~~ </td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; @user, you asked me to remind you to check oven.</td></tr>
+                </table>
+            </div>
 		
-		    <code>=cancel</code><br />
-		    <i>Removes your current timer in the channel.</i>
-	        <table class="codeblock">
-			    <tr><td>&lt;user&gt; =remind 20 "shower"</td></tr>
-			    <tr><td class="bot-text">&lt;B 42&gt; ​I will notify you in 0:20. Use `=cancel` to stop the reminder.</td></tr>
-			    <tr><td>&lt;user&gt; =cancel</td></tr>
-			    <tr><td class="bot-text">&lt;B 42&gt; Stopping reminder.</td></tr>
-			    <tr><td>&nbsp;&nbsp;&nbsp; ~~ Time Passes ~~ </td></tr>
-			    <tr><td>&nbsp;&nbsp;&nbsp; But there was only silence... </td></tr>
-		    </table>
+            <div class="command-usage">
+                <code>=cancel</code><br />
+                <i>Removes your current timer in the channel.</i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =remind 20 "shower"</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; ​I will notify you in 0:20. Use `=cancel` to stop the reminder.</td></tr>
+                    <tr><td>&lt;user&gt; =cancel</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; Stopping reminder.</td></tr>
+                    <tr><td>&nbsp;&nbsp;&nbsp; ~~ Time Passes ~~ </td></tr>
+                    <tr><td>&nbsp;&nbsp;&nbsp; But there was only silence... </td></tr>
+                </table>
+            </div>
 		
 	    </div>
 	    <hr />
@@ -143,12 +149,14 @@
 		
 		    <b>Usage:</b><br />
 		
-		    <code>=youtube 'query'</code>
-		    <i>This command is one of the very few that does not require quotes around the query.</i>
-		    <table class="codeblock">
-			    <tr><td>&lt;user&gt; =youtube dynamix cryonix giga omega</td></tr>
-			    <tr><td class="bot-text">&lt;B 42&gt; https://www.youtube.com/watch?v=6zfcdS5Gbb0</td></tr>
-		    </table>
+            <div class="command-usage">
+                <code>=youtube 'query'</code>
+                <i>This command is one of the very few that does not require quotes around the query.</i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =youtube dynamix cryonix giga omega</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; https://www.youtube.com/watch?v=6zfcdS5Gbb0</td></tr>
+                </table>
+            </div>
 	    </div>
 	    <hr />
 	
@@ -166,17 +174,21 @@
 		
 		    <b>Usage:</b><br />
 		
-		    <code>=archive ['limit']</code><br />
-		    <i>Starting at the command call, limit is the number of messages to save. Defaults to 100.</i><br />
-		    <br />
+            <div class="command-usage">
+                <code>=archive ['limit']</code><br />
+                <i>Starting at the command call, limit is the number of messages to save. Defaults to 100.</i><br />
+                <br />
+            </div>
 		
-		    <code>=archive 'start ID' 'limit;</code><br />
-		    <code>=archive 'limit' 'end ID'</code><br />
-		    <code>=archive 'start ID' 'end ID'</code><br />
-		    <i>
-			    IDs can be gathered with the method above. Both an ID and a limit is required for this method.<br />
-			    For all methods defined above, the maximum limit is 5000. If you are using the between ID method, it will take the first 5000.<br />
-		    </i>
+            <div class="command-usage">
+                <code>=archive 'start ID' 'limit;</code><br />
+                <code>=archive 'limit' 'end ID'</code><br />
+                <code>=archive 'start ID' 'end ID'</code><br />
+                <i>
+                    IDs can be gathered with the method above. Both an ID and a limit is required for this method.<br />
+                    For all methods defined above, the maximum limit is 5000. If you are using the between ID method, it will take the first 5000.<br />
+                </i>
+            </div>
 	
 	    </div>
 	    <hr />
@@ -191,8 +203,10 @@
 		
 		    <b>Usage:</b><br />
 		
-		    <code>=cleanme ['limit']</code>
-		    <i>Limit is the number of messages that will be archived and then scanned for deletions. If not given, it defaults to 100.</i>
+            <div class="command-usage">
+                <code>=cleanme ['limit']</code>
+                <i>Limit is the number of messages that will be archived and then scanned for deletions. If not given, it defaults to 100.</i>
+            </div>
 	    </div>
         <hr />
 	
@@ -214,16 +228,18 @@
 		
 		    <b>Usage:</b>
 		
-		    <code>=prunecheck</code>
-		    <table class="codeblock">
-			    <tr><td>&lt;user&gt; =prunecheck</td></tr>
-			    <tr><td class="bot-text">&lt;B 42&gt; # Members on server: 1626</td></tr>
-			    <tr><td class="bot-text">&nbsp; [Role Members][867]</td></tr>
-			    <tr><td class="bot-text">&nbsp; [Safe Members][1305]</td></tr>
-			    <tr><td class="bot-text">&nbsp; [1 Day Prune ][321]</td></tr>
-			    <tr><td class="bot-text">&nbsp; [7 Day Prune ][213]</td></tr>
-			    <tr><td class="bot-text">&nbsp; [30 Day Prune][122]</td></tr>
-		    </table>
+            <div class="command-usage">
+                <code>=prunecheck</code>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =prunecheck</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; # Members on server: 1626</td></tr>
+                    <tr><td class="bot-text">&nbsp; [Role Members][867]</td></tr>
+                    <tr><td class="bot-text">&nbsp; [Safe Members][1305]</td></tr>
+                    <tr><td class="bot-text">&nbsp; [1 Day Prune ][321]</td></tr>
+                    <tr><td class="bot-text">&nbsp; [7 Day Prune ][213]</td></tr>
+                    <tr><td class="bot-text">&nbsp; [30 Day Prune][122]</td></tr>
+                </table>
+            </div>
 	    </div>
         <hr />
 	
@@ -236,16 +252,18 @@
 
             <b>Usage:</b><br />
 
-            <code>=afk 'message'</code>
-            <i>this is another command that does not require quotes</i>
-            <table class="codeblock">
-                <tr><td>&lt;user&gt; =afk gone fishing</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have set your AFK message...</td></tr>
-                <tr><td>&lt;mod&gt; @user</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; user: gone fishing</td></tr>
-                <tr><td>&lt;user&gt; back</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; Welcome back user, I will stop sending your AFK message.</td></tr>
-            </table>
+            <div class="command-usage">
+                <code>=afk 'message'</code>
+                <i>this is another command that does not require quotes</i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =afk gone fishing</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have set your AFK message...</td></tr>
+                    <tr><td>&lt;mod&gt; @user</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; user: gone fishing</td></tr>
+                    <tr><td>&lt;user&gt; back</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; Welcome back user, I will stop sending your AFK message.</td></tr>
+                </table>
+            </div>
 
         </div>
         <hr />
@@ -265,23 +283,31 @@
 
             <b>Usage:</b><br />
 
-            <code>=announce hourly 'message'</code><br />
-            <i>Sends a message every hour. Message is what to send.</i><br />
+            <div class="command-usage">
+                <code>=announce hourly 'message'</code><br />
+                <i>Sends a message every hour. Message is what to send.</i><br />
+            </div>
 
-            <code>=announce daily 'message'</code><br />
-            <i>Sends a message daily. Message is what to send.</i><br />
+            <div class="command-usage">
+                <code>=announce daily 'message'</code><br />
+                <i>Sends a message daily. Message is what to send.</i><br />
+            </div>
 
-            <code>=announce command 'command...'</code><br />
-            <i>Performs a command hourly. Command... is the non quoted command to use, and does not require the call character.</i>
-            <table class="codeblock">
-                <tr><td>&lt;user&gt; =announce hourly "Welcome to the server... Please type `=giveme entry` to start talking"</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have set your hourly message.</td></tr>
-                <tr><td>&lt;user&gt; =announce command remove all 500</td></tr>
-                <tr><td class="bot-text">&lt;B 42&gt; I have set your hourly command to =remove all 500</td></tr>                
-            </table>
+            <div class="command-usage">
+                <code>=announce command 'command...'</code><br />
+                <i>Performs a command hourly. Command... is the non quoted command to use, and does not require the call character.</i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =announce hourly "Welcome to the server... Please type `=giveme entry` to start talking"</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have set your hourly message.</td></tr>
+                    <tr><td>&lt;user&gt; =announce command remove all 500</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have set your hourly command to =remove all 500</td></tr>
+                </table>
+            </div>
 
-            <code>=announce stop 'type'</code><br />
-            <i>Stops an announcement. Type is one of "hourly", "daily" or "command"</i>
+            <div class="command-usage">
+                <code>=announce stop 'type'</code><br />
+                <i>Stops an announcement. Type is one of "hourly", "daily" or "command"</i>
+            </div>
         </div>
         <hr />
 
