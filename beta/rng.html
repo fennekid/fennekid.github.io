@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+
+<html lang="en-gb" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta content="All about 42!" name="Description" property="og:description">
+    <title>Infobot 42</title>
+    <link rel="stylesheet" type="text/css" href="42help.css">
+</head>
+<body>
+    <aside>
+        <div class="aside-header">
+            <a href="https://discordapp.com/oauth2/authorize?client_id=196574652229877760&scope=bot&permissions=403041302">
+                Want Me? Have ME! =join <br />
+            </a>
+            You need manage server or manage roles to add bots.
+        </div>
+        <div class="aside-content">
+            <h3><a href="index.html">Home</a></h3>
+            <h3>Command Help</h3>
+            <ul class="no-bullet">
+                <li><a href="introduction.html">&#9654; Introduction</a></li>
+                <li><a href="faq.html">&#9654; Frequently Asked Questions</a></li>
+                <li>Command Categories</li>
+                <li><a href="bot.html">&#9654; Bot</a></li>
+                <li><a href="tools.html">&#9654; Tools</a></li>
+                <li><a href="mod.html">&#9654; Moderation</a></li>
+                <li><a href="info.html">&#9654; Information</a></li>
+                <li>
+                    <a href="#top">&#9660; RNG</a>
+                    <ul class="no-bullet">
+                        <li><a href="#choose">=choose</a></li>
+                        <li><a href="#dice">=dice</a></li>
+                        <li><a href="#random">=random</a></li>
+                        <li><a href="#private">Private Functions</a></li>
+                    </ul>
+                </li>
+                <li><a href="memory.html">&#9654; Memory</a></li>
+                <li><a href="fun.html">&#9654; Fun</a></li>
+                <li><a href="nerd.html">&#9654; Nerd</a></li>
+                <li><a href="vg.html">&#9654; Video Games</a></li>
+                <li><a href="secret.html">&#9654; Secrets</a></li>
+                <li>Other Sections</li>
+                <li><a href="autofunc.html">&#9654; Automatic Functions</a></li>
+                <li><a href="yna.html">&#9654; yna Tag Scripting</a></li>
+            </ul>
+            <h3>Friends of 42</h3>
+            <ul class="no-bullet">
+                <li><a href="redditbot/index.html">&#9654; Redditbot</a></li>
+                <li><a href="pinksquid/index.html">&#9654; Pinksquid</a></li>
+                <li>&#9654; Your bot here?</li>
+            </ul>
+        </div>
+        <div class="aside-footer">
+            programmers are fueled by pizza~!<br />
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="53TDH5RCZ6QTU">
+                <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal Donate - Keep those creative juices flowing!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+            </form>
+        </div>
+    </aside>
+
+    <article>
+        <h1 id="top">RNG category commands</h1>
+        <p>
+            These are commands primarily used to do random things.
+        </p>
+
+        <hr />
+
+        <div id="choose" class="command">
+            <h4><code>=choose</code> [5/10s]</h4>
+            <i class="bot-text">"makes me pick from a list of options"</i>
+            <p>
+                This command takes a list of args and picks one at random.
+            </p>
+
+            <b>Usage:</b><br />
+
+            <div class="command-usage">
+                <code>=choose 'option' 'option' [...]</code><br />
+                <i>options are the different options that could be chosen.</i>
+            </div>
+
+        </div>
+        <hr />
+
+        <div id="dice" class="command">
+            <h4><code>=dice</code> [5/15s]</h4>
+            <i class="bot-text">"gives me some dice to roll for you"</i>
+            <p>
+                This command generates and throws up to 5 groups of up to 50 dice of an arbitrary number of sides between 1 and 100.<br />
+                Each group can be given a modifier to add to the group too.<br />
+                <br />
+                After the dice have been thrown, the bot will either post the total of all groups or the count of each dice value.
+            </p>
+
+            <b>Usage:</b><br />
+
+            <div class="command-usage">
+                <code>=dice 'nDf+m' [...]</code><br />
+                <i>n is the number of dice, f is the number of faces on the dice, +m and -m is the modifier.</i>
+                <table class="codeblock">
+                    <tr><td>&lt;user&gt; =dice D20+3 3D4-1</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I rolled those dice for you and got:</td></tr>
+                    <tr><td class="bot-text">&nbsp; <b>1D20+3</b>: [13] +3 totalling <b>16</b></td></tr>
+                    <tr><td class="bot-text">&nbsp; <b>3D4-1</b>: [2, 2, 1] -1 totalling <b>4</b></td></tr>
+                    <tr><td class="bot-text">&nbsp; The total of all the dice is 20</td></tr>
+                </table>
+            </div>
+
+        </div>
+        <hr />
+
+        <div id="random" class="command">
+            <h4><code>=random</code> [5/15s]</h4>
+            <i class="bot-text">"accesses my randomisation functions"</i>
+            <p>
+                This command is a group of different random functions.<br />
+                Some are made for specific games, namely Splatoon and Super Smash Brothers.<br />
+                Some of the options are maintained by some of my friends, so credit will be given where due.
+            </p>
+
+            <b>Usage:</b><br />
+
+            <div class="command-usage">
+                <code>=random 'subcommand'</code><br />
+                <i>The list of subcommands is:</i>
+                <ul class="no-bullet">
+                    <li><i><code>number ['max']</code> Chooses a random number from 1 to max or 1 to 100.</i></li>
+                    <li><i><code>lenny</code> Chooses a random lenny face.</i></li>
+                    <li><i><code>coin</code> Flips a coin.</i></li>
+                    <li><i><code>8ball</code> Shakes a magic 8-ball</i></li>
+                    <li><i><code>ship ['m1']</code> Ships two random members, or ships one with the given name.</i></li>
+                    <li><i><code>kaomoji</code> Chooses a random weebie (･ω&lt;)☆</i></li>
+                    <li><i><code>team ['size']</code> Chooses 5 or size members from the server.</i></li>
+                    <li><i><code>channelteam, onlineteam</code> Same as team, but chooses members in the channel or members who are online.</i></li>
+                    <li><i><code>tag</code> Alias to <code><a href="memory.html#tag">=tag random</a></code>.</i></li>
+                    <li><i><code>weapon</code> [Splatoon] Chooses a random weapon.</i></li>
+                    <li><i><code>scrim ['rounds']</code> [Splatoon] Chooses 5 or rounds random ranked matches.</i></li>
+                    <li><i><code>strat</code> [Splatoon] Random "fun" gamerules to play by.</i></li>
+                    <li><i><code>smash</code> [SSB4] Chooses a random character.</i></li>
+                    <li><i><code>cat</code> [By Tori] Posts a cat picture.</i></li>
+                    <li><i><code>honk</code> [By Xiggy] Posts a chen picture.</i></li>
+                    <li><i><code>encouragement</code> [By Leonie] Posts an encouraging message.</i></li>
+                    <li><i><code>happysong</code> [By Leonie] Posts a youtube video.</i></li>
+                    <li><i><code>squiddy</code> [By Frawst and Toby] Posts an inkling picture.</i></li>
+                    <li><i><code>puffu</code> [By Ramza] Posts a seal picture.</i></li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+
+        <div id="#private" class="command">
+            <h4>Private Functions</h4>
+            <p>
+                These are used by the specific people who manage the random commands.<br />
+                Only the named people can use these commands.
+            </p>
+
+            <code>=addcat</code> [Tori]<br />
+            <code>=addhonk</code> [Xiggy]<br />
+            <code>=addencouragement</code> [Leonie]<br />
+            <code>=addpuffu</code> [Ramza]<br />
+        </div>
+        <hr />
+
+        <a href="#top">Return to top.</a>
+
+
+
+    </article>
+
+</body>
+</html>
