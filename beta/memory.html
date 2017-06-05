@@ -1,0 +1,572 @@
+﻿<!DOCTYPE html>
+
+<html lang="en-gb" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta content="All about 42!" name="Description" property="og:description">
+    <title>Infobot 42</title>
+    <link rel="stylesheet" type="text/css" href="42help.css">
+</head>
+<body>
+    <aside>
+        <div class="aside-header">
+            <a href="https://discordapp.com/oauth2/authorize?client_id=196574652229877760&scope=bot&permissions=403041302">
+                Want Me? Have ME! =join <br />
+            </a>
+            You need manage server or manage roles to add bots.
+        </div>
+        <div class="aside-content">
+            <h3><a href="index.html">Home</a></h3>
+            <h3>Command Help</h3>
+            <ul class="no-bullet">
+                <li><a href="introduction.html">&#9654; Introduction</a></li>
+                <li><a href="faq.html">&#9654; Frequently Asked Questions</a></li>
+                <li>Command Categories</li>
+                <li><a href="bot.html">&#9654; Bot</a></li>
+                <li><a href="tools.html">&#9654; Tools</a></li>
+                <li><a href="mod.html">&#9654; Moderation</a></li>
+                <li><a href="info.html">&#9654; Information</a></li>
+                <li><a href="rng.html">&#9654; RNG</a></li>
+                <li>
+                    <a href="#top">&#9660; Memory</a>
+                    <ul class="no-bullet">
+                        <li><a href="#event">=event (All Users)</a></li>
+                        <li><a href="#bmevent">=event (Bot Mod)</a></li>
+                        <li><a href="#profile">=profile</a></li>
+                        <li>
+                            <a href="#tag">=tag</a>
+                            <ul class="no-bullet">
+                                <li><a href="#editing">Basic Editing</a></li>
+                                <li><a href="#other">Other Basic Functions</a></li>
+                                <li><a href="#meta">Tag Metadata</a></li>
+                                <li><a href="#servers">Cross Server Tag Management</a></li>
+                                <li><a href="#yna">Scripting</a></li>
+                                <li><a href="#extra">Extra Functions</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="fun.html">&#9654; Fun</a></li>
+                <li><a href="nerd.html">&#9654; Nerd</a></li>
+                <li><a href="vg.html">&#9654; Video Games</a></li>
+                <li><a href="secret.html">&#9654; Secrets</a></li>
+                <li>Other Sections</li>
+                <li><a href="autofunc.html">&#9654; Automatic Functions</a></li>
+                <li><a href="yna.html">&#9654; yna Tag Scripting</a></li>
+            </ul>
+            <h3>Friends of 42</h3>
+            <ul class="no-bullet">
+                <li><a href="redditbot/index.html">&#9654; Redditbot</a></li>
+                <li><a href="pinksquid/index.html">&#9654; Pinksquid</a></li>
+                <li>&#9654; Your bot here?</li>
+            </ul>
+        </div>
+        <div class="aside-footer">
+            programmers are fueled by pizza~!<br />
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="53TDH5RCZ6QTU">
+                <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal Donate - Keep those creative juices flowing!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+            </form>
+        </div>
+    </aside>
+
+    <article>
+        <h1>Memory Category Commands</h1>
+        <p>
+            This section is basically the most complicated set of commands on the bot, especially tags.<br />
+            Most of the commands in this section are based around storing and recalling data.
+        </p>
+
+        <hr />
+
+        <div id="event" class="command">
+            <h4><code>=event</code></h4>
+            <i class="bot-text">"lets you access my calendar functions"</i>
+            <p>
+                This command allows users to recall upcoming events.<br />
+                These are either events <a href="#bmevent">set by the mods</a> or birthdays set in <a href="#profile">user's profiles</a>.
+            </p>
+
+            <b>Usage:</b><br />
+
+            <div class="command-usage">
+                <code>=event [list]</code><br />
+                <i>Lists all birthdays and events in the server. If there are too many, a file will be posted.</i><br />
+            </div>
+
+            <div class="command-usage">
+                <code>=event next</code><br />
+                <i>Lists only birthdays and events in the next month. Useful if there are too many on the full list.</i>
+            </div>
+        </div>
+        <hr />
+
+        <div id="bmevent" class="command">
+            <h4><code>=event</code> [Bot Mod]</h4>
+            <p>
+                This command allows you to set up events that can be seen by members on the server.<br />
+                However, there wont be any alerts when the event hits and it will not be removed automatically after it does.<br />
+                <br />
+                You cannot manage birthdays using this command. Birthdays will always be present on the list.
+            </p>
+
+            <b>Usage:</b><br />
+
+            <div class="command-usage">
+                <code>=event create 'date' 'message'</code><br />
+                <i>Adds an event to the list. Date is the date to add to, message is the message to add.</i><br />
+            </div>
+
+            <div class="command-usage">
+                <code>=event set 'date' 'message'</code><br />
+                <i>Deletes all events on a date and replaces it with the given event.</i><br />
+            </div>
+            
+            <div class="command-usage">
+                <code>=event delete 'date'</code><br />
+                <i>Deletes an event from a date. If there is more than 1, this is interractive.</i><br />
+            </div>
+
+            <div class="command-usage">
+                <code>=event clear 'date'</code><br />
+                <i>Deletes all events from a date.</i><br />
+            </div>
+
+            <div class="command-usage">
+                <code>=event wipe</code><br />
+                <i>Deletes all events on the list.</i>
+            </div>
+        </div>
+        <hr />
+
+        <div id="profile" class="command">
+            <h4><code>=profile</code></h4>
+            <i class="bot-text">"lets me keep track of your online profile"</i>
+            <p>
+                This command lets you tell 42 information about yourself to allow other users to easily access this information.<br />
+                Having a profile is entirely optional.<br />
+                <br />
+                Beta 42 respects the visibility principle, which is an unwritten rule in Discord that means that if a user cannot see a server, channel, or user, then that server, channel or user does not exist.<br />
+                <br />
+                Some elements of profiles are used in other commands, such as timezones in <a href="info.html#now"><code>=now</code></a>, 
+                birthdays in <a href="#event"><code>=event</code></a> and both in <a href="vg.html#solstice"><code>=solstice</code></a>.<br />
+
+            </p>
+
+            <b>Usage:</b><br />
+            <!--This is going to take a while... I hope its not unreadable...-->
+
+            <div class="command-usage">
+                <code>=profile [get ['member]]</code><br />
+                <i>Gets a profile. Member is who's profile to get, or if no name is given, then it gets your own.</i><br />
+            </div>
+
+            <div class="command-usage">
+                <code>=profile nnid 'data'</code><br />
+                <i>Sets your default Nintendo Network ID. Data is the new NNID</i><br />
+            </div>
+
+            <div class="command-usage">
+                <code>=profile alt 'data'</code><br />
+                <i>Adds an alternate Nintendo Network ID. Data is the NNID to add. You can have up to 3 alts.</i><br />
+            </div>
+
+            <div class="command-usage">
+                <code>=profile game 'data'</code><br />
+                <i>Adds a new game to your profile. Data is the game to add. You can have up to 8 games.</i><br />
+            </div>
+
+            <div class="command-usage">
+                <code>=profile birthday 'date'</code><br />
+                <i>Adds a birthday to your profile. Date is your birthday.</i><br />
+            </div>
+
+            <div class="command-usage">
+                <code>=profile timezone</code><br />
+                <i>Sets your timezone. This command is interractive and can only be done in PMs.</i><br />
+            </div>
+
+            <div class="command-usage">
+                <code>=profile note 'data'</code><br />
+                <i>Sets your profile note. Data is the new note. Notes are displayed at the bottom of your profile.</i><br />
+            </div>
+
+            <div class="command-usage">
+                <code>=profile set 'field' 'data'</code><br />
+                <i>Sets a custom field. Field is the field name, data is the data to set. You can have up to 5 fields.</i><br />
+            </div>
+
+            <div class="command-usage">
+                <code>=profile update</code><br />
+                <i>Updates a field. This command is interractive.</i>
+            </div>
+
+            <div class="command-usage">
+                <code>=profile clear 'field'</code><br />
+                <i>
+                    Clears a default field. field is one of "nnid", "game", "birthday", "timezone", "note"<br />
+                    For games and NNIDs, the command is interractive.
+                </i><br />
+            </div>
+
+            <div class="command-usage">
+                <code>=profile clear custom</code><br />
+                <i>Clears a custom field. This command is interractive.</i><br />
+            </div>
+
+            <div class="command-usage">
+                <code>=profile delete</code><br />
+                <i>Deletes your entire profile.</i><br />
+            </div>
+
+            <div class="command-usage">
+                <code>=profile make</code><br />
+                <i>
+                    Deletes your existing profile and starts an interractive walkthrough to create a new one.<br />
+                    This command can only be used in PMs.<br />
+                    You can use <code>=skip</code> to skip any stage of the process.
+                </i>
+            </div>
+
+        </div>
+        <hr />
+
+        <div id="tag" class="command">
+            <h4><code>=tag</code> [Old User] [5/15s]</h4>
+            <i>"lets me store and recall messages, image links or custom scripts"</i>
+            <p>
+                <b>Permission: [Old User]</b> Caller must either have been a member of the server for 15 minutes or have a role with more permissions than @everyone.<br />
+                <br />
+                Tags are like recallable bookmarks.<br />
+                You can store long messages or image links under a easy to remember name, and then recall the images later.<br />
+                <br />
+                Tags can contain scripting using a <a href="yna.html">custom language</a>.<br />
+                <br />
+                Internal help docs are spread over 4 different help commands, <code>=help tag</code>, <code>=help taginfo</code>, <code>=help tagmovement</code> and <code>=help tagyna</code><br />
+                <br />
+                Tags are saved exclusively per server. Currently there is no way to 
+            </p>
+
+            <b>Usage:</b><br />
+            <p>
+                For all subcommands, <code>name</code> is the name of the tag you want to interract with.<br />
+                <table>
+                    <tr><td>&lt;user&gt; =tag create foo "Hello World"</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have created your 'foo' tag.</td></tr>
+                    <tr><td>&lt;user&gt; =tag foo</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; Hello World</td></tr>
+                    <tr><td>&lt;user&gt; =tag delete foo</td></tr>
+                    <tr><td class="bot-text">&lt;B42&gt; I have deleted that tag.</td></tr>
+                </table>
+            </p>
+            <br />
+
+            <b id="editing">Basic Tag Editing</b>
+
+            <div class="command-usage">
+                <code>=tag 'name'</code><br />
+                <i>Recalls a tag with the given name.</i><br />
+            </div>
+
+            <div class="command-usage">
+                <code>=tag create 'name' 'content'</code><br />
+                <i>
+                    Creates a new tag. Content is the content to save.<br />
+                    You cannot create a tag with a name that is already taken or reserved.<br />
+                    You will be assigned as the owner of this tag.
+                </i>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag delete 'name'</code><br />
+                <i>
+                    Deletes a tag.<br />
+                    You must own the tag or be a Bot Mod to delete tags.
+                </i>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag edit 'name' 'new content'</code><br />
+                <i>
+                    Edits an existing tag. New content is the content to save.<br />
+                    You must own the tag or be a Bot Mod on the server.<br />
+                    If the tag is synced, then you must be the owner to edit it.
+                </i>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag extend 'name' 'line'</code><br />
+                <i>
+                    Appends content to the end of a tag starting on a new line. Line is the content to append.<br />
+                    Tags marked as public can be extended by anyone allowing for the creation of request lists.
+                </i>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag rename 'name' 'new name'</code><br />
+                <i>
+                    Renames an existing tag. New name is the new name for the tag.<br />
+                    The new name cannot be a name that is already taken or reserved.<br />
+                    You must own the tag or be a Bot Mod to rename tags.<br />
+                    If the tag is synced, then you must be the owner to edit it.
+                </i>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag gift 'name' 'member'</code><br />
+                <i>
+                    Transfers ownership of a tag to another user. Member is who you want to give the tag to.<br />
+                    Gifting a tag will remove you as the owner, meaning you can no longer edit or delete it.<br />
+                    You must currently own the tag to gift it.
+                </i>
+            </div>
+            
+            <b id="other">Other Basic Functions</b>
+
+            <div class="command-usage">
+                <code>=tag list ['member']</code><br />
+                <i>
+                    Gets a members tag list. Member is who's tags to get, if no member is given, it gets your own.<br />
+                    Only tags for servers you are on will be shown. If you do not share a server with your target, you will not see those tags.<br />
+                    If you have orphaned tags on a server, those will not be shown either.
+                </i>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag list all</code>
+                <i>
+                    Posts a (paginated) list of every tag in the server.
+                    This list also contains who created the tag and what metadata flags are on the tag.
+                </i>
+                <ul>
+                    <li><i><code>[HDN]</code> This tag is hidden: Calls will be deleted.</i></li>
+                    <li><i><code>[YNA]</code> This tag contains yna scripting.</i></li>
+                    <li><i><code>[CLS]</code> This tag is closed source: You cannot call it with raw.</i></li>
+                    <li><i><code>[NSW]</code> This tag is NSFW: It cannot be used outside NSFW channels.</i></li>
+                    <li><i><code>[SNC]</code> This tag is synced.</i></li>
+                    <li><i><code>[NMV]</code> This tag is restricted: It cannot be cloned, pulled or exported.</i></li>
+                    <li><i><code>[SPL]</code> This tag contains spoilers: It will not appear in random.</i></li>
+                </ul>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag search 'query'</code><br />
+                <i>
+                    Searches for a tag by name. Query is the substring to search for.
+                </i>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag random</code><br />
+                <i>
+                    Posts a random tag from the server.<br />
+                    Tags marked spoiler or NSFW will not be pulled in random.
+                </i>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag info 'name'</code><br />
+                <i>
+                    Fetches info about a tag, who owns it and what metadata flags it has.
+                </i>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag claim 'name'</code><br />
+                <i>
+                    Gives yourself ownership of an orphaned tag.<br />
+                    Tags becomed orphaned when their owner has left the server.
+                </i>
+            </div>
+
+            <b id="meta">Tag Metadata</b>
+            <p>
+                Every tag has a set of metadata flags that can be enabled and effect how the tag works.
+            </p>
+
+            <div class="command-usage">
+                <code>=tag spoiler 'name'</code><br />
+                <i>
+                    Marks a tag as spoiler content.
+                </i>
+                <ul>
+                    <li><i>Spoiler tags will not appear in <code>=tag random</code></i></li>
+                    <li><i>Spoiler tags will be locked to spoiler rooms if your server has defined them.</i></li>
+                </ul>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag restrict 'name'</code><br />
+                <i>
+                    Prevents this tag from being copied to/from other servers by members who are not the owner of the tag.
+                </i>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag hidden 'name'</code><br />
+                <i>
+                    Makes the bot attempt to delete calls to this tag.<br />
+                    The bot requires Manage Messages to do this.
+                </i>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag nsfw 'name'</code><br />
+                <i>
+                    Marks the tag as NSFW content.
+                </i>
+                <ul>
+                    <li><i>NSFW tags can only be used in discord marked NSFW channels.</i></li>
+                    <li><i>NSFW tags will not appear in <code>=tag random</code></i></li>
+                </ul>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag closed 'name'</code><br />
+                <i>
+                    Marks a tag as closed source. Tags with this cannot be called with <code>=tag raw</code> unless the caller is the tag's owner.
+                </i>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag public 'name'</code><br />
+                <i>
+                    Marks a tag for public editing.<br />
+                    Tags with this can be extended with <code>=tag extend</code> by any member of the server.<br />
+                    Edits that would otherwise clash the tag with one of the owner's synced tags cannot be made.
+                </i>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag sync 'name'</code><br />
+                <i>
+                    Syncronises a tag with any identical tags accross servers.<br />
+                    The check for matching tags is same owner and content, not name.<br />
+                    Any edits to the content or metadata of one synced tag will propogate through the rest of the connected tags.
+                </i>
+            </div>
+
+            <!--This doesn't exist yet
+            <div class="command-usage">
+                <code>=tag publish 'name'</code><br />
+                <i>
+                    Submits a tag for review and publishes it to the public tag directory.<br />
+                    Published tags cannot be edited in any way, not even by the owner.<br />
+                    The owner can unpublish the tag at any time to edit it.<br />
+                    Servers can deliberately overwrite the tag name with a local tag to stop the global tag showing.
+                </i>
+            </div>
+            -->
+
+            <b id="servers">Cross Server Tag Management</b>
+            <p>
+                Tags are strictly per server. This method can be used to transfer tags between servers.<br />
+                A note on clone and pull:
+                <ul>
+                    <li>You cannot clone to or pull from servers where tags are disabled via toggle.</li>
+                    <li>You cannot clone to or pull from servers that you are not a member of.</li>
+                    <li>You cannot clone or pull tags which are restricted unless you are the tag's owner.</li>
+                </ul>
+
+            </p>
+
+            <div class="command-usage">
+                <code>=tag clone 'name' 'server' ['new name']</code>
+                <i>
+                    Copies a tag to a given server. Server is the target server, new name is the name the tag will assume on the target server.
+                </i>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag pull 'name' 'server' ['new name']</code>
+                <i>
+                    Copies a tag from a given server. Server is the target server, new name is the name the tag will assume on the current server.
+                </i>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag export</code>
+                <i>
+                    Dumps all of your tags into a file, which is uploaded to chat.<br />
+                    Restricted tags will not be copied into the file.
+                </i>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag import</code>
+                <i>
+                    <b>This command only works when it is the caption of a file upload.</b><br />
+                    The file must be one generated by the <code>=tag export</code> command.<br />
+                    If your file contains NSFW tags, you will be prompted to import them seperately.
+                </i>
+            </div>
+
+            <b id="yna">Scripting</b>
+            <p>
+                Tags can use a custom scripting language called <a href="yna.html">Yonni Na</a>.<br />
+                The tools defined below can help with debugging your scripts.
+            </p>
+
+            <div class="command-usage">
+                <code>=tag raw 'name'</code><br />
+                <i>
+                    Fetches the raw content of a tag.<br />
+                    If the tag is closed source, this will not work.
+                </i>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag eval 'content'</code><br />
+                <i>Evaluates arbitrary yna objects. Content is the content to evaluate.</i>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag debug 'name'</code><br />
+                <i>Executes a tag and then posts a debug log.</i>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag deval 'content'</code><br />
+                <i>A combination of debug and eval. Content is the content to evaluate.</i>
+            </div>
+
+            <b id="extra">Extra Functions</b>
+            <p>
+                These functions aren't for interracting with specific tags.
+            </p>
+
+            <div class="command-usage">
+                <code>=tag spoilerrooms '#channel' [...]</code>
+                <i>
+                    Sets the servers spoiler rooms. There is no way to individually add rooms, so you must define all at once.<br />
+                    #channel is the channel mention. You can have multiple mentions.<br />
+                    If a spoiler room is defined, then tags marked as spoilers will not be usable outside them.
+                </i>
+            </div>
+
+            <div class="command-usage">
+                <code>=tag spoilerrooms clear</code>
+                <i>
+                    Removes the spoiler room restriction from the server.
+                </i>
+            </div>
+
+            <div id="welcome" class="command-usage">
+                <code>=tag welcome ['new content']</code>
+                <i>
+                    Sets the welcome message for the server. New content is the content to set for the welcome message, if none is given, then the current message is returned.<br />
+                    <code>{user}</code> and <code>{@user}</code> can be used to name or mention the new user.
+                </i>
+            </div>
+
+        </div>
+        <hr />
+
+        <a href="#top">Return to top.</a>
+
+    </article>
+
+</body>
+</html>
