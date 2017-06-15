@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+<html lang="en-gb" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta content="All about 42!" name="Description" property="og:description">
+    <title>Infobot 42</title>
+    <link rel="stylesheet" type="text/css" href="42help.css">
+</head>
+<body>
+    <aside>
+        <div class="aside-header">
+            <a href="https://discordapp.com/oauth2/authorize?client_id=196574652229877760&scope=bot&permissions=403041302">
+                Want Me? Have ME! =join <br />
+            </a>
+            You need manage server or manage roles to add bots.
+        </div>
+        <div class="aside-content">
+            <h3><a href="index.html">Home</a></h3>
+            <h3>Command Help</h3>
+            <ul class="no-bullet">
+                <li><a href="introduction.html">&#9654; Introduction</a></li>
+                <li><a href="faq.html">&#9654; Frequently Asked Questions</a></li>
+                <li>Command Categories</li>
+                <li><a href="bot.html">&#9654; Bot</a></li>
+                <li><a href="tools.html">&#9654; Tools</a></li>
+                <li><a href="mod.html">&#9654; Moderation</a></li>
+                <li><a href="info.html">&#9654; Information</a></li>
+                <li><a href="rng.html">&#9654; RNG</a></li>
+                <li><a href="memory.html">&#9654; Memory</a></li>
+                <li>
+                    <a href="fun.html">&#9660; Fun</a>
+                    <ul class="no-bullet">
+                        <li><a href="#me">=me</a></li>
+                        <li><a href="#sync">=sync</a></li>
+                        <li><a href="#quote">=quote</a></li>
+                        <li><a href="#lenny">=lenny</a></li>
+                        <li><a href="#poll">=poll and =vote</a></li>
+                        <li><a href="#raffle">=raffle and =enter</a></li>
+                        <li><a href="#awards">=awards</a></li>
+                        <li><a href="#ayy">=ayy</a></li>
+                        <li><a href="#autoresponse">=autoresponse</a></li>
+                        <li><a href="#coins">=coins</a></li>
+                    </ul>
+                </li>
+                <li><a href="nerd.html">&#9654; Nerd</a></li>
+                <li><a href="vg.html">&#9654; Video Games</a></li>
+                <li><a href="secret.html">&#9654; Secrets</a></li>
+                <li>Other Sections</li>
+                <li><a href="autofunc.html">&#9654; Automatic Functions</a></li>
+                <li><a href="yna.html">&#9654; yna Tag Scripting</a></li>
+            </ul>
+            <h3>Friends of 42</h3>
+            <ul class="no-bullet">
+                <li><a href="redditbot/index.html">&#9654; Redditbot</a></li>
+                <li><a href="pinksquid/index.html">&#9654; Pinksquid</a></li>
+                <li>&#9654; Your bot here?</li>
+            </ul>
+        </div>
+        <div class="aside-footer">
+            programmers are fueled by pizza~!<br />
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="53TDH5RCZ6QTU">
+                <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal Donate - Keep those creative juices flowing!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+            </form>
+        </div>
+    </aside>
+
+    <article>
+        <h1 id="top">Fun Category Commands</h1>
+        <p>
+            These commands are just for fun. Some of them are useful, but most are just for fun.
+        </p>
+        
+        <hr />
+        
+        <div id="me" class="command">
+            <h4><code>=me</code> [5/20s]</h4>
+            <i class="bot-text">"a Skype-like replacement for Discord's /me command"</i>
+            <p>
+                This command takes the content of the command and puts it into an embed box in the style
+            </p>
+            <div class="embed" data-color="#1ABC9C">
+                <p><b>* Username</b> Content</p>
+            </div>
+            <p>
+                <br />
+                The colour of the embed will match that of the user.
+            </p>
+            
+            <b>Usage:</b><br />
+            
+            <div class="command-usage">
+                <code>=me 'content'</code><br />
+                <i>Content is what to put into the embed. This command does not require quote marks.</i>
+            </div>
+        </div>
+        <hr />
+        
+        <div id="sync" class="command">
+            <h4><code>=sync</code> [2/15s]</h4>
+            <i class="bot-text">"makes me start a countdown in chat"</i>
+            <p>
+                This command posts a countdown starting at a given value and counting approximately in seconds.<br />
+                Text chat seems to be better synced between users than voice chat, so this command allows for coordination.<br />
+                <br />
+                (This command was first created to help friends get on the same team during Splatfests in Splatoon.)
+            </p>
+            
+            <b>Usage:</b><br />
+            
+            <div class="command-usage">
+                <code>=sync ['start']</code><br />
+                <i>Start is the starting value. If not given, it defaults to 3.</i>
+            </div>
+        </div>
+        <hr />
+        
+        <div id="quote" class="command">
+            <h4><code>=quote</code> [5/20s]</h4>
+            <i class="bot-text">"quotes a message's content and context"</i>
+            <p>
+                This command finds a message by ID and then posts that and up to 3 messages of context before and after.<br />
+                You can only quote messages from the current channel.<br />
+                To get an ID, enable Developer Mode in the appearence settings, then click on the cog next to the message.
+            </p>
+            
+            <b>Usage:</b><br />
+            
+            <div class="command-usage">
+                <code>=quote 'ID'</code><br />
+                <i>ID is the message to find. It must be in the current channel.</i>
+            </div>
+        </div>
+        <hr />
+        
+        <div id="lenny" class="command">
+            <h4><code>=lenny</code></h4>
+        </div>
+        <hr />
+        
+        <div id="poll" class="command">
+            <h4><code>=poll</code> [Server Manager]</h4>
+            <i class="bot-text">"lets me host a poll in chat"</i>
+            <p>
+                This command is just for managing polls. For voting, see <a href="#vote"><code>=vote</code></a><br />
+                <br />
+                Each user can make 1 vote on the poll.<br />
+                You can only have 1 poll on the server at a time.
+            </p>
+            
+            <b>Usage:</b><br />
+            
+            <div class="command-usage">
+                <code>=poll start 'question' 'option 1' ...</code><br />
+                <i>
+                    Starts a poll. Question is the qestion to ask, option is an option.<br />
+                    You can have up to 16 options.
+                </i><br />
+            </div>
+            
+            <div class="command-usage">
+                <code>=poll append 'option'</code><br />
+                <i>
+                    Adds an answer to the current poll. Answer is the answer to add.<br />
+                    You can have up to 16 options.
+                </i><br />
+            </div>
+            
+            <div class="command-usage">
+                <code>=poll remove 'option index'</code><br />
+                <i>
+                    Removes an option from the poll. Option index is the index (in <a href="#vote"><code>=vote</code></a>) to remove<br />
+                    Removed options still count towards the 16 option limit.<br />
+                    All votes made to a removed option become invalidated.
+                </i><br />
+            </div>
+            
+            <div class="command-usage">
+                <code>=poll results</code><br />
+                <i>Posts the current results of the poll.</i>
+            </div>
+            
+            <div class="command-usage">
+                <code>=poll close</code><br />
+                <i>Posts the final results and then deletes the poll.</i>
+            </div>
+        </div>
+        <hr />
+        
+        <div id="vote" class="command">
+            <h4><code>=vote</code> [No PM]</h4>
+            <i class="bot-text">"lets you vote on the current poll"</i>
+            <p>
+                This command adds a users vote to the open poll.<br />
+                A user can only make one vote. They can change their vote at any time.
+            </p>
+            
+            <b>Usage:</b><br />
+            
+            <div class="command-usage">
+                <code>=vote</code><br />
+                <i>Posts the options and their index values.</i><br />
+            </div>
+            
+            <div class="command-usage">
+                <code>=vote 'option index'</code><br />
+                <i>Sets your vote to the matching index in <code>=vote</code></i>
+            </div>
+        </div>
+        <hr />
+        
+        <div id="raffle" class="command">
+            <h4><code>=raffle</code> [Server Manager]</h4>
+            <i class="bot-text">"starts a random drawer in chat"</i>
+            <p>
+                This command draws random users from those who use the <a href="#enter"><code>=enter</code></a> command.<br />
+                You can only have 1 raffle running at a time.<br />
+                <br />
+                When you draw, you must have 5 entrants for every winner you want.<br />
+                <br />
+                After 2 hours, the raffle will be drawn automatically with 1 selected winner.<br />
+                A warning will be posted 10 minutes before the end.
+            </p>
+            
+            <b>Usage:</b><br />
+            
+            <div class="command-usage">
+                <code>=raffle start</code><br />
+                <i>Starts a raffle.</i><br />
+            </div>
+            
+            <div class="command-usage">
+                <code>=raffle draw ['n']</code><br />
+                <i>Ends the raffle, drawing n members. If n is not given, it defaults to 1.</i>
+            </div>
+        </div>
+        
+        <div id="enter" class="command">
+            <h4><code>=enter</code> [Active Raffle]</h4>
+            <i class="bot-text">"lets you enter a raffle"</i>
+            <p>
+                <b>Permission: [Active Raffle]</b> Requires a raffle to be running on the server.<br />
+                <br />
+                You can only enter a raffle once. Attempting to enter again, will remove you from the draw permanently.
+            </p>
+            
+            <b>Usage:</b><br />
+            
+            <div class="command-usage">
+                <code>=enter</code>
+            </div>
+        </div>
+        
+        <div id="awards" class="command">
+            <h4><code>=awards</code></h4>
+            <i class="bot-text">"makes me post a bunch of top 10s"</i>
+            <p>
+                These are for getting the top 10 things in any given part of <a href="info.html#info"><code>=info world</code></a>
+            </p>
+            
+            <b>Usage:</b><br />
+            <br />
+            
+            <b>"People" Awards:</b><br />
+            
+            <div class="command-usage">
+                <code>=awards popular</code><br />
+                <i>Posts the 10 servers with the most users total.</i><br />
+            </div>
+            
+            <div class="command-usage">
+                <code>=awards vocal</code><br />
+                <i>Posts the 10 servers with the most users in voice chat.</i><br />
+            </div>
+            
+            <div class="command-usage">
+                <code>=awards gamer</code><br />
+                <i>
+                    Posts the 10 servers with the most users in game*.<br />
+                    <sup>*Bot does not check for in game, just status != None.</sup>
+                </i><br />
+            </div>
+            
+            <div class="command-usage">
+                <code>=awards active</code><br />
+                <i>
+                    Posts the 10 servers with the highest percentage of online members.<br />
+                    The maximum score is 100.00%
+                </i><br />
+            </div>
+            
+            <div class="command-usage">
+                <code>=awards loyal</code><br />
+                <i>
+                    Posts the 10 members with the most shared servers to the bot.<br />
+                    The maximum score is 100* as that is the server cap for users.<br />
+                    <sup>*Users created before this limit may be on more than 100 servers.</sup>
+                </i><br />
+            </div>
+            
+            <div class="command-usage">
+                <code>=awards spammy</code><br />
+                <i>
+                    Posts the 10 members who have the highest percentage of messages in the deque.
+                </i>
+            </div>
+            <br />
+            
+            <b>"Channel" Awards:</b><br />
+            
+            <div class="command-usage">
+                <code>=awards spacey</code><br />
+                <i>
+                    Posts the 10 servers with the most channels.<br />
+                    The maximum score is 500* as that is the channel cap for servers.<br />
+                    <sup>*Servers created before this limit may have more than 500 channels.</sup>
+                </i><br />
+            </div>
+            
+            <div class="command-usage">
+                <code>=awards packed</code><br />
+                <code>=awards empty</code><br />
+                <i>
+                    Posts the 10 most or least densely populated servers.<br />
+                    The minimum is 0.002 members per channel.
+                </i><br />
+            </div>
+            <br />
+            
+            <b>"Command" Awards:</b>
+            
+            <div class="command-usage">
+                <code>=awards command</code><br />
+                <i>Posts the 10 commands with the most uses over all servers.</i><br />
+            </div>
+            
+            <div class="command-usage">
+                <code>=awards clingy</code><br />
+                <i>
+                    Posts the 10 members with the most overall bot uses.<br />
+                    Due to how the data is stored, the values returned are that members total on all servers.
+                </i><br />
+            </div>
+            
+            <div class="command-usage">
+                <code>=awards dependant</code><br />
+                <i>
+                    Posts the 10 servers that the bot has sent the most messages to.<br />
+                    This counts the bot's sent messages, not the servers command calls.<br />
+                    This means command calls with multiple message outputs count for multiple points.
+                </i><br />
+            </div>
+            <br />
+            
+            <b>"Fun" Awards:</b>
+            
+            <div class="command-usage">
+                <code>=awards random</code><br />
+                <i>
+                    Posts the 10 <a href="rng.html#random"><code>=random</code></a> subcommands with the most uses.
+                </i><br />
+            </div>
+            
+            <div class="command-usage">
+                <code>=awards richest</code><br />
+                <i>
+                    Posts the 10 members on the server with the most <a href="#coins">coins</a>.<br />
+                    <span class="bot-text">"squaswin will always be exempted from this for... <sup>What do I say squas?</sup>"</span><br />
+                    <sup>Just say <a href="assets/squascoins.png">reasons</a>... &gt;_&gt;</sup><br />
+                    <span class="bot-text">"reasons."</span>
+                </i><br />
+            </div>
+            
+            <div class="command-usage">
+                <code>=awards shitposting</code><br />
+                <i>
+                    Posts the 10 servers with the most tags <b>per member</b>.
+                </i><br />
+            </div>
+        </div>
+        <hr />
+        
+        <div id="ayy" class="command">
+            <h4><code>=ayy</code> [Server Manager]</h4>
+            <i class="bot-text">"manages my default autoresponses"</i>
+            <p>
+                Manages Beta 42's set of default <a href="autofunc.html#ayy">autoresponses.</a><br />
+                <br />
+                For custom autoresponses, see <a href="#autoresponse"><code>=autoresponse</code></a><br />
+            </p>
+            
+            <p class="bot-text">
+                I have 5 different functions right now. They are
+                <ol>
+                    <li class="bot-text">Unflipping Tables. When someone flips a table, I <i>might</i> come and unflip it.</li>
+                    <li class="bot-text">Respond to Pings. When someone mentions me, I will reply.</li>
+                    <!-- Try changing Beta 42's nickname to "Ping for Free Hugs" without the quotes. -->
+                    <li class="bot-text">Removing "U"s. When someone types "no u", I will post the previous message but without the letter U in.</li>
+                    <li class="bot-text">Unit Conversion. This one is somewhat unreliable, but it converts temperatures and distances between Metric and Amerial.</li>
+                    <li class="bot-text">Closing Brackets. When someone writes a message with unmatched brackets, braces, parenthesis or inequalities, I will close them.</li>
+                </ol>
+            </p>
+            
+            <p>
+                This command is interractive. Once you have set up everything, just send a "0" to end the session.<br />
+                This command uses <code>diff</code> highlighting where <span class="diff-added">Yellow</span> means active and <span class="diff-removed">Red</span> means not active.
+            </p>
+        
+            <b>Usage:</b><br />
+            
+            <div class="command-usage">
+                <code>=ayy</code><br />
+                <i>This starts an interractive session.</i>
+            </div>
+        </div>
+        <hr />
+        
+        <div id="autoresponse" class="command">
+            <h4><code>=autoresponse</code> [Server Manager]</h4>
+            <i class="bot-text">"lets you set up autoresponses to messages"</i>
+            <p>
+                This command allows you to set up custom responses, or simple commands.
+            </p>
+            
+            <b>Usage:</b><br />
+            
+            <div class="command-usage">
+                <code>=autoresponse add ['mod'] 'trigger' 'response' ['chance']</code><br />
+                <i>
+                    Creates a new response. Trigger is the pattern to look for, response is the response message.<br />
+                    Chance is a float from 0 to 1 and is the chance of the trigger causing the response. If not given, defaults to 1.<br />
+                    Mod is one of the following valuse:
+                </i>
+                <ul class="no-bullet">
+                    <li><i><code>-S</code>: Startswith. Checks that the message starts with the trigger.</i></li>
+                    <li><i><code>-E</code>: Endswith. Checks that the message ends with the trigger.</i></li>
+                    <li><i><code>-C</code>: Contains. Checks the trigger exists in the message.</i></li>
+                    <li><i><code>-R</code>: Regex. Passes the trigger as raw regex. You can access groups with curly braces.</i></li>
+                </ul>
+                <table class="codeblock">
+                    <tr><td>&lt;mod&gt; =autoresponse add "=cookie" "( &#xff3e;&#x25e1;&#xff3e;)&#x3063;&#x1f36a;"</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have added that response.</td></tr>
+                    <tr><td>&lt;user&gt; =cookie</td><tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; ( &#xff3e;&#x25e1;&#xff3e;)&#x3063;&#x1f36a;</td></tr>
+                    <tr><td>&lt;mod&gt; =autoresponse add -R "=cookie (.*)" "Have a cookie {0}~! &#x1f36a;"</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; I have added that response.</td></tr>
+                    <tr><td>&lt;user&gt; =cookie mr.mod</td></tr>
+                    <tr><td class="bot-text">&lt;B 42&gt; Have a cookie mr.mod~! &#x1f36a;</td></tr>
+                </table>
+            </div>
+            
+            <div class="command-usage">
+                <code>=autoresponse remove</code><br />
+                <i>
+                    Lists the autoresponses and prompts for which to remove if any.
+                </i>
+            </div>
+        </div>
+        <hr />
+        
+        <div id="coins" class="command">
+            <h4><code>=coins</code></h4>
+            <i class="bot-text">"lets me manage your coins"</i>
+            <p>
+                Coins are used in some game commands, though as they are not implemented yet, they serve more as bragging rights.<br />
+            </p>
+            
+            <b>Aquisition and Usage:</b>
+            
+            <table class="codeblock channel-view">
+                <tr><th>Aquisition</th><th>Uses</th></tr>
+                <tr><td>=coins add</td><td>=coins give</td></tr>
+                <tr><td>=coins give</td><td>More coming soon.</td></tr>
+                <tr><td>Bug bounties*</td><td></td></tr>
+            </table>
+            <sup>*Bug bounties: 500 coins per english spelling mistake, 2000 coins for minor bugs, 10000 coins for breaking bugs.</sup><br />
+            
+            <b>Usage:</b><br />
+            
+            <div class="command-usage">
+                <code>=coins [get ['member']]</code><br />
+                <i>Gets a members coin count. Member is who's coins to get. If not given, it fetches your own.</i><br />
+            </div>
+            
+            <div class="command-usage">
+                <code>=coins add</code><br />
+                <i>Adds 300 coins. You must wait 24 hours before using this command again.</i><br />
+            </div>
+            
+            <div class="command-usage">
+                <code>=coins give 'member' 'amount'</code><br />
+                <i>Gives coins to another member. Member is who to give to, amount is how many to give.</i><br />
+            </div>
+            
+        </div>
+        <hr />
+        
+        <a href="#top">Return to top.</a>
+        
+    </article>
+
+</body>
+</html>
