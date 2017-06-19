@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+
+<html lang="en-gb" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta content="All about 42!" name="Description" property="og:description">
+    <title>Infobot 42</title>
+    <link rel="stylesheet" type="text/css" href="42help.css">
+</head>
+<body>
+    <aside>
+        <div class="aside-header">
+            <a href="https://discordapp.com/oauth2/authorize?client_id=196574652229877760&scope=bot&permissions=403041302">
+                Want Me? Have ME! =join <br />
+            </a>
+            You need manage server or manage roles to add bots.
+        </div>
+        <div class="aside-content">
+            <h1>Site map</h1>
+            <h3>Command Help</h3>
+            <ul class="no-bullet">
+                <li><a href="introduction.html">&#9654; Introduction</a></li>
+                <li><a href="faq.html">&#9654; Frequently Asked Questions</a></li>
+                <li>Command Categories</li>
+                <li><a href="bot.html">&#9654; Bot</a></li>
+                <li><a href="tools.html">&#9654; Tools</a></li>
+                <li><a href="mod.html">&#9654; Moderation</a></li>
+                <li><a href="info.html">&#9654; Information</a></li>
+                <li><a href="rng.html">&#9654; RNG</a></li>
+                <li><a href="memory.html">&#9654; Memory</a></li>
+                <li>
+                    <a href="fun.html">&#9660; Fun</a>
+                    <ul class="no-bullet">
+                        <li><a href="fun.html">Back...</a></li>
+                        <li><a href="#top">Game Commands</a></li>
+                        <!--<li><a href="#slots">=slots</a></li>-->
+                        <!--<li><a href="#blackjack">=blackjack</a></li>-->
+                        <li><a href="#puyo">=puyo</a></li>
+                    </ul>
+                </li>
+                <li><a href="nerd.html">&#9654; Nerd</a></li>
+                <li><a href="vg.html">&#9654; Video Games</a></li>
+                <li><a href="secret.html">&#9654; Secrets</a></li>
+                <li>Other Sections</li>
+                <li><a href="autofunc.html">&#9654; Automatic Functions</a></li>
+                <li><a href="yna.html">&#9654; yna Tag Scripting</a></li>
+            </ul>
+            <h3>Friends of 42</h3>
+            <ul class="no-bullet">
+                <li><a href="redditbot/index.html">&#9654; Redditbot</a></li>
+                <li><a href="pinksquid/index.html">&#9654; Pinksquid</a></li>
+                <li>&#9654; Your bot here?</li>
+            </ul>
+        </div>
+        <div class="aside-footer">
+            programmers are fueled by pizza~!<br />
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="53TDH5RCZ6QTU">
+                <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal Donate - Keep those creative juices flowing!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+            </form>
+        </div>
+    </aside>
+
+    <article>
+        <h1 id="top">Game Commands</h1>
+        <p>
+            These commands generally cost <a href="fun.html#coins">coins</a> to play. Some have a payout, others do not.
+        </p>
+
+        <hr />
+
+        <!--
+        <div id="slots" class="command">
+
+        </div>
+        <hr />
+            -->
+
+        <!--
+        <div id="blacklist" class="command">
+
+        </div>
+        <hr />
+            -->
+
+        <div id="puyo" class="command">
+            <h4><code>=puyo</code> [One Per Server Channel] [1/20m]</h4>
+            <i class="bot-text">"plays Puyo Puyo single player"</i>
+            <p>
+                <b>Permission: [One Per Server Channel]</b> Only one person can play this game in each channel* and it cannot be used in PMs.<br />
+                *This is because Discord has a 5/5s/channel on send and edit message, and this command is <em>very</em> intensive.<br />
+                <br />
+                <a href="https://puyonexus.com/wiki/Puyo_Puyo">Puyo Puyo</a> is a primerally Japanese puzzle game where the aim is to connect 
+                groups of 4 similar coloured puyos together.<br />
+                Score is given for every group of puyos popped with bonuses for getting large groups (e.g. 5+ puyos at once) and chains.<br />
+                <br />
+                A chain is when after popping a group of puyos, another group is created. These are where most of the points are.<br />
+                <br />
+                There are 3 gamemodes:
+                <ul>
+                    <li>Sweet (3 colours)</li>
+                    <li>Normal (4 colours)</li>
+                    <li>Spicy (5 colours)</li>
+                </ul>
+                <br />
+                To control this game:<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Left, Right and Down moves puyos in the respective direction<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Left Turn and Right Turn rotate a puyo<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Double Down locks a puyo where it is. You can use the ghost blocks to see where it will land.<br />
+                <br />
+                If you """win""" the game by surviving around 75 puyo drops, your score will be saved (if it is better than your previous score.)<br />
+                <br />
+                <b>This game costs 500 coins to play.</b>
+            </p>
+
+            <b>Usage:</b>
+
+            <div class="command-usage">
+                <code>=puyo ['level']</code><br />
+                <i>Starts a game. Level is either <code>sweet</code> or <code>spicy</code> and if not given, will be set to Normal.</i>
+            </div>
+
+            <div class="command-usage">
+                <code>=puyo scores</code><br />
+                <i>Gets the high score table. The high scores are global, but you'll only be shown server members.</i>
+            </div>
+        </div>
+        <hr />
+
+        <a href="top">Return to top.</a><br />
+        <a href="fun.html">Return to Fun Category Commands.</a>
+
+    </article>
+
+</body>
+</html>
