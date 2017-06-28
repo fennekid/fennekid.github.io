@@ -88,6 +88,12 @@
                             </ul>
                         </li>
                         <li>
+                            <a href="#state">Saving states</a>
+                            <ul class="no-bullet">
+                                <li><a href="save">{save}</a></li>
+                            </ul>
+                        </li>
+                        <li>
                             <a href="#examples">Example Scripts</a>
                             <ul class="no-bullet">
                                 <li><a href="#shipscore">shipscore.yna</a></li>
@@ -367,6 +373,7 @@
                 </ul>
             </div>
         </div>
+        <hr />
 
         <div id="slice" class="command">
             <h4>Slice Function</h4>
@@ -839,11 +846,60 @@
 
         <hr />
 
+        <h3 id="states">Saving States Between Calls</h3>
+        <p>
+            Tags have access to a set of state variables. These are similar to variables created using <code>{set}</code>, but with 1 very big difference:<br />
+            <b>State variables aren't deleted when a tag call ends!</b><br />
+            <br />
+            This allows you to create tags that can remember things, like when they were called, or who called them, or things like that.<br />
+            <br />
+            There is a small list of restrictions with state variables however:
+        </p>
+        <ul>
+            <li>State variables are <b>strictly</b> per tag. Cloning, Syncing or otherwise copying tags will not preserve its state.</li>
+            <li>Each tag can only support at most 16 state variables.</li>
+            <li>State variable names must be at most 32 charcters and cannot conflict with any <a href="#format">formatting objects</a>.</li>
+            <li>State variable content can be at most 256 characters.</li>
+        </ul>
+        <p>    
+            There is only 1 command that you can use to save variables to the state.
+        </p>
+
+        <div id="save" class="command">
+            <h4>State Saving</h4>
+            <p>
+                This function takes an evaluated value and saves it to the tags state dictionary.
+            </p>
+            <div class="indented">
+                <h5>Syntax</h5>
+                <code>{save:name;content;}</code>
+
+                <h5>Arguments</h5>
+                <ul class="no-bullet">
+                    <li><code>name</code> The state variable name.</li>
+                    <li><code>content</code> The content to store. Leave blank to delete a variable</li>
+                </ul>
+
+                <h5>Exceptions</h5>
+                <ul class="no-bullet">
+                    <li><code>no args</code> No args were given.</li>
+                    <li><code>invalid args</code> Either too many or not enough args were given.</li>
+                    <li><code>invalid key</code> The key value is not a valid identifier name.</li>
+                    <li><code>too many variables</code> There are already 16 state variables.</li>
+                    <li><code>invalid name</code> A reserved key was used or the name was too long.</li>
+                    <li><code>content too long</code> The content was too long.</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr />
+
         <h3 id="examples">Examples</h3>
         <p>
             Here is a list of some relatively simple tags created either by myself or the community.<br />
             Credit will be given where credit is due.<br />
             <br />
+            Note: If you are using the Notepad++ stylers, I highly recommend starting your state variable names with <code>s_</code> as this will flag them in a unique colour.
         </p>
         <div class="embed" data-color="#FF66FF">
             <p>
@@ -880,16 +936,14 @@
                 For the caller, we use <code>{caller.name}</code> to get just the name, 
                 and here we want to get the second arg, since if we only have the first arg, we still use the caller.
             </p>
-            <table class="codeblock">
-                <tr><td>{when:{arglen};lt;2;{caller.name};{arg2};}</td></tr>
-            </table>
+            <pre class="demo">
+    {when:{arglen};lt;2;{caller.name};{arg2};} </pre>
 
             <p>Lets just store this away for later.</p>
-            <table class="codeblock">
-                <tr><td>{set:first;</td></tr>
-                <tr><td>&nbsp; {when:{arglen};lt;2;{caller.name};{arg2};}</td></tr>
-                <tr><td>;}</td></tr>
-            </table>
+            <pre class="demo">
+    {set:first;
+    &nbsp; {when:{arglen};lt;2;{caller.name};{arg2};}
+    ;} </pre>
 
             <p>
                 Now we just need to do this again for the second person in the ship.<br />
@@ -901,36 +955,79 @@
                 Third part of the puzzle is the score.<br />
                 Since we want different text for each option, we can use rep later on to substitute the units.
             </p>
-            <table class="codeblock">
-                <tr><td>{set:score;</td></tr>
-                <tr><td>&nbsp; {choose:</td></tr>
-                <tr><td>&nbsp; &nbsp; X% - Terrible;</td></tr>
-                <tr><td>&nbsp; &nbsp; 1X% - Really Bad;</td></tr>
-                <tr><td>&nbsp; &nbsp; ...</td></tr>
-                <tr><td>&nbsp; &nbsp; 9X% - AMAZING!!</td></tr>
-                <tr><td>&nbsp; ;}</td></tr>
-                <tr><td>;}</td></tr>
-            </table>
+            <pre class="demo">
+    {set:score;
+        {choose:
+            X% - Terrible;
+            1X% - Really Bad;
+            ...
+            9X% - AMAZING!!
+        ;}
+    ;} </pre>
 
             <p>Then we just replace in the <code>X</code> with a number from 0 to 9 and put that away for later.</p>
-            <table class="codeblock">
-                <tr><td>{set:newrep;true;}{!old replace syntax is depreciated}</td></tr>
-                <tr><td>{set:score;</td></tr>
-                <tr><td>&nbsp; {rep:X;{num:9;};{score};}</td></tr>
-                <tr><td>;}</td></tr>
-            </table>
+            <pre class="demo">
+    {set:newrep;true;}{!old replace syntax is depreciated}
+    {set:score;
+        {rep:X;{num:9;};{score};}
+    ;} </pre>
 
             <p>Now we just stitch it together.</p>
-            <table class="codeblock">
-                <tr><td>=====Shipping Score=====</td></tr>
-                <tr><td>First: {first}</td></tr>
-                <tr><td>Second: {second}</td></tr>
-                <tr><td>====================</td></tr>
-                <tr><td>{score}</td></tr>
-            </table>
+            <pre class="demo">
+    =====Shipping Score=====
+    First: {first}
+    Second: {second}
+    ====================
+    {score} </pre>
 
         </div>
         <hr />
+
+        <div id="jackpot" class="command">
+            <h4>Jackpot by squaswin</h4>
+            <div class="embed" data-color="#1dfca4">
+                <p>
+                    <!--<img class="dl" src="assets/download_button.png" />-->
+                    <a href="assets/jackpot.yna" download="jackpot.yna">Download code</a>
+                </p>
+            </div>
+
+            <p>
+                This tag is a simple demonstration of state variables. It ticks up with every call until someone gets a 50.
+            </p>
+
+            <h5>Code Demonstration</h5>
+
+            <p>
+                First lets decide what to do when someone wins. We should reset the counter.
+            </p>
+            <pre class="demo">
+    Congratulations, you won {s_total}
+    {save:s_total;0;} </pre>
+
+            <p>
+                And if they lose, we just increment the counter.
+            </p>
+            <pre class="demo">
+    {set:tmp;{math;add;{s_total};1;};}
+    {save:s_total;tmp;}
+    Better luck next time. The jackpot is now {tmp}. </pre>
+
+            <p>
+                Now we just stitch it all together with a when statement.
+            </p>
+            <pre class="demo">
+    {set:score;{num:50;};}
+    {when:{score};eq;50;{!win path};{!lose path};} </pre>
+
+            <p>
+                Lastly, we need to initialise our <code>s_total</code>  when we create the tag.
+            </p>
+            <table class="codeblock">
+                <tr><td>&lt;user&gt; =tag create jackpot "..." "{save:s_total;0;}"</td></tr>
+            </table>
+
+        </div>
 
     </article>
 

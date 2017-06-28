@@ -271,11 +271,13 @@
             </div>
 
             <div class="command-usage">
-                <code>=tag create 'name' 'content'</code><br />
+                <code>=tag create 'name' 'content' ['init']</code><br />
                 <i>
                     Creates a new tag. Content is the content to save.<br />
                     You cannot create a tag with a name that is already taken or reserved.<br />
-                    You will be assigned as the owner of this tag.
+                    You will be assigned as the owner of this tag.<br />
+                    <br />
+                    Init is the code that will be run when the tag is created. It is intended to be used to set up <a href="yna.html#state">state variables</a>.
                 </i>
             </div>
 

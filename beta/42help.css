@@ -147,7 +147,16 @@
             border-radius:4px;
             display: inline-block;
         }
-        .embed p{
+        .embed p {
             margin:0 10px;
             vertical-align: middle;
+        }
+
+
+        .demo {
+            font-size: 14px;
+            background-color: #2e3337;
+            border: 3px double black;
+            width: 95%;
+            padding: 4px 0px;
         }

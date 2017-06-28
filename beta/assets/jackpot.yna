@@ -1,0 +1,16 @@
+{oneline:
+    {!
+        When creating this tag, you should initialise s_total 
+        to 0 with a save bracket.
+    }
+
+    {set:score;{num:50;};}
+    {when:{score};eq;50;
+        JACKPOT! Congratulations, you won {s_total} points!
+        {save:s_total;0;}
+        ;
+        {set:tmp;{math:add;{s_total};1;};}
+        {save:s_total;tmp;}
+        You rolled a {score}. Better luck next time. The jackpot is now {tmp}.
+    ;}
+;}
