@@ -86,7 +86,7 @@
             -->
 
         <div id="puyo" class="command">
-            <h4><code>=puyo</code> [One Per Server Channel] [1/20m]</h4>
+            <h4><code>=puyo</code> [One Per Server Channel] [1/30m]</h4>
             <i class="bot-text">"plays Puyo Puyo single player"</i>
             <p>
                 <b>Permission: [One Per Server Channel]</b> Only one person can play this game in each channel* and it cannot be used in PMs.<br />
@@ -97,8 +97,12 @@
                 Score is given for every group of puyos popped with bonuses for getting large groups (e.g. 5+ puyos at once) and chains.<br />
                 <br />
                 A chain is when after popping a group of puyos, another group is created. These are where most of the points are.<br />
-                <br />
-                There are 3 gamemodes:
+            </p>
+            
+            <p>
+                <b>Playing the game</b><br />
+                
+                There are 3 levels:
                 <ul>
                     <li>Sweet (3 colours)</li>
                     <li>Normal (4 colours)</li>
@@ -114,12 +118,40 @@
                 <br />
                 <b>This game costs 500 coins to play.</b>
             </p>
+            
+            <p>
+                <b>Fever Mode</b><br />
+                
+                If you wish, you can play the game in Fever Mode. This changes a few rules.
+                <ul>
+                    <li>You can choose a character. This changes the spell messages that appear.</li>
+                    <li>You use your character's dropset.</li>
+                    <li>Pieces spawn on two tiles (and leaving a piece on either is game over.)</li>
+                    <li>Getting a zen-keshi (all clear) will spawn a preset chain.</li>
+                </ul>
+                
+                For a list of characters, click <a href="assets/puyo_characters.html">here</a>.
+            </p>
+            
+            <p>
+                <b>Payouts</b><br />
+                
+                There are 3 things in this game that will give you coins.
+                <ul>
+                    <li>Completing the game will return your 500 coins.</li>
+                    <li>Bonus for max chain (min 4, max 10.) More chain, more coins.</li>
+                    <li>Bonus for the amount of nuisance you generated while playing.</li>
+                </ul>
+            </p>
 
             <b>Usage:</b>
 
             <div class="command-usage">
-                <code>=puyo ['level']</code><br />
-                <i>Starts a game. Level is either <code>sweet</code> or <code>spicy</code> and if not given, will be set to Normal.</i>
+                <code>=puyo ['level'] [fever 'character']</code><br />
+                <i>
+                    Starts a game. Level is either <code>sweet</code> or <code>spicy</code> and if not given, will be set to Normal.<br />
+                    Character is a puyo character from the list above.
+                </i>
             </div>
 
             <div class="command-usage">

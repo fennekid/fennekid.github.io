@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+
+<html lang="en-gb" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Infobot 42</title>
+</head>
+<body>
+    <script>
+        const useAlt = false;
+        const img = "puyo_characters.png"
+        const altImg = "puyo_characters_alt.png"
+        function swap() {
+            let e = document.getElementById("pic");
+            if (e.src.endsWith(img)) {
+                e.src = altImg;
+            } else {
+                e.src = img;
+            }
+        }
+    </script>
+
+    <img id="pic" src="puyo_characters.png" onclick="swap()" />
+    <p>If the image above makes you irationally angry, click the image.</p>
+</body>
+</html>
