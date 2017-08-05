@@ -35,6 +35,7 @@
                         <li><a href="#top">Game Commands</a></li>
                         <!--<li><a href="#slots">=slots</a></li>-->
                         <!--<li><a href="#blackjack">=blackjack</a></li>-->
+                        <!--<li><a href="#videopoker">=videopoker</a></li>-->
                         <li><a href="#puyo">=puyo</a></li>
                     </ul>
                 </li>
@@ -66,21 +67,123 @@
     <article>
         <h1 id="top">Game Commands</h1>
         <p>
-            These commands generally cost <a href="fun.html#coins">coins</a> to play. Some have a payout, others do not.
+            These commands generally cost <a href="fun.html#coins">coins</a> to play. Some have a payout, others do not.<br />
+            <br />
+            The bot requires Manage Messages for all commands listed in this page.<br />
+            <br />
+            <!--
+            Most casino games are played in sessions. A session lasts 15 minutes or until you press the X reaction.<br />
+            After finishing a session, you will not be able to play any casino games for an hour.<br />
+            Aditionally, only 1 casino game can be running in a channel.<br />
+            Attempting to play any casino game and puyo at the same time in the same channel will lag both games to unplayable levels.
+                -->
         </p>
 
         <hr />
 
         <!--
         <div id="slots" class="command">
-
+            
         </div>
         <hr />
             -->
 
         <!--
-        <div id="blacklist" class="command">
-
+        <div id="blackjack" class="command">
+            <h4><code>=blackjack</code> [No Recent Plays]</h4>
+            <i class="bot-text">"an interactive in-Discord game of blackjack against house"</i>
+            <p>
+                Starts a game session of blackjack.
+            </p>
+            <p>
+                <b>Rules:</b>
+                <ul>
+                    <li>The aim of the game is to get as close to 21 as you can without going over.</li>
+                    <li>If you go over 21 (Bust), you lose immediately.</li>
+                    <li>If the dealer finishes with a higher score than you, then you also lose.</li>
+                    <li>If the dealer goes bust, then you win.</li>
+                    <li>All face cards are worth 10 points.</li>
+                    <li>Aces are worth either 11 or 1.</li>
+                    <li>You win 1.5x bet for getting a Blackjack (A+10 start hand) or drawing 5 cards without going bust.</li>
+                    <li>In a tie, you get your bet returned.</li>
+                </ul>
+                Possible bet values are multiples of 15 up to 150.
+            </p>
+            <p>
+                <b>Controls:</b><br />
+                Menu
+                <ul>
+                    <li>&#x1F4E4; Starts game</li>
+                    <li>&#x1F4B0; Changes bet</li>
+                    <li>&#x274C; Exits game</li>
+                </ul>
+                Game
+                <ul>
+                    <li>&#x1F4E4; Hit (Draw card)</li>
+                    <li>&#x1F6D1; Stand (End turn)</li>
+                </ul>
+            <p>
+            
+            <b>Usage:</b>
+            
+            <div class="command-usage">
+                <code>=blackjack</code>
+            </div>
+            
+        </div>
+        <hr />
+            -->
+            
+        <!--
+        <div id="videopoker" class="command">
+            <h4><code>=videopoker</code> [No Recent Plays]</h4>
+            <i class="bot-text">"an interactive in-Discord game of video poker"</i>
+            <p>
+                Starts a game session of video poker.
+            </p>
+            <p>
+                <b>Rules:</b>
+                <ul>
+                    <li>The aim of the game is to get the highest ranked hand.</li>
+                    <li>You are dealt a hand and pick 0-5 cards to hold.</li>
+                    <li>Aces are strictly low in this version (A2345 is not a straight.)</li>
+                </ul>
+            </p>
+            <p>
+                <b>Controls:</b>
+                Menu
+                <ul>
+                    <li>&#x1F4E4; Starts game</li>
+                    <li>&#x1F4B0; Changes bet</li>
+                    <li>&#x274C; Exits game</li>
+                </ul>
+                Game
+                <ul>
+                    <li>1&#x20E3; - 5&#x20E3; Hold respective card</li>
+                    <li>&#x1F4E4; Discard and redraw hand</li>
+                </ul>
+            </p>
+            <p>
+                <b>Hand explination</b>
+                <ol>
+                    <li><b>Royal Flush</b> Suited 10JQKA</li>
+                    <li><b>Straight Flush</b> Any suited straight</li>
+                    <li><b>4 of a Kind</b> Any 4 identical value cards</li>
+                    <li><b>Full House</b> Any 3 of a Kind plus any Pair</li>
+                    <li><b>Flush</b> Any 5 suited cards</li>
+                    <li><b>Straight</b> Any 5 consecutive cards</li>
+                    <li><b>3 of a Kind</b> Any 3 identical value cards</li>
+                    <li><b>2 Pairs</b> Any 2 value pairs</li>
+                    <li><b>Jacks or Better</b> Any pair of JQK or A</li>
+                </ol>
+            </p>
+            
+            <b>Usage:</b>
+            
+            <div class="command-usage">
+                <code>=videopoker</code>
+            </div>
+            
         </div>
         <hr />
             -->
