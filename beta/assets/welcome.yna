@@ -1,0 +1,17 @@
+{init}
+    {save:s_member_4;None;}
+    {save:s_member_3;None;}
+    {save:s_member_2;None;}
+    {save:s_member_1;None;}
+    {save:s_member_0;None;}
+{endinit}
+{oneline:
+    {save:s_member_4;{s_member_3};}
+    {save:s_member_3;{s_member_2};}
+    {save:s_member_2;{s_member_1};}
+    {save:s_member_1;{s_member_0};}
+    {save:s_member_0;{caller.name};}
+;}Welcome to {server.name}, {caller.mention}!\n
+
+The server now has {uses} members on. The newest 5 members are
+{s_member_4} > {s_member_3} > {s_member_2} > {s_member_1} > {caller.name}

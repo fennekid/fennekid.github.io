@@ -3,6 +3,10 @@
         When creating this tag, you should initialise s_total 
         to 0 with a save bracket.
     }
+    
+    {init}
+        {save:s_total;0;}
+    {endinit}
 
     {set:score;{num:50;};}
     {when:{score};eq;50;
