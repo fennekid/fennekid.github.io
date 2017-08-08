@@ -1,6 +1,6 @@
 ﻿@font-face {
-    font-family: Whitney Book;
-    src: url(https://discordapp.com/assets/e8acd7d9bf6207f99350ca9f9e23b168.woff) format('woff');
+    font-family: "Whitney Book";
+    src: url("https://discordapp.com/assets/e8acd7d9bf6207f99350ca9f9e23b168.woff") format("woff");
 }
 
 body {
@@ -9,7 +9,7 @@ body {
     margin-right: 0;
     margin-top: 0;
     top: 0;
-    font-family: Whitney Book, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+    font-family: "Whitney Book", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", sans-serif;
     overflow-y: hidden;
 }
 
@@ -24,7 +24,7 @@ p {
 }
 
 code {
-    font-family: Menlo, Consolas, Monaco, monospace;
+    font-family: "Menlo", "Consolas", "Monaco", monospace;
     font-size: inherit;
     background-color: #2e3337;
 }
