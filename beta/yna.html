@@ -100,7 +100,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#state">Saving states</a>
+                            <a href="#states">Saving states</a>
                             <ul class="no-bullet">
                                 <li><a href="#save">{save}</a></li>
                             </ul>
@@ -333,7 +333,7 @@
         </div>
         <hr />
 
-        <h3 class="eval">Evaluation Objects</h3>
+        <h3 id="eval">Evaluation Objects</h3>
         <p>
             Evaluation Objects are where the majority of yna's power lays.<br />
             These objects are designated by the trailing semicolon (i.e. <code>{object<b>;</b>}</code>)<br />
@@ -793,7 +793,7 @@
             </p>
             <div class="indented">
                 <h5>Syntax</h5>
-                <code>{rep:&lt;op&gt;;&lt;arg1&lt;[[;&lt;arg2&gt;];&lt;...&gt;];}</code>
+                <code>{rep:&lt;op&gt;;&lt;arg1&gt;[[;&lt;arg2&gt;];&lt;...&gt;];}</code>
 
                 <h5>Arguments</h5>
                 <ul class="no-bullet">
@@ -841,7 +841,7 @@
         </div>
         <hr />
 
-        <div id="online" class="command">
+        <div id="oneline" class="command">
             <h4>Oneline Function</h4>
             <p>
                 This strips all the newlines and leading whitespace from code, allowing it to be formatted in a readable way without leaving a lot of newlines.<br />
