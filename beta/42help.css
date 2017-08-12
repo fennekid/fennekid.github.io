@@ -52,8 +52,8 @@ table.channel-view {
     table-layout: fixed;
 }
 
-table.channel-view td+td,
-table.channel-view th+th {
+table.codeblock td+td,
+table.codeblock th+th {
     border-left: 3px double black;
 }
 

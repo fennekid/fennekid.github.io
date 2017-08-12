@@ -1,0 +1,488 @@
+﻿<!DOCTYPE html>
+
+<html lang="en-gb" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta content="All about 42!" name="Description" property="og:description">
+    <title>Infobot 42</title>
+    <link rel="stylesheet" type="text/css" href="42help.css">
+    <script type="text/javascript" src="42help.js"></script>
+
+
+    <!--Analytics-->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-104225413-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <!------------->
+
+</head>
+<body>
+    <aside>
+        <div class="aside-header">
+            <a href="https://discordapp.com/oauth2/authorize?client_id=196574652229877760&scope=bot&permissions=403041302">
+                Want Me? Have ME! =join <br />
+            </a>
+            You need manage server or manage roles to add bots.
+        </div>
+        <div class="aside-content">
+            <h3><a href="index.html">Home</a></h3>
+            <h3>Command Help</h3>
+            <ul class="no-bullet">
+                <li><a href="introduction.html">&#9654; Introduction</a></li>
+                <li><a href="faq.html">&#9654; Frequently Asked Questions</a></li>
+                <li>Command Categories</li>
+                <li><a href="bot.html">&#9654; Bot</a></li>
+                <li><a href="tools.html">&#9654; Tools</a></li>
+                <li><a href="mod.html">&#9654; Moderation</a></li>
+                <li><a href="info.html">&#9654; Information</a></li>
+                <li><a href="rng.html">&#9654; RNG</a></li>
+                <li><a href="memory.html">&#9654; Memory</a></li>
+                <li><a href="fun.html">&#9654; Fun</a></li>
+                <li><a href="nerd.html">&#9654; Nerd</a></li>
+                <li><a href="vg.html">&#9654; Video Games</a></li>
+                <li><a href="secret.html">&#9654; Secrets</a></li>
+                <li>Other Sections</li>
+                <li>
+                    <a href="autofunc.html">&#9654; Automatic Functions</a>
+                    <ul class="no-bullet">
+                        <li><a href="#respones"><b>Autoresponses</b></a></li>
+                        <li><a href="#ayy">Default Functions</a></li>
+                        <li><a href="#autoresponse">Custom Responses</a></li>
+                        <li><a href="#afk">=afk</a></li>
+                        <li><a href="#announce">=announce</a></li>
+                        <li><a href="#blacklist">=blacklist</a></li>
+                        <li><a href="#rolestate">=rolestate</a></li>
+                        <li><a href="#welcome">=welcome</a></li>
+                        <li><a href="#internal"><b>Internal Processes</b></a></li>
+                        <li><a href="#raffle">Raffles</a></li>
+                        <li><a href="#status">Status cycle</a></li>
+                        <li><a href="#timer">Timers</a></li>
+                        <li><a href="#world">World rank updating</a></li>
+                        <li><a href="#gotchas"><b>Gotchas</b></a></li>
+                        <li><a href="#modlog">Modlog</a></li>
+                        <li><a href="#me">=me</a></li>
+                        <li><a href="#textbox">=textbox</a></li>
+                        <li><a href="#xsend">=xsend</a></li>
+                        <li><a href="#logging"><b>Logging</b></a></li>
+                        <li><a href="#commands">General Command Logs</a></li>
+                        <li><a href="#statistics">Command Statistics</a></li>
+                        <li><a href="#xkcd">XKCD Tracking</a></li>
+                        <!--<li><a href="#cp">Contribution Points</a></li>-->
+                    </ul>
+                </li>
+                <li><a href="yna.html">&#9660; yna Tag Scripting</a></li>
+            </ul>
+            <h3>Friends of 42</h3>
+            <ul class="no-bullet">
+                <li><a href="redditbot/index.html">&#9654; Redditbot</a></li>
+                <li><a href="pinksquid/index.html">&#9654; Pinksquid</a></li>
+                <li>&#9654; Your bot here?</li>
+            </ul>
+        </div>
+        <div class="aside-footer">
+            programmers are fueled by pizza~!<br />
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="53TDH5RCZ6QTU">
+                <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal Donate - Keep those creative juices flowing!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+            </form>
+        </div>
+    </aside>
+
+    <article>
+        <h1 id="top">Automatic Functions</h1>
+        <p>
+            Beta 42 has a set of automatic functionality, all of which can be enabled or disabled as per the mods needs.<br />
+            A lot of this list will be overviews of the set-it-and-forget-it functions such as <code><a href="mod.html#welcome">=welcome</a></code>, so I will show them first.<br />
+            <br />
+            <b>If the bot is doing something and you do not know why, check here first!</b><br />
+            I will include also with every section how to disable a specific function if possible.<br />
+            <br />
+            I will also document all the logging the bot uses.
+        </p>
+
+        <hr />
+
+        <h3 id="responses">Autoresponses</h3>
+        <p>
+            These are the responses set via the various commands in the bot.
+        </p>
+
+        <hr />
+
+        <div id="ayy" class="command">
+            <h4>Default Autoresponses</h4>
+            <b>What it is:</b>
+            <p>
+                As said in this <a href="fun.html#ayy">link</a>, this is a set of small functions that trigger on a specific message or message fragment, instead of a command call.<br />
+                There are currently 5:
+                <ol>
+                    <li>Unflipping Tables. When someone flips a table, she <i>might</i> come and unflip it.</li>
+                    <li>Respond to Pings. When someone mentions her, she will reply.</li>
+                    <!-- Try changing Beta 42's nickname to "Ping for Free Hugs" without the quotes. -->
+                    <li>Removing "U"s. When someone types "no u", she will post the previous message but without the letter U in.</li>
+                    <li>Unit Conversion. This one is somewhat unreliable, but it converts temperatures and distances between Metric and Amerial.</li>
+                    <li>Closing Brackets. When someone writes a message with unmatched brackets, braces, parenthesis or inequalities, she will close them.</li>
+                </ol>
+                There may be more in future, or if you have any ideas, let squaswin know and he will see what he can do.
+            </p>
+
+            <b>How to stop it:</b>
+            <p>
+                Use the <code><a href="fun.html#ayy">=ayy</a></code> command to display a list of functions, then enter numbers (one at a time) to toggle them. Enter "0" to end.
+            </p>
+        </div>
+        <hr />
+
+        <div id="autoresponse" class="command">
+            <h4>Custom Autoresponses</h4>
+            <b>What it is:</b>
+            <p>
+                As said in this <a href="fun.html#autoresponse">link</a>, this is a command that lets you create custom message triggers.<br />
+                Currently, there is no way to check what the responses are, but I promise it will get done. You can check the triggers with <code>=autoresponse remove</code><br />
+                Triggers are displayed as <a href="https://en.wikipedia.org/wiki/Regular_expression">RegEx</a>, but for the most part, you only need to know that <code>^</code> means "start" and <code>$</code> means "end."
+            </p>
+
+            <b>How to stop it:</b>
+            <p>
+                Use the <code><a href="fun.html#autoresponse">=autoresponse</a> remove</code> command, then enter the number of the trigger to delete.
+            </p>
+        </div>
+        <hr />
+
+        <div id="afk" class="command">
+            <h4><code>=afk</code> [<a href="tools.html#toggle">Link</a>]</h4>
+            <b>What it is:</b>
+            <p>
+                When a user sets an AFK message, pinging that user will automatically recall that AFK message.
+            </p>
+
+            <b>How to stop it:</b>
+            <p>
+                If you are the user that set it, just send a message and it will stop your AFK message.<br />
+                As a server admin, you cannot disable specific member's AFK messages, but you can <a href="bot.html#toggle">toggle</a> the command.
+            </p>
+        </div>
+        <hr />
+
+        <div id="announce" class="command">
+            <h4><code>=announce</code> [<a href="tools.html#announce">Link</a>]</h4>
+            <b>What it is:</b>
+            <p>
+                An automated message that is sent approximately on the hour every hour, or approximately at midnight UTC every day
+            </p>
+
+            <b>How to stop it:</b>
+            <p>
+                Use the <code><a href="tools.html#announce">=announce</a> stop</code> command.
+            </p>
+        </div>
+        <hr />
+
+        <div id="blacklist" class="command">
+            <h4><code>=blacklist</code> [<a href="mod.html#blacklist">Link</a>]</h4>
+            <b>What it is:</b>
+            <p>
+                Automatic deletion of messages containing certain keywords.<br />
+                It also contains tracking and infraction management, which may send messages or kick/ban users.
+            </p>
+
+            <b>How to stop it:</b>
+            <p>
+                Use the <code><a html="mod.html#blacklist">=blacklist</a> remove</code> command.
+            </p>
+        </div>
+        <hr />
+
+        <div id="rolestate" class="command">
+            <h4><code>=rolestate</code> [<a href="mod.html#rolestate">Link</a>]</h4>
+            <b>What it is:</b>
+            <p>
+                Storage of a member's roles and nickname when they leave the server, allowing the bot to return
+                those roles to the user.
+            </p>
+
+            <b>How to stop it:</b>
+            <p>
+                Use the <code><a href="mod.html#rolestate">=rolestate stop</a></code> command.
+            </p>
+        </div>
+        <hr />
+
+        <div id="welcome" class="command">
+            <h4><code>=welcome</code> [<a href="mod.html#welcome">Link</a>]</h4>
+            <b>What it is:</b>
+            <p>
+                A specific set of actions taken whenever a new member joins, including sending messages and creating/assigning roles.
+            </p>
+
+            <b>How to stop it:</b>
+            <p>
+                Use the <code><a href="mod.html#rolestate">=welcome info</a></code> command to see a list of active behaviours and how to stop each.
+            </p>
+        </div>
+        <hr />
+
+
+        <h3 id="internal">Internal Processes</h3>
+        <p>
+            These are automatic processes inside the bot that the users have minimal to no control over.
+        </p>
+
+        <hr />
+
+        <div id="raffle" class="command">
+            <h4>Raffle checking</h4>
+            <b>What it is:</b>
+            <p>
+                Every minute, the bot searches through active raffles.<br />
+                Any raffles she finds within 10 minutes of expiring will make her send a warning message to the host channel<br />
+                Any raffles she finds past expiry will be automatically drawn and the results posted to the channel. This will also delete the raffle.
+            </p>
+
+            <b>How it affects you:</b>
+            <p>
+                You may see 2 random messages pop up from the raffle.
+            </p>
+
+            <b>How to avoid it:</b>
+            <p>
+                Don't use <code><a href="fun.html#raffle">=raffle</a></code>
+            </p>
+        </div>
+        <hr />
+
+        <div id="status" class="command">
+            <h4>Status Cycle</h4>
+            <b>What it is:</b>
+            <p>
+                Every 15 seconds, the bot will change her status in a fixed cycle (listed below).
+            </p>
+
+            <b>How it affects you and how to stop it:</b>
+            <p>
+                It doesn't and you can't.
+            </p>
+
+            <b>The cycle:</b>
+            <table id="cycle_table_1" class="codeblock" style="display:block">
+                <tr><td>~00</td><td>"servers"</td><td>Shows the number of servers the bot is on.</td></tr>
+                <tr><td>~15</td><td>"online"</td><td>Shows the number of users that are online in the bot's servers.</td></tr>
+                <tr><td>~30</td><td>"join"</td><td>Shows how to add the bot to the server.</td></tr>
+                <tr><td>~45</td><td>"help"</td><td>Shows how to access the bots help command.</td></tr>
+                <tr><td>~1:00</td><td>"uses"</td><td>Shows how many times commands have been called.</td></tr>
+                <tr><td>~1:15</td><td>"messages"</td><td>Shows how many messages the bot has sent.</td></tr>
+                <tr><td>~1:30</td><td>"uptime"</td><td>Shows the bots current uptime.</td></tr>
+                <tr><td>~1:45</td><td>"tags"</td><td>Shows the total number of tags the bot has over all servers.</td></tr>
+                <tr><td>~2:00</td><td>"help"</td><td>Same as before</td></tr>
+                <tr><td>~2:15</td><td>"backlog"</td><td>Shows the last 3 commands that were used</td></tr>
+                <tr><td>~2:30</td><td>"suggestion"</td><td>Shows a random command that has no auth level on</td></tr>
+                <tr><td>~2:45</td><td>"website"</td><td>Shows a link to here</td></tr>
+                <tr><td>~3:00</td><td>"help"</td><td>Same as the last 2 times</td></tr>
+                <tr><td>~3:15</td><td>"redditbot"</td><td>Suggests a friend bot link.*</td></tr>
+                <tr><td>~3:30</td><td>"help"</td><td>I'm not saying again...</td></tr>
+            </table>
+
+            <table id="cycle_table_2" class="codeblock" style="display:none">
+                <tr><td>~00</td><td class="bot-text">"on 662 servers"</td></tr>
+                <tr><td>~15</td><td class="bot-text">"with 13605 online"</td></tr>
+                <tr><td>~30</td><td class="bot-text">"Want me? =join"</td></tr>
+                <tr><td>~45</td><td class="bot-text">"Use =help"</td></tr>
+                <tr><td>~1:00</td><td class="bot-text">"after 167894 calls"</td></tr>
+                <tr><td>~1:15</td><td class="bot-text">"after 836496 messages"</td></tr>
+                <tr><td>~1:30</td><td class="bot-text">"for 4d, 14h, 34m"</td></tr>
+                <tr><td>~1:45</td><td class="bot-text">"with 32120 tags"</td></tr>
+                <tr><td>~2:00</td><td class="bot-text">"Use =help"</td></tr>
+                <tr><td>~2:15</td><td class="bot-text">"=status, =youtube, =co..."</td></tr>
+                <tr><td>~2:30</td><td class="bot-text">"try =random"</td></tr>
+                <tr><td>~2:45</td><td class="bot-text">"fennekid.github.io"</td></tr>
+                <tr><td>~3:00</td><td class="bot-text">"Use =help"</td></tr>
+                <tr><td>~3:15</td><td class="bot-text">"v.gd/Redditbot"</td></tr>
+                <tr><td>~3:30</td><td class="bot-text">"Use =help"</td></tr>
+            </table>
+            <sub><a href="#" onclick="toggletable()">Show/Hide examples</a></sub>
+            <sub>*DM squas to add a friendbot link. Your bot must not already be on carbonitex, and must be at least competantly made.</sub>
+        </div>
+        <hr />
+
+        <div id="timer" class="command">
+            <h4>Timer Checks</h4>
+            <b>What it is:</b>
+            <p>
+                Every minute, the bot will check her list of all active <a href="tools.html#remind">remind</a> calls to see which have expired.<br />
+                This is why she has an accuracy of &plusmn;1 minute.
+            </p>
+
+            <b>How it affects you:</b>
+            <p>
+                Occasionally the bot will send a message mentioning someone.
+            </p>
+
+            <b>How to avoid it:</b>
+            <p>
+                Don't use <code><a href="tools.html#remind">=remind</a></code>
+            </p>
+        </div>
+        <hr />
+
+        <div id="world" class="command">
+            <h4>World Rank Updating</h4>
+            <b>What it is:</b>
+            <p>
+                About half of the data displayed in the <a href="info.html#info">world info</a> is actually cached and updated every hour.<br />
+                This is because the info itself takes a relatively long time to gather, and blocks the bot while it is doing so.<br />
+                By caching data like this, I do not need to gather it on command and slow the command down.
+            </p>
+
+            <b>How it affects you:</b>
+            <p>
+                Every hour for about 5-10 seconds, the bot will become totally unresponsive.
+            </p>
+
+            <b>How to avoid it:</b>
+            <p>
+                You can't.
+            </p>
+        </div>
+        <hr />
+
+        <h3 id="gotchas">Gotchas</h3>
+        <p>
+            Here, I will list the commands that force the bot to delete the call message where possible. While these are not true autoresponses, it may appear like they are.
+        </p>
+
+        <hr />
+
+        <div id="modlog" class="command">
+            <h4>Modlog Commands</h4>
+            <p>
+                The <a href="mod.html#modlog">modlog</a> is a way for moderators to track actions taken in a server.<br />
+                This automatically sends messages into a specific channel and is controlled by the config setup in the channel's topic<br />
+                <br />
+                However, there is 2 functions that add messages to the mod log that may be unexpected. <a href="mod.html#report">Report</a> and <a href="mod.html#log">Log</a> messages.
+            </p>
+        </div>
+        <hr />
+
+        <div id="me" class="command">
+            <h4><code>=me</code> [<a href="fun.html#me">Link</a>]</h4>
+            <p>
+                This command posts a simple embed echoing what was sent in the command.<br />
+                Example: <code>=me posts a thing</code> would post
+            </p>
+            <div class="embed" data-color="#00FF90">
+                <p><b>&nbsp;* squaswin</b> posts a thing</p>
+            </div>
+        </div>
+        <hr />
+
+        <div id="xsend" class="command">
+            <h4><code>=xsend</code> [<a href="nerd.html#xsend">Link</a>]</h4>
+            <p>
+                This command posts a simple embed like above, but instead of deleting the call, the call may be in a different channel.
+            </p>
+        </div>
+        <hr />
+
+        <h3 id="logging">Logging Functions</h3>
+
+        <hr />
+
+        <div id="commands" class="command">
+            <h4>General Command Logging</h4>
+            <b>What it is:</b>
+            <p>
+                When commands are used, I store a little bit of information along side it.
+            </p>
+
+            <ul>
+                <li><b>Backlog</b> For the next ~100 command calls, your call will be stored in the backlog.</li>
+            </ul>
+            <p>
+                This includes your server's name, channel name, username and the main command you used.<br />
+                e.g. If I called <code>=tag create hello</code> in Kiwi#stadium, It would store "Kiwi", "stadium", "squaswin" and "=tag"
+            </p>
+
+            <ul>
+                <li><b>Local Logs</b> Your command call will be send to the local console and saved to a log file for up to 7 days.</li>
+            </ul>
+            <p>
+                Included data will be the timestamp, server name, channel name and user name, as well as the full content of the command.<br />
+                This serves no reason other than to have proof of people abusing the bot through spamming or using the bot in illiegal ways.<br />
+                This includes but is not limited to spamming the same commands, creating hundreds of spam tags, or using tags or profiles for storing illiegal materials.<br />
+                <br />
+                After a week, the logs will be automatically deleted.
+            </p>
+
+            <p>
+                Local logging is also performed for all messages sent by the bot.
+            </p>
+        </div>
+        <hr />
+
+        <div id="statistics" class="command">
+            <h4>Command Statistics</h4>
+            <b>What is it:</b>
+            <p>
+                When a command is used, or when the bot sends a message, a few counters will be incremented.
+                These are used for <a href="fun.html#awards">Awards</a> and <a href="info.html#info">World info</a>
+            </p>
+
+            <ul>
+                <li><b>Command Counting</b> On command call: the counter for the specific command will be incremented.</li>
+                <li><b>Member Counting</b> On command call: the counter for the caller will be incremented.</li>
+                <li><b>Server Counting</b> When the bot sends a message: the counter for the destination server will be incremented.</li>
+                <li><b>Random Subcommands</b> When <code><a href="#rng.html#random">=random</a></code> is used, the counter for the subcommand will be incremented.</li>
+            </ul>
+
+            <sub><a href="assets/memcount_example.png">Click for an example of the member logging.</a></sub>
+        </div>
+        <hr />
+
+        <div id="xkcd" class="command">
+            <h4>XKCD Tracking</h4>
+            <b>What it is:</b>
+            <p>
+                When a user posts a message with a url to an XKCD comic in, the bot will note down what number was sent.<br />
+                So far this data is no longer used, but if you head over to <a href="http://discord.me/kiwibots">Kiwi Hangout</a> and ask squas, he can tell you those stats.
+            </p>
+        </div>
+        <hr />
+
+        <!--
+        <div id="cp" class="command">
+            <h4>Contribution Points</h4>
+            <p>
+                This isn't a feature implemented into the bot yet, but is part of the `plans` I have coming soon
+            </p>
+            <b>What it is:</b>
+            <p>
+                I don't know yet, but it will probably include tracking IDs and stats and stuff.
+                I can guarentee that it wont log raw message data though, so thats good~
+            </p>
+        </div>
+        <hr />
+            -->
+
+        <a href="#top">Return to top</a>
+
+    </article>
+
+    <script>
+        const first = document.getElementById("cycle_table_1"),
+              second = document.getElementById("cycle_table_2");
+        function toggletable() {
+            first.style.display = first.style.display === "none" ? "block" : "none";
+            second.style.display = second.style.display === "none" ? "block" : "none";
+        }
+    </script>
+
+
+</body>
+</html>
